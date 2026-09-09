@@ -1,0 +1,12 @@
+﻿estrategia,cluster,segmento,dias_presente,mediana_margen_cop_kwh,media_margen_cop_kwh
+Trader expuesto a bolsa (sin cobertura),0,MEDIANO,12,-9.37,-47.71
+Trader expuesto a bolsa (sin cobertura),0,PEQUEÑO,212,64.65,-5.23
+Trader no regulado,1,GRANDE,212,-5.06,-26.02
+Trader no regulado,1,MEDIANO,212,-67.18,-74.52
+Trader no regulado,1,PEQUEÑO,212,-253.23,-254.11
+Integrado/regional regulado,2,MEDIANO,212,-39.9,-53.74
+Integrado/regional regulado,2,PEQUEÑO,212,-59.74,-72.21
+Comercializador regulado,3,GRANDE,212,-17.89,-29.98
+Comercializador regulado,3,MEDIANO,212,-4.82,-25.31
+Trader con sobrecobertura de contratos,4,MEDIANO,212,-45.34,-64.87
+Trader con sobrecobertura de contratos,4,PEQUEÑO,212,-500,-437.34

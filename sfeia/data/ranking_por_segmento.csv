@@ -1,0 +1,2133 @@
+﻿segmento,fecha,estrategia,cluster,n_agentes,mediana_margen_cop_kwh,media_margen_cop_kwh,puesto_del_dia
+GRANDE,2025-01-01,Comercializador regulado,3,5,-27.3,-65.13,2
+GRANDE,2025-01-01,Trader no regulado,1,2,-3.21,-202.72,1
+GRANDE,2025-01-02,Comercializador regulado,3,5,-64.7,-94.41,1
+GRANDE,2025-01-02,Trader no regulado,1,2,-113.19,-201.73,2
+GRANDE,2025-01-03,Comercializador regulado,3,5,-74.19,-101.07,1
+GRANDE,2025-01-03,Trader no regulado,1,2,-126.66,-159.58,2
+GRANDE,2025-01-04,Comercializador regulado,3,5,-56.61,-88.29,1
+GRANDE,2025-01-04,Trader no regulado,1,2,-84.28,-126.65,2
+GRANDE,2025-01-05,Comercializador regulado,3,5,-24.0,-58.28,2
+GRANDE,2025-01-05,Trader no regulado,1,2,8.88,-83.19,1
+GRANDE,2025-01-06,Comercializador regulado,3,5,-40.18,-73.18,1
+GRANDE,2025-01-06,Trader no regulado,1,2,-46.3,-111.36,2
+GRANDE,2025-01-07,Comercializador regulado,3,5,-44.57,-75.39,1
+GRANDE,2025-01-07,Trader no regulado,1,2,-57.21,-114.67,2
+GRANDE,2025-01-08,Comercializador regulado,3,5,-27.11,-58.21,2
+GRANDE,2025-01-08,Trader no regulado,1,2,-9.56,-69.88,1
+GRANDE,2025-01-09,Comercializador regulado,3,5,-24.62,-53.12,2
+GRANDE,2025-01-09,Trader no regulado,1,2,-4.67,-68.42,1
+GRANDE,2025-01-10,Comercializador regulado,3,5,-24.05,-52.71,2
+GRANDE,2025-01-10,Trader no regulado,1,2,-2.25,-60.57,1
+GRANDE,2025-01-11,Comercializador regulado,3,5,-30.45,-62.56,2
+GRANDE,2025-01-11,Trader no regulado,1,2,-21.9,-83.09,1
+GRANDE,2025-01-12,Comercializador regulado,3,5,-32.28,-65.2,2
+GRANDE,2025-01-12,Trader no regulado,1,2,-32.24,-102.2,1
+GRANDE,2025-01-13,Comercializador regulado,3,5,-51.21,-80.29,1
+GRANDE,2025-01-13,Trader no regulado,1,2,-70.89,-124.12,2
+GRANDE,2025-01-14,Comercializador regulado,3,5,-65.79,-91.29,1
+GRANDE,2025-01-14,Trader no regulado,1,2,-100.16,-115.86,2
+GRANDE,2025-01-15,Comercializador regulado,3,5,-84.55,-110.37,1
+GRANDE,2025-01-15,Trader no regulado,1,2,-121.53,-126.58,2
+GRANDE,2025-01-16,Comercializador regulado,3,5,-95.56,-112.3,1
+GRANDE,2025-01-16,Trader no regulado,1,2,-139.26,-149.6,2
+GRANDE,2025-01-17,Comercializador regulado,3,5,-118.6,-130.87,1
+GRANDE,2025-01-17,Trader no regulado,1,2,-125.83,-167.35,2
+GRANDE,2025-01-18,Comercializador regulado,3,5,-114.58,-131.03,1
+GRANDE,2025-01-18,Trader no regulado,1,2,-131.15,-161.82,2
+GRANDE,2025-01-19,Comercializador regulado,3,5,-106.77,-127.44,1
+GRANDE,2025-01-19,Trader no regulado,1,2,-166.98,-176.6,2
+GRANDE,2025-01-20,Comercializador regulado,3,5,-110.16,-126.58,1
+GRANDE,2025-01-20,Trader no regulado,1,2,-177.67,-186.1,2
+GRANDE,2025-01-21,Comercializador regulado,3,5,-116.42,-139.33,2
+GRANDE,2025-01-21,Trader no regulado,1,2,-109.21,-162.37,1
+GRANDE,2025-01-22,Comercializador regulado,3,5,-127.17,-145.1,2
+GRANDE,2025-01-22,Trader no regulado,1,2,-114.0,-178.45,1
+GRANDE,2025-01-23,Comercializador regulado,3,5,-110.2,-115.05,1
+GRANDE,2025-01-23,Trader no regulado,1,2,-131.7,-161.66,2
+GRANDE,2025-01-24,Comercializador regulado,3,5,-101.74,-102.13,1
+GRANDE,2025-01-24,Trader no regulado,1,2,-137.79,-149.97,2
+GRANDE,2025-01-25,Comercializador regulado,3,5,-102.69,-110.87,1
+GRANDE,2025-01-25,Trader no regulado,1,2,-107.21,-158.87,2
+GRANDE,2025-01-26,Comercializador regulado,3,5,-105.29,-109.23,2
+GRANDE,2025-01-26,Trader no regulado,1,2,-104.76,-161.63,1
+GRANDE,2025-01-27,Comercializador regulado,3,5,-112.56,-109.78,1
+GRANDE,2025-01-27,Trader no regulado,1,2,-128.68,-161.06,2
+GRANDE,2025-01-28,Comercializador regulado,3,5,-106.55,-111.73,1
+GRANDE,2025-01-28,Trader no regulado,1,2,-130.54,-172.19,2
+GRANDE,2025-01-29,Comercializador regulado,3,5,-115.98,-117.57,1
+GRANDE,2025-01-29,Trader no regulado,1,2,-121.84,-169.13,2
+GRANDE,2025-01-30,Comercializador regulado,3,5,-110.73,-108.68,1
+GRANDE,2025-01-30,Trader no regulado,1,2,-116.08,-146.93,2
+GRANDE,2025-01-31,Comercializador regulado,3,5,-100.06,-101.84,1
+GRANDE,2025-01-31,Trader no regulado,1,2,-126.75,-146.62,2
+GRANDE,2025-02-01,Comercializador regulado,3,5,-89.67,-91.7,1
+GRANDE,2025-02-01,Trader no regulado,1,2,-148.95,-160.46,2
+GRANDE,2025-02-02,Comercializador regulado,3,5,-70.28,-69.54,1
+GRANDE,2025-02-02,Trader no regulado,1,2,-113.39,-140.72,2
+GRANDE,2025-02-03,Comercializador regulado,3,5,-82.15,-88.24,1
+GRANDE,2025-02-03,Trader no regulado,1,2,-168.24,-181.21,2
+GRANDE,2025-02-04,Comercializador regulado,3,5,-97.71,-91.85,1
+GRANDE,2025-02-04,Trader no regulado,1,2,-149.16,-158.92,2
+GRANDE,2025-02-05,Comercializador regulado,3,5,-90.75,-96.69,1
+GRANDE,2025-02-05,Trader no regulado,1,2,-116.03,-152.63,2
+GRANDE,2025-02-06,Comercializador regulado,3,5,-114.0,-106.73,2
+GRANDE,2025-02-06,Trader no regulado,1,2,-101.58,-153.59,1
+GRANDE,2025-02-07,Comercializador regulado,3,5,-84.53,-93.59,1
+GRANDE,2025-02-07,Trader no regulado,1,2,-122.0,-153.42,2
+GRANDE,2025-02-08,Comercializador regulado,3,5,-62.1,-66.67,1
+GRANDE,2025-02-08,Trader no regulado,1,2,-110.31,-112.77,2
+GRANDE,2025-02-09,Comercializador regulado,3,5,-84.44,-89.01,1
+GRANDE,2025-02-09,Trader no regulado,1,2,-111.94,-141.76,2
+GRANDE,2025-02-10,Comercializador regulado,3,5,-74.6,-78.01,1
+GRANDE,2025-02-10,Trader no regulado,1,2,-146.58,-149.53,2
+GRANDE,2025-02-11,Comercializador regulado,3,5,-55.1,-56.62,1
+GRANDE,2025-02-11,Trader no regulado,1,2,-78.64,-92.96,2
+GRANDE,2025-02-12,Comercializador regulado,3,5,-80.54,-84.58,1
+GRANDE,2025-02-12,Trader no regulado,1,2,-119.12,-140.21,2
+GRANDE,2025-02-13,Comercializador regulado,3,5,-74.94,-76.8,1
+GRANDE,2025-02-13,Trader no regulado,1,2,-121.09,-127.66,2
+GRANDE,2025-02-14,Comercializador regulado,3,5,-57.6,-62.12,1
+GRANDE,2025-02-14,Trader no regulado,1,2,-101.88,-106.86,2
+GRANDE,2025-02-15,Comercializador regulado,3,5,-58.08,-57.26,1
+GRANDE,2025-02-15,Trader no regulado,1,2,-90.85,-100.37,2
+GRANDE,2025-02-16,Comercializador regulado,3,5,-46.36,-47.51,1
+GRANDE,2025-02-16,Trader no regulado,1,2,-55.4,-94.24,2
+GRANDE,2025-02-17,Comercializador regulado,3,5,-40.33,-42.57,1
+GRANDE,2025-02-17,Trader no regulado,1,2,-41.56,-87.92,2
+GRANDE,2025-02-18,Comercializador regulado,3,5,-34.74,-37.16,2
+GRANDE,2025-02-18,Trader no regulado,1,2,-32.37,-68.96,1
+GRANDE,2025-02-19,Comercializador regulado,3,5,-30.1,-32.1,2
+GRANDE,2025-02-19,Trader no regulado,1,2,-16.24,-58.94,1
+GRANDE,2025-02-20,Comercializador regulado,3,5,-32.24,-34.23,2
+GRANDE,2025-02-20,Trader no regulado,1,2,-20.79,-62.36,1
+GRANDE,2025-02-21,Comercializador regulado,3,5,-26.68,-28.39,2
+GRANDE,2025-02-21,Trader no regulado,1,2,-5.75,-49.86,1
+GRANDE,2025-02-22,Comercializador regulado,3,5,-25.04,-27.54,2
+GRANDE,2025-02-22,Trader no regulado,1,2,-0.94,-49.67,1
+GRANDE,2025-02-23,Comercializador regulado,3,5,-23.89,-27.06,2
+GRANDE,2025-02-23,Trader no regulado,1,2,-3.87,-59.89,1
+GRANDE,2025-02-24,Comercializador regulado,3,5,-34.29,-36.54,2
+GRANDE,2025-02-24,Trader no regulado,1,2,-27.07,-77.96,1
+GRANDE,2025-02-25,Comercializador regulado,3,5,-41.38,-43.07,1
+GRANDE,2025-02-25,Trader no regulado,1,2,-43.43,-66.57,2
+GRANDE,2025-02-26,Comercializador regulado,3,5,-34.71,-37.39,2
+GRANDE,2025-02-26,Trader no regulado,1,2,-27.05,-69.55,1
+GRANDE,2025-02-27,Comercializador regulado,3,5,-30.78,-32.81,2
+GRANDE,2025-02-27,Trader no regulado,1,2,-18.91,-61.55,1
+GRANDE,2025-02-28,Comercializador regulado,3,5,-30.34,-32.77,2
+GRANDE,2025-02-28,Trader no regulado,1,2,-15.78,-65.53,1
+GRANDE,2025-03-01,Comercializador regulado,3,5,-14.52,-19.49,2
+GRANDE,2025-03-01,Trader no regulado,1,2,5.31,-52.24,1
+GRANDE,2025-03-02,Comercializador regulado,3,5,-13.43,-20.74,2
+GRANDE,2025-03-02,Trader no regulado,1,2,8.76,-56.74,1
+GRANDE,2025-03-03,Comercializador regulado,3,5,-23.1,-27.12,2
+GRANDE,2025-03-03,Trader no regulado,1,2,-7.39,-79.62,1
+GRANDE,2025-03-04,Comercializador regulado,3,5,-28.98,-32.23,2
+GRANDE,2025-03-04,Trader no regulado,1,2,-20.77,-63.52,1
+GRANDE,2025-03-05,Comercializador regulado,3,5,-23.22,-27.37,2
+GRANDE,2025-03-05,Trader no regulado,1,2,-8.85,-54.45,1
+GRANDE,2025-03-06,Comercializador regulado,3,5,-24.33,-27.95,2
+GRANDE,2025-03-06,Trader no regulado,1,2,-11.87,-50.11,1
+GRANDE,2025-03-07,Comercializador regulado,3,5,-17.94,-22.63,2
+GRANDE,2025-03-07,Trader no regulado,1,2,0.58,-34.53,1
+GRANDE,2025-03-08,Comercializador regulado,3,5,-15.24,-21.57,2
+GRANDE,2025-03-08,Trader no regulado,1,2,1.95,-44.94,1
+GRANDE,2025-03-09,Comercializador regulado,3,5,-19.09,-23.14,2
+GRANDE,2025-03-09,Trader no regulado,1,2,-0.56,-56.24,1
+GRANDE,2025-03-10,Comercializador regulado,3,5,-26.16,-30.14,2
+GRANDE,2025-03-10,Trader no regulado,1,2,-16.05,-63.62,1
+GRANDE,2025-03-11,Comercializador regulado,3,5,-33.88,-36.52,1
+GRANDE,2025-03-11,Trader no regulado,1,2,-34.04,-64.36,2
+GRANDE,2025-03-12,Comercializador regulado,3,5,-32.45,-35.3,2
+GRANDE,2025-03-12,Trader no regulado,1,2,-29.19,-64.59,1
+GRANDE,2025-03-13,Comercializador regulado,3,5,-26.86,-29.66,2
+GRANDE,2025-03-13,Trader no regulado,1,2,-19.16,-61.62,1
+GRANDE,2025-03-14,Comercializador regulado,3,5,-25.78,-29.63,2
+GRANDE,2025-03-14,Trader no regulado,1,2,-14.2,-51.88,1
+GRANDE,2025-03-15,Comercializador regulado,3,5,-25.01,-28.73,2
+GRANDE,2025-03-15,Trader no regulado,1,2,-9.49,-48.54,1
+GRANDE,2025-03-16,Comercializador regulado,3,5,-25.75,-30.02,2
+GRANDE,2025-03-16,Trader no regulado,1,2,-19.03,-61.11,1
+GRANDE,2025-03-17,Comercializador regulado,3,5,-29.11,-32.16,2
+GRANDE,2025-03-17,Trader no regulado,1,2,-21.13,-57.52,1
+GRANDE,2025-03-18,Comercializador regulado,3,5,-26.41,-30.05,2
+GRANDE,2025-03-18,Trader no regulado,1,2,-13.55,-57.02,1
+GRANDE,2025-03-19,Comercializador regulado,3,5,-29.27,-32.15,2
+GRANDE,2025-03-19,Trader no regulado,1,2,-21.21,-59.16,1
+GRANDE,2025-03-20,Comercializador regulado,3,5,-30.92,-33.69,2
+GRANDE,2025-03-20,Trader no regulado,1,2,-25.22,-53.76,1
+GRANDE,2025-03-21,Comercializador regulado,3,5,-21.89,-26.9,2
+GRANDE,2025-03-21,Trader no regulado,1,2,-10.44,-46.09,1
+GRANDE,2025-03-22,Comercializador regulado,3,5,-17.04,-23.46,2
+GRANDE,2025-03-22,Trader no regulado,1,2,-5.16,-43.45,1
+GRANDE,2025-03-23,Comercializador regulado,3,5,-13.82,-17.95,2
+GRANDE,2025-03-23,Trader no regulado,1,2,6.21,-48.11,1
+GRANDE,2025-03-24,Comercializador regulado,3,5,-18.25,-22.13,2
+GRANDE,2025-03-24,Trader no regulado,1,2,-1.65,-38.4,1
+GRANDE,2025-03-25,Comercializador regulado,3,5,-33.17,-35.81,2
+GRANDE,2025-03-25,Trader no regulado,1,2,-32.1,-63.14,1
+GRANDE,2025-03-26,Comercializador regulado,3,5,-26.08,-29.79,2
+GRANDE,2025-03-26,Trader no regulado,1,2,-15.48,-52.6,1
+GRANDE,2025-03-27,Comercializador regulado,3,5,-35.34,-37.67,1
+GRANDE,2025-03-27,Trader no regulado,1,2,-36.34,-73.44,2
+GRANDE,2025-03-28,Comercializador regulado,3,5,-30.06,-32.78,2
+GRANDE,2025-03-28,Trader no regulado,1,2,-26.06,-72.63,1
+GRANDE,2025-03-29,Comercializador regulado,3,5,-8.08,-13.69,2
+GRANDE,2025-03-29,Trader no regulado,1,2,2.74,-75.93,1
+GRANDE,2025-03-30,Comercializador regulado,3,5,-14.99,-21.26,2
+GRANDE,2025-03-30,Trader no regulado,1,2,7.31,-108.52,1
+GRANDE,2025-03-31,Comercializador regulado,3,5,-28.9,-31.72,2
+GRANDE,2025-03-31,Trader no regulado,1,2,-21.71,-124.2,1
+GRANDE,2025-04-01,Comercializador regulado,3,5,-21.37,-24.89,2
+GRANDE,2025-04-01,Trader no regulado,1,2,-10.1,-128.25,1
+GRANDE,2025-04-02,Comercializador regulado,3,5,-23.64,-26.92,2
+GRANDE,2025-04-02,Trader no regulado,1,2,-8.6,-119.77,1
+GRANDE,2025-04-03,Comercializador regulado,3,5,-25.07,-28.35,2
+GRANDE,2025-04-03,Trader no regulado,1,2,-21.89,-128.74,1
+GRANDE,2025-04-04,Comercializador regulado,3,5,-16.23,-20.66,2
+GRANDE,2025-04-04,Trader no regulado,1,2,-9.71,-103.56,1
+GRANDE,2025-04-05,Comercializador regulado,3,5,-9.27,-14.83,2
+GRANDE,2025-04-05,Trader no regulado,1,2,-4.48,-109.3,1
+GRANDE,2025-04-06,Comercializador regulado,3,5,-9.41,-16.34,2
+GRANDE,2025-04-06,Trader no regulado,1,2,-6.21,-140.72,1
+GRANDE,2025-04-07,Comercializador regulado,3,5,-18.98,-22.92,2
+GRANDE,2025-04-07,Trader no regulado,1,2,-10.76,-131.44,1
+GRANDE,2025-04-08,Comercializador regulado,3,5,-25.58,-28.31,1
+GRANDE,2025-04-08,Trader no regulado,1,2,-27.02,-114.95,2
+GRANDE,2025-04-09,Comercializador regulado,3,5,-21.79,-25.51,2
+GRANDE,2025-04-09,Trader no regulado,1,2,-15.48,-115.3,1
+GRANDE,2025-04-10,Comercializador regulado,3,5,-11.93,-17.83,2
+GRANDE,2025-04-10,Trader no regulado,1,2,-5.06,-110.61,1
+GRANDE,2025-04-11,Comercializador regulado,3,5,-16.58,-18.13,2
+GRANDE,2025-04-11,Trader no regulado,1,2,-6.47,-116.95,1
+GRANDE,2025-04-12,Comercializador regulado,3,5,-5.9,-11.96,2
+GRANDE,2025-04-12,Trader no regulado,1,2,4.14,-108.0,1
+GRANDE,2025-04-13,Comercializador regulado,3,5,-6.6,-12.71,2
+GRANDE,2025-04-13,Trader no regulado,1,2,-1.22,-115.42,1
+GRANDE,2025-04-14,Comercializador regulado,3,5,-1.7,-10.51,2
+GRANDE,2025-04-14,Trader no regulado,1,2,6.57,-95.77,1
+GRANDE,2025-04-15,Comercializador regulado,3,5,-5.54,-13.08,2
+GRANDE,2025-04-15,Trader no regulado,1,2,-3.36,-74.44,1
+GRANDE,2025-04-16,Comercializador regulado,3,5,-3.22,-12.37,2
+GRANDE,2025-04-16,Trader no regulado,1,2,6.45,-68.83,1
+GRANDE,2025-04-17,Comercializador regulado,3,5,-8.55,-12.51,2
+GRANDE,2025-04-17,Trader no regulado,1,2,14.32,-69.5,1
+GRANDE,2025-04-18,Comercializador regulado,3,5,-15.96,-16.36,2
+GRANDE,2025-04-18,Trader no regulado,1,2,6.66,-97.61,1
+GRANDE,2025-04-19,Comercializador regulado,3,5,-5.94,-14.25,2
+GRANDE,2025-04-19,Trader no regulado,1,2,12.35,-82.77,1
+GRANDE,2025-04-20,Comercializador regulado,3,5,-9.18,-14.89,2
+GRANDE,2025-04-20,Trader no regulado,1,2,4.72,-59.59,1
+GRANDE,2025-04-21,Comercializador regulado,3,5,-11.24,-16.92,2
+GRANDE,2025-04-21,Trader no regulado,1,2,5.31,-62.69,1
+GRANDE,2025-04-22,Comercializador regulado,3,5,-16.66,-20.26,2
+GRANDE,2025-04-22,Trader no regulado,1,2,-3.13,-48.73,1
+GRANDE,2025-04-23,Comercializador regulado,3,5,-14.84,-18.44,2
+GRANDE,2025-04-23,Trader no regulado,1,2,-4.48,-73.2,1
+GRANDE,2025-04-24,Comercializador regulado,3,5,-14.8,-19.14,2
+GRANDE,2025-04-24,Trader no regulado,1,2,0.8,-66.82,1
+GRANDE,2025-04-25,Comercializador regulado,3,5,-6.97,-13.56,2
+GRANDE,2025-04-25,Trader no regulado,1,2,3.32,-65.12,1
+GRANDE,2025-04-26,Comercializador regulado,3,5,-10.81,-15.79,2
+GRANDE,2025-04-26,Trader no regulado,1,2,3.34,-72.89,1
+GRANDE,2025-04-27,Comercializador regulado,3,5,-6.01,-14.7,2
+GRANDE,2025-04-27,Trader no regulado,1,2,9.87,-99.75,1
+GRANDE,2025-04-28,Comercializador regulado,3,5,-9.31,-15.11,2
+GRANDE,2025-04-28,Trader no regulado,1,2,1.19,-98.49,1
+GRANDE,2025-04-29,Comercializador regulado,3,5,-7.91,-15.07,2
+GRANDE,2025-04-29,Trader no regulado,1,2,4.01,-88.38,1
+GRANDE,2025-04-30,Comercializador regulado,3,5,-8.85,-16.03,2
+GRANDE,2025-04-30,Trader no regulado,1,2,-0.24,-85.38,1
+GRANDE,2025-05-01,Comercializador regulado,3,5,-3.59,-8.85,1
+GRANDE,2025-05-01,Trader no regulado,1,2,-6.25,-53.33,2
+GRANDE,2025-05-02,Comercializador regulado,3,5,-10.73,-14.28,2
+GRANDE,2025-05-02,Trader no regulado,1,2,-6.25,-52.19,1
+GRANDE,2025-05-03,Comercializador regulado,3,5,-10.3,-14.04,2
+GRANDE,2025-05-03,Trader no regulado,1,2,4.16,-49.28,1
+GRANDE,2025-05-04,Comercializador regulado,3,5,-4.93,-10.82,2
+GRANDE,2025-05-04,Trader no regulado,1,2,6.54,-54.31,1
+GRANDE,2025-05-05,Comercializador regulado,3,5,-12.11,-17.44,2
+GRANDE,2025-05-05,Trader no regulado,1,2,5.69,-53.44,1
+GRANDE,2025-05-06,Comercializador regulado,3,5,-15.41,-20.52,2
+GRANDE,2025-05-06,Trader no regulado,1,2,-3.0,-34.02,1
+GRANDE,2025-05-07,Comercializador regulado,3,5,-9.34,-15.88,2
+GRANDE,2025-05-07,Trader no regulado,1,2,7.8,-36.97,1
+GRANDE,2025-05-08,Comercializador regulado,3,5,-8.92,-16.22,2
+GRANDE,2025-05-08,Trader no regulado,1,2,-6.51,-49.86,1
+GRANDE,2025-05-09,Comercializador regulado,3,5,-8.5,-10.91,2
+GRANDE,2025-05-09,Trader no regulado,1,2,3.88,-40.43,1
+GRANDE,2025-05-10,Comercializador regulado,3,5,-3.95,-10.35,2
+GRANDE,2025-05-10,Trader no regulado,1,2,-0.29,-45.32,1
+GRANDE,2025-05-11,Comercializador regulado,3,5,-6.47,-9.23,2
+GRANDE,2025-05-11,Trader no regulado,1,2,0.15,-50.49,1
+GRANDE,2025-05-12,Comercializador regulado,3,5,-7.24,-14.21,1
+GRANDE,2025-05-12,Trader no regulado,1,2,-7.3,-58.81,2
+GRANDE,2025-05-13,Comercializador regulado,3,5,-13.17,-15.94,1
+GRANDE,2025-05-13,Trader no regulado,1,2,-25.91,-51.62,2
+GRANDE,2025-05-14,Comercializador regulado,3,5,-14.35,-17.5,2
+GRANDE,2025-05-14,Trader no regulado,1,2,-6.24,-47.9,1
+GRANDE,2025-05-15,Comercializador regulado,3,5,-6.01,-12.14,2
+GRANDE,2025-05-15,Trader no regulado,1,2,-5.33,-49.42,1
+GRANDE,2025-05-16,Comercializador regulado,3,5,-8.33,-15.12,2
+GRANDE,2025-05-16,Trader no regulado,1,2,3.45,-47.47,1
+GRANDE,2025-05-17,Comercializador regulado,3,5,-6.16,-10.85,1
+GRANDE,2025-05-17,Trader no regulado,1,2,-6.57,-54.9,2
+GRANDE,2025-05-18,Comercializador regulado,3,5,-8.34,-14.59,2
+GRANDE,2025-05-18,Trader no regulado,1,2,-4.57,-62.56,1
+GRANDE,2025-05-19,Comercializador regulado,3,5,-12.84,-16.52,2
+GRANDE,2025-05-19,Trader no regulado,1,2,0.31,-65.31,1
+GRANDE,2025-05-20,Comercializador regulado,3,5,-17.86,-19.67,2
+GRANDE,2025-05-20,Trader no regulado,1,2,-9.4,-51.78,1
+GRANDE,2025-05-21,Comercializador regulado,3,5,-17.86,-19.44,2
+GRANDE,2025-05-21,Trader no regulado,1,2,-5.45,-47.75,1
+GRANDE,2025-05-22,Comercializador regulado,3,5,-13.81,-16.79,2
+GRANDE,2025-05-22,Trader no regulado,1,2,-4.34,-58.29,1
+GRANDE,2025-05-23,Comercializador regulado,3,5,-11.54,-17.56,2
+GRANDE,2025-05-23,Trader no regulado,1,2,-3.15,-48.61,1
+GRANDE,2025-05-24,Comercializador regulado,3,5,-2.28,-8.74,2
+GRANDE,2025-05-24,Trader no regulado,1,2,2.65,-44.09,1
+GRANDE,2025-05-25,Comercializador regulado,3,5,-3.93,-10.67,2
+GRANDE,2025-05-25,Trader no regulado,1,2,-2.19,-47.45,1
+GRANDE,2025-05-26,Comercializador regulado,3,5,-3.52,-9.65,2
+GRANDE,2025-05-26,Trader no regulado,1,2,4.77,-61.46,1
+GRANDE,2025-05-27,Comercializador regulado,3,5,-11.75,-14.02,2
+GRANDE,2025-05-27,Trader no regulado,1,2,-0.98,-46.38,1
+GRANDE,2025-05-28,Comercializador regulado,3,5,-6.91,-12.27,2
+GRANDE,2025-05-28,Trader no regulado,1,2,-6.13,-52.95,1
+GRANDE,2025-05-29,Comercializador regulado,3,5,-7.79,-14.37,1
+GRANDE,2025-05-29,Trader no regulado,1,2,-91.74,-91.88,2
+GRANDE,2025-05-30,Comercializador regulado,3,5,-0.85,-9.33,1
+GRANDE,2025-05-30,Trader no regulado,1,2,-2.06,-43.33,2
+GRANDE,2025-05-31,Comercializador regulado,3,5,-2.57,-10.54,2
+GRANDE,2025-05-31,Trader no regulado,1,2,2.17,-46.46,1
+GRANDE,2025-06-01,Comercializador regulado,3,5,-18.01,-18.58,2
+GRANDE,2025-06-01,Trader no regulado,1,2,10.19,-51.99,1
+GRANDE,2025-06-02,Comercializador regulado,3,5,-16.56,-15.93,2
+GRANDE,2025-06-02,Trader no regulado,1,2,7.38,-44.34,1
+GRANDE,2025-06-03,Comercializador regulado,3,5,-17.66,-17.06,2
+GRANDE,2025-06-03,Trader no regulado,1,2,5.33,-49.02,1
+GRANDE,2025-06-04,Comercializador regulado,3,5,-11.97,-12.91,2
+GRANDE,2025-06-04,Trader no regulado,1,2,7.7,-42.31,1
+GRANDE,2025-06-05,Comercializador regulado,3,5,-17.0,-17.77,2
+GRANDE,2025-06-05,Trader no regulado,1,2,4.14,-39.18,1
+GRANDE,2025-06-06,Comercializador regulado,3,5,-17.68,-17.77,2
+GRANDE,2025-06-06,Trader no regulado,1,2,8.73,-35.39,1
+GRANDE,2025-06-07,Comercializador regulado,3,5,-16.37,-15.03,2
+GRANDE,2025-06-07,Trader no regulado,1,2,11.44,-43.18,1
+GRANDE,2025-06-08,Comercializador regulado,3,5,-3.69,-7.03,2
+GRANDE,2025-06-08,Trader no regulado,1,2,2.44,-48.59,1
+GRANDE,2025-06-09,Comercializador regulado,3,5,-11.77,-13.34,2
+GRANDE,2025-06-09,Trader no regulado,1,2,0.92,-53.3,1
+GRANDE,2025-06-10,Comercializador regulado,3,5,-15.19,-17.41,2
+GRANDE,2025-06-10,Trader no regulado,1,2,0.37,-55.8,1
+GRANDE,2025-06-11,Comercializador regulado,3,5,-20.04,-21.8,2
+GRANDE,2025-06-11,Trader no regulado,1,2,1.27,-60.77,1
+GRANDE,2025-06-12,Comercializador regulado,3,5,-19.41,-20.62,2
+GRANDE,2025-06-12,Trader no regulado,1,2,6.8,-51.15,1
+GRANDE,2025-06-13,Comercializador regulado,3,5,-20.15,-25.82,2
+GRANDE,2025-06-13,Trader no regulado,1,2,9.69,-51.01,1
+GRANDE,2025-06-14,Comercializador regulado,3,5,-21.29,-24.14,2
+GRANDE,2025-06-14,Trader no regulado,1,2,0.5,-75.75,1
+GRANDE,2025-06-15,Comercializador regulado,3,5,-20.42,-23.28,2
+GRANDE,2025-06-15,Trader no regulado,1,2,9.73,-81.32,1
+GRANDE,2025-06-16,Comercializador regulado,3,5,-15.09,-16.6,2
+GRANDE,2025-06-16,Trader no regulado,1,2,5.44,-73.41,1
+GRANDE,2025-06-17,Comercializador regulado,3,5,-18.05,-19.22,2
+GRANDE,2025-06-17,Trader no regulado,1,2,-0.63,-47.5,1
+GRANDE,2025-06-18,Comercializador regulado,3,5,-18.11,-16.34,2
+GRANDE,2025-06-18,Trader no regulado,1,2,9.02,-37.77,1
+GRANDE,2025-06-19,Comercializador regulado,3,5,-14.19,-15.1,2
+GRANDE,2025-06-19,Trader no regulado,1,2,-1.81,-39.05,1
+GRANDE,2025-06-20,Comercializador regulado,3,5,-13.3,-14.7,2
+GRANDE,2025-06-20,Trader no regulado,1,2,1.81,-34.89,1
+GRANDE,2025-06-21,Comercializador regulado,3,5,-16.28,-15.79,2
+GRANDE,2025-06-21,Trader no regulado,1,2,1.93,-40.26,1
+GRANDE,2025-06-22,Comercializador regulado,3,5,-13.65,-16.43,2
+GRANDE,2025-06-22,Trader no regulado,1,2,1.25,-45.27,1
+GRANDE,2025-06-23,Comercializador regulado,3,5,-22.37,-25.45,2
+GRANDE,2025-06-23,Trader no regulado,1,2,1.68,-34.35,1
+GRANDE,2025-06-24,Comercializador regulado,3,5,-21.29,-23.55,2
+GRANDE,2025-06-24,Trader no regulado,1,2,1.91,-34.38,1
+GRANDE,2025-06-25,Comercializador regulado,3,5,-22.46,-23.07,2
+GRANDE,2025-06-25,Trader no regulado,1,2,-4.24,-45.07,1
+GRANDE,2025-06-26,Comercializador regulado,3,5,-20.99,-20.96,2
+GRANDE,2025-06-26,Trader no regulado,1,2,-5.09,-43.29,1
+GRANDE,2025-06-27,Comercializador regulado,3,5,-19.92,-19.22,2
+GRANDE,2025-06-27,Trader no regulado,1,2,-2.39,-40.08,1
+GRANDE,2025-06-28,Comercializador regulado,3,5,-17.89,-17.75,2
+GRANDE,2025-06-28,Trader no regulado,1,2,1.79,-38.17,1
+GRANDE,2025-06-29,Comercializador regulado,3,5,-17.63,-18.61,2
+GRANDE,2025-06-29,Trader no regulado,1,2,2.04,-37.09,1
+GRANDE,2025-06-30,Comercializador regulado,3,5,-20.05,-17.02,2
+GRANDE,2025-06-30,Trader no regulado,1,2,9.65,-40.24,1
+GRANDE,2025-07-01,Comercializador regulado,3,5,-13.62,-14.32,2
+GRANDE,2025-07-01,Trader no regulado,1,2,4.45,-47.05,1
+GRANDE,2025-07-02,Comercializador regulado,3,5,-13.86,-16.69,2
+GRANDE,2025-07-02,Trader no regulado,1,2,-0.46,-43.2,1
+GRANDE,2025-07-03,Comercializador regulado,3,5,-11.44,-15.18,2
+GRANDE,2025-07-03,Trader no regulado,1,2,6.28,-33.42,1
+GRANDE,2025-07-04,Comercializador regulado,3,5,-15.21,-18.09,2
+GRANDE,2025-07-04,Trader no regulado,1,2,4.84,-31.78,1
+GRANDE,2025-07-05,Comercializador regulado,3,5,-19.94,-21.5,2
+GRANDE,2025-07-05,Trader no regulado,1,2,2.71,-35.41,1
+GRANDE,2025-07-06,Comercializador regulado,3,5,-17.47,-22.49,2
+GRANDE,2025-07-06,Trader no regulado,1,2,3.92,-29.14,1
+GRANDE,2025-07-07,Comercializador regulado,3,5,-16.26,-19.82,2
+GRANDE,2025-07-07,Trader no regulado,1,2,-0.43,-47.68,1
+GRANDE,2025-07-08,Comercializador regulado,3,5,-16.67,-19.94,2
+GRANDE,2025-07-08,Trader no regulado,1,2,-4.47,-47.33,1
+GRANDE,2025-07-09,Comercializador regulado,3,5,-16.27,-19.78,2
+GRANDE,2025-07-09,Trader no regulado,1,2,-14.2,-42.02,1
+GRANDE,2025-07-10,Comercializador regulado,3,5,-17.02,-20.82,2
+GRANDE,2025-07-10,Trader no regulado,1,2,-6.26,-32.79,1
+GRANDE,2025-07-11,Comercializador regulado,3,5,-14.66,-18.91,2
+GRANDE,2025-07-11,Trader no regulado,1,2,-0.1,-38.39,1
+GRANDE,2025-07-12,Comercializador regulado,3,5,-8.81,-12.2,2
+GRANDE,2025-07-12,Trader no regulado,1,2,3.69,-32.58,1
+GRANDE,2025-07-13,Comercializador regulado,3,5,-14.31,-13.54,2
+GRANDE,2025-07-13,Trader no regulado,1,2,4.24,-25.73,1
+GRANDE,2025-07-14,Comercializador regulado,3,5,-12.83,-17.28,2
+GRANDE,2025-07-14,Trader no regulado,1,2,8.57,-52.14,1
+GRANDE,2025-07-15,Comercializador regulado,3,5,-6.3,-12.36,2
+GRANDE,2025-07-15,Trader no regulado,1,2,1.08,-70.17,1
+GRANDE,2025-07-16,Comercializador regulado,3,5,-6.85,-11.77,2
+GRANDE,2025-07-16,Trader no regulado,1,2,-0.4,-76.39,1
+GRANDE,2025-07-17,Comercializador regulado,3,5,-12.38,-14.61,2
+GRANDE,2025-07-17,Trader no regulado,1,2,-1.02,-65.93,1
+GRANDE,2025-07-18,Comercializador regulado,3,5,-14.7,-15.3,2
+GRANDE,2025-07-18,Trader no regulado,1,2,-3.52,-60.91,1
+GRANDE,2025-07-19,Comercializador regulado,3,5,-12.17,-12.91,2
+GRANDE,2025-07-19,Trader no regulado,1,2,4.02,-63.35,1
+GRANDE,2025-07-20,Comercializador regulado,3,5,-3.43,-10.17,2
+GRANDE,2025-07-20,Trader no regulado,1,2,-0.39,-62.69,1
+GRANDE,2025-07-21,Comercializador regulado,3,5,-14.6,-15.74,2
+GRANDE,2025-07-21,Trader no regulado,1,2,-0.47,-66.84,1
+GRANDE,2025-07-22,Comercializador regulado,3,5,-10.82,-14.62,2
+GRANDE,2025-07-22,Trader no regulado,1,2,-8.17,-50.58,1
+GRANDE,2025-07-23,Comercializador regulado,3,5,-14.54,-18.41,2
+GRANDE,2025-07-23,Trader no regulado,1,2,-7.75,-56.46,1
+GRANDE,2025-07-24,Comercializador regulado,3,5,-17.0,-19.63,2
+GRANDE,2025-07-24,Trader no regulado,1,2,-9.18,-52.61,1
+GRANDE,2025-07-25,Comercializador regulado,3,5,-11.84,-15.79,2
+GRANDE,2025-07-25,Trader no regulado,1,2,-8.11,-51.63,1
+GRANDE,2025-07-26,Comercializador regulado,3,5,-12.17,-17.21,2
+GRANDE,2025-07-26,Trader no regulado,1,2,0.43,-62.75,1
+GRANDE,2025-07-27,Comercializador regulado,3,5,-11.34,-14.63,2
+GRANDE,2025-07-27,Trader no regulado,1,2,-3.03,-70.11,1
+GRANDE,2025-07-28,Comercializador regulado,3,5,-10.59,-15.75,2
+GRANDE,2025-07-28,Trader no regulado,1,2,-8.15,-80.39,1
+GRANDE,2025-07-29,Comercializador regulado,3,5,-13.04,-16.41,2
+GRANDE,2025-07-29,Trader no regulado,1,2,-4.85,-65.99,1
+GRANDE,2025-07-30,Comercializador regulado,3,5,-24.39,-24.55,2
+GRANDE,2025-07-30,Trader no regulado,1,2,-10.28,-67.42,1
+GRANDE,2025-07-31,Comercializador regulado,3,5,-19.5,-22.26,2
+GRANDE,2025-07-31,Trader no regulado,1,2,-9.57,-57.86,1
+MEDIANO,2025-01-01,Integrado/regional regulado,2,16,-26.65,-141.84,3
+MEDIANO,2025-01-01,Trader con sobrecobertura de contratos,4,3,-356.07,-296.27,5
+MEDIANO,2025-01-01,Trader no regulado,1,3,-117.74,-228.34,4
+MEDIANO,2025-01-01,Comercializador regulado,3,4,-13.77,-12.11,2
+MEDIANO,2025-01-01,Trader expuesto a bolsa (sin cobertura),0,1,14.97,14.97,1
+MEDIANO,2025-01-02,Integrado/regional regulado,2,16,-96.86,-136.1,3
+MEDIANO,2025-01-02,Trader con sobrecobertura de contratos,4,3,-276.33,-272.51,5
+MEDIANO,2025-01-02,Trader no regulado,1,3,-82.9,-162.24,2
+MEDIANO,2025-01-02,Comercializador regulado,3,4,-67.64,-86.87,1
+MEDIANO,2025-01-02,Trader expuesto a bolsa (sin cobertura),0,1,-167.04,-167.04,4
+MEDIANO,2025-01-03,Integrado/regional regulado,2,16,-105.22,-137.88,2
+MEDIANO,2025-01-03,Trader con sobrecobertura de contratos,4,3,-232.38,-258.41,5
+MEDIANO,2025-01-03,Trader no regulado,1,3,-107.61,-228.66,3
+MEDIANO,2025-01-03,Comercializador regulado,3,4,-74.79,-80.05,1
+MEDIANO,2025-01-03,Trader expuesto a bolsa (sin cobertura),0,1,-195.55,-195.55,4
+MEDIANO,2025-01-04,Integrado/regional regulado,2,16,-78.11,-126.55,3
+MEDIANO,2025-01-04,Trader con sobrecobertura de contratos,4,3,-179.79,-239.68,5
+MEDIANO,2025-01-04,Trader no regulado,1,3,-74.31,-74.61,2
+MEDIANO,2025-01-04,Comercializador regulado,3,4,-59.52,-62.61,1
+MEDIANO,2025-01-04,Trader expuesto a bolsa (sin cobertura),0,1,-124.24,-124.24,4
+MEDIANO,2025-01-05,Integrado/regional regulado,2,17,-23.52,-101.55,3
+MEDIANO,2025-01-05,Trader con sobrecobertura de contratos,4,3,-145.18,-225.73,5
+MEDIANO,2025-01-05,Trader no regulado,1,3,-47.33,-45.06,4
+MEDIANO,2025-01-05,Comercializador regulado,3,3,-8.43,-8.79,2
+MEDIANO,2025-01-05,Trader expuesto a bolsa (sin cobertura),0,1,34.4,34.4,1
+MEDIANO,2025-01-06,Integrado/regional regulado,2,17,-47.53,-123.71,2
+MEDIANO,2025-01-06,Trader con sobrecobertura de contratos,4,3,-154.27,-230.11,5
+MEDIANO,2025-01-06,Trader no regulado,1,3,-121.15,-106.86,4
+MEDIANO,2025-01-06,Comercializador regulado,3,3,-40.48,-40.3,1
+MEDIANO,2025-01-06,Trader expuesto a bolsa (sin cobertura),0,1,-53.64,-53.64,3
+MEDIANO,2025-01-07,Integrado/regional regulado,2,16,-53.3,-100.45,2
+MEDIANO,2025-01-07,Trader con sobrecobertura de contratos,4,3,-111.62,-215.79,5
+MEDIANO,2025-01-07,Trader no regulado,1,3,-83.81,-91.02,4
+MEDIANO,2025-01-07,Comercializador regulado,3,4,-47.49,-48.86,1
+MEDIANO,2025-01-07,Trader expuesto a bolsa (sin cobertura),0,1,-77.15,-77.15,3
+MEDIANO,2025-01-08,Integrado/regional regulado,2,16,-28.56,-74.44,3
+MEDIANO,2025-01-08,Trader con sobrecobertura de contratos,4,3,-72.66,-201.86,5
+MEDIANO,2025-01-08,Trader no regulado,1,3,-69.19,-53.09,4
+MEDIANO,2025-01-08,Comercializador regulado,3,4,-20.33,-20.95,2
+MEDIANO,2025-01-08,Trader expuesto a bolsa (sin cobertura),0,1,4.95,4.95,1
+MEDIANO,2025-01-09,Integrado/regional regulado,2,16,-23.69,-69.84,3
+MEDIANO,2025-01-09,Trader con sobrecobertura de contratos,4,3,-39.3,-190.62,4
+MEDIANO,2025-01-09,Trader no regulado,1,3,-51.71,-46.27,5
+MEDIANO,2025-01-09,Comercializador regulado,3,4,-16.33,-16.5,2
+MEDIANO,2025-01-09,Trader expuesto a bolsa (sin cobertura),0,1,15.27,15.27,1
+MEDIANO,2025-01-10,Integrado/regional regulado,2,16,-22.49,-67.1,3
+MEDIANO,2025-01-10,Trader con sobrecobertura de contratos,4,3,-32.24,-186.91,4
+MEDIANO,2025-01-10,Trader no regulado,1,3,-66.06,-50.3,5
+MEDIANO,2025-01-10,Comercializador regulado,3,4,-13.87,-13.28,2
+MEDIANO,2025-01-10,Trader expuesto a bolsa (sin cobertura),0,1,17.0,17.0,1
+MEDIANO,2025-01-11,Integrado/regional regulado,2,16,-33.87,-83.13,3
+MEDIANO,2025-01-11,Trader con sobrecobertura de contratos,4,3,-34.7,-189.52,4
+MEDIANO,2025-01-11,Trader no regulado,1,3,-66.64,-56.39,5
+MEDIANO,2025-01-11,Comercializador regulado,3,4,-25.88,-25.77,2
+MEDIANO,2025-01-11,Trader expuesto a bolsa (sin cobertura),0,1,-9.37,-9.37,1
+MEDIANO,2025-01-12,Integrado/regional regulado,2,16,-36.87,-106.16,3
+MEDIANO,2025-01-12,Trader con sobrecobertura de contratos,4,3,-48.21,-193.51,4
+MEDIANO,2025-01-12,Trader no regulado,1,3,-66.01,-75.21,5
+MEDIANO,2025-01-12,Comercializador regulado,3,4,-32.27,-32.51,2
+MEDIANO,2025-01-12,Trader expuesto a bolsa (sin cobertura),0,1,-32.17,-32.17,1
+MEDIANO,2025-01-13,Integrado/regional regulado,2,17,-65.7,-98.16,2
+MEDIANO,2025-01-13,Trader con sobrecobertura de contratos,4,3,-98.73,-212.32,3
+MEDIANO,2025-01-13,Trader no regulado,1,3,-140.42,-176.06,4
+MEDIANO,2025-01-13,Comercializador regulado,3,4,-55.58,-56.94,1
+MEDIANO,2025-01-14,Integrado/regional regulado,2,17,-91.43,-109.48,4
+MEDIANO,2025-01-14,Trader con sobrecobertura de contratos,4,3,-72.61,-204.73,2
+MEDIANO,2025-01-14,Trader no regulado,1,3,-79.02,-104.75,3
+MEDIANO,2025-01-14,Comercializador regulado,3,4,-71.47,-73.95,1
+MEDIANO,2025-01-15,Integrado/regional regulado,2,18,-111.27,-150.51,4
+MEDIANO,2025-01-15,Trader con sobrecobertura de contratos,4,2,-42.28,-58.9,1
+MEDIANO,2025-01-15,Trader no regulado,1,3,-91.87,-117.47,2
+MEDIANO,2025-01-15,Comercializador regulado,3,4,-93.43,-101.01,3
+MEDIANO,2025-01-16,Integrado/regional regulado,2,18,-124.09,-167.54,3
+MEDIANO,2025-01-16,Trader con sobrecobertura de contratos,4,2,-47.25,-61.95,1
+MEDIANO,2025-01-16,Trader no regulado,1,3,-186.8,-162.05,4
+MEDIANO,2025-01-16,Comercializador regulado,3,4,-105.51,-110.43,2
+MEDIANO,2025-01-17,Integrado/regional regulado,2,18,-145.89,-183.57,4
+MEDIANO,2025-01-17,Trader con sobrecobertura de contratos,4,2,-50.8,-65.4,1
+MEDIANO,2025-01-17,Trader no regulado,1,3,-143.98,-163.18,3
+MEDIANO,2025-01-17,Comercializador regulado,3,4,-131.28,-141.49,2
+MEDIANO,2025-01-18,Integrado/regional regulado,2,18,-142.06,-175.52,3
+MEDIANO,2025-01-18,Trader con sobrecobertura de contratos,4,2,-46.99,-58.96,1
+MEDIANO,2025-01-18,Trader no regulado,1,3,-146.37,-168.64,4
+MEDIANO,2025-01-18,Comercializador regulado,3,4,-121.88,-128.18,2
+MEDIANO,2025-01-19,Integrado/regional regulado,2,17,-134.35,-157.85,4
+MEDIANO,2025-01-19,Trader con sobrecobertura de contratos,4,3,-78.6,-208.38,1
+MEDIANO,2025-01-19,Trader no regulado,1,3,-83.71,-139.48,2
+MEDIANO,2025-01-19,Comercializador regulado,3,4,-115.72,-120.23,3
+MEDIANO,2025-01-20,Integrado/regional regulado,2,17,-142.1,-156.88,4
+MEDIANO,2025-01-20,Trader con sobrecobertura de contratos,4,3,-76.11,-208.85,1
+MEDIANO,2025-01-20,Trader no regulado,1,3,-109.43,-147.79,2
+MEDIANO,2025-01-20,Comercializador regulado,3,4,-135.39,-137.6,3
+MEDIANO,2025-01-21,Integrado/regional regulado,2,18,-144.66,-180.48,4
+MEDIANO,2025-01-21,Trader con sobrecobertura de contratos,4,2,-48.21,-64.66,1
+MEDIANO,2025-01-21,Trader no regulado,1,3,-125.57,-161.38,2
+MEDIANO,2025-01-21,Comercializador regulado,3,4,-138.03,-141.16,3
+MEDIANO,2025-01-22,Integrado/regional regulado,2,17,-157.16,-169.07,4
+MEDIANO,2025-01-22,Trader con sobrecobertura de contratos,4,3,-84.0,-211.84,1
+MEDIANO,2025-01-22,Trader no regulado,1,3,-134.13,-162.08,2
+MEDIANO,2025-01-22,Comercializador regulado,3,4,-147.37,-154.19,3
+MEDIANO,2025-01-23,Integrado/regional regulado,2,17,-153.95,-171.44,4
+MEDIANO,2025-01-23,Trader con sobrecobertura de contratos,4,3,-92.94,-214.19,1
+MEDIANO,2025-01-23,Trader no regulado,1,3,-146.26,-180.24,2
+MEDIANO,2025-01-23,Comercializador regulado,3,4,-153.86,-162.49,3
+MEDIANO,2025-01-24,Integrado/regional regulado,2,17,-141.07,-159.92,4
+MEDIANO,2025-01-24,Trader con sobrecobertura de contratos,4,3,-72.87,-206.98,1
+MEDIANO,2025-01-24,Trader no regulado,1,3,-141.05,-158.52,3
+MEDIANO,2025-01-24,Comercializador regulado,3,4,-139.52,-145.71,2
+MEDIANO,2025-01-25,Integrado/regional regulado,2,17,-136.33,-161.85,3
+MEDIANO,2025-01-25,Trader con sobrecobertura de contratos,4,3,-67.02,-204.94,1
+MEDIANO,2025-01-25,Trader no regulado,1,3,-141.25,-160.99,4
+MEDIANO,2025-01-25,Comercializador regulado,3,4,-121.79,-134.07,2
+MEDIANO,2025-01-26,Integrado/regional regulado,2,18,-152.77,-176.05,3
+MEDIANO,2025-01-26,Trader con sobrecobertura de contratos,4,3,-104.69,-218.04,1
+MEDIANO,2025-01-26,Trader no regulado,1,3,-139.04,-162.63,2
+MEDIANO,2025-01-26,Comercializador regulado,3,3,-165.99,-162.85,4
+MEDIANO,2025-01-27,Integrado/regional regulado,2,17,-143.78,-170.82,3
+MEDIANO,2025-01-27,Trader con sobrecobertura de contratos,4,3,-87.53,-212.16,1
+MEDIANO,2025-01-27,Trader no regulado,1,3,-103.25,-148.29,2
+MEDIANO,2025-01-27,Comercializador regulado,3,4,-162.85,-166.64,4
+MEDIANO,2025-01-28,Integrado/regional regulado,2,17,-151.52,-174.56,3
+MEDIANO,2025-01-28,Trader con sobrecobertura de contratos,4,3,-84.36,-211.26,1
+MEDIANO,2025-01-28,Trader no regulado,1,3,-134.67,-150.72,2
+MEDIANO,2025-01-28,Comercializador regulado,3,4,-155.93,-162.93,4
+MEDIANO,2025-01-29,Integrado/regional regulado,2,16,-149.69,-175.87,2
+MEDIANO,2025-01-29,Trader con sobrecobertura de contratos,4,3,-78.01,-208.82,1
+MEDIANO,2025-01-29,Trader no regulado,1,3,-159.07,-151.86,3
+MEDIANO,2025-01-29,Comercializador regulado,3,5,-199.53,-195.42,4
+MEDIANO,2025-01-30,Integrado/regional regulado,2,16,-132.15,-158.82,2
+MEDIANO,2025-01-30,Trader con sobrecobertura de contratos,4,3,-73.21,-207.03,1
+MEDIANO,2025-01-30,Trader no regulado,1,3,-167.97,-152.86,4
+MEDIANO,2025-01-30,Comercializador regulado,3,5,-157.57,-172.42,3
+MEDIANO,2025-01-31,Integrado/regional regulado,2,16,-118.14,-146.51,2
+MEDIANO,2025-01-31,Trader con sobrecobertura de contratos,4,3,-67.1,-204.22,1
+MEDIANO,2025-01-31,Trader no regulado,1,3,-127.93,-140.39,3
+MEDIANO,2025-01-31,Comercializador regulado,3,5,-129.75,-150.28,4
+MEDIANO,2025-02-01,Integrado/regional regulado,2,18,-118.22,-163.59,3
+MEDIANO,2025-02-01,Trader con sobrecobertura de contratos,4,2,-46.07,-56.36,1
+MEDIANO,2025-02-01,Trader no regulado,1,3,-128.96,-147.3,4
+MEDIANO,2025-02-01,Comercializador regulado,3,4,-114.78,-126.01,2
+MEDIANO,2025-02-02,Integrado/regional regulado,2,17,-100.5,-142.18,2
+MEDIANO,2025-02-02,Trader con sobrecobertura de contratos,4,3,-137.16,-226.93,4
+MEDIANO,2025-02-02,Trader no regulado,1,3,-109.86,-109.07,3
+MEDIANO,2025-02-02,Comercializador regulado,3,4,-87.61,-92.57,1
+MEDIANO,2025-02-03,Integrado/regional regulado,2,17,-129.83,-147.89,4
+MEDIANO,2025-02-03,Trader con sobrecobertura de contratos,4,3,-95.44,-213.6,1
+MEDIANO,2025-02-03,Trader no regulado,1,3,-101.04,-124.8,2
+MEDIANO,2025-02-03,Comercializador regulado,3,4,-115.44,-135.6,3
+MEDIANO,2025-02-04,Integrado/regional regulado,2,18,-133.4,-171.68,2
+MEDIANO,2025-02-04,Trader con sobrecobertura de contratos,4,2,-45.34,-58.93,1
+MEDIANO,2025-02-04,Trader no regulado,1,3,-144.44,-143.04,4
+MEDIANO,2025-02-04,Comercializador regulado,3,4,-143.6,-142.84,3
+MEDIANO,2025-02-05,Integrado/regional regulado,2,18,-138.92,-177.15,2
+MEDIANO,2025-02-05,Trader con sobrecobertura de contratos,4,2,-47.38,-59.78,1
+MEDIANO,2025-02-05,Trader no regulado,1,3,-171.47,-159.61,4
+MEDIANO,2025-02-05,Comercializador regulado,3,4,-146.82,-156.56,3
+MEDIANO,2025-02-06,Integrado/regional regulado,2,18,-148.4,-181.23,2
+MEDIANO,2025-02-06,Trader con sobrecobertura de contratos,4,2,-45.5,-71.21,1
+MEDIANO,2025-02-06,Trader no regulado,1,3,-160.3,-162.73,4
+MEDIANO,2025-02-06,Comercializador regulado,3,4,-156.97,-160.77,3
+MEDIANO,2025-02-07,Integrado/regional regulado,2,18,-124.15,-166.51,3
+MEDIANO,2025-02-07,Trader con sobrecobertura de contratos,4,2,-46.14,-63.56,1
+MEDIANO,2025-02-07,Trader no regulado,1,3,-127.81,-142.99,4
+MEDIANO,2025-02-07,Comercializador regulado,3,4,-115.59,-132.12,2
+MEDIANO,2025-02-08,Integrado/regional regulado,2,18,-106.91,-147.78,4
+MEDIANO,2025-02-08,Trader con sobrecobertura de contratos,4,2,-43.12,-65.72,1
+MEDIANO,2025-02-08,Trader no regulado,1,3,-105.76,-110.63,3
+MEDIANO,2025-02-08,Comercializador regulado,3,4,-80.9,-86.66,2
+MEDIANO,2025-02-09,Integrado/regional regulado,2,17,-121.32,-159.6,2
+MEDIANO,2025-02-09,Trader con sobrecobertura de contratos,4,3,-122.55,-222.07,3
+MEDIANO,2025-02-09,Trader no regulado,1,3,-129.4,-131.27,4
+MEDIANO,2025-02-09,Comercializador regulado,3,4,-100.91,-118.76,1
+MEDIANO,2025-02-10,Integrado/regional regulado,2,17,-102.2,-134.18,2
+MEDIANO,2025-02-10,Trader con sobrecobertura de contratos,4,3,-93.98,-212.92,1
+MEDIANO,2025-02-10,Trader no regulado,1,3,-108.43,-128.92,4
+MEDIANO,2025-02-10,Comercializador regulado,3,4,-103.71,-112.88,3
+MEDIANO,2025-02-11,Integrado/regional regulado,2,18,-83.24,-128.4,3
+MEDIANO,2025-02-11,Trader con sobrecobertura de contratos,4,2,-41.32,-54.72,1
+MEDIANO,2025-02-11,Trader no regulado,1,3,-85.95,-98.39,4
+MEDIANO,2025-02-11,Comercializador regulado,3,4,-66.29,-68.87,2
+MEDIANO,2025-02-12,Integrado/regional regulado,2,18,-120.32,-160.07,4
+MEDIANO,2025-02-12,Trader con sobrecobertura de contratos,4,2,-44.55,-71.27,1
+MEDIANO,2025-02-12,Trader no regulado,1,3,-102.8,-136.77,2
+MEDIANO,2025-02-12,Comercializador regulado,3,4,-103.93,-117.02,3
+MEDIANO,2025-02-13,Integrado/regional regulado,2,18,-103.47,-147.52,2
+MEDIANO,2025-02-13,Trader con sobrecobertura de contratos,4,2,-43.63,-58.72,1
+MEDIANO,2025-02-13,Trader no regulado,1,3,-104.54,-127.5,3
+MEDIANO,2025-02-13,Comercializador regulado,3,4,-104.97,-108.81,4
+MEDIANO,2025-02-14,Integrado/regional regulado,2,18,-92.76,-133.13,4
+MEDIANO,2025-02-14,Trader con sobrecobertura de contratos,4,2,-41.51,-54.85,1
+MEDIANO,2025-02-14,Trader no regulado,1,3,-90.4,-110.27,3
+MEDIANO,2025-02-14,Comercializador regulado,3,4,-80.24,-81.86,2
+MEDIANO,2025-02-15,Integrado/regional regulado,2,18,-85.38,-133.63,4
+MEDIANO,2025-02-15,Trader con sobrecobertura de contratos,4,2,-37.51,-74.23,1
+MEDIANO,2025-02-15,Trader no regulado,1,3,-85.11,-113.22,3
+MEDIANO,2025-02-15,Comercializador regulado,3,4,-69.1,-68.59,2
+MEDIANO,2025-02-16,Integrado/regional regulado,2,17,-55.24,-131.57,2
+MEDIANO,2025-02-16,Trader con sobrecobertura de contratos,4,3,-132.19,-223.98,4
+MEDIANO,2025-02-16,Trader no regulado,1,3,-87.71,-99.47,3
+MEDIANO,2025-02-16,Comercializador regulado,3,4,-46.65,-48.3,1
+MEDIANO,2025-02-17,Integrado/regional regulado,2,18,-47.89,-118.58,3
+MEDIANO,2025-02-17,Trader con sobrecobertura de contratos,4,2,-38.82,-57.35,1
+MEDIANO,2025-02-17,Trader no regulado,1,3,-88.21,-86.4,4
+MEDIANO,2025-02-17,Comercializador regulado,3,4,-40.19,-40.41,2
+MEDIANO,2025-02-18,Integrado/regional regulado,2,18,-45.24,-108.04,3
+MEDIANO,2025-02-18,Trader con sobrecobertura de contratos,4,2,-37.56,-49.09,2
+MEDIANO,2025-02-18,Trader no regulado,1,3,-84.17,-76.52,4
+MEDIANO,2025-02-18,Comercializador regulado,3,4,-31.01,-31.13,1
+MEDIANO,2025-02-19,Integrado/regional regulado,2,18,-37.3,-100.02,3
+MEDIANO,2025-02-19,Trader con sobrecobertura de contratos,4,2,-37.19,-54.13,2
+MEDIANO,2025-02-19,Trader no regulado,1,3,-94.01,-75.14,4
+MEDIANO,2025-02-19,Comercializador regulado,3,4,-20.66,-20.46,1
+MEDIANO,2025-02-20,Integrado/regional regulado,2,18,-39.56,-102.8,3
+MEDIANO,2025-02-20,Trader con sobrecobertura de contratos,4,2,-37.47,-49.27,2
+MEDIANO,2025-02-20,Trader no regulado,1,3,-79.1,-77.81,4
+MEDIANO,2025-02-20,Comercializador regulado,3,4,-26.41,-26.89,1
+MEDIANO,2025-02-21,Integrado/regional regulado,2,18,-39.9,-96.86,3
+MEDIANO,2025-02-21,Trader con sobrecobertura de contratos,4,2,-36.51,-48.9,2
+MEDIANO,2025-02-21,Trader no regulado,1,3,-74.61,-51.47,4
+MEDIANO,2025-02-21,Comercializador regulado,3,4,-14.03,-15.5,1
+MEDIANO,2025-02-22,Integrado/regional regulado,2,18,-37.96,-108.07,3
+MEDIANO,2025-02-22,Trader con sobrecobertura de contratos,4,2,-36.66,-45.75,2
+MEDIANO,2025-02-22,Trader no regulado,1,3,-66.21,-53.36,4
+MEDIANO,2025-02-22,Comercializador regulado,3,4,-20.94,-19.78,1
+MEDIANO,2025-02-23,Integrado/regional regulado,2,17,-36.51,-113.21,2
+MEDIANO,2025-02-23,Trader con sobrecobertura de contratos,4,3,-75.5,-204.0,4
+MEDIANO,2025-02-23,Trader no regulado,1,3,-71.86,-52.28,3
+MEDIANO,2025-02-23,Comercializador regulado,3,4,-15.67,-15.7,1
+MEDIANO,2025-02-24,Integrado/regional regulado,2,18,-48.45,-111.95,3
+MEDIANO,2025-02-24,Trader con sobrecobertura de contratos,4,2,-37.51,-59.55,2
+MEDIANO,2025-02-24,Trader no regulado,1,3,-72.0,-59.37,4
+MEDIANO,2025-02-24,Comercializador regulado,3,4,-30.91,-30.87,1
+MEDIANO,2025-02-25,Integrado/regional regulado,2,18,-48.84,-111.63,3
+MEDIANO,2025-02-25,Trader con sobrecobertura de contratos,4,2,-38.93,-46.33,1
+MEDIANO,2025-02-25,Trader no regulado,1,3,-85.59,-80.6,4
+MEDIANO,2025-02-25,Comercializador regulado,3,4,-41.51,-41.35,2
+MEDIANO,2025-02-26,Integrado/regional regulado,2,18,-46.77,-104.75,4
+MEDIANO,2025-02-26,Trader con sobrecobertura de contratos,4,2,-38.29,-48.8,2
+MEDIANO,2025-02-26,Trader no regulado,1,3,-41.15,-55.28,3
+MEDIANO,2025-02-26,Comercializador regulado,3,4,-30.54,-31.23,1
+MEDIANO,2025-02-27,Integrado/regional regulado,2,18,-39.6,-100.88,3
+MEDIANO,2025-02-27,Trader con sobrecobertura de contratos,4,2,-37.31,-49.67,2
+MEDIANO,2025-02-27,Trader no regulado,1,3,-79.67,-63.4,4
+MEDIANO,2025-02-27,Comercializador regulado,3,4,-24.16,-25.07,1
+MEDIANO,2025-02-28,Integrado/regional regulado,2,18,-40.21,-98.95,3
+MEDIANO,2025-02-28,Trader con sobrecobertura de contratos,4,2,-37.09,-56.42,2
+MEDIANO,2025-02-28,Trader no regulado,1,3,-76.85,-67.04,4
+MEDIANO,2025-02-28,Comercializador regulado,3,4,-22.56,-23.2,1
+MEDIANO,2025-03-01,Integrado/regional regulado,2,18,-31.01,-101.58,3
+MEDIANO,2025-03-01,Trader con sobrecobertura de contratos,4,2,-31.01,-78.72,2
+MEDIANO,2025-03-01,Trader no regulado,1,3,-58.11,-40.43,4
+MEDIANO,2025-03-01,Comercializador regulado,3,4,0.18,-2.37,1
+MEDIANO,2025-03-02,Integrado/regional regulado,2,17,-31.53,-102.36,3
+MEDIANO,2025-03-02,Trader con sobrecobertura de contratos,4,3,-177.36,-236.3,4
+MEDIANO,2025-03-02,Trader no regulado,1,3,-23.44,-27.9,2
+MEDIANO,2025-03-02,Comercializador regulado,3,4,-1.01,-2.33,1
+MEDIANO,2025-03-03,Integrado/regional regulado,2,18,-33.71,-100.55,3
+MEDIANO,2025-03-03,Trader con sobrecobertura de contratos,4,2,-32.39,-91.0,2
+MEDIANO,2025-03-03,Trader no regulado,1,3,-67.54,-54.54,4
+MEDIANO,2025-03-03,Comercializador regulado,3,4,-7.92,-11.19,1
+MEDIANO,2025-03-04,Integrado/regional regulado,2,18,-56.67,-103.07,3
+MEDIANO,2025-03-04,Trader con sobrecobertura de contratos,4,2,-33.08,-54.43,2
+MEDIANO,2025-03-04,Trader no regulado,1,3,-68.93,-74.1,4
+MEDIANO,2025-03-04,Comercializador regulado,3,4,-26.6,-25.97,1
+MEDIANO,2025-03-05,Integrado/regional regulado,2,18,-54.44,-95.94,3
+MEDIANO,2025-03-05,Trader con sobrecobertura de contratos,4,2,-32.79,-49.97,2
+MEDIANO,2025-03-05,Trader no regulado,1,3,-67.7,-50.44,4
+MEDIANO,2025-03-05,Comercializador regulado,3,4,-14.81,-15.54,1
+MEDIANO,2025-03-06,Integrado/regional regulado,2,18,-62.26,-99.29,4
+MEDIANO,2025-03-06,Trader con sobrecobertura de contratos,4,2,-32.59,-41.64,2
+MEDIANO,2025-03-06,Trader no regulado,1,3,-61.61,-54.21,3
+MEDIANO,2025-03-06,Comercializador regulado,3,4,-19.17,-19.0,1
+MEDIANO,2025-03-07,Integrado/regional regulado,2,18,-49.51,-91.85,3
+MEDIANO,2025-03-07,Trader con sobrecobertura de contratos,4,2,-31.79,-52.22,2
+MEDIANO,2025-03-07,Trader no regulado,1,3,-78.31,-84.55,4
+MEDIANO,2025-03-07,Comercializador regulado,3,4,-8.37,-9.01,1
+MEDIANO,2025-03-08,Integrado/regional regulado,2,18,-52.71,-102.28,3
+MEDIANO,2025-03-08,Trader con sobrecobertura de contratos,4,2,-31.32,-49.97,2
+MEDIANO,2025-03-08,Trader no regulado,1,3,-81.48,-59.52,4
+MEDIANO,2025-03-08,Comercializador regulado,3,4,-10.31,-10.92,1
+MEDIANO,2025-03-09,Integrado/regional regulado,2,17,-47.44,-102.72,2
+MEDIANO,2025-03-09,Trader con sobrecobertura de contratos,4,3,-86.7,-206.22,3
+MEDIANO,2025-03-09,Trader no regulado,1,3,-91.1,-63.71,4
+MEDIANO,2025-03-09,Comercializador regulado,3,4,-5.75,-7.66,1
+MEDIANO,2025-03-10,Integrado/regional regulado,2,17,-37.77,-77.54,2
+MEDIANO,2025-03-10,Trader con sobrecobertura de contratos,4,3,-48.77,-193.94,3
+MEDIANO,2025-03-10,Trader no regulado,1,3,-106.61,-94.22,4
+MEDIANO,2025-03-10,Comercializador regulado,3,4,-19.93,-20.79,1
+MEDIANO,2025-03-11,Integrado/regional regulado,2,18,-51.8,-106.88,3
+MEDIANO,2025-03-11,Trader con sobrecobertura de contratos,4,2,-33.72,-33.77,1
+MEDIANO,2025-03-11,Trader no regulado,1,3,-100.9,-90.11,4
+MEDIANO,2025-03-11,Comercializador regulado,3,4,-33.94,-33.95,2
+MEDIANO,2025-03-12,Integrado/regional regulado,2,18,-45.86,-102.55,3
+MEDIANO,2025-03-12,Trader con sobrecobertura de contratos,4,2,-33.87,-33.88,2
+MEDIANO,2025-03-12,Trader no regulado,1,3,-99.82,-92.25,4
+MEDIANO,2025-03-12,Comercializador regulado,3,4,-30.93,-31.29,1
+MEDIANO,2025-03-13,Integrado/regional regulado,2,18,-37.94,-97.64,3
+MEDIANO,2025-03-13,Trader con sobrecobertura de contratos,4,2,-33.16,-37.19,2
+MEDIANO,2025-03-13,Trader no regulado,1,3,-103.21,-86.56,4
+MEDIANO,2025-03-13,Comercializador regulado,3,4,-24.38,-24.64,1
+MEDIANO,2025-03-14,Integrado/regional regulado,2,18,-42.33,-99.89,3
+MEDIANO,2025-03-14,Trader con sobrecobertura de contratos,4,2,-33.19,-33.84,2
+MEDIANO,2025-03-14,Trader no regulado,1,3,-81.97,-84.19,4
+MEDIANO,2025-03-14,Comercializador regulado,3,4,-20.88,-21.32,1
+MEDIANO,2025-03-15,Integrado/regional regulado,2,18,-45.2,-109.72,3
+MEDIANO,2025-03-15,Trader con sobrecobertura de contratos,4,2,-32.69,-34.89,2
+MEDIANO,2025-03-15,Trader no regulado,1,3,-122.52,-93.24,4
+MEDIANO,2025-03-15,Comercializador regulado,3,4,-19.88,-20.26,1
+MEDIANO,2025-03-16,Integrado/regional regulado,2,17,-58.78,-116.07,3
+MEDIANO,2025-03-16,Trader con sobrecobertura de contratos,4,3,-42.93,-192.08,2
+MEDIANO,2025-03-16,Trader no regulado,1,3,-99.66,-84.51,4
+MEDIANO,2025-03-16,Comercializador regulado,3,4,-21.24,-21.97,1
+MEDIANO,2025-03-17,Integrado/regional regulado,2,17,-43.65,-82.73,3
+MEDIANO,2025-03-17,Trader con sobrecobertura de contratos,4,3,-33.59,-189.05,2
+MEDIANO,2025-03-17,Trader no regulado,1,3,-95.31,-90.08,4
+MEDIANO,2025-03-17,Comercializador regulado,3,4,-26.24,-26.22,1
+MEDIANO,2025-03-18,Integrado/regional regulado,2,18,-63.08,-104.39,4
+MEDIANO,2025-03-18,Trader con sobrecobertura de contratos,4,2,-28.12,-30.64,2
+MEDIANO,2025-03-18,Trader no regulado,1,3,-47.18,-67.68,3
+MEDIANO,2025-03-18,Comercializador regulado,3,4,-20.83,-21.64,1
+MEDIANO,2025-03-19,Integrado/regional regulado,2,18,-60.66,-102.75,3
+MEDIANO,2025-03-19,Trader con sobrecobertura de contratos,4,2,-31.72,-32.56,2
+MEDIANO,2025-03-19,Trader no regulado,1,3,-125.26,-108.77,4
+MEDIANO,2025-03-19,Comercializador regulado,3,4,-24.75,-25.48,1
+MEDIANO,2025-03-20,Integrado/regional regulado,2,18,-43.29,-101.51,3
+MEDIANO,2025-03-20,Trader no regulado,1,4,-43.45,-93.47,4
+MEDIANO,2025-03-20,Comercializador regulado,3,4,-28.39,-28.55,1
+MEDIANO,2025-03-20,Trader con sobrecobertura de contratos,4,1,-33.86,-33.86,2
+MEDIANO,2025-03-21,Integrado/regional regulado,2,18,-33.81,-96.3,3
+MEDIANO,2025-03-21,Trader con sobrecobertura de contratos,4,2,-26.8,-29.81,2
+MEDIANO,2025-03-21,Trader no regulado,1,3,-79.28,-80.95,4
+MEDIANO,2025-03-21,Comercializador regulado,3,4,-16.39,-17.14,1
+MEDIANO,2025-03-22,Integrado/regional regulado,2,18,-34.83,-104.87,3
+MEDIANO,2025-03-22,Trader con sobrecobertura de contratos,4,2,-29.4,-30.78,2
+MEDIANO,2025-03-22,Trader no regulado,1,3,-91.97,-82.35,4
+MEDIANO,2025-03-22,Comercializador regulado,3,4,-11.44,-11.51,1
+MEDIANO,2025-03-23,Integrado/regional regulado,2,17,-41.17,-104.27,2
+MEDIANO,2025-03-23,Trader con sobrecobertura de contratos,4,3,-46.36,-192.61,3
+MEDIANO,2025-03-23,Trader no regulado,1,3,-96.11,-96.51,4
+MEDIANO,2025-03-23,Comercializador regulado,3,4,0.01,-1.95,1
+MEDIANO,2025-03-24,Integrado/regional regulado,2,17,-32.62,-98.78,2
+MEDIANO,2025-03-24,Trader con sobrecobertura de contratos,4,3,-40.12,-190.67,3
+MEDIANO,2025-03-24,Trader no regulado,1,3,-99.09,-102.36,4
+MEDIANO,2025-03-24,Comercializador regulado,3,4,-5.75,-9.78,1
+MEDIANO,2025-03-25,Integrado/regional regulado,2,18,-45.87,-105.56,3
+MEDIANO,2025-03-25,Trader con sobrecobertura de contratos,4,2,-33.83,-36.53,2
+MEDIANO,2025-03-25,Trader no regulado,1,3,-169.07,-247.24,4
+MEDIANO,2025-03-25,Comercializador regulado,3,4,-32.26,-32.28,1
+MEDIANO,2025-03-26,Integrado/regional regulado,2,18,-37.48,-96.13,3
+MEDIANO,2025-03-26,Trader con sobrecobertura de contratos,4,2,-32.87,-39.56,2
+MEDIANO,2025-03-26,Trader no regulado,1,3,-91.48,-78.75,4
+MEDIANO,2025-03-26,Comercializador regulado,3,4,-19.25,-19.67,1
+MEDIANO,2025-03-27,Integrado/regional regulado,2,18,-49.82,-106.04,3
+MEDIANO,2025-03-27,Trader con sobrecobertura de contratos,4,2,-34.22,-34.53,1
+MEDIANO,2025-03-27,Trader no regulado,1,3,-79.59,-74.23,4
+MEDIANO,2025-03-27,Comercializador regulado,3,4,-35.91,-36.01,2
+MEDIANO,2025-03-28,Integrado/regional regulado,2,18,-35.5,-100.89,3
+MEDIANO,2025-03-28,Trader con sobrecobertura de contratos,4,2,-33.36,-34.12,2
+MEDIANO,2025-03-28,Trader no regulado,1,3,-87.25,-70.05,4
+MEDIANO,2025-03-28,Comercializador regulado,3,4,-27.49,-27.45,1
+MEDIANO,2025-03-29,Integrado/regional regulado,2,18,-29.55,-93.58,2
+MEDIANO,2025-03-29,Trader con sobrecobertura de contratos,4,2,-31.15,-41.8,3
+MEDIANO,2025-03-29,Trader no regulado,1,3,-62.15,-44.18,4
+MEDIANO,2025-03-29,Comercializador regulado,3,4,0.89,-2.74,1
+MEDIANO,2025-03-30,Integrado/regional regulado,2,17,-32.45,-106.51,2
+MEDIANO,2025-03-30,Trader con sobrecobertura de contratos,4,3,-49.1,-193.85,3
+MEDIANO,2025-03-30,Trader no regulado,1,3,-75.59,-59.67,4
+MEDIANO,2025-03-30,Comercializador regulado,3,4,-4.22,-5.02,1
+MEDIANO,2025-03-31,Integrado/regional regulado,2,18,-38.63,-102.66,3
+MEDIANO,2025-03-31,Trader con sobrecobertura de contratos,4,2,-33.38,-41.92,2
+MEDIANO,2025-03-31,Trader no regulado,1,3,-99.56,-78.47,4
+MEDIANO,2025-03-31,Comercializador regulado,3,4,-25.85,-25.97,1
+MEDIANO,2025-04-01,Integrado/regional regulado,2,18,-32.8,-95.65,3
+MEDIANO,2025-04-01,Trader con sobrecobertura de contratos,4,2,-32.8,-51.97,2
+MEDIANO,2025-04-01,Trader no regulado,1,3,-67.03,-68.19,4
+MEDIANO,2025-04-01,Comercializador regulado,3,4,-11.42,-12.75,1
+MEDIANO,2025-04-02,Integrado/regional regulado,2,18,-51.47,-97.7,3
+MEDIANO,2025-04-02,Trader con sobrecobertura de contratos,4,2,-33.09,-36.61,2
+MEDIANO,2025-04-02,Trader no regulado,1,3,-69.5,-60.76,4
+MEDIANO,2025-04-02,Comercializador regulado,3,4,-15.8,-17.2,1
+MEDIANO,2025-04-03,Integrado/regional regulado,2,18,-38.9,-102.18,3
+MEDIANO,2025-04-03,Trader con sobrecobertura de contratos,4,2,-33.48,-39.64,2
+MEDIANO,2025-04-03,Trader no regulado,1,3,-67.72,-57.12,4
+MEDIANO,2025-04-03,Comercializador regulado,3,4,-18.49,-20.2,1
+MEDIANO,2025-04-04,Integrado/regional regulado,2,18,-30.16,-94.98,2
+MEDIANO,2025-04-04,Trader con sobrecobertura de contratos,4,2,-32.41,-36.6,3
+MEDIANO,2025-04-04,Trader no regulado,1,3,-62.86,-45.48,4
+MEDIANO,2025-04-04,Comercializador regulado,3,4,-5.11,-6.92,1
+MEDIANO,2025-04-05,Integrado/regional regulado,2,18,-31.51,-104.41,3
+MEDIANO,2025-04-05,Trader con sobrecobertura de contratos,4,2,-31.51,-50.78,2
+MEDIANO,2025-04-05,Trader no regulado,1,3,-65.65,-44.4,4
+MEDIANO,2025-04-05,Comercializador regulado,3,4,1.55,-0.48,1
+MEDIANO,2025-04-06,Integrado/regional regulado,2,18,-36.51,-131.24,3
+MEDIANO,2025-04-06,Trader con sobrecobertura de contratos,4,2,-32.12,-55.7,2
+MEDIANO,2025-04-06,Trader no regulado,1,3,-53.08,-43.24,4
+MEDIANO,2025-04-06,Comercializador regulado,3,4,-1.46,-3.94,1
+MEDIANO,2025-04-07,Integrado/regional regulado,2,18,-28.74,-99.09,2
+MEDIANO,2025-04-07,Trader con sobrecobertura de contratos,4,2,-32.38,-36.3,3
+MEDIANO,2025-04-07,Trader no regulado,1,3,-39.77,-46.17,4
+MEDIANO,2025-04-07,Comercializador regulado,3,4,-6.8,-8.3,1
+MEDIANO,2025-04-08,Integrado/regional regulado,2,18,-41.7,-105.76,3
+MEDIANO,2025-04-08,Trader con sobrecobertura de contratos,4,2,-33.83,-65.66,2
+MEDIANO,2025-04-08,Trader no regulado,1,3,-94.4,-87.45,4
+MEDIANO,2025-04-08,Comercializador regulado,3,4,-20.73,-21.44,1
+MEDIANO,2025-04-09,Integrado/regional regulado,2,18,-33.89,-96.4,3
+MEDIANO,2025-04-09,Trader con sobrecobertura de contratos,4,2,-33.16,-59.2,2
+MEDIANO,2025-04-09,Trader no regulado,1,3,-57.32,-61.27,4
+MEDIANO,2025-04-09,Comercializador regulado,3,4,-13.92,-13.66,1
+MEDIANO,2025-04-10,Integrado/regional regulado,2,18,-31.91,-94.41,3
+MEDIANO,2025-04-10,Trader con sobrecobertura de contratos,4,2,-31.82,-51.02,2
+MEDIANO,2025-04-10,Trader no regulado,1,3,-68.97,-87.02,4
+MEDIANO,2025-04-10,Comercializador regulado,3,4,-3.92,-5.4,1
+MEDIANO,2025-04-11,Integrado/regional regulado,2,18,-21.75,-92.03,2
+MEDIANO,2025-04-11,Trader con sobrecobertura de contratos,4,2,-30.74,-51.55,3
+MEDIANO,2025-04-11,Trader no regulado,1,3,-67.18,-64.6,4
+MEDIANO,2025-04-11,Comercializador regulado,3,4,3.71,2.61,1
+MEDIANO,2025-04-12,Integrado/regional regulado,2,18,-30.61,-105.53,3
+MEDIANO,2025-04-12,Trader con sobrecobertura de contratos,4,2,-30.61,-77.32,2
+MEDIANO,2025-04-12,Trader no regulado,1,3,-66.71,-81.72,4
+MEDIANO,2025-04-12,Comercializador regulado,3,4,8.01,5.69,1
+MEDIANO,2025-04-13,Integrado/regional regulado,2,17,-34.95,-99.43,2
+MEDIANO,2025-04-13,Trader con sobrecobertura de contratos,4,3,-184.76,-238.55,4
+MEDIANO,2025-04-13,Trader no regulado,1,3,-73.62,-88.94,3
+MEDIANO,2025-04-13,Comercializador regulado,3,4,7.65,3.19,1
+MEDIANO,2025-04-14,Integrado/regional regulado,2,18,-33.8,-91.09,3
+MEDIANO,2025-04-14,Trader con sobrecobertura de contratos,4,2,-30.83,-68.55,2
+MEDIANO,2025-04-14,Trader no regulado,1,3,-67.63,-69.31,4
+MEDIANO,2025-04-14,Comercializador regulado,3,4,12.18,9.19,1
+MEDIANO,2025-04-15,Integrado/regional regulado,2,18,-31.18,-86.87,3
+MEDIANO,2025-04-15,Trader con sobrecobertura de contratos,4,2,-31.18,-47.77,2
+MEDIANO,2025-04-15,Trader no regulado,1,3,-79.16,-48.68,4
+MEDIANO,2025-04-15,Comercializador regulado,3,4,7.55,6.92,1
+MEDIANO,2025-04-16,Integrado/regional regulado,2,18,-30.83,-89.97,2
+MEDIANO,2025-04-16,Trader con sobrecobertura de contratos,4,2,-30.9,-67.05,3
+MEDIANO,2025-04-16,Trader no regulado,1,3,-65.46,-38.74,4
+MEDIANO,2025-04-16,Comercializador regulado,3,4,5.24,5.95,1
+MEDIANO,2025-04-17,Integrado/regional regulado,2,18,-51.66,-132.9,3
+MEDIANO,2025-04-17,Trader con sobrecobertura de contratos,4,2,-31.0,-100.44,2
+MEDIANO,2025-04-17,Trader no regulado,1,3,-64.71,-92.4,4
+MEDIANO,2025-04-17,Comercializador regulado,3,4,5.04,1.03,1
+MEDIANO,2025-04-18,Integrado/regional regulado,2,17,-59.11,-123.1,2
+MEDIANO,2025-04-18,Trader con sobrecobertura de contratos,4,3,-208.13,-246.26,4
+MEDIANO,2025-04-18,Trader no regulado,1,3,-67.49,-164.07,3
+MEDIANO,2025-04-18,Comercializador regulado,3,4,1.86,-6.28,1
+MEDIANO,2025-04-19,Integrado/regional regulado,2,17,-70.56,-110.86,3
+MEDIANO,2025-04-19,Trader con sobrecobertura de contratos,4,3,-126.55,-219.23,4
+MEDIANO,2025-04-19,Trader no regulado,1,3,-67.28,-161.45,2
+MEDIANO,2025-04-19,Comercializador regulado,3,4,1.78,-3.71,1
+MEDIANO,2025-04-20,Integrado/regional regulado,2,17,-51.33,-123.01,2
+MEDIANO,2025-04-20,Trader con sobrecobertura de contratos,4,3,-124.79,-218.78,4
+MEDIANO,2025-04-20,Trader no regulado,1,3,-66.33,-205.64,3
+MEDIANO,2025-04-20,Comercializador regulado,3,4,-1.21,-7.5,1
+MEDIANO,2025-04-21,Integrado/regional regulado,2,18,-32.54,-93.86,3
+MEDIANO,2025-04-21,Trader con sobrecobertura de contratos,4,2,-32.54,-61.51,2
+MEDIANO,2025-04-21,Trader no regulado,1,3,-72.61,-102.7,4
+MEDIANO,2025-04-21,Comercializador regulado,3,4,-1.03,2.69,1
+MEDIANO,2025-04-22,Integrado/regional regulado,2,18,-33.08,-93.92,3
+MEDIANO,2025-04-22,Trader con sobrecobertura de contratos,4,2,-31.96,-83.86,2
+MEDIANO,2025-04-22,Trader no regulado,1,3,-79.41,-91.44,4
+MEDIANO,2025-04-22,Comercializador regulado,3,4,-3.36,-3.0,1
+MEDIANO,2025-04-23,Integrado/regional regulado,2,18,-31.81,-93.04,3
+MEDIANO,2025-04-23,Trader con sobrecobertura de contratos,4,2,-31.81,-73.45,2
+MEDIANO,2025-04-23,Trader no regulado,1,3,-89.77,-85.37,4
+MEDIANO,2025-04-23,Comercializador regulado,3,4,-4.82,-4.81,1
+MEDIANO,2025-04-24,Integrado/regional regulado,2,18,-38.62,-93.26,3
+MEDIANO,2025-04-24,Trader con sobrecobertura de contratos,4,2,-31.9,-60.94,2
+MEDIANO,2025-04-24,Trader no regulado,1,3,-68.11,-78.76,4
+MEDIANO,2025-04-24,Comercializador regulado,3,4,-5.86,-6.87,1
+MEDIANO,2025-04-25,Integrado/regional regulado,2,18,-36.2,-89.44,3
+MEDIANO,2025-04-25,Trader con sobrecobertura de contratos,4,2,-31.17,-58.3,2
+MEDIANO,2025-04-25,Trader no regulado,1,3,-67.15,-73.39,4
+MEDIANO,2025-04-25,Comercializador regulado,3,4,1.94,1.91,1
+MEDIANO,2025-04-26,Integrado/regional regulado,2,18,-39.74,-102.89,4
+MEDIANO,2025-04-26,Trader con sobrecobertura de contratos,4,2,-31.48,-51.09,3
+MEDIANO,2025-04-26,Trader no regulado,1,3,-30.87,-40.94,2
+MEDIANO,2025-04-26,Comercializador regulado,3,4,0.6,0.15,1
+MEDIANO,2025-04-27,Integrado/regional regulado,2,18,-31.96,-99.24,2
+MEDIANO,2025-04-27,Trader con sobrecobertura de contratos,4,3,-106.79,-212.92,4
+MEDIANO,2025-04-27,Trader no regulado,1,3,-53.53,-46.84,3
+MEDIANO,2025-04-27,Comercializador regulado,3,3,3.43,1.44,1
+MEDIANO,2025-04-28,Integrado/regional regulado,2,18,-35.35,-93.6,4
+MEDIANO,2025-04-28,Trader con sobrecobertura de contratos,4,2,-31.28,-62.91,3
+MEDIANO,2025-04-28,Trader no regulado,1,3,-25.33,-33.15,2
+MEDIANO,2025-04-28,Comercializador regulado,3,4,0.73,-0.4,1
+MEDIANO,2025-04-29,Integrado/regional regulado,2,18,-31.21,-89.98,3
+MEDIANO,2025-04-29,Trader con sobrecobertura de contratos,4,2,-26.47,-28.84,2
+MEDIANO,2025-04-29,Trader no regulado,1,3,-43.53,-51.51,4
+MEDIANO,2025-04-29,Comercializador regulado,3,4,3.06,2.26,1
+MEDIANO,2025-04-30,Integrado/regional regulado,2,18,-31.12,-92.22,3
+MEDIANO,2025-04-30,Trader con sobrecobertura de contratos,4,2,-31.12,-35.18,2
+MEDIANO,2025-04-30,Trader no regulado,1,3,-67.1,-54.41,4
+MEDIANO,2025-04-30,Comercializador regulado,3,4,2.63,2.12,1
+MEDIANO,2025-05-01,Integrado/regional regulado,2,18,-34.02,-119.16,3
+MEDIANO,2025-05-01,Trader con sobrecobertura de contratos,4,2,-28.71,-87.07,2
+MEDIANO,2025-05-01,Trader no regulado,1,3,-63.58,-204.37,4
+MEDIANO,2025-05-01,Comercializador regulado,3,4,1.77,-0.43,1
+MEDIANO,2025-05-02,Integrado/regional regulado,2,17,-34.34,-79.05,2
+MEDIANO,2025-05-02,Trader con sobrecobertura de contratos,4,3,-73.4,-200.68,3
+MEDIANO,2025-05-02,Trader no regulado,1,3,-96.34,-145.82,4
+MEDIANO,2025-05-02,Comercializador regulado,3,4,4.55,1.09,1
+MEDIANO,2025-05-03,Integrado/regional regulado,2,17,-33.93,-94.24,2
+MEDIANO,2025-05-03,Trader con sobrecobertura de contratos,4,3,-85.59,-204.85,4
+MEDIANO,2025-05-03,Trader no regulado,1,3,-68.8,-48.57,3
+MEDIANO,2025-05-03,Comercializador regulado,3,4,-1.98,-7.24,1
+MEDIANO,2025-05-04,Integrado/regional regulado,2,18,-44.65,-115.0,3
+MEDIANO,2025-05-04,Trader con sobrecobertura de contratos,4,3,-155.63,-228.11,4
+MEDIANO,2025-05-04,Trader no regulado,1,3,-40.63,-39.42,2
+MEDIANO,2025-05-04,Comercializador regulado,3,3,1.31,-2.09,1
+MEDIANO,2025-05-05,Integrado/regional regulado,2,17,-44.41,-85.35,2
+MEDIANO,2025-05-05,Trader con sobrecobertura de contratos,4,3,-57.06,-195.36,3
+MEDIANO,2025-05-05,Trader no regulado,1,3,-64.35,-87.54,4
+MEDIANO,2025-05-05,Comercializador regulado,3,4,-2.72,-7.29,1
+MEDIANO,2025-05-06,Integrado/regional regulado,2,17,-40.13,-82.15,2
+MEDIANO,2025-05-06,Trader con sobrecobertura de contratos,4,3,-51.67,-193.77,3
+MEDIANO,2025-05-06,Trader no regulado,1,3,-65.69,-67.26,4
+MEDIANO,2025-05-06,Comercializador regulado,3,4,-6.23,-8.86,1
+MEDIANO,2025-05-07,Integrado/regional regulado,2,17,-28.95,-73.64,2
+MEDIANO,2025-05-07,Trader con sobrecobertura de contratos,4,3,-44.69,-191.21,3
+MEDIANO,2025-05-07,Trader no regulado,1,3,-63.18,-64.33,4
+MEDIANO,2025-05-07,Comercializador regulado,3,4,-1.13,-6.15,1
+MEDIANO,2025-05-08,Integrado/regional regulado,2,17,-28.66,-77.83,2
+MEDIANO,2025-05-08,Trader con sobrecobertura de contratos,4,3,-84.02,-204.23,4
+MEDIANO,2025-05-08,Trader no regulado,1,3,-65.95,-43.14,3
+MEDIANO,2025-05-08,Comercializador regulado,3,4,2.05,-1.05,1
+MEDIANO,2025-05-09,Integrado/regional regulado,2,18,-24.88,-70.96,2
+MEDIANO,2025-05-09,Trader con sobrecobertura de contratos,4,3,-67.94,-198.85,4
+MEDIANO,2025-05-09,Trader no regulado,1,3,-63.84,-56.03,3
+MEDIANO,2025-05-09,Comercializador regulado,3,3,3.43,3.2,1
+MEDIANO,2025-05-10,Integrado/regional regulado,2,17,-30.55,-89.16,2
+MEDIANO,2025-05-10,Trader con sobrecobertura de contratos,4,3,-74.76,-201.0,4
+MEDIANO,2025-05-10,Trader no regulado,1,3,-62.78,-51.87,3
+MEDIANO,2025-05-10,Comercializador regulado,3,4,8.3,-0.38,1
+MEDIANO,2025-05-11,Integrado/regional regulado,2,18,-46.66,-114.74,2
+MEDIANO,2025-05-11,Trader con sobrecobertura de contratos,4,3,-85.8,-204.87,4
+MEDIANO,2025-05-11,Trader no regulado,1,3,-62.98,-47.84,3
+MEDIANO,2025-05-11,Comercializador regulado,3,3,8.07,3.7,1
+MEDIANO,2025-05-12,Integrado/regional regulado,2,17,-36.04,-81.92,2
+MEDIANO,2025-05-12,Trader con sobrecobertura de contratos,4,3,-66.26,-198.52,4
+MEDIANO,2025-05-12,Trader no regulado,1,3,-63.29,-72.41,3
+MEDIANO,2025-05-12,Comercializador regulado,3,4,1.31,-6.2,1
+MEDIANO,2025-05-13,Integrado/regional regulado,2,18,-44.16,-106.18,3
+MEDIANO,2025-05-13,Trader con sobrecobertura de contratos,4,2,-28.63,-29.13,2
+MEDIANO,2025-05-13,Trader no regulado,1,3,-63.45,-66.75,4
+MEDIANO,2025-05-13,Comercializador regulado,3,4,-6.05,-10.42,1
+MEDIANO,2025-05-14,Integrado/regional regulado,2,17,-45.57,-84.71,3
+MEDIANO,2025-05-14,Trader con sobrecobertura de contratos,4,3,-38.38,-189.31,2
+MEDIANO,2025-05-14,Trader no regulado,1,3,-51.61,-39.08,4
+MEDIANO,2025-05-14,Comercializador regulado,3,4,-4.02,-8.28,1
+MEDIANO,2025-05-15,Integrado/regional regulado,2,19,-42.97,-101.36,3
+MEDIANO,2025-05-15,Trader con sobrecobertura de contratos,4,2,-28.93,-33.85,2
+MEDIANO,2025-05-15,Trader no regulado,1,3,-68.63,-69.46,4
+MEDIANO,2025-05-15,Comercializador regulado,3,3,1.09,1.67,1
+MEDIANO,2025-05-16,Integrado/regional regulado,2,17,-39.38,-83.69,3
+MEDIANO,2025-05-16,Trader con sobrecobertura de contratos,4,3,-32.5,-187.01,2
+MEDIANO,2025-05-16,Trader no regulado,1,3,-60.51,-48.52,4
+MEDIANO,2025-05-16,Comercializador regulado,3,4,-0.53,-1.89,1
+MEDIANO,2025-05-17,Integrado/regional regulado,2,18,-32.4,-98.79,2
+MEDIANO,2025-05-17,Trader con sobrecobertura de contratos,4,3,-78.88,-202.28,4
+MEDIANO,2025-05-17,Trader no regulado,1,3,-62.45,-43.58,3
+MEDIANO,2025-05-17,Comercializador regulado,3,3,-3.73,-1.58,1
+MEDIANO,2025-05-18,Integrado/regional regulado,2,18,-51.07,-130.42,2
+MEDIANO,2025-05-18,Trader con sobrecobertura de contratos,4,3,-143.22,-223.95,4
+MEDIANO,2025-05-18,Trader no regulado,1,3,-67.14,-44.01,3
+MEDIANO,2025-05-18,Comercializador regulado,3,3,2.45,0.23,1
+MEDIANO,2025-05-19,Integrado/regional regulado,2,17,-46.24,-88.77,2
+MEDIANO,2025-05-19,Trader con sobrecobertura de contratos,4,3,-83.36,-204.15,4
+MEDIANO,2025-05-19,Trader no regulado,1,3,-78.55,-66.37,3
+MEDIANO,2025-05-19,Comercializador regulado,3,4,-3.17,-4.96,1
+MEDIANO,2025-05-20,Integrado/regional regulado,2,17,-35.51,-84.28,3
+MEDIANO,2025-05-20,Trader con sobrecobertura de contratos,4,3,-57.93,-195.92,4
+MEDIANO,2025-05-20,Trader no regulado,1,3,-32.44,-33.26,2
+MEDIANO,2025-05-20,Comercializador regulado,3,4,-6.79,-12.2,1
+MEDIANO,2025-05-21,Integrado/regional regulado,2,17,-34.74,-82.53,2
+MEDIANO,2025-05-21,Trader con sobrecobertura de contratos,4,3,-60.61,-196.76,3
+MEDIANO,2025-05-21,Trader no regulado,1,3,-64.8,-53.65,4
+MEDIANO,2025-05-21,Comercializador regulado,3,4,-6.62,-10.49,1
+MEDIANO,2025-05-22,Integrado/regional regulado,2,18,-36.24,-79.27,2
+MEDIANO,2025-05-22,Trader con sobrecobertura de contratos,4,3,-69.02,-199.51,4
+MEDIANO,2025-05-22,Trader no regulado,1,3,-46.67,-36.49,3
+MEDIANO,2025-05-22,Comercializador regulado,3,3,-2.91,-2.09,1
+MEDIANO,2025-05-23,Integrado/regional regulado,2,17,-33.83,-79.24,2
+MEDIANO,2025-05-23,Trader con sobrecobertura de contratos,4,3,-62.47,-197.31,4
+MEDIANO,2025-05-23,Trader no regulado,1,3,-61.16,-61.24,3
+MEDIANO,2025-05-23,Comercializador regulado,3,4,-5.56,-9.77,1
+MEDIANO,2025-05-24,Integrado/regional regulado,2,18,-47.66,-84.8,3
+MEDIANO,2025-05-24,Trader con sobrecobertura de contratos,4,3,-116.35,-214.82,4
+MEDIANO,2025-05-24,Trader no regulado,1,3,-34.59,-31.47,2
+MEDIANO,2025-05-24,Comercializador regulado,3,3,8.78,6.89,1
+MEDIANO,2025-05-25,Integrado/regional regulado,2,18,-45.35,-112.67,3
+MEDIANO,2025-05-25,Trader con sobrecobertura de contratos,4,3,-128.31,-218.92,4
+MEDIANO,2025-05-25,Trader no regulado,1,3,-44.96,-38.56,2
+MEDIANO,2025-05-25,Comercializador regulado,3,3,3.95,4.18,1
+MEDIANO,2025-05-26,Integrado/regional regulado,2,17,-30.38,-77.1,3
+MEDIANO,2025-05-26,Trader con sobrecobertura de contratos,4,3,-60.87,-196.49,4
+MEDIANO,2025-05-26,Trader no regulado,1,3,-17.55,-24.66,2
+MEDIANO,2025-05-26,Comercializador regulado,3,4,4.01,-2.89,1
+MEDIANO,2025-05-27,Integrado/regional regulado,2,18,-29.11,-73.57,3
+MEDIANO,2025-05-27,Trader con sobrecobertura de contratos,4,3,-52.85,-193.99,4
+MEDIANO,2025-05-27,Trader no regulado,1,3,1.81,-16.97,1
+MEDIANO,2025-05-27,Comercializador regulado,3,3,-1.73,-1.11,2
+MEDIANO,2025-05-28,Integrado/regional regulado,2,17,-39.44,-75.71,3
+MEDIANO,2025-05-28,Trader con sobrecobertura de contratos,4,3,-80.21,-202.92,4
+MEDIANO,2025-05-28,Trader no regulado,1,3,-25.64,-27.76,2
+MEDIANO,2025-05-28,Comercializador regulado,3,4,3.0,-2.06,1
+MEDIANO,2025-05-29,Integrado/regional regulado,2,17,-31.07,-72.98,2
+MEDIANO,2025-05-29,Trader con sobrecobertura de contratos,4,3,-63.42,-197.46,3
+MEDIANO,2025-05-29,Trader no regulado,1,3,-65.04,-47.97,4
+MEDIANO,2025-05-29,Comercializador regulado,3,4,-0.08,-4.54,1
+MEDIANO,2025-05-30,Integrado/regional regulado,2,18,-33.46,-69.07,3
+MEDIANO,2025-05-30,Trader con sobrecobertura de contratos,4,3,-53.63,-194.06,4
+MEDIANO,2025-05-30,Trader no regulado,1,3,-25.7,-26.07,2
+MEDIANO,2025-05-30,Comercializador regulado,3,3,8.04,8.67,1
+MEDIANO,2025-05-31,Integrado/regional regulado,2,18,-47.34,-90.69,2
+MEDIANO,2025-05-31,Trader con sobrecobertura de contratos,4,3,-98.4,-209.01,4
+MEDIANO,2025-05-31,Trader no regulado,1,3,-81.54,-59.15,3
+MEDIANO,2025-05-31,Comercializador regulado,3,3,6.36,5.29,1
+MEDIANO,2025-06-01,Integrado/regional regulado,2,18,-43.19,-124.5,2
+MEDIANO,2025-06-01,Trader con sobrecobertura de contratos,4,3,-172.06,-233.22,4
+MEDIANO,2025-06-01,Trader no regulado,1,3,-61.4,-52.6,3
+MEDIANO,2025-06-01,Comercializador regulado,3,3,0.46,3.41,1
+MEDIANO,2025-06-02,Integrado/regional regulado,2,18,-55.3,-117.61,2
+MEDIANO,2025-06-02,Trader con sobrecobertura de contratos,4,3,-153.08,-226.91,4
+MEDIANO,2025-06-02,Trader no regulado,1,3,-59.29,-55.8,3
+MEDIANO,2025-06-02,Comercializador regulado,3,3,2.65,4.86,1
+MEDIANO,2025-06-03,Integrado/regional regulado,2,18,-29.89,-77.7,2
+MEDIANO,2025-06-03,Trader con sobrecobertura de contratos,4,3,-85.5,-204.35,4
+MEDIANO,2025-06-03,Trader no regulado,1,3,-59.74,-61.27,3
+MEDIANO,2025-06-03,Comercializador regulado,3,3,6.63,6.54,1
+MEDIANO,2025-06-04,Integrado/regional regulado,2,18,-27.5,-71.21,2
+MEDIANO,2025-06-04,Trader con sobrecobertura de contratos,4,3,-38.97,-188.82,3
+MEDIANO,2025-06-04,Trader no regulado,1,3,-54.54,-49.21,4
+MEDIANO,2025-06-04,Comercializador regulado,3,3,5.76,6.08,1
+MEDIANO,2025-06-05,Integrado/regional regulado,2,18,-36.51,-77.72,3
+MEDIANO,2025-06-05,Trader con sobrecobertura de contratos,4,3,-48.93,-192.16,4
+MEDIANO,2025-06-05,Trader no regulado,1,3,-19.95,-30.73,2
+MEDIANO,2025-06-05,Comercializador regulado,3,3,9.59,9.24,1
+MEDIANO,2025-06-06,Integrado/regional regulado,2,18,-55.19,-78.09,3
+MEDIANO,2025-06-06,Trader con sobrecobertura de contratos,4,3,-71.56,-199.8,4
+MEDIANO,2025-06-06,Trader no regulado,1,3,-11.71,-21.01,2
+MEDIANO,2025-06-06,Comercializador regulado,3,3,5.95,7.42,1
+MEDIANO,2025-06-07,Integrado/regional regulado,2,18,-47.12,-96.93,2
+MEDIANO,2025-06-07,Trader con sobrecobertura de contratos,4,3,-126.53,-218.02,4
+MEDIANO,2025-06-07,Trader no regulado,1,3,-60.71,-42.8,3
+MEDIANO,2025-06-07,Comercializador regulado,3,3,9.7,9.64,1
+MEDIANO,2025-06-08,Integrado/regional regulado,2,19,-38.66,-122.67,3
+MEDIANO,2025-06-08,Trader con sobrecobertura de contratos,4,2,-27.23,-77.84,2
+MEDIANO,2025-06-08,Trader no regulado,1,3,-60.4,-44.53,4
+MEDIANO,2025-06-08,Comercializador regulado,3,3,10.45,9.03,1
+MEDIANO,2025-06-09,Integrado/regional regulado,2,19,-27.87,-94.09,4
+MEDIANO,2025-06-09,Trader con sobrecobertura de contratos,4,2,-27.87,-56.37,3
+MEDIANO,2025-06-09,Trader no regulado,1,3,-14.65,-28.83,2
+MEDIANO,2025-06-09,Comercializador regulado,3,3,7.0,6.04,1
+MEDIANO,2025-06-10,Integrado/regional regulado,2,18,-30.41,-74.33,3
+MEDIANO,2025-06-10,Trader con sobrecobertura de contratos,4,3,-67.65,-198.67,4
+MEDIANO,2025-06-10,Trader no regulado,1,3,-17.77,-31.93,2
+MEDIANO,2025-06-10,Comercializador regulado,3,3,6.9,6.77,1
+MEDIANO,2025-06-11,Integrado/regional regulado,2,18,-28.4,-75.07,3
+MEDIANO,2025-06-11,Trader con sobrecobertura de contratos,4,3,-69.9,-199.43,4
+MEDIANO,2025-06-11,Trader no regulado,1,3,-2.08,-30.83,2
+MEDIANO,2025-06-11,Comercializador regulado,3,3,3.7,3.73,1
+MEDIANO,2025-06-12,Integrado/regional regulado,2,17,-30.65,-75.04,2
+MEDIANO,2025-06-12,Trader con sobrecobertura de contratos,4,3,-97.73,-208.63,4
+MEDIANO,2025-06-12,Trader no regulado,1,3,-70.34,-45.87,3
+MEDIANO,2025-06-12,Comercializador regulado,3,4,3.18,-4.09,1
+MEDIANO,2025-06-13,Integrado/regional regulado,2,17,-30.83,-77.56,2
+MEDIANO,2025-06-13,Trader con sobrecobertura de contratos,4,3,-64.8,-197.73,4
+MEDIANO,2025-06-13,Trader no regulado,1,3,-61.0,-51.82,3
+MEDIANO,2025-06-13,Comercializador regulado,3,4,1.63,-4.15,1
+MEDIANO,2025-06-14,Integrado/regional regulado,2,19,-36.55,-110.62,3
+MEDIANO,2025-06-14,Trader con sobrecobertura de contratos,4,2,-28.08,-80.76,2
+MEDIANO,2025-06-14,Trader no regulado,1,3,-59.98,-80.86,4
+MEDIANO,2025-06-14,Comercializador regulado,3,3,0.89,0.94,1
+MEDIANO,2025-06-15,Integrado/regional regulado,2,18,-53.22,-123.55,2
+MEDIANO,2025-06-15,Trader con sobrecobertura de contratos,4,3,-174.2,-234.11,4
+MEDIANO,2025-06-15,Trader no regulado,1,3,-59.85,-63.08,3
+MEDIANO,2025-06-15,Comercializador regulado,3,3,-4.59,-3.78,1
+MEDIANO,2025-06-16,Integrado/regional regulado,2,18,-23.77,-75.95,2
+MEDIANO,2025-06-16,Trader con sobrecobertura de contratos,4,3,-74.36,-200.72,4
+MEDIANO,2025-06-16,Trader no regulado,1,3,-59.31,-61.02,3
+MEDIANO,2025-06-16,Comercializador regulado,3,3,2.98,2.75,1
+MEDIANO,2025-06-17,Integrado/regional regulado,2,18,-27.92,-75.17,2
+MEDIANO,2025-06-17,Trader con sobrecobertura de contratos,4,3,-56.66,-194.86,4
+MEDIANO,2025-06-17,Trader no regulado,1,3,-44.29,-41.41,3
+MEDIANO,2025-06-17,Comercializador regulado,3,3,6.8,8.64,1
+MEDIANO,2025-06-18,Integrado/regional regulado,2,17,-30.52,-75.01,2
+MEDIANO,2025-06-18,Trader con sobrecobertura de contratos,4,3,-66.41,-198.03,4
+MEDIANO,2025-06-18,Trader no regulado,1,3,-61.99,-55.3,3
+MEDIANO,2025-06-18,Comercializador regulado,3,4,8.81,6.94,1
+MEDIANO,2025-06-19,Integrado/regional regulado,2,18,-27.24,-69.58,2
+MEDIANO,2025-06-19,Trader con sobrecobertura de contratos,4,3,-48.21,-191.99,3
+MEDIANO,2025-06-19,Trader no regulado,1,3,-60.98,-56.63,4
+MEDIANO,2025-06-19,Comercializador regulado,3,3,11.32,11.94,1
+MEDIANO,2025-06-20,Integrado/regional regulado,2,18,-30.2,-71.85,2
+MEDIANO,2025-06-20,Trader con sobrecobertura de contratos,4,3,-63.14,-197.03,4
+MEDIANO,2025-06-20,Trader no regulado,1,3,-48.64,-44.68,3
+MEDIANO,2025-06-20,Comercializador regulado,3,3,11.92,12.33,1
+MEDIANO,2025-06-21,Integrado/regional regulado,2,18,-32.12,-84.14,2
+MEDIANO,2025-06-21,Trader con sobrecobertura de contratos,4,3,-42.05,-189.93,4
+MEDIANO,2025-06-21,Trader no regulado,1,3,-32.72,-40.92,3
+MEDIANO,2025-06-21,Comercializador regulado,3,3,6.7,4.6,1
+MEDIANO,2025-06-22,Integrado/regional regulado,2,18,-47.03,-114.29,3
+MEDIANO,2025-06-22,Trader con sobrecobertura de contratos,4,3,-41.3,-189.74,2
+MEDIANO,2025-06-22,Trader no regulado,1,3,-58.48,-44.76,4
+MEDIANO,2025-06-22,Comercializador regulado,3,3,1.19,2.55,1
+MEDIANO,2025-06-23,Integrado/regional regulado,2,18,-28.28,-107.52,2
+MEDIANO,2025-06-23,Trader con sobrecobertura de contratos,4,3,-69.62,-199.3,4
+MEDIANO,2025-06-23,Trader no regulado,1,3,-47.53,-37.68,3
+MEDIANO,2025-06-23,Comercializador regulado,3,3,-1.4,0.31,1
+MEDIANO,2025-06-24,Integrado/regional regulado,2,18,-37.02,-80.85,2
+MEDIANO,2025-06-24,Trader con sobrecobertura de contratos,4,3,-66.48,-198.34,4
+MEDIANO,2025-06-24,Trader no regulado,1,3,-61.06,-69.59,3
+MEDIANO,2025-06-24,Comercializador regulado,3,3,0.84,0.75,1
+MEDIANO,2025-06-25,Integrado/regional regulado,2,17,-45.03,-82.81,2
+MEDIANO,2025-06-25,Trader con sobrecobertura de contratos,4,3,-56.81,-195.13,3
+MEDIANO,2025-06-25,Trader no regulado,1,3,-58.92,-41.4,4
+MEDIANO,2025-06-25,Comercializador regulado,3,4,-2.9,-11.01,1
+MEDIANO,2025-06-26,Integrado/regional regulado,2,17,-31.38,-75.87,2
+MEDIANO,2025-06-26,Trader con sobrecobertura de contratos,4,3,-68.13,-198.92,4
+MEDIANO,2025-06-26,Trader no regulado,1,3,-61.2,-49.4,3
+MEDIANO,2025-06-26,Comercializador regulado,3,4,-3.47,-8.81,1
+MEDIANO,2025-06-27,Integrado/regional regulado,2,18,-32.09,-71.25,2
+MEDIANO,2025-06-27,Trader con sobrecobertura de contratos,4,3,-51.67,-193.26,4
+MEDIANO,2025-06-27,Trader no regulado,1,3,-46.3,-36.32,3
+MEDIANO,2025-06-27,Comercializador regulado,3,3,3.58,2.17,1
+MEDIANO,2025-06-28,Integrado/regional regulado,2,18,-30.33,-83.69,3
+MEDIANO,2025-06-28,Trader con sobrecobertura de contratos,4,3,-91.39,-206.28,4
+MEDIANO,2025-06-28,Trader no regulado,1,3,-24.47,-28.93,2
+MEDIANO,2025-06-28,Comercializador regulado,3,3,5.1,4.16,1
+MEDIANO,2025-06-29,Integrado/regional regulado,2,18,-39.48,-114.16,2
+MEDIANO,2025-06-29,Trader con sobrecobertura de contratos,4,3,-115.21,-214.35,4
+MEDIANO,2025-06-29,Trader no regulado,1,3,-50.98,-47.49,3
+MEDIANO,2025-06-29,Comercializador regulado,3,3,3.89,4.14,1
+MEDIANO,2025-06-30,Integrado/regional regulado,2,18,-34.29,-106.13,2
+MEDIANO,2025-06-30,Trader con sobrecobertura de contratos,4,3,-142.52,-223.45,4
+MEDIANO,2025-06-30,Trader no regulado,1,3,-53.5,-48.82,3
+MEDIANO,2025-06-30,Comercializador regulado,3,3,2.06,-0.86,1
+MEDIANO,2025-07-01,Integrado/regional regulado,2,17,-41.07,-79.22,2
+MEDIANO,2025-07-01,Trader con sobrecobertura de contratos,4,3,-78.41,-202.48,4
+MEDIANO,2025-07-01,Trader no regulado,1,3,-67.43,-84.7,3
+MEDIANO,2025-07-01,Comercializador regulado,3,4,6.19,-4.66,1
+MEDIANO,2025-07-02,Integrado/regional regulado,2,17,-36.62,-74.78,2
+MEDIANO,2025-07-02,Trader con sobrecobertura de contratos,4,3,-72.61,-200.68,4
+MEDIANO,2025-07-02,Trader no regulado,1,3,-59.32,-56.06,3
+MEDIANO,2025-07-02,Comercializador regulado,3,4,-4.12,-8.54,1
+MEDIANO,2025-07-03,Integrado/regional regulado,2,18,-35.88,-92.5,3
+MEDIANO,2025-07-03,Trader con sobrecobertura de contratos,4,2,-28.49,-68.53,2
+MEDIANO,2025-07-03,Trader no regulado,1,3,-38.52,-48.24,4
+MEDIANO,2025-07-03,Comercializador regulado,3,4,-1.08,-45.88,1
+MEDIANO,2025-07-04,Integrado/regional regulado,2,18,-44.02,-78.73,2
+MEDIANO,2025-07-04,Trader con sobrecobertura de contratos,4,3,-74.95,-201.46,3
+MEDIANO,2025-07-04,Trader no regulado,1,3,-79.15,-82.21,4
+MEDIANO,2025-07-04,Comercializador regulado,3,3,0.4,-0.8,1
+MEDIANO,2025-07-05,Integrado/regional regulado,2,18,-52.02,-91.24,3
+MEDIANO,2025-07-05,Trader con sobrecobertura de contratos,4,3,-123.13,-217.42,4
+MEDIANO,2025-07-05,Trader no regulado,1,3,-38.99,-43.22,2
+MEDIANO,2025-07-05,Comercializador regulado,3,3,-0.25,-4.41,1
+MEDIANO,2025-07-06,Integrado/regional regulado,2,18,-53.12,-118.99,2
+MEDIANO,2025-07-06,Trader con sobrecobertura de contratos,4,3,-141.23,-223.66,4
+MEDIANO,2025-07-06,Trader no regulado,1,3,-69.56,-68.67,3
+MEDIANO,2025-07-06,Comercializador regulado,3,3,5.34,-3.59,1
+MEDIANO,2025-07-07,Integrado/regional regulado,2,17,-42.89,-81.5,3
+MEDIANO,2025-07-07,Trader con sobrecobertura de contratos,4,3,-80.88,-203.57,4
+MEDIANO,2025-07-07,Trader no regulado,1,3,-39.65,-42.35,2
+MEDIANO,2025-07-07,Comercializador regulado,3,4,-3.62,-11.13,1
+MEDIANO,2025-07-08,Integrado/regional regulado,2,18,-44.16,-101.41,4
+MEDIANO,2025-07-08,Trader con sobrecobertura de contratos,4,2,-30.06,-67.45,2
+MEDIANO,2025-07-08,Trader no regulado,1,3,-40.21,-51.28,3
+MEDIANO,2025-07-08,Comercializador regulado,3,4,-6.06,-10.93,1
+MEDIANO,2025-07-09,Integrado/regional regulado,2,19,-38.31,-98.51,3
+MEDIANO,2025-07-09,Trader con sobrecobertura de contratos,4,2,-30.3,-57.11,2
+MEDIANO,2025-07-09,Trader no regulado,1,3,-40.17,-40.28,4
+MEDIANO,2025-07-09,Comercializador regulado,3,3,-6.73,-9.84,1
+MEDIANO,2025-07-10,Integrado/regional regulado,2,18,-42.78,-106.51,4
+MEDIANO,2025-07-10,Trader con sobrecobertura de contratos,4,2,-30.37,-39.35,2
+MEDIANO,2025-07-10,Trader no regulado,1,3,-37.68,-27.89,3
+MEDIANO,2025-07-10,Comercializador regulado,3,4,-6.47,-12.49,1
+MEDIANO,2025-07-11,Integrado/regional regulado,2,19,-43.06,-97.94,4
+MEDIANO,2025-07-11,Trader con sobrecobertura de contratos,4,2,-29.74,-43.63,2
+MEDIANO,2025-07-11,Trader no regulado,1,3,-39.43,-31.37,3
+MEDIANO,2025-07-11,Comercializador regulado,3,3,-1.57,-3.53,1
+MEDIANO,2025-07-12,Integrado/regional regulado,2,19,-41.53,-106.32,4
+MEDIANO,2025-07-12,Trader con sobrecobertura de contratos,4,2,-28.79,-58.9,2
+MEDIANO,2025-07-12,Trader no regulado,1,3,-31.83,-21.38,3
+MEDIANO,2025-07-12,Comercializador regulado,3,3,-0.11,-5.88,1
+MEDIANO,2025-07-13,Integrado/regional regulado,2,19,-51.54,-135.79,4
+MEDIANO,2025-07-13,Trader con sobrecobertura de contratos,4,2,-29.23,-86.92,3
+MEDIANO,2025-07-13,Trader no regulado,1,3,-12.64,-19.26,2
+MEDIANO,2025-07-13,Comercializador regulado,3,3,0.19,-8.47,1
+MEDIANO,2025-07-14,Integrado/regional regulado,2,19,-51.1,-100.94,4
+MEDIANO,2025-07-14,Trader con sobrecobertura de contratos,4,2,-29.25,-69.67,2
+MEDIANO,2025-07-14,Trader no regulado,1,3,-48.55,-73.15,3
+MEDIANO,2025-07-14,Comercializador regulado,3,3,1.07,-0.64,1
+MEDIANO,2025-07-15,Integrado/regional regulado,2,19,-43.63,-94.79,3
+MEDIANO,2025-07-15,Trader con sobrecobertura de contratos,4,2,-29.19,-66.54,2
+MEDIANO,2025-07-15,Trader no regulado,1,3,-80.09,-84.2,4
+MEDIANO,2025-07-15,Comercializador regulado,3,3,3.33,-0.07,1
+MEDIANO,2025-07-16,Integrado/regional regulado,2,18,-35.25,-92.63,3
+MEDIANO,2025-07-16,Trader con sobrecobertura de contratos,4,2,-29.15,-35.06,2
+MEDIANO,2025-07-16,Trader no regulado,1,3,-88.09,-86.77,4
+MEDIANO,2025-07-16,Comercializador regulado,3,4,4.22,-5.31,1
+MEDIANO,2025-07-17,Integrado/regional regulado,2,18,-33.78,-100.4,3
+MEDIANO,2025-07-17,Trader con sobrecobertura de contratos,4,2,-29.36,-42.17,2
+MEDIANO,2025-07-17,Trader no regulado,1,3,-131.46,-103.12,4
+MEDIANO,2025-07-17,Comercializador regulado,3,4,-2.89,-5.11,1
+MEDIANO,2025-07-18,Integrado/regional regulado,2,18,-51.45,-105.0,3
+MEDIANO,2025-07-18,Trader con sobrecobertura de contratos,4,2,-29.15,-55.97,2
+MEDIANO,2025-07-18,Trader no regulado,1,3,-84.6,-83.44,4
+MEDIANO,2025-07-18,Comercializador regulado,3,4,-4.13,-6.33,1
+MEDIANO,2025-07-19,Integrado/regional regulado,2,18,-31.89,-88.3,2
+MEDIANO,2025-07-19,Trader con sobrecobertura de contratos,4,3,-196.14,-241.86,4
+MEDIANO,2025-07-19,Trader no regulado,1,3,-63.69,-84.59,3
+MEDIANO,2025-07-19,Comercializador regulado,3,3,4.14,0.52,1
+MEDIANO,2025-07-20,Integrado/regional regulado,2,19,-43.02,-132.82,3
+MEDIANO,2025-07-20,Trader con sobrecobertura de contratos,4,2,-29.69,-118.95,2
+MEDIANO,2025-07-20,Trader no regulado,1,3,-53.67,-94.25,4
+MEDIANO,2025-07-20,Comercializador regulado,3,3,7.93,-6.08,1
+MEDIANO,2025-07-21,Integrado/regional regulado,2,17,-36.63,-81.72,2
+MEDIANO,2025-07-21,Trader con sobrecobertura de contratos,4,3,-83.81,-204.48,4
+MEDIANO,2025-07-21,Trader no regulado,1,3,-39.53,-70.62,3
+MEDIANO,2025-07-21,Comercializador regulado,3,4,3.15,-5.5,1
+MEDIANO,2025-07-22,Integrado/regional regulado,2,17,-33.85,-99.96,3
+MEDIANO,2025-07-22,Trader con sobrecobertura de contratos,4,2,-29.65,-44.36,2
+MEDIANO,2025-07-22,Trader no regulado,1,3,-39.52,-59.4,4
+MEDIANO,2025-07-22,Comercializador regulado,3,5,-9.72,-42.62,1
+MEDIANO,2025-07-23,Integrado/regional regulado,2,19,-46.14,-99.46,3
+MEDIANO,2025-07-23,Trader con sobrecobertura de contratos,4,2,-30.04,-46.4,2
+MEDIANO,2025-07-23,Trader no regulado,1,3,-53.82,-68.6,4
+MEDIANO,2025-07-23,Comercializador regulado,3,3,-5.84,-4.94,1
+MEDIANO,2025-07-24,Integrado/regional regulado,2,17,-38.51,-95.89,3
+MEDIANO,2025-07-24,Trader con sobrecobertura de contratos,4,2,-30.02,-49.41,2
+MEDIANO,2025-07-24,Trader no regulado,1,3,-40.2,-69.26,4
+MEDIANO,2025-07-24,Comercializador regulado,3,5,-7.58,-44.5,1
+MEDIANO,2025-07-25,Integrado/regional regulado,2,18,-33.66,-96.44,3
+MEDIANO,2025-07-25,Trader con sobrecobertura de contratos,4,2,-29.17,-60.37,2
+MEDIANO,2025-07-25,Trader no regulado,1,3,-39.45,-55.55,4
+MEDIANO,2025-07-25,Comercializador regulado,3,4,1.35,-3.68,1
+MEDIANO,2025-07-26,Integrado/regional regulado,2,17,-64.79,-92.81,2
+MEDIANO,2025-07-26,Trader con sobrecobertura de contratos,4,3,-149.5,-226.25,4
+MEDIANO,2025-07-26,Trader no regulado,1,3,-114.25,-109.78,3
+MEDIANO,2025-07-26,Comercializador regulado,3,4,-1.79,-7.16,1
+MEDIANO,2025-07-27,Integrado/regional regulado,2,18,-43.37,-114.95,2
+MEDIANO,2025-07-27,Trader con sobrecobertura de contratos,4,3,-190.69,-240.05,4
+MEDIANO,2025-07-27,Trader no regulado,1,3,-111.45,-106.72,3
+MEDIANO,2025-07-27,Comercializador regulado,3,3,1.62,-3.13,1
+MEDIANO,2025-07-28,Integrado/regional regulado,2,18,-23.83,-97.96,2
+MEDIANO,2025-07-28,Trader con sobrecobertura de contratos,4,2,-30.08,-54.49,3
+MEDIANO,2025-07-28,Trader no regulado,1,3,-91.94,-86.28,4
+MEDIANO,2025-07-28,Comercializador regulado,3,4,-0.98,-7.8,1
+MEDIANO,2025-07-29,Integrado/regional regulado,2,17,-35.91,-95.83,3
+MEDIANO,2025-07-29,Trader con sobrecobertura de contratos,4,2,-29.89,-44.89,2
+MEDIANO,2025-07-29,Trader no regulado,1,3,-52.03,-67.85,4
+MEDIANO,2025-07-29,Comercializador regulado,3,5,-3.44,-38.56,1
+MEDIANO,2025-07-30,Integrado/regional regulado,2,18,-37.14,-105.97,3
+MEDIANO,2025-07-30,Trader con sobrecobertura de contratos,4,2,-30.72,-52.19,2
+MEDIANO,2025-07-30,Trader no regulado,1,3,-47.79,-48.75,4
+MEDIANO,2025-07-30,Comercializador regulado,3,4,-6.53,-11.82,1
+MEDIANO,2025-07-31,Integrado/regional regulado,2,18,-37.5,-103.42,3
+MEDIANO,2025-07-31,Trader con sobrecobertura de contratos,4,2,-30.7,-58.87,2
+MEDIANO,2025-07-31,Trader no regulado,1,3,-49.97,-53.1,4
+MEDIANO,2025-07-31,Comercializador regulado,3,4,-4.92,-9.1,1
+PEQUEÑO,2025-01-01,Trader con sobrecobertura de contratos,4,7,-500,-433.25,4
+PEQUEÑO,2025-01-01,Trader no regulado,1,8,-500,-356.19,3
+PEQUEÑO,2025-01-01,Integrado/regional regulado,2,8,-55.41,-103.47,2
+PEQUEÑO,2025-01-01,Trader expuesto a bolsa (sin cobertura),0,5,24.01,24.98,1
+PEQUEÑO,2025-01-02,Trader con sobrecobertura de contratos,4,6,-500,-423.53,4
+PEQUEÑO,2025-01-02,Trader no regulado,1,8,-194.62,-306.75,2
+PEQUEÑO,2025-01-02,Integrado/regional regulado,2,10,-142.12,-211.32,1
+PEQUEÑO,2025-01-02,Trader expuesto a bolsa (sin cobertura),0,5,-194.9,-197.65,3
+PEQUEÑO,2025-01-03,Trader con sobrecobertura de contratos,4,7,-500,-372.82,4
+PEQUEÑO,2025-01-03,Trader no regulado,1,7,-444.28,-304.63,3
+PEQUEÑO,2025-01-03,Trader expuesto a bolsa (sin cobertura),0,6,-230.15,-232.54,2
+PEQUEÑO,2025-01-03,Integrado/regional regulado,2,9,-160.6,-175.73,1
+PEQUEÑO,2025-01-04,Trader con sobrecobertura de contratos,4,6,-500,-347.81,4
+PEQUEÑO,2025-01-04,Trader no regulado,1,7,-455.55,-300.65,3
+PEQUEÑO,2025-01-04,Trader expuesto a bolsa (sin cobertura),0,6,-144.49,-145.16,2
+PEQUEÑO,2025-01-04,Integrado/regional regulado,2,9,-134.65,-168.39,1
+PEQUEÑO,2025-01-05,Trader con sobrecobertura de contratos,4,5,-500,-359.32,4
+PEQUEÑO,2025-01-05,Trader no regulado,1,7,-500,-321.19,3
+PEQUEÑO,2025-01-05,Trader expuesto a bolsa (sin cobertura),0,6,50.99,50.12,1
+PEQUEÑO,2025-01-05,Integrado/regional regulado,2,9,-154.98,-189.02,2
+PEQUEÑO,2025-01-06,Trader con sobrecobertura de contratos,4,5,-500,-407.21,4
+PEQUEÑO,2025-01-06,Trader no regulado,1,7,-500,-308.28,3
+PEQUEÑO,2025-01-06,Integrado/regional regulado,2,10,-72.15,-166.28,2
+PEQUEÑO,2025-01-06,Trader expuesto a bolsa (sin cobertura),0,6,-57.97,-57.89,1
+PEQUEÑO,2025-01-07,Trader con sobrecobertura de contratos,4,5,-500,-407.15,4
+PEQUEÑO,2025-01-07,Trader no regulado,1,7,-481.79,-301.45,3
+PEQUEÑO,2025-01-07,Integrado/regional regulado,2,10,-87.89,-152.2,2
+PEQUEÑO,2025-01-07,Trader expuesto a bolsa (sin cobertura),0,6,-87.2,-84.02,1
+PEQUEÑO,2025-01-08,Trader con sobrecobertura de contratos,4,6,-500,-352.41,4
+PEQUEÑO,2025-01-08,Trader no regulado,1,7,-500,-298.38,3
+PEQUEÑO,2025-01-08,Integrado/regional regulado,2,10,-49.82,-115.31,2
+PEQUEÑO,2025-01-08,Trader expuesto a bolsa (sin cobertura),0,5,11.87,12.25,1
+PEQUEÑO,2025-01-09,Trader con sobrecobertura de contratos,4,5,-500,-326.06,4
+PEQUEÑO,2025-01-09,Trader no regulado,1,8,-454.42,-315.75,3
+PEQUEÑO,2025-01-09,Integrado/regional regulado,2,10,-107.39,-157.69,2
+PEQUEÑO,2025-01-09,Trader expuesto a bolsa (sin cobertura),0,5,23.89,24.49,1
+PEQUEÑO,2025-01-10,Trader con sobrecobertura de contratos,4,5,-500,-318.89,4
+PEQUEÑO,2025-01-10,Trader no regulado,1,8,-32.24,-259.26,2
+PEQUEÑO,2025-01-10,Integrado/regional regulado,2,10,-49.13,-107.05,3
+PEQUEÑO,2025-01-10,Trader expuesto a bolsa (sin cobertura),0,5,26.2,26.44,1
+PEQUEÑO,2025-01-11,Trader con sobrecobertura de contratos,4,4,-500,-383.47,4
+PEQUEÑO,2025-01-11,Trader no regulado,1,8,-48.19,-259.21,2
+PEQUEÑO,2025-01-11,Integrado/regional regulado,2,11,-60.14,-120.98,3
+PEQUEÑO,2025-01-11,Trader expuesto a bolsa (sin cobertura),0,5,-4.73,-4.61,1
+PEQUEÑO,2025-01-12,Trader con sobrecobertura de contratos,4,5,-500,-352.71,4
+PEQUEÑO,2025-01-12,Trader no regulado,1,7,-500,-323.64,3
+PEQUEÑO,2025-01-12,Trader expuesto a bolsa (sin cobertura),0,7,-32.13,-32.14,1
+PEQUEÑO,2025-01-12,Integrado/regional regulado,2,9,-113.15,-183.95,2
+PEQUEÑO,2025-01-13,Trader con sobrecobertura de contratos,4,5,-500,-324.2,4
+PEQUEÑO,2025-01-13,Trader no regulado,1,8,-431.75,-322.37,3
+PEQUEÑO,2025-01-13,Integrado/regional regulado,2,10,-75.45,-139.56,1
+PEQUEÑO,2025-01-13,Trader expuesto a bolsa (sin cobertura),0,5,-111.28,-111.23,2
+PEQUEÑO,2025-01-14,Trader con sobrecobertura de contratos,4,5,-500,-323.98,4
+PEQUEÑO,2025-01-14,Trader no regulado,1,7,-500,-312.62,3
+PEQUEÑO,2025-01-14,Integrado/regional regulado,2,10,-83.45,-141.35,1
+PEQUEÑO,2025-01-14,Trader expuesto a bolsa (sin cobertura),0,5,-174.06,-174.98,2
+PEQUEÑO,2025-01-15,Trader con sobrecobertura de contratos,4,7,-500,-376.88,4
+PEQUEÑO,2025-01-15,Trader no regulado,1,7,-467.83,-314.73,3
+PEQUEÑO,2025-01-15,Trader expuesto a bolsa (sin cobertura),0,6,-275.67,-267.44,2
+PEQUEÑO,2025-01-15,Integrado/regional regulado,2,9,-134.66,-165.74,1
+PEQUEÑO,2025-01-16,Trader con sobrecobertura de contratos,4,5,-500,-327.87,4
+PEQUEÑO,2025-01-16,Trader no regulado,1,7,-500,-323.14,3
+PEQUEÑO,2025-01-16,Integrado/regional regulado,2,10,-156.06,-199.5,1
+PEQUEÑO,2025-01-16,Trader expuesto a bolsa (sin cobertura),0,5,-317.82,-320.74,2
+PEQUEÑO,2025-01-17,Trader con sobrecobertura de contratos,4,5,-500,-337.81,4
+PEQUEÑO,2025-01-17,Trader no regulado,1,7,-500,-334.89,3
+PEQUEÑO,2025-01-17,Integrado/regional regulado,2,10,-145.32,-169.21,1
+PEQUEÑO,2025-01-17,Trader expuesto a bolsa (sin cobertura),0,5,-404.56,-407.58,2
+PEQUEÑO,2025-01-18,Trader con sobrecobertura de contratos,4,6,-500,-368.75,3
+PEQUEÑO,2025-01-18,Trader no regulado,1,7,-500,-381.47,4
+PEQUEÑO,2025-01-18,Trader expuesto a bolsa (sin cobertura),0,6,-387.07,-386.79,2
+PEQUEÑO,2025-01-18,Integrado/regional regulado,2,9,-130.86,-174.48,1
+PEQUEÑO,2025-01-19,Trader con sobrecobertura de contratos,4,5,-500,-384.64,4
+PEQUEÑO,2025-01-19,Trader no regulado,1,7,-500,-354.78,3
+PEQUEÑO,2025-01-19,Trader expuesto a bolsa (sin cobertura),0,6,-359.27,-347.69,2
+PEQUEÑO,2025-01-19,Integrado/regional regulado,2,9,-121.02,-207.4,1
+PEQUEÑO,2025-01-20,Trader con sobrecobertura de contratos,4,5,-500,-345.0,4
+PEQUEÑO,2025-01-20,Trader no regulado,1,7,-500,-328.55,3
+PEQUEÑO,2025-01-20,Integrado/regional regulado,2,10,-114.95,-164.52,1
+PEQUEÑO,2025-01-20,Trader expuesto a bolsa (sin cobertura),0,5,-377.03,-378.4,2
+PEQUEÑO,2025-01-21,Trader con sobrecobertura de contratos,4,5,-500,-341.28,4
+PEQUEÑO,2025-01-21,Trader no regulado,1,7,-500,-330.97,3
+PEQUEÑO,2025-01-21,Trader expuesto a bolsa (sin cobertura),0,6,-398.7,-387.2,2
+PEQUEÑO,2025-01-21,Integrado/regional regulado,2,9,-127.13,-164.8,1
+PEQUEÑO,2025-01-22,Trader con sobrecobertura de contratos,4,6,-500,-370.64,4
+PEQUEÑO,2025-01-22,Trader no regulado,1,7,-500,-340.67,3
+PEQUEÑO,2025-01-22,Integrado/regional regulado,2,10,-124.24,-164.4,1
+PEQUEÑO,2025-01-22,Trader expuesto a bolsa (sin cobertura),0,5,-423.16,-427.14,2
+PEQUEÑO,2025-01-23,Trader con sobrecobertura de contratos,4,6,-500,-365.08,4
+PEQUEÑO,2025-01-23,Trader no regulado,1,7,-175.32,-292.9,2
+PEQUEÑO,2025-01-23,Integrado/regional regulado,2,10,-119.43,-201.11,1
+PEQUEÑO,2025-01-23,Trader expuesto a bolsa (sin cobertura),0,5,-452.72,-455.17,3
+PEQUEÑO,2025-01-24,Trader con sobrecobertura de contratos,4,5,-500,-340.24,4
+PEQUEÑO,2025-01-24,Trader no regulado,1,7,-149.7,-287.19,2
+PEQUEÑO,2025-01-24,Integrado/regional regulado,2,11,-142.89,-191.86,1
+PEQUEÑO,2025-01-24,Trader expuesto a bolsa (sin cobertura),0,5,-397.5,-400.01,3
+PEQUEÑO,2025-01-25,Trader con sobrecobertura de contratos,4,6,-500,-373.99,4
+PEQUEÑO,2025-01-25,Trader no regulado,1,7,-167.06,-283.64,2
+PEQUEÑO,2025-01-25,Integrado/regional regulado,2,10,-139.66,-175.47,1
+PEQUEÑO,2025-01-25,Trader expuesto a bolsa (sin cobertura),0,5,-437.26,-435.25,3
+PEQUEÑO,2025-01-26,Trader con sobrecobertura de contratos,4,7,-500,-427.68,4
+PEQUEÑO,2025-01-26,Trader no regulado,1,8,-195.89,-306.36,2
+PEQUEÑO,2025-01-26,Integrado/regional regulado,2,9,-122.63,-164.89,1
+PEQUEÑO,2025-01-26,Trader expuesto a bolsa (sin cobertura),0,4,-472.29,-481.83,3
+PEQUEÑO,2025-01-27,Trader con sobrecobertura de contratos,4,6,-500,-371.29,4
+PEQUEÑO,2025-01-27,Trader no regulado,1,7,-160.73,-285.25,2
+PEQUEÑO,2025-01-27,Integrado/regional regulado,2,10,-120.14,-162.22,1
+PEQUEÑO,2025-01-27,Trader expuesto a bolsa (sin cobertura),0,5,-452.99,-454.12,3
+PEQUEÑO,2025-01-28,Trader con sobrecobertura de contratos,4,6,-500,-373.34,4
+PEQUEÑO,2025-01-28,Trader no regulado,1,7,-155.73,-283.17,2
+PEQUEÑO,2025-01-28,Integrado/regional regulado,2,10,-120.28,-176.13,1
+PEQUEÑO,2025-01-28,Trader expuesto a bolsa (sin cobertura),0,5,-455.28,-459.05,3
+PEQUEÑO,2025-01-29,Trader con sobrecobertura de contratos,4,6,-142.36,-292.04,2
+PEQUEÑO,2025-01-29,Trader no regulado,1,7,-158.07,-284.0,3
+PEQUEÑO,2025-01-29,Trader expuesto a bolsa (sin cobertura),0,5,-480.3,-482.21,4
+PEQUEÑO,2025-01-29,Integrado/regional regulado,2,9,-131.83,-165.81,1
+PEQUEÑO,2025-01-30,Trader con sobrecobertura de contratos,4,7,-500,-327.98,4
+PEQUEÑO,2025-01-30,Trader no regulado,1,7,-148.8,-284.95,2
+PEQUEÑO,2025-01-30,Trader expuesto a bolsa (sin cobertura),0,5,-422.98,-426.74,3
+PEQUEÑO,2025-01-30,Integrado/regional regulado,2,9,-139.43,-200.76,1
+PEQUEÑO,2025-01-31,Trader con sobrecobertura de contratos,4,6,-500,-369.6,4
+PEQUEÑO,2025-01-31,Trader no regulado,1,7,-148.3,-276.73,2
+PEQUEÑO,2025-01-31,Integrado/regional regulado,2,10,-127.58,-150.31,1
+PEQUEÑO,2025-01-31,Trader expuesto a bolsa (sin cobertura),0,5,-361.51,-363.56,3
+PEQUEÑO,2025-02-01,Trader con sobrecobertura de contratos,4,8,-500,-347.87,4
+PEQUEÑO,2025-02-01,Trader expuesto a bolsa (sin cobertura),0,6,-353.91,-376.14,3
+PEQUEÑO,2025-02-01,Trader no regulado,1,7,-158.06,-284.93,2
+PEQUEÑO,2025-02-01,Integrado/regional regulado,2,9,-134.95,-168.79,1
+PEQUEÑO,2025-02-02,Trader con sobrecobertura de contratos,4,7,-500,-414.25,4
+PEQUEÑO,2025-02-02,Trader expuesto a bolsa (sin cobertura),0,6,-223.56,-253.42,2
+PEQUEÑO,2025-02-02,Trader no regulado,1,7,-317.86,-301.0,3
+PEQUEÑO,2025-02-02,Integrado/regional regulado,2,10,-90.29,-186.68,1
+PEQUEÑO,2025-02-03,Trader con sobrecobertura de contratos,4,7,-500,-386.2,4
+PEQUEÑO,2025-02-03,Trader expuesto a bolsa (sin cobertura),0,6,-373.61,-390.17,3
+PEQUEÑO,2025-02-03,Trader no regulado,1,7,-139.57,-272.44,2
+PEQUEÑO,2025-02-03,Integrado/regional regulado,2,10,-126.89,-161.62,1
+PEQUEÑO,2025-02-04,Trader con sobrecobertura de contratos,4,6,-500,-361.89,4
+PEQUEÑO,2025-02-04,Trader expuesto a bolsa (sin cobertura),0,6,-395.63,-413.7,3
+PEQUEÑO,2025-02-04,Trader no regulado,1,7,-150.39,-284.59,2
+PEQUEÑO,2025-02-04,Integrado/regional regulado,2,10,-121.32,-158.66,1
+PEQUEÑO,2025-02-05,Trader con sobrecobertura de contratos,4,6,-500,-366.65,4
+PEQUEÑO,2025-02-05,Trader expuesto a bolsa (sin cobertura),0,6,-427.64,-441.69,3
+PEQUEÑO,2025-02-05,Trader no regulado,1,7,-144.47,-285.84,2
+PEQUEÑO,2025-02-05,Integrado/regional regulado,2,10,-113.77,-146.55,1
+PEQUEÑO,2025-02-06,Trader con sobrecobertura de contratos,4,6,-500,-364.15,4
+PEQUEÑO,2025-02-06,Trader expuesto a bolsa (sin cobertura),0,7,-454.3,-449.61,3
+PEQUEÑO,2025-02-06,Trader no regulado,1,7,-149.1,-281.4,2
+PEQUEÑO,2025-02-06,Integrado/regional regulado,2,9,-131.24,-195.2,1
+PEQUEÑO,2025-02-07,Trader con sobrecobertura de contratos,4,6,-87.01,-285.94,1
+PEQUEÑO,2025-02-07,Trader expuesto a bolsa (sin cobertura),0,6,-367.98,-388.52,4
+PEQUEÑO,2025-02-07,Trader no regulado,1,7,-134.97,-274.12,3
+PEQUEÑO,2025-02-07,Integrado/regional regulado,2,9,-125.17,-150.83,2
+PEQUEÑO,2025-02-08,Trader con sobrecobertura de contratos,4,8,-500,-341.49,4
+PEQUEÑO,2025-02-08,Trader expuesto a bolsa (sin cobertura),0,6,-217.75,-249.31,3
+PEQUEÑO,2025-02-08,Trader no regulado,1,7,-115.51,-259.63,2
+PEQUEÑO,2025-02-08,Integrado/regional regulado,2,9,-105.3,-150.43,1
+PEQUEÑO,2025-02-09,Trader con sobrecobertura de contratos,4,7,-500,-434.81,4
+PEQUEÑO,2025-02-09,Trader no regulado,1,8,-182.16,-311.64,2
+PEQUEÑO,2025-02-09,Integrado/regional regulado,2,9,-112.56,-167.0,1
+PEQUEÑO,2025-02-09,Trader expuesto a bolsa (sin cobertura),0,5,-345.96,-344.81,3
+PEQUEÑO,2025-02-10,Trader con sobrecobertura de contratos,4,6,-500,-378.72,4
+PEQUEÑO,2025-02-10,Trader expuesto a bolsa (sin cobertura),0,6,-321.85,-347.97,3
+PEQUEÑO,2025-02-10,Trader no regulado,1,7,-133.69,-266.5,2
+PEQUEÑO,2025-02-10,Integrado/regional regulado,2,10,-114.03,-152.96,1
+PEQUEÑO,2025-02-11,Trader con sobrecobertura de contratos,4,7,-500,-315.12,4
+PEQUEÑO,2025-02-11,Trader expuesto a bolsa (sin cobertura),0,6,-155.97,-192.42,3
+PEQUEÑO,2025-02-11,Trader no regulado,1,7,-122.54,-259.14,1
+PEQUEÑO,2025-02-11,Integrado/regional regulado,2,9,-123.89,-130.31,2
+PEQUEÑO,2025-02-12,Trader con sobrecobertura de contratos,4,6,-500,-359.95,4
+PEQUEÑO,2025-02-12,Trader expuesto a bolsa (sin cobertura),0,6,-341.14,-365.86,3
+PEQUEÑO,2025-02-12,Trader no regulado,1,7,-142.23,-276.76,2
+PEQUEÑO,2025-02-12,Integrado/regional regulado,2,10,-103.62,-142.58,1
+PEQUEÑO,2025-02-13,Trader con sobrecobertura de contratos,4,6,-111.67,-284.85,1
+PEQUEÑO,2025-02-13,Trader no regulado,1,10,-257.62,-316.19,3
+PEQUEÑO,2025-02-13,Trader expuesto a bolsa (sin cobertura),0,5,-295.59,-320.29,4
+PEQUEÑO,2025-02-13,Integrado/regional regulado,2,9,-133.39,-189.38,2
+PEQUEÑO,2025-02-14,Trader con sobrecobertura de contratos,4,6,-500,-351.88,4
+PEQUEÑO,2025-02-14,Trader no regulado,1,9,-275.88,-291.37,3
+PEQUEÑO,2025-02-14,Trader expuesto a bolsa (sin cobertura),0,5,-196.66,-230.79,2
+PEQUEÑO,2025-02-14,Integrado/regional regulado,2,10,-85.29,-128.65,1
+PEQUEÑO,2025-02-15,Trader con sobrecobertura de contratos,4,6,-500,-375.65,4
+PEQUEÑO,2025-02-15,Trader expuesto a bolsa (sin cobertura),0,7,-173.59,-197.09,3
+PEQUEÑO,2025-02-15,Trader no regulado,1,8,-139.53,-279.52,2
+PEQUEÑO,2025-02-15,Integrado/regional regulado,2,9,-109.47,-142.1,1
+PEQUEÑO,2025-02-16,Trader con sobrecobertura de contratos,4,8,-500,-429.85,4
+PEQUEÑO,2025-02-16,Trader no regulado,1,10,-379.46,-336.77,3
+PEQUEÑO,2025-02-16,Integrado/regional regulado,2,9,-72.44,-140.86,1
+PEQUEÑO,2025-02-16,Trader expuesto a bolsa (sin cobertura),0,4,-77.93,-78.88,2
+PEQUEÑO,2025-02-17,Trader con sobrecobertura de contratos,4,5,-500,-365.57,4
+PEQUEÑO,2025-02-17,Trader expuesto a bolsa (sin cobertura),0,5,-46.01,-97.26,1
+PEQUEÑO,2025-02-17,Trader no regulado,1,8,-71.45,-249.4,3
+PEQUEÑO,2025-02-17,Integrado/regional regulado,2,10,-64.39,-127.12,2
+PEQUEÑO,2025-02-18,Trader con sobrecobertura de contratos,4,6,-291.07,-313.94,4
+PEQUEÑO,2025-02-18,Trader expuesto a bolsa (sin cobertura),0,5,-11.62,-64.61,1
+PEQUEÑO,2025-02-18,Trader no regulado,1,8,-61.69,-247.37,2
+PEQUEÑO,2025-02-18,Integrado/regional regulado,2,9,-99.71,-116.63,3
+PEQUEÑO,2025-02-19,Trader con sobrecobertura de contratos,4,8,-500,-335.82,4
+PEQUEÑO,2025-02-19,Trader expuesto a bolsa (sin cobertura),0,5,15.75,-37.25,1
+PEQUEÑO,2025-02-19,Trader no regulado,1,8,-54.79,-243.94,2
+PEQUEÑO,2025-02-19,Integrado/regional regulado,2,10,-92.39,-151.65,3
+PEQUEÑO,2025-02-20,Trader con sobrecobertura de contratos,4,7,-500,-305.61,4
+PEQUEÑO,2025-02-20,Trader no regulado,1,10,-314.03,-296.24,3
+PEQUEÑO,2025-02-20,Trader expuesto a bolsa (sin cobertura),0,5,2.16,-49.04,1
+PEQUEÑO,2025-02-20,Integrado/regional regulado,2,9,-125.8,-192.75,2
+PEQUEÑO,2025-02-21,Trader con sobrecobertura de contratos,4,6,-500,-352.37,4
+PEQUEÑO,2025-02-21,Trader expuesto a bolsa (sin cobertura),0,6,30.35,-17.41,1
+PEQUEÑO,2025-02-21,Trader no regulado,1,9,-366.68,-275.97,3
+PEQUEÑO,2025-02-21,Integrado/regional regulado,2,9,-95.44,-110.52,2
+PEQUEÑO,2025-02-22,Trader con sobrecobertura de contratos,4,6,-96.75,-278.93,3
+PEQUEÑO,2025-02-22,Trader no regulado,1,10,-393.83,-305.15,4
+PEQUEÑO,2025-02-22,Trader expuesto a bolsa (sin cobertura),0,5,39.8,-16.08,1
+PEQUEÑO,2025-02-22,Integrado/regional regulado,2,9,-76.84,-119.25,2
+PEQUEÑO,2025-02-23,Trader con sobrecobertura de contratos,4,7,-500,-332.34,4
+PEQUEÑO,2025-02-23,Trader no regulado,1,9,-260.22,-270.7,3
+PEQUEÑO,2025-02-23,Trader expuesto a bolsa (sin cobertura),0,4,45.77,43.94,1
+PEQUEÑO,2025-02-23,Integrado/regional regulado,2,8,-54.18,-134.68,2
+PEQUEÑO,2025-02-24,Trader con sobrecobertura de contratos,4,8,-500,-343.11,4
+PEQUEÑO,2025-02-24,Trader expuesto a bolsa (sin cobertura),0,5,-8.84,-58.94,1
+PEQUEÑO,2025-02-24,Trader no regulado,1,8,-70.55,-224.66,2
+PEQUEÑO,2025-02-24,Integrado/regional regulado,2,9,-82.23,-127.37,3
+PEQUEÑO,2025-02-25,Trader con sobrecobertura de contratos,4,5,-500,-337.5,4
+PEQUEÑO,2025-02-25,Trader expuesto a bolsa (sin cobertura),0,5,-50.45,-99.05,1
+PEQUEÑO,2025-02-25,Trader no regulado,1,8,-64.59,-220.04,2
+PEQUEÑO,2025-02-25,Integrado/regional regulado,2,11,-99.59,-145.02,3
+PEQUEÑO,2025-02-26,Trader con sobrecobertura de contratos,4,6,-500,-366.86,4
+PEQUEÑO,2025-02-26,Trader no regulado,1,10,-66.11,-269.33,3
+PEQUEÑO,2025-02-26,Trader expuesto a bolsa (sin cobertura),0,5,-7.86,-58.82,1
+PEQUEÑO,2025-02-26,Integrado/regional regulado,2,10,-56.02,-101.44,2
+PEQUEÑO,2025-02-27,Trader con sobrecobertura de contratos,4,6,-129.52,-287.78,4
+PEQUEÑO,2025-02-27,Trader expuesto a bolsa (sin cobertura),0,5,9.98,-39.38,1
+PEQUEÑO,2025-02-27,Trader no regulado,1,9,-126.45,-252.83,3
+PEQUEÑO,2025-02-27,Integrado/regional regulado,2,9,-106.8,-158.7,2
+PEQUEÑO,2025-02-28,Trader con sobrecobertura de contratos,4,5,-500,-343.91,4
+PEQUEÑO,2025-02-28,Trader expuesto a bolsa (sin cobertura),0,5,11.44,-38.29,1
+PEQUEÑO,2025-02-28,Trader no regulado,1,9,-224.46,-263.16,3
+PEQUEÑO,2025-02-28,Integrado/regional regulado,2,10,-49.8,-101.31,2
+PEQUEÑO,2025-03-01,Trader con sobrecobertura de contratos,4,5,-500,-378.82,4
+PEQUEÑO,2025-03-01,Trader expuesto a bolsa (sin cobertura),0,5,58.67,7.43,1
+PEQUEÑO,2025-03-01,Trader no regulado,1,8,-123.15,-225.37,3
+PEQUEÑO,2025-03-01,Integrado/regional regulado,2,10,-49.03,-101.27,2
+PEQUEÑO,2025-03-02,Trader con sobrecobertura de contratos,4,7,-500,-433.08,4
+PEQUEÑO,2025-03-02,Trader no regulado,1,9,-229.53,-255.87,3
+PEQUEÑO,2025-03-02,Integrado/regional regulado,2,8,-54.03,-140.09,2
+PEQUEÑO,2025-03-02,Trader expuesto a bolsa (sin cobertura),0,4,73.85,71.5,1
+PEQUEÑO,2025-03-03,Trader con sobrecobertura de contratos,4,7,-500,-401.83,4
+PEQUEÑO,2025-03-03,Trader expuesto a bolsa (sin cobertura),0,5,26.45,-21.66,1
+PEQUEÑO,2025-03-03,Trader no regulado,1,8,-82.68,-225.48,3
+PEQUEÑO,2025-03-03,Integrado/regional regulado,2,10,-47.02,-109.8,2
+PEQUEÑO,2025-03-04,Trader con sobrecobertura de contratos,4,6,-500,-370.2,4
+PEQUEÑO,2025-03-04,Trader expuesto a bolsa (sin cobertura),0,5,-4.51,-55.31,1
+PEQUEÑO,2025-03-04,Trader no regulado,1,8,-38.56,-216.8,2
+PEQUEÑO,2025-03-04,Integrado/regional regulado,2,10,-53.46,-101.13,3
+PEQUEÑO,2025-03-05,Trader con sobrecobertura de contratos,4,6,-500,-398.15,4
+PEQUEÑO,2025-03-05,Trader expuesto a bolsa (sin cobertura),0,5,21.45,-34.3,1
+PEQUEÑO,2025-03-05,Trader no regulado,1,8,-31.98,-209.96,2
+PEQUEÑO,2025-03-05,Integrado/regional regulado,2,10,-90.28,-102.63,3
+PEQUEÑO,2025-03-06,Trader con sobrecobertura de contratos,4,5,-500,-388.53,4
+PEQUEÑO,2025-03-06,Trader no regulado,1,9,-72.97,-213.11,2
+PEQUEÑO,2025-03-06,Integrado/regional regulado,2,10,-88.77,-143.36,3
+PEQUEÑO,2025-03-06,Trader expuesto a bolsa (sin cobertura),0,4,19.17,18.04,1
+PEQUEÑO,2025-03-07,Trader con sobrecobertura de contratos,4,5,-500,-380.86,4
+PEQUEÑO,2025-03-07,Trader no regulado,1,10,-82.11,-234.76,3
+PEQUEÑO,2025-03-07,Integrado/regional regulado,2,10,-47.84,-85.59,2
+PEQUEÑO,2025-03-07,Trader expuesto a bolsa (sin cobertura),0,4,47.65,45.64,1
+PEQUEÑO,2025-03-08,Trader con sobrecobertura de contratos,4,6,-500,-421.89,4
+PEQUEÑO,2025-03-08,Trader no regulado,1,10,-111.36,-243.17,3
+PEQUEÑO,2025-03-08,Integrado/regional regulado,2,10,-43.72,-97.86,2
+PEQUEÑO,2025-03-08,Trader expuesto a bolsa (sin cobertura),0,4,49.07,47.34,1
+PEQUEÑO,2025-03-09,Trader con sobrecobertura de contratos,4,7,-500,-433.14,4
+PEQUEÑO,2025-03-09,Trader no regulado,1,9,-172.77,-244.4,3
+PEQUEÑO,2025-03-09,Integrado/regional regulado,2,9,-53.64,-114.1,2
+PEQUEÑO,2025-03-09,Trader expuesto a bolsa (sin cobertura),0,4,47.95,46.16,1
+PEQUEÑO,2025-03-10,Trader con sobrecobertura de contratos,4,6,-500,-419.67,4
+PEQUEÑO,2025-03-10,Trader no regulado,1,9,-81.0,-216.9,3
+PEQUEÑO,2025-03-10,Integrado/regional regulado,2,10,-54.88,-110.17,2
+PEQUEÑO,2025-03-10,Trader expuesto a bolsa (sin cobertura),0,4,7.85,7.13,1
+PEQUEÑO,2025-03-11,Trader con sobrecobertura de contratos,4,6,-500,-422.29,4
+PEQUEÑO,2025-03-11,Trader no regulado,1,9,-136.31,-234.26,3
+PEQUEÑO,2025-03-11,Integrado/regional regulado,2,10,-59.88,-101.0,2
+PEQUEÑO,2025-03-11,Trader expuesto a bolsa (sin cobertura),0,4,-34.6,-34.62,1
+PEQUEÑO,2025-03-12,Trader con sobrecobertura de contratos,4,5,-500,-400.76,4
+PEQUEÑO,2025-03-12,Trader no regulado,1,10,-73.11,-250.64,2
+PEQUEÑO,2025-03-12,Integrado/regional regulado,2,10,-81.75,-129.15,3
+PEQUEÑO,2025-03-12,Trader expuesto a bolsa (sin cobertura),0,4,-22.72,-22.96,1
+PEQUEÑO,2025-03-13,Trader con sobrecobertura de contratos,4,6,-500,-422.19,4
+PEQUEÑO,2025-03-13,Trader no regulado,1,9,-40.98,-216.04,2
+PEQUEÑO,2025-03-13,Integrado/regional regulado,2,10,-53.23,-90.41,3
+PEQUEÑO,2025-03-13,Trader expuesto a bolsa (sin cobertura),0,4,2.92,2.25,1
+PEQUEÑO,2025-03-14,Trader con sobrecobertura de contratos,4,6,-500,-422.2,4
+PEQUEÑO,2025-03-14,Trader no regulado,1,9,-31.67,-205.96,2
+PEQUEÑO,2025-03-14,Integrado/regional regulado,2,10,-50.05,-88.72,3
+PEQUEÑO,2025-03-14,Trader expuesto a bolsa (sin cobertura),0,4,9.78,8.79,1
+PEQUEÑO,2025-03-15,Trader con sobrecobertura de contratos,4,7,-500,-433.24,4
+PEQUEÑO,2025-03-15,Trader no regulado,1,9,-57.83,-216.22,2
+PEQUEÑO,2025-03-15,Integrado/regional regulado,2,10,-88.04,-110.5,3
+PEQUEÑO,2025-03-15,Trader expuesto a bolsa (sin cobertura),0,4,13.94,10.74,1
+PEQUEÑO,2025-03-16,Trader con sobrecobertura de contratos,4,6,-500,-422.22,4
+PEQUEÑO,2025-03-16,Trader no regulado,1,10,-330.69,-310.5,3
+PEQUEÑO,2025-03-16,Integrado/regional regulado,2,10,-57.52,-160.58,2
+PEQUEÑO,2025-03-16,Trader expuesto a bolsa (sin cobertura),0,4,11.63,10.73,1
+PEQUEÑO,2025-03-17,Trader con sobrecobertura de contratos,4,5,-500,-334.55,4
+PEQUEÑO,2025-03-17,Trader no regulado,1,10,-102.45,-253.67,3
+PEQUEÑO,2025-03-17,Integrado/regional regulado,2,10,-75.48,-126.63,2
+PEQUEÑO,2025-03-17,Trader expuesto a bolsa (sin cobertura),0,4,-1.94,-2.47,1
+PEQUEÑO,2025-03-18,Trader con sobrecobertura de contratos,4,6,-500,-358.5,4
+PEQUEÑO,2025-03-18,Trader no regulado,1,10,-68.74,-241.93,2
+PEQUEÑO,2025-03-18,Integrado/regional regulado,2,10,-83.0,-104.7,3
+PEQUEÑO,2025-03-18,Trader expuesto a bolsa (sin cobertura),0,4,11.77,10.92,1
+PEQUEÑO,2025-03-19,Trader con sobrecobertura de contratos,4,5,-500,-406.68,4
+PEQUEÑO,2025-03-19,Trader no regulado,1,11,-53.42,-223.12,2
+PEQUEÑO,2025-03-19,Integrado/regional regulado,2,10,-56.72,-97.2,3
+PEQUEÑO,2025-03-19,Trader expuesto a bolsa (sin cobertura),0,4,-1.3,-1.83,1
+PEQUEÑO,2025-03-20,Trader con sobrecobertura de contratos,4,5,-500,-328.01,4
+PEQUEÑO,2025-03-20,Trader no regulado,1,10,-99.43,-247.03,3
+PEQUEÑO,2025-03-20,Integrado/regional regulado,2,11,-87.63,-149.16,2
+PEQUEÑO,2025-03-20,Trader expuesto a bolsa (sin cobertura),0,4,-11.14,-11.71,1
+PEQUEÑO,2025-03-21,Trader con sobrecobertura de contratos,4,6,-500,-365.24,4
+PEQUEÑO,2025-03-21,Trader no regulado,1,10,-95.76,-241.75,3
+PEQUEÑO,2025-03-21,Integrado/regional regulado,2,11,-76.33,-149.36,2
+PEQUEÑO,2025-03-21,Trader expuesto a bolsa (sin cobertura),0,4,21.91,20.61,1
+PEQUEÑO,2025-03-22,Trader con sobrecobertura de contratos,4,6,-500,-373.19,4
+PEQUEÑO,2025-03-22,Trader no regulado,1,10,-215.71,-289.89,3
+PEQUEÑO,2025-03-22,Integrado/regional regulado,2,10,-67.37,-119.73,2
+PEQUEÑO,2025-03-22,Trader expuesto a bolsa (sin cobertura),0,4,35.04,33.62,1
+PEQUEÑO,2025-03-23,Trader con sobrecobertura de contratos,4,7,-500,-412.36,4
+PEQUEÑO,2025-03-23,Trader no regulado,1,9,-253.23,-294.81,3
+PEQUEÑO,2025-03-23,Integrado/regional regulado,2,10,-46.61,-167.91,2
+PEQUEÑO,2025-03-23,Trader expuesto a bolsa (sin cobertura),0,4,67.45,65.21,1
+PEQUEÑO,2025-03-24,Trader con sobrecobertura de contratos,4,7,-500,-404.32,4
+PEQUEÑO,2025-03-24,Trader no regulado,1,10,-242.73,-300.64,3
+PEQUEÑO,2025-03-24,Integrado/regional regulado,2,10,-54.17,-155.21,2
+PEQUEÑO,2025-03-24,Trader expuesto a bolsa (sin cobertura),0,4,41.12,39.45,1
+PEQUEÑO,2025-03-25,Trader con sobrecobertura de contratos,4,5,-500,-316.68,4
+PEQUEÑO,2025-03-25,Trader no regulado,1,10,-243.39,-295.82,3
+PEQUEÑO,2025-03-25,Integrado/regional regulado,2,10,-59.49,-129.37,2
+PEQUEÑO,2025-03-25,Trader expuesto a bolsa (sin cobertura),0,4,-28.36,-28.48,1
+PEQUEÑO,2025-03-26,Trader con sobrecobertura de contratos,4,6,-500,-344.15,4
+PEQUEÑO,2025-03-26,Trader no regulado,1,9,-217.83,-234.68,3
+PEQUEÑO,2025-03-26,Integrado/regional regulado,2,10,-52.51,-107.85,2
+PEQUEÑO,2025-03-26,Trader expuesto a bolsa (sin cobertura),0,4,7.48,6.81,1
+PEQUEÑO,2025-03-27,Trader con sobrecobertura de contratos,4,6,-500,-349.53,4
+PEQUEÑO,2025-03-27,Trader no regulado,1,10,-142.85,-261.49,3
+PEQUEÑO,2025-03-27,Integrado/regional regulado,2,10,-59.74,-114.53,2
+PEQUEÑO,2025-03-27,Trader expuesto a bolsa (sin cobertura),0,4,-40.41,-40.53,1
+PEQUEÑO,2025-03-28,Trader con sobrecobertura de contratos,4,4,-500,-383.35,4
+PEQUEÑO,2025-03-28,Trader no regulado,1,11,-110.6,-227.8,3
+PEQUEÑO,2025-03-28,Integrado/regional regulado,2,10,-58.87,-117.1,2
+PEQUEÑO,2025-03-28,Trader expuesto a bolsa (sin cobertura),0,4,-10.31,-10.92,1
+PEQUEÑO,2025-03-29,Trader con sobrecobertura de contratos,4,6,-500,-356.61,4
+PEQUEÑO,2025-03-29,Trader no regulado,1,9,-131.42,-217.8,3
+PEQUEÑO,2025-03-29,Integrado/regional regulado,2,10,-39.77,-120.59,2
+PEQUEÑO,2025-03-29,Trader expuesto a bolsa (sin cobertura),0,4,60.94,59.14,1
+PEQUEÑO,2025-03-30,Trader con sobrecobertura de contratos,4,5,-500,-347.88,4
+PEQUEÑO,2025-03-30,Trader no regulado,1,10,-255.99,-310.32,3
+PEQUEÑO,2025-03-30,Integrado/regional regulado,2,10,-53.56,-167.29,2
+PEQUEÑO,2025-03-30,Trader expuesto a bolsa (sin cobertura),0,4,56.3,54.45,1
+PEQUEÑO,2025-03-31,Trader con sobrecobertura de contratos,4,6,-500,-348.47,4
+PEQUEÑO,2025-03-31,Trader no regulado,1,10,-220.93,-292.84,3
+PEQUEÑO,2025-03-31,Integrado/regional regulado,2,10,-57.98,-132.28,2
+PEQUEÑO,2025-03-31,Trader expuesto a bolsa (sin cobertura),0,4,-2.17,-2.65,1
+PEQUEÑO,2025-04-01,Trader con sobrecobertura de contratos,4,5,-500,-315.79,4
+PEQUEÑO,2025-04-01,Trader no regulado,1,9,-276.1,-271.46,3
+PEQUEÑO,2025-04-01,Integrado/regional regulado,2,11,-68.12,-115.74,2
+PEQUEÑO,2025-04-01,Trader expuesto a bolsa (sin cobertura),0,3,36.02,35.12,1
+PEQUEÑO,2025-04-02,Trader con sobrecobertura de contratos,4,6,-500,-344.24,4
+PEQUEÑO,2025-04-02,Trader no regulado,1,9,-293.09,-274.24,3
+PEQUEÑO,2025-04-02,Integrado/regional regulado,2,11,-84.06,-128.32,2
+PEQUEÑO,2025-04-02,Trader expuesto a bolsa (sin cobertura),0,3,28.64,27.89,1
+PEQUEÑO,2025-04-03,Trader con sobrecobertura de contratos,4,5,-500,-339.96,4
+PEQUEÑO,2025-04-03,Trader no regulado,1,9,-251.56,-243.08,3
+PEQUEÑO,2025-04-03,Integrado/regional regulado,2,11,-72.76,-126.19,2
+PEQUEÑO,2025-04-03,Trader expuesto a bolsa (sin cobertura),0,3,21.42,20.61,1
+PEQUEÑO,2025-04-04,Trader con sobrecobertura de contratos,4,6,-500,-378.72,4
+PEQUEÑO,2025-04-04,Trader no regulado,1,9,-53.56,-208.1,2
+PEQUEÑO,2025-04-04,Integrado/regional regulado,2,11,-69.23,-114.74,3
+PEQUEÑO,2025-04-04,Trader expuesto a bolsa (sin cobertura),0,3,64.36,62.44,1
+PEQUEÑO,2025-04-05,Trader con sobrecobertura de contratos,4,6,-500,-403.84,4
+PEQUEÑO,2025-04-05,Trader no regulado,1,9,-108.55,-222.91,3
+PEQUEÑO,2025-04-05,Integrado/regional regulado,2,11,-36.28,-118.91,2
+PEQUEÑO,2025-04-05,Trader expuesto a bolsa (sin cobertura),0,3,96.64,94.84,1
+PEQUEÑO,2025-04-06,Trader con sobrecobertura de contratos,4,5,-500,-406.42,4
+PEQUEÑO,2025-04-06,Trader no regulado,1,10,-280.97,-301.32,3
+PEQUEÑO,2025-04-06,Integrado/regional regulado,2,11,-51.19,-156.3,2
+PEQUEÑO,2025-04-06,Trader expuesto a bolsa (sin cobertura),0,3,87.15,85.37,1
+PEQUEÑO,2025-04-07,Trader con sobrecobertura de contratos,4,6,-500,-380.36,4
+PEQUEÑO,2025-04-07,Trader no regulado,1,9,-239.45,-242.19,3
+PEQUEÑO,2025-04-07,Integrado/regional regulado,2,11,-77.22,-140.45,2
+PEQUEÑO,2025-04-07,Trader expuesto a bolsa (sin cobertura),0,3,55.0,53.84,1
+PEQUEÑO,2025-04-08,Trader con sobrecobertura de contratos,4,7,-500,-388.29,4
+PEQUEÑO,2025-04-08,Trader no regulado,1,9,-161.7,-243.77,3
+PEQUEÑO,2025-04-08,Integrado/regional regulado,2,11,-53.93,-118.11,2
+PEQUEÑO,2025-04-08,Trader expuesto a bolsa (sin cobertura),0,3,14.4,13.82,1
+PEQUEÑO,2025-04-09,Trader con sobrecobertura de contratos,4,6,-500,-381.96,4
+PEQUEÑO,2025-04-09,Trader no regulado,1,10,-86.37,-246.32,3
+PEQUEÑO,2025-04-09,Integrado/regional regulado,2,11,-67.87,-111.63,2
+PEQUEÑO,2025-04-09,Trader expuesto a bolsa (sin cobertura),0,3,34.16,33.33,1
+PEQUEÑO,2025-04-10,Trader con sobrecobertura de contratos,4,4,-310.34,-335.56,4
+PEQUEÑO,2025-04-10,Trader no regulado,1,9,-82.41,-211.31,3
+PEQUEÑO,2025-04-10,Integrado/regional regulado,2,12,-44.62,-142.29,2
+PEQUEÑO,2025-04-10,Trader expuesto a bolsa (sin cobertura),0,3,69.47,67.84,1
+PEQUEÑO,2025-04-11,Trader con sobrecobertura de contratos,4,4,-237.9,-317.18,3
+PEQUEÑO,2025-04-11,Trader no regulado,1,11,-268.7,-268.78,4
+PEQUEÑO,2025-04-11,Trader expuesto a bolsa (sin cobertura),0,4,98.14,-53.37,1
+PEQUEÑO,2025-04-11,Integrado/regional regulado,2,11,-55.9,-106.86,2
+PEQUEÑO,2025-04-12,Trader con sobrecobertura de contratos,4,5,-500,-356.69,4
+PEQUEÑO,2025-04-12,Trader no regulado,1,9,-226.69,-239.8,3
+PEQUEÑO,2025-04-12,Integrado/regional regulado,2,12,-35.67,-139.21,2
+PEQUEÑO,2025-04-12,Trader expuesto a bolsa (sin cobertura),0,3,100.5,98.66,1
+PEQUEÑO,2025-04-13,Trader con sobrecobertura de contratos,4,6,-500,-421.82,4
+PEQUEÑO,2025-04-13,Trader no regulado,1,9,-358.44,-296.4,3
+PEQUEÑO,2025-04-13,Integrado/regional regulado,2,12,-47.61,-165.28,2
+PEQUEÑO,2025-04-13,Trader expuesto a bolsa (sin cobertura),0,3,102.2,100.19,1
+PEQUEÑO,2025-04-14,Trader con sobrecobertura de contratos,4,6,-500,-389.49,4
+PEQUEÑO,2025-04-14,Trader no regulado,1,9,-242.88,-261.42,3
+PEQUEÑO,2025-04-14,Integrado/regional regulado,2,12,-52.75,-153.48,2
+PEQUEÑO,2025-04-14,Trader expuesto a bolsa (sin cobertura),0,3,100.73,98.92,1
+PEQUEÑO,2025-04-15,Trader con sobrecobertura de contratos,4,5,-500,-398.94,4
+PEQUEÑO,2025-04-15,Trader no regulado,1,10,-240.37,-284.86,3
+PEQUEÑO,2025-04-15,Integrado/regional regulado,2,12,-36.99,-140.56,2
+PEQUEÑO,2025-04-15,Trader expuesto a bolsa (sin cobertura),0,3,90.99,89.29,1
+PEQUEÑO,2025-04-16,Trader con sobrecobertura de contratos,4,4,-391.39,-355.57,4
+PEQUEÑO,2025-04-16,Trader no regulado,1,9,-245.37,-277.04,3
+PEQUEÑO,2025-04-16,Integrado/regional regulado,2,12,-54.55,-144.84,2
+PEQUEÑO,2025-04-16,Trader expuesto a bolsa (sin cobertura),0,3,92.01,90.38,1
+PEQUEÑO,2025-04-17,Trader con sobrecobertura de contratos,4,6,-500,-413.25,4
+PEQUEÑO,2025-04-17,Trader no regulado,1,9,-241.71,-311.29,3
+PEQUEÑO,2025-04-17,Integrado/regional regulado,2,12,-42.03,-198.83,2
+PEQUEÑO,2025-04-17,Trader expuesto a bolsa (sin cobertura),0,4,99.94,98.22,1
+PEQUEÑO,2025-04-18,Trader con sobrecobertura de contratos,4,5,-500,-406.13,4
+PEQUEÑO,2025-04-18,Trader no regulado,1,9,-500,-368.46,3
+PEQUEÑO,2025-04-18,Integrado/regional regulado,2,11,-45.23,-177.1,2
+PEQUEÑO,2025-04-18,Trader expuesto a bolsa (sin cobertura),0,4,99.81,98.1,1
+PEQUEÑO,2025-04-19,Trader con sobrecobertura de contratos,4,5,-500,-397.45,4
+PEQUEÑO,2025-04-19,Trader no regulado,1,9,-237.47,-311.28,3
+PEQUEÑO,2025-04-19,Integrado/regional regulado,2,12,-31.22,-189.03,2
+PEQUEÑO,2025-04-19,Trader expuesto a bolsa (sin cobertura),0,3,98.04,96.23,1
+PEQUEÑO,2025-04-20,Trader con sobrecobertura de contratos,4,5,-500,-406.31,4
+PEQUEÑO,2025-04-20,Trader no regulado,1,9,-251.43,-294.14,3
+PEQUEÑO,2025-04-20,Integrado/regional regulado,2,12,-47.99,-190.25,2
+PEQUEÑO,2025-04-20,Trader expuesto a bolsa (sin cobertura),0,3,98.18,96.23,1
+PEQUEÑO,2025-04-21,Trader con sobrecobertura de contratos,4,4,-289.31,-330.46,4
+PEQUEÑO,2025-04-21,Trader no regulado,1,10,-231.6,-285.08,3
+PEQUEÑO,2025-04-21,Integrado/regional regulado,2,12,-41.66,-151.48,2
+PEQUEÑO,2025-04-21,Trader expuesto a bolsa (sin cobertura),0,4,101.51,100.13,1
+PEQUEÑO,2025-04-22,Trader con sobrecobertura de contratos,4,5,-500,-372.6,4
+PEQUEÑO,2025-04-22,Trader no regulado,1,9,-73.51,-202.99,3
+PEQUEÑO,2025-04-22,Integrado/regional regulado,2,12,-45.73,-134.1,2
+PEQUEÑO,2025-04-22,Trader expuesto a bolsa (sin cobertura),0,4,74.96,73.86,1
+PEQUEÑO,2025-04-23,Trader con sobrecobertura de contratos,4,4,-186.16,-304.49,4
+PEQUEÑO,2025-04-23,Trader no regulado,1,9,-86.01,-205.49,3
+PEQUEÑO,2025-04-23,Integrado/regional regulado,2,12,-44.42,-132.68,2
+PEQUEÑO,2025-04-23,Trader expuesto a bolsa (sin cobertura),0,3,65.3,64.05,1
+PEQUEÑO,2025-04-24,Trader con sobrecobertura de contratos,4,4,-372.51,-351.11,4
+PEQUEÑO,2025-04-24,Trader no regulado,1,9,-65.8,-201.34,3
+PEQUEÑO,2025-04-24,Integrado/regional regulado,2,12,-63.76,-153.06,2
+PEQUEÑO,2025-04-24,Trader expuesto a bolsa (sin cobertura),0,3,67.94,66.33,1
+PEQUEÑO,2025-04-25,Trader con sobrecobertura de contratos,4,4,-225.38,-314.14,3
+PEQUEÑO,2025-04-25,Trader no regulado,1,9,-235.8,-248.8,4
+PEQUEÑO,2025-04-25,Integrado/regional regulado,2,12,-36.54,-135.27,2
+PEQUEÑO,2025-04-25,Trader expuesto a bolsa (sin cobertura),0,4,98.54,96.56,1
+PEQUEÑO,2025-04-26,Trader con sobrecobertura de contratos,4,6,-500,-398.7,4
+PEQUEÑO,2025-04-26,Trader no regulado,1,9,-239.43,-263.66,3
+PEQUEÑO,2025-04-26,Integrado/regional regulado,2,12,-36.17,-135.18,2
+PEQUEÑO,2025-04-26,Trader expuesto a bolsa (sin cobertura),0,3,102.08,100.2,1
+PEQUEÑO,2025-04-27,Trader con sobrecobertura de contratos,4,5,-500,-406.39,4
+PEQUEÑO,2025-04-27,Trader no regulado,1,9,-407.15,-307.88,3
+PEQUEÑO,2025-04-27,Integrado/regional regulado,2,12,-91.08,-183.46,2
+PEQUEÑO,2025-04-27,Trader expuesto a bolsa (sin cobertura),0,3,102.03,100.0,1
+PEQUEÑO,2025-04-28,Trader con sobrecobertura de contratos,4,4,-320.0,-337.82,4
+PEQUEÑO,2025-04-28,Trader no regulado,1,9,-232.83,-258.54,3
+PEQUEÑO,2025-04-28,Integrado/regional regulado,2,12,-65.87,-147.09,2
+PEQUEÑO,2025-04-28,Trader expuesto a bolsa (sin cobertura),0,3,102.8,100.95,1
+PEQUEÑO,2025-04-29,Trader con sobrecobertura de contratos,4,4,-309.96,-335.29,4
+PEQUEÑO,2025-04-29,Trader no regulado,1,10,-238.14,-274.09,3
+PEQUEÑO,2025-04-29,Integrado/regional regulado,2,12,-40.48,-135.97,2
+PEQUEÑO,2025-04-29,Trader expuesto a bolsa (sin cobertura),0,3,103.43,101.54,1
+PEQUEÑO,2025-04-30,Trader con sobrecobertura de contratos,4,4,-308.58,-334.93,4
+PEQUEÑO,2025-04-30,Trader no regulado,1,10,-238.53,-281.31,3
+PEQUEÑO,2025-04-30,Integrado/regional regulado,2,12,-72.06,-142.28,2
+PEQUEÑO,2025-04-30,Trader expuesto a bolsa (sin cobertura),0,3,104.02,102.23,1
+PEQUEÑO,2025-05-01,Trader con sobrecobertura de contratos,4,5,-500,-391.22,4
+PEQUEÑO,2025-05-01,Trader no regulado,1,9,-222.0,-269.42,3
+PEQUEÑO,2025-05-01,Integrado/regional regulado,2,12,-37.38,-154.65,2
+PEQUEÑO,2025-05-01,Trader expuesto a bolsa (sin cobertura),0,3,104.32,101.97,1
+PEQUEÑO,2025-05-02,Trader con sobrecobertura de contratos,4,6,-500,-365.98,4
+PEQUEÑO,2025-05-02,Trader no regulado,1,9,-214.66,-257.26,3
+PEQUEÑO,2025-05-02,Integrado/regional regulado,2,12,-31.0,-146.71,2
+PEQUEÑO,2025-05-02,Trader expuesto a bolsa (sin cobertura),0,4,103.53,101.5,1
+PEQUEÑO,2025-05-03,Trader con sobrecobertura de contratos,4,5,-500,-353.14,4
+PEQUEÑO,2025-05-03,Trader no regulado,1,9,-238.51,-268.53,3
+PEQUEÑO,2025-05-03,Integrado/regional regulado,2,12,-54.08,-145.23,2
+PEQUEÑO,2025-05-03,Trader expuesto a bolsa (sin cobertura),0,3,103.9,102.02,1
+PEQUEÑO,2025-05-04,Trader con sobrecobertura de contratos,4,4,-401.37,-357.52,4
+PEQUEÑO,2025-05-04,Trader no regulado,1,10,-339.31,-327.79,3
+PEQUEÑO,2025-05-04,Integrado/regional regulado,2,12,-51.36,-185.77,2
+PEQUEÑO,2025-05-04,Trader expuesto a bolsa (sin cobertura),0,3,106.08,104.02,1
+PEQUEÑO,2025-05-05,Trader con sobrecobertura de contratos,4,4,-277.56,-326.65,4
+PEQUEÑO,2025-05-05,Trader no regulado,1,9,-250.1,-264.73,3
+PEQUEÑO,2025-05-05,Integrado/regional regulado,2,12,-62.45,-153.83,2
+PEQUEÑO,2025-05-05,Trader expuesto a bolsa (sin cobertura),0,3,104.14,102.29,1
+PEQUEÑO,2025-05-06,Trader con sobrecobertura de contratos,4,5,-500,-351.07,4
+PEQUEÑO,2025-05-06,Trader no regulado,1,9,-265.93,-266.2,3
+PEQUEÑO,2025-05-06,Integrado/regional regulado,2,12,-58.61,-144.28,2
+PEQUEÑO,2025-05-06,Trader expuesto a bolsa (sin cobertura),0,3,69.17,67.81,1
+PEQUEÑO,2025-05-07,Trader con sobrecobertura de contratos,4,4,-264.38,-323.33,3
+PEQUEÑO,2025-05-07,Trader no regulado,1,10,-268.07,-287.5,4
+PEQUEÑO,2025-05-07,Trader expuesto a bolsa (sin cobertura),0,4,101.56,-50.14,1
+PEQUEÑO,2025-05-07,Integrado/regional regulado,2,11,-35.3,-99.57,2
+PEQUEÑO,2025-05-08,Trader con sobrecobertura de contratos,4,5,-500,-360.31,4
+PEQUEÑO,2025-05-08,Trader no regulado,1,10,-274.33,-286.25,3
+PEQUEÑO,2025-05-08,Integrado/regional regulado,2,12,-55.31,-133.43,2
+PEQUEÑO,2025-05-08,Trader expuesto a bolsa (sin cobertura),0,3,104.1,101.89,1
+PEQUEÑO,2025-05-09,Trader con sobrecobertura de contratos,4,4,-306.66,-333.82,4
+PEQUEÑO,2025-05-09,Trader no regulado,1,10,-276.09,-287.34,3
+PEQUEÑO,2025-05-09,Integrado/regional regulado,2,12,-41.55,-137.28,2
+PEQUEÑO,2025-05-09,Trader expuesto a bolsa (sin cobertura),0,3,105.17,102.41,1
+PEQUEÑO,2025-05-10,Trader con sobrecobertura de contratos,4,5,-500,-328.51,4
+PEQUEÑO,2025-05-10,Trader no regulado,1,9,-288.27,-267.24,3
+PEQUEÑO,2025-05-10,Integrado/regional regulado,2,12,-41.07,-138.88,2
+PEQUEÑO,2025-05-10,Trader expuesto a bolsa (sin cobertura),0,3,105.74,103.84,1
+PEQUEÑO,2025-05-11,Trader con sobrecobertura de contratos,4,5,-500,-389.9,4
+PEQUEÑO,2025-05-11,Trader no regulado,1,9,-398.54,-333.02,3
+PEQUEÑO,2025-05-11,Integrado/regional regulado,2,12,-53.52,-184.47,2
+PEQUEÑO,2025-05-11,Trader expuesto a bolsa (sin cobertura),0,3,102.9,100.89,1
+PEQUEÑO,2025-05-12,Trader con sobrecobertura de contratos,4,4,-245.26,-318.64,4
+PEQUEÑO,2025-05-12,Trader no regulado,1,10,-120.74,-253.57,3
+PEQUEÑO,2025-05-12,Integrado/regional regulado,2,12,-59.77,-155.71,2
+PEQUEÑO,2025-05-12,Trader expuesto a bolsa (sin cobertura),0,3,69.16,67.82,1
+PEQUEÑO,2025-05-13,Trader con sobrecobertura de contratos,4,5,-500,-344.16,4
+PEQUEÑO,2025-05-13,Trader no regulado,1,9,-296.3,-271.74,3
+PEQUEÑO,2025-05-13,Integrado/regional regulado,2,11,-63.36,-157.23,2
+PEQUEÑO,2025-05-13,Trader expuesto a bolsa (sin cobertura),0,3,48.72,47.67,1
+PEQUEÑO,2025-05-14,Trader con sobrecobertura de contratos,4,4,-280.41,-327.49,3
+PEQUEÑO,2025-05-14,Trader no regulado,1,10,-300.6,-299.11,4
+PEQUEÑO,2025-05-14,Integrado/regional regulado,2,11,-54.23,-149.17,2
+PEQUEÑO,2025-05-14,Trader expuesto a bolsa (sin cobertura),0,3,61.73,60.55,1
+PEQUEÑO,2025-05-15,Trader con sobrecobertura de contratos,4,5,-500,-343.2,4
+PEQUEÑO,2025-05-15,Trader no regulado,1,9,-80.27,-208.24,3
+PEQUEÑO,2025-05-15,Integrado/regional regulado,2,11,-49.44,-161.67,2
+PEQUEÑO,2025-05-15,Trader expuesto a bolsa (sin cobertura),0,3,93.67,91.64,1
+PEQUEÑO,2025-05-16,Trader con sobrecobertura de contratos,4,4,-251.88,-320.1,4
+PEQUEÑO,2025-05-16,Trader no regulado,1,9,-95.22,-207.52,2
+PEQUEÑO,2025-05-16,Integrado/regional regulado,2,11,-107.81,-168.19,3
+PEQUEÑO,2025-05-16,Trader expuesto a bolsa (sin cobertura),0,3,102.03,99.35,1
+PEQUEÑO,2025-05-17,Trader con sobrecobertura de contratos,4,4,-500,-381.99,4
+PEQUEÑO,2025-05-17,Trader no regulado,1,10,-105.62,-242.96,3
+PEQUEÑO,2025-05-17,Integrado/regional regulado,2,12,-75.28,-153.81,2
+PEQUEÑO,2025-05-17,Trader expuesto a bolsa (sin cobertura),0,3,100.81,98.99,1
+PEQUEÑO,2025-05-18,Trader con sobrecobertura de contratos,4,6,-500,-421.44,4
+PEQUEÑO,2025-05-18,Trader no regulado,1,9,-259.74,-263.27,3
+PEQUEÑO,2025-05-18,Integrado/regional regulado,2,12,-114.09,-195.19,2
+PEQUEÑO,2025-05-18,Trader expuesto a bolsa (sin cobertura),0,3,104.5,102.48,1
+PEQUEÑO,2025-05-19,Trader con sobrecobertura de contratos,4,5,-500,-377.49,4
+PEQUEÑO,2025-05-19,Trader no regulado,1,9,-85.42,-214.91,3
+PEQUEÑO,2025-05-19,Integrado/regional regulado,2,12,-62.69,-159.22,2
+PEQUEÑO,2025-05-19,Trader expuesto a bolsa (sin cobertura),0,3,91.57,89.91,1
+PEQUEÑO,2025-05-20,Trader con sobrecobertura de contratos,4,5,-500,-383.58,4
+PEQUEÑO,2025-05-20,Trader no regulado,1,9,-92.35,-219.85,3
+PEQUEÑO,2025-05-20,Integrado/regional regulado,2,12,-53.52,-150.34,2
+PEQUEÑO,2025-05-20,Trader expuesto a bolsa (sin cobertura),0,3,56.96,55.78,1
+PEQUEÑO,2025-05-21,Trader con sobrecobertura de contratos,4,4,-187.62,-304.32,3
+PEQUEÑO,2025-05-21,Trader no regulado,1,10,-484.41,-331.79,4
+PEQUEÑO,2025-05-21,Integrado/regional regulado,2,12,-37.0,-141.71,2
+PEQUEÑO,2025-05-21,Trader expuesto a bolsa (sin cobertura),0,3,56.99,55.87,1
+PEQUEÑO,2025-05-22,Trader con sobrecobertura de contratos,4,5,-500,-368.24,4
+PEQUEÑO,2025-05-22,Trader no regulado,1,9,-295.42,-263.96,3
+PEQUEÑO,2025-05-22,Integrado/regional regulado,2,12,-46.67,-152.66,2
+PEQUEÑO,2025-05-22,Trader expuesto a bolsa (sin cobertura),0,3,67.35,65.78,1
+PEQUEÑO,2025-05-23,Trader con sobrecobertura de contratos,4,6,-500,-405.4,4
+PEQUEÑO,2025-05-23,Trader no regulado,1,9,-79.06,-215.42,3
+PEQUEÑO,2025-05-23,Integrado/regional regulado,2,12,-43.58,-148.34,2
+PEQUEÑO,2025-05-23,Trader expuesto a bolsa (sin cobertura),0,3,54.25,52.59,1
+PEQUEÑO,2025-05-24,Trader con sobrecobertura de contratos,4,6,-500,-395.11,4
+PEQUEÑO,2025-05-24,Trader no regulado,1,9,-308.88,-264.29,3
+PEQUEÑO,2025-05-24,Integrado/regional regulado,2,12,-40.26,-146.55,2
+PEQUEÑO,2025-05-24,Trader expuesto a bolsa (sin cobertura),0,3,102.72,100.87,1
+PEQUEÑO,2025-05-25,Trader con sobrecobertura de contratos,4,6,-500,-421.41,4
+PEQUEÑO,2025-05-25,Trader no regulado,1,9,-441.86,-327.5,3
+PEQUEÑO,2025-05-25,Integrado/regional regulado,2,11,-68.56,-157.47,2
+PEQUEÑO,2025-05-25,Trader expuesto a bolsa (sin cobertura),0,4,103.09,101.59,1
+PEQUEÑO,2025-05-26,Trader con sobrecobertura de contratos,4,6,-500,-407.31,4
+PEQUEÑO,2025-05-26,Trader no regulado,1,9,-285.13,-256.48,3
+PEQUEÑO,2025-05-26,Integrado/regional regulado,2,12,-49.06,-156.39,2
+PEQUEÑO,2025-05-26,Trader expuesto a bolsa (sin cobertura),0,4,102.2,100.84,1
+PEQUEÑO,2025-05-27,Trader con sobrecobertura de contratos,4,5,-500,-382.35,4
+PEQUEÑO,2025-05-27,Trader no regulado,1,9,-111.85,-220.96,3
+PEQUEÑO,2025-05-27,Integrado/regional regulado,2,12,-41.23,-143.52,2
+PEQUEÑO,2025-05-27,Trader expuesto a bolsa (sin cobertura),0,3,92.62,90.92,1
+PEQUEÑO,2025-05-28,Trader con sobrecobertura de contratos,4,6,-500,-389.47,4
+PEQUEÑO,2025-05-28,Trader no regulado,1,9,-283.59,-272.05,3
+PEQUEÑO,2025-05-28,Integrado/regional regulado,2,11,-41.59,-113.51,2
+PEQUEÑO,2025-05-28,Trader expuesto a bolsa (sin cobertura),0,3,93.21,91.59,1
+PEQUEÑO,2025-05-29,Trader con sobrecobertura de contratos,4,5,-500,-380.42,4
+PEQUEÑO,2025-05-29,Trader no regulado,1,9,-294.64,-264.63,3
+PEQUEÑO,2025-05-29,Integrado/regional regulado,2,12,-58.29,-167.38,2
+PEQUEÑO,2025-05-29,Trader expuesto a bolsa (sin cobertura),0,3,69.33,67.73,1
+PEQUEÑO,2025-05-30,Trader con sobrecobertura de contratos,4,5,-500,-363.83,4
+PEQUEÑO,2025-05-30,Trader no regulado,1,9,-288.53,-266.16,3
+PEQUEÑO,2025-05-30,Integrado/regional regulado,2,12,-54.94,-152.19,2
+PEQUEÑO,2025-05-30,Trader expuesto a bolsa (sin cobertura),0,3,102.92,100.22,1
+PEQUEÑO,2025-05-31,Trader con sobrecobertura de contratos,4,4,-411.09,-359.93,4
+PEQUEÑO,2025-05-31,Trader no regulado,1,9,-93.54,-230.34,3
+PEQUEÑO,2025-05-31,Integrado/regional regulado,2,12,-68.13,-155.92,2
+PEQUEÑO,2025-05-31,Trader expuesto a bolsa (sin cobertura),0,3,104.19,102.31,1
+PEQUEÑO,2025-06-01,Trader con sobrecobertura de contratos,4,5,-500,-405.52,4
+PEQUEÑO,2025-06-01,Trader no regulado,1,9,-499.72,-365.16,3
+PEQUEÑO,2025-06-01,Integrado/regional regulado,2,11,-66.08,-169.4,2
+PEQUEÑO,2025-06-01,Trader expuesto a bolsa (sin cobertura),0,3,103.98,101.97,1
+PEQUEÑO,2025-06-02,Trader con sobrecobertura de contratos,4,4,-500,-381.91,4
+PEQUEÑO,2025-06-02,Trader no regulado,1,9,-461.37,-309.83,3
+PEQUEÑO,2025-06-02,Integrado/regional regulado,2,12,-87.77,-178.25,2
+PEQUEÑO,2025-06-02,Trader expuesto a bolsa (sin cobertura),0,3,103.4,101.09,1
+PEQUEÑO,2025-06-03,Trader con sobrecobertura de contratos,4,5,-500,-346.32,4
+PEQUEÑO,2025-06-03,Trader no regulado,1,10,-306.81,-293.7,3
+PEQUEÑO,2025-06-03,Integrado/regional regulado,2,12,-59.39,-155.93,2
+PEQUEÑO,2025-06-03,Trader expuesto a bolsa (sin cobertura),0,4,103.49,102.1,1
+PEQUEÑO,2025-06-04,Trader con sobrecobertura de contratos,4,6,-500,-374.6,4
+PEQUEÑO,2025-06-04,Trader no regulado,1,9,-306.96,-271.09,3
+PEQUEÑO,2025-06-04,Integrado/regional regulado,2,12,-48.53,-137.48,2
+PEQUEÑO,2025-06-04,Trader expuesto a bolsa (sin cobertura),0,3,104.41,102.65,1
+PEQUEÑO,2025-06-05,Trader con sobrecobertura de contratos,4,4,-274.76,-325.59,4
+PEQUEÑO,2025-06-05,Trader no regulado,1,10,-73.75,-243.95,3
+PEQUEÑO,2025-06-05,Integrado/regional regulado,2,12,-38.89,-134.64,2
+PEQUEÑO,2025-06-05,Trader expuesto a bolsa (sin cobertura),0,3,100.77,98.64,1
+PEQUEÑO,2025-06-06,Trader con sobrecobertura de contratos,4,4,-331.43,-339.82,4
+PEQUEÑO,2025-06-06,Trader no regulado,1,10,-308.66,-290.08,3
+PEQUEÑO,2025-06-06,Integrado/regional regulado,2,12,-46.65,-146.22,2
+PEQUEÑO,2025-06-06,Trader expuesto a bolsa (sin cobertura),0,3,104.45,101.73,1
+PEQUEÑO,2025-06-07,Trader con sobrecobertura de contratos,4,5,-500,-385.03,4
+PEQUEÑO,2025-06-07,Trader no regulado,1,9,-323.77,-275.19,3
+PEQUEÑO,2025-06-07,Integrado/regional regulado,2,12,-56.46,-143.85,2
+PEQUEÑO,2025-06-07,Trader expuesto a bolsa (sin cobertura),0,3,105.53,103.65,1
+PEQUEÑO,2025-06-08,Trader con sobrecobertura de contratos,4,5,-500,-405.45,4
+PEQUEÑO,2025-06-08,Trader no regulado,1,9,-446.59,-338.4,3
+PEQUEÑO,2025-06-08,Integrado/regional regulado,2,12,-31.78,-163.68,2
+PEQUEÑO,2025-06-08,Trader expuesto a bolsa (sin cobertura),0,3,103.3,101.31,1
+PEQUEÑO,2025-06-09,Trader con sobrecobertura de contratos,4,4,-351.71,-344.89,4
+PEQUEÑO,2025-06-09,Trader no regulado,1,9,-298.7,-269.72,3
+PEQUEÑO,2025-06-09,Integrado/regional regulado,2,12,-50.1,-143.72,2
+PEQUEÑO,2025-06-09,Trader expuesto a bolsa (sin cobertura),0,3,98.28,96.53,1
+PEQUEÑO,2025-06-10,Trader con sobrecobertura de contratos,4,6,-500,-394.04,4
+PEQUEÑO,2025-06-10,Trader no regulado,1,9,-304.19,-266.95,3
+PEQUEÑO,2025-06-10,Integrado/regional regulado,2,12,-53.8,-133.94,2
+PEQUEÑO,2025-06-10,Trader expuesto a bolsa (sin cobertura),0,3,103.45,101.59,1
+PEQUEÑO,2025-06-11,Trader con sobrecobertura de contratos,4,5,-500,-365.83,4
+PEQUEÑO,2025-06-11,Trader no regulado,1,9,-299.47,-266.64,3
+PEQUEÑO,2025-06-11,Integrado/regional regulado,2,12,-57.7,-135.52,2
+PEQUEÑO,2025-06-11,Trader expuesto a bolsa (sin cobertura),0,3,103.92,102.15,1
+PEQUEÑO,2025-06-12,Trader con sobrecobertura de contratos,4,5,-500,-371.29,4
+PEQUEÑO,2025-06-12,Trader no regulado,1,9,-312.66,-260.16,3
+PEQUEÑO,2025-06-12,Integrado/regional regulado,2,12,-58.95,-132.1,2
+PEQUEÑO,2025-06-12,Trader expuesto a bolsa (sin cobertura),0,3,101.71,99.55,1
+PEQUEÑO,2025-06-13,Trader con sobrecobertura de contratos,4,5,-500,-364.95,4
+PEQUEÑO,2025-06-13,Trader no regulado,1,9,-302.38,-261.48,3
+PEQUEÑO,2025-06-13,Integrado/regional regulado,2,12,-44.23,-126.91,2
+PEQUEÑO,2025-06-13,Trader expuesto a bolsa (sin cobertura),0,3,103.18,100.48,1
+PEQUEÑO,2025-06-14,Trader con sobrecobertura de contratos,4,5,-500,-405.62,4
+PEQUEÑO,2025-06-14,Trader no regulado,1,9,-326.45,-280.41,3
+PEQUEÑO,2025-06-14,Integrado/regional regulado,2,12,-41.96,-136.97,2
+PEQUEÑO,2025-06-14,Trader expuesto a bolsa (sin cobertura),0,3,100.97,99.14,1
+PEQUEÑO,2025-06-15,Trader con sobrecobertura de contratos,4,5,-500,-405.63,4
+PEQUEÑO,2025-06-15,Trader no regulado,1,9,-443.73,-339.39,3
+PEQUEÑO,2025-06-15,Integrado/regional regulado,2,12,-77.08,-178.41,2
+PEQUEÑO,2025-06-15,Trader expuesto a bolsa (sin cobertura),0,3,100.98,99.01,1
+PEQUEÑO,2025-06-16,Trader con sobrecobertura de contratos,4,5,-500,-378.19,4
+PEQUEÑO,2025-06-16,Trader no regulado,1,9,-300.13,-261.17,3
+PEQUEÑO,2025-06-16,Integrado/regional regulado,2,12,-58.14,-154.13,2
+PEQUEÑO,2025-06-16,Trader expuesto a bolsa (sin cobertura),0,3,101.89,100.08,1
+PEQUEÑO,2025-06-17,Trader con sobrecobertura de contratos,4,5,-500,-367.27,4
+PEQUEÑO,2025-06-17,Trader no regulado,1,10,-151.73,-238.45,3
+PEQUEÑO,2025-06-17,Integrado/regional regulado,2,12,-59.05,-146.8,2
+PEQUEÑO,2025-06-17,Trader expuesto a bolsa (sin cobertura),0,3,105.69,103.81,1
+PEQUEÑO,2025-06-18,Trader con sobrecobertura de contratos,4,4,-313.98,-335.42,4
+PEQUEÑO,2025-06-18,Trader no regulado,1,10,-6.7,-224.02,2
+PEQUEÑO,2025-06-18,Integrado/regional regulado,2,12,-52.27,-137.83,3
+PEQUEÑO,2025-06-18,Trader expuesto a bolsa (sin cobertura),0,3,105.69,103.9,1
+PEQUEÑO,2025-06-19,Trader con sobrecobertura de contratos,4,5,-500,-374.6,4
+PEQUEÑO,2025-06-19,Trader no regulado,1,10,-46.65,-233.87,3
+PEQUEÑO,2025-06-19,Integrado/regional regulado,2,12,-43.75,-139.65,2
+PEQUEÑO,2025-06-19,Trader expuesto a bolsa (sin cobertura),0,3,104.16,101.97,1
+PEQUEÑO,2025-06-20,Trader con sobrecobertura de contratos,4,5,-500,-359.09,4
+PEQUEÑO,2025-06-20,Trader no regulado,1,10,-117.58,-247.83,3
+PEQUEÑO,2025-06-20,Integrado/regional regulado,2,12,-44.08,-139.19,2
+PEQUEÑO,2025-06-20,Trader expuesto a bolsa (sin cobertura),0,3,105.31,102.57,1
+PEQUEÑO,2025-06-21,Trader con sobrecobertura de contratos,4,5,-500,-382.86,4
+PEQUEÑO,2025-06-21,Trader no regulado,1,10,-81.05,-240.55,3
+PEQUEÑO,2025-06-21,Integrado/regional regulado,2,12,-52.73,-143.89,2
+PEQUEÑO,2025-06-21,Trader expuesto a bolsa (sin cobertura),0,3,105.52,103.63,1
+PEQUEÑO,2025-06-22,Trader con sobrecobertura de contratos,4,5,-500,-405.59,4
+PEQUEÑO,2025-06-22,Trader no regulado,1,10,-453.36,-342.31,3
+PEQUEÑO,2025-06-22,Integrado/regional regulado,2,11,-89.48,-157.95,2
+PEQUEÑO,2025-06-22,Trader expuesto a bolsa (sin cobertura),0,3,105.26,103.23,1
+PEQUEÑO,2025-06-23,Trader con sobrecobertura de contratos,4,6,-500,-414.51,4
+PEQUEÑO,2025-06-23,Trader no regulado,1,9,-387.02,-304.41,3
+PEQUEÑO,2025-06-23,Integrado/regional regulado,2,12,-58.73,-159.14,2
+PEQUEÑO,2025-06-23,Trader expuesto a bolsa (sin cobertura),0,4,102.75,101.02,1
+PEQUEÑO,2025-06-24,Trader con sobrecobertura de contratos,4,5,-500,-366.03,4
+PEQUEÑO,2025-06-24,Trader no regulado,1,9,-302.76,-260.48,3
+PEQUEÑO,2025-06-24,Integrado/regional regulado,2,12,-50.13,-154.33,2
+PEQUEÑO,2025-06-24,Trader expuesto a bolsa (sin cobertura),0,3,95.09,93.36,1
+PEQUEÑO,2025-06-25,Trader con sobrecobertura de contratos,4,4,-192.61,-305.3,3
+PEQUEÑO,2025-06-25,Trader no regulado,1,10,-307.85,-283.68,4
+PEQUEÑO,2025-06-25,Integrado/regional regulado,2,12,-46.89,-136.32,2
+PEQUEÑO,2025-06-25,Trader expuesto a bolsa (sin cobertura),0,3,70.83,69.53,1
+PEQUEÑO,2025-06-26,Trader con sobrecobertura de contratos,4,4,-235.87,-316.13,3
+PEQUEÑO,2025-06-26,Trader no regulado,1,10,-296.39,-276.77,4
+PEQUEÑO,2025-06-26,Integrado/regional regulado,2,12,-39.16,-137.78,2
+PEQUEÑO,2025-06-26,Trader expuesto a bolsa (sin cobertura),0,3,68.81,67.22,1
+PEQUEÑO,2025-06-27,Trader con sobrecobertura de contratos,4,4,-105.87,-283.49,3
+PEQUEÑO,2025-06-27,Trader no regulado,1,10,-291.04,-263.58,4
+PEQUEÑO,2025-06-27,Integrado/regional regulado,2,12,-39.48,-137.07,2
+PEQUEÑO,2025-06-27,Trader expuesto a bolsa (sin cobertura),0,3,90.17,87.76,1
+PEQUEÑO,2025-06-28,Trader con sobrecobertura de contratos,4,5,-500,-333.14,4
+PEQUEÑO,2025-06-28,Trader no regulado,1,10,-311.3,-291.18,3
+PEQUEÑO,2025-06-28,Integrado/regional regulado,2,12,-56.82,-147.92,2
+PEQUEÑO,2025-06-28,Trader expuesto a bolsa (sin cobertura),0,3,104.9,103.02,1
+PEQUEÑO,2025-06-29,Trader con sobrecobertura de contratos,4,5,-500,-335.88,4
+PEQUEÑO,2025-06-29,Trader no regulado,1,10,-419.19,-332.99,3
+PEQUEÑO,2025-06-29,Integrado/regional regulado,2,11,-82.36,-166.24,2
+PEQUEÑO,2025-06-29,Trader expuesto a bolsa (sin cobertura),0,3,106.64,104.58,1
+PEQUEÑO,2025-06-30,Trader con sobrecobertura de contratos,4,4,-160.27,-297.02,4
+PEQUEÑO,2025-06-30,Trader no regulado,1,10,-59.67,-254.48,2
+PEQUEÑO,2025-06-30,Integrado/regional regulado,2,12,-71.86,-175.13,3
+PEQUEÑO,2025-06-30,Trader expuesto a bolsa (sin cobertura),0,4,104.77,103.01,1
+PEQUEÑO,2025-07-01,Trader con sobrecobertura de contratos,4,4,-71.46,-275.12,3
+PEQUEÑO,2025-07-01,Trader no regulado,1,10,-285.8,-279.98,4
+PEQUEÑO,2025-07-01,Integrado/regional regulado,2,12,-71.29,-155.28,2
+PEQUEÑO,2025-07-01,Trader expuesto a bolsa (sin cobertura),0,3,105.35,103.46,1
+PEQUEÑO,2025-07-02,Trader con sobrecobertura de contratos,4,6,-500,-362.38,4
+PEQUEÑO,2025-07-02,Trader no regulado,1,8,-16.13,-224.07,2
+PEQUEÑO,2025-07-02,Integrado/regional regulado,2,12,-90.38,-155.53,3
+PEQUEÑO,2025-07-02,Trader expuesto a bolsa (sin cobertura),0,3,88.59,87.03,1
+PEQUEÑO,2025-07-03,Trader con sobrecobertura de contratos,4,4,-258.51,-321.76,3
+PEQUEÑO,2025-07-03,Trader no regulado,1,10,-356.76,-292.09,4
+PEQUEÑO,2025-07-03,Integrado/regional regulado,2,12,-90.34,-160.73,2
+PEQUEÑO,2025-07-03,Trader expuesto a bolsa (sin cobertura),0,4,98.88,97.3,1
+PEQUEÑO,2025-07-04,Trader con sobrecobertura de contratos,4,5,-500,-354.99,4
+PEQUEÑO,2025-07-04,Trader no regulado,1,10,-300.68,-297.0,3
+PEQUEÑO,2025-07-04,Integrado/regional regulado,2,12,-92.59,-161.97,2
+PEQUEÑO,2025-07-04,Trader expuesto a bolsa (sin cobertura),0,3,99.23,96.6,1
+PEQUEÑO,2025-07-05,Trader con sobrecobertura de contratos,4,3,-500,-343.05,4
+PEQUEÑO,2025-07-05,Trader no regulado,1,10,-315.53,-299.31,3
+PEQUEÑO,2025-07-05,Integrado/regional regulado,2,12,-72.68,-191.07,2
+PEQUEÑO,2025-07-05,Trader expuesto a bolsa (sin cobertura),0,4,103.02,73.32,1
+PEQUEÑO,2025-07-06,Trader con sobrecobertura de contratos,4,4,-158.66,-297.11,3
+PEQUEÑO,2025-07-06,Trader no regulado,1,10,-436.3,-337.29,4
+PEQUEÑO,2025-07-06,Integrado/regional regulado,2,12,-86.49,-181.68,2
+PEQUEÑO,2025-07-06,Trader expuesto a bolsa (sin cobertura),0,3,103.5,101.48,1
+PEQUEÑO,2025-07-07,Trader con sobrecobertura de contratos,4,5,-500,-348.42,4
+PEQUEÑO,2025-07-07,Trader no regulado,1,10,-302.69,-286.89,3
+PEQUEÑO,2025-07-07,Integrado/regional regulado,2,12,-63.2,-155.76,2
+PEQUEÑO,2025-07-07,Trader expuesto a bolsa (sin cobertura),0,3,85.55,83.96,1
+PEQUEÑO,2025-07-08,Trader con sobrecobertura de contratos,4,6,-500,-364.72,4
+PEQUEÑO,2025-07-08,Trader no regulado,1,9,-317.87,-260.16,3
+PEQUEÑO,2025-07-08,Integrado/regional regulado,2,12,-73.5,-149.1,2
+PEQUEÑO,2025-07-08,Trader expuesto a bolsa (sin cobertura),0,3,71.11,69.72,1
+PEQUEÑO,2025-07-09,Trader con sobrecobertura de contratos,4,5,-500,-329.15,4
+PEQUEÑO,2025-07-09,Trader no regulado,1,10,-342.26,-288.87,3
+PEQUEÑO,2025-07-09,Integrado/regional regulado,2,12,-76.81,-155.05,2
+PEQUEÑO,2025-07-09,Trader expuesto a bolsa (sin cobertura),0,3,49.5,48.48,1
+PEQUEÑO,2025-07-10,Trader con sobrecobertura de contratos,4,5,-500,-319.72,4
+PEQUEÑO,2025-07-10,Trader no regulado,1,10,-332.35,-287.14,3
+PEQUEÑO,2025-07-10,Integrado/regional regulado,2,12,-95.83,-157.39,2
+PEQUEÑO,2025-07-10,Trader expuesto a bolsa (sin cobertura),0,3,60.6,59.14,1
+PEQUEÑO,2025-07-11,Trader con sobrecobertura de contratos,4,4,-121.93,-287.92,3
+PEQUEÑO,2025-07-11,Trader no regulado,1,10,-338.2,-284.74,4
+PEQUEÑO,2025-07-11,Integrado/regional regulado,2,12,-85.7,-152.75,2
+PEQUEÑO,2025-07-11,Trader expuesto a bolsa (sin cobertura),0,3,80.15,77.93,1
+PEQUEÑO,2025-07-12,Trader con sobrecobertura de contratos,4,4,-500,-382.2,4
+PEQUEÑO,2025-07-12,Trader no regulado,1,9,-369.69,-271.0,3
+PEQUEÑO,2025-07-12,Integrado/regional regulado,2,13,-59.3,-148.72,2
+PEQUEÑO,2025-07-12,Trader expuesto a bolsa (sin cobertura),0,3,93.68,91.96,1
+PEQUEÑO,2025-07-13,Trader con sobrecobertura de contratos,4,4,-206.55,-308.94,3
+PEQUEÑO,2025-07-13,Trader no regulado,1,10,-489.66,-342.17,4
+PEQUEÑO,2025-07-13,Integrado/regional regulado,2,12,-133.85,-226.56,2
+PEQUEÑO,2025-07-13,Trader expuesto a bolsa (sin cobertura),0,3,95.95,94.05,1
+PEQUEÑO,2025-07-14,Trader con sobrecobertura de contratos,4,4,-53.44,-270.67,2
+PEQUEÑO,2025-07-14,Trader no regulado,1,10,-341.22,-290.1,4
+PEQUEÑO,2025-07-14,Integrado/regional regulado,2,12,-118.8,-179.15,3
+PEQUEÑO,2025-07-14,Trader expuesto a bolsa (sin cobertura),0,3,102.38,100.55,1
+PEQUEÑO,2025-07-15,Trader con sobrecobertura de contratos,4,5,-500,-314.28,4
+PEQUEÑO,2025-07-15,Trader no regulado,1,10,-333.62,-286.01,3
+PEQUEÑO,2025-07-15,Integrado/regional regulado,2,12,-45.63,-162.19,2
+PEQUEÑO,2025-07-15,Trader expuesto a bolsa (sin cobertura),0,3,86.76,85.14,1
+PEQUEÑO,2025-07-16,Trader con sobrecobertura de contratos,4,5,-500,-330.66,4
+PEQUEÑO,2025-07-16,Trader no regulado,1,9,-357.79,-262.86,3
+PEQUEÑO,2025-07-16,Integrado/regional regulado,2,12,-43.28,-143.44,2
+PEQUEÑO,2025-07-16,Trader expuesto a bolsa (sin cobertura),0,3,87.53,85.99,1
+PEQUEÑO,2025-07-17,Trader con sobrecobertura de contratos,4,4,-111.09,-285.11,3
+PEQUEÑO,2025-07-17,Trader no regulado,1,10,-359.76,-285.18,4
+PEQUEÑO,2025-07-17,Integrado/regional regulado,2,12,-61.51,-143.95,2
+PEQUEÑO,2025-07-17,Trader expuesto a bolsa (sin cobertura),0,3,94.29,92.25,1
+PEQUEÑO,2025-07-18,Trader con sobrecobertura de contratos,4,4,-168.79,-299.49,3
+PEQUEÑO,2025-07-18,Trader no regulado,1,11,-500,-308.19,4
+PEQUEÑO,2025-07-18,Integrado/regional regulado,2,12,-76.19,-149.38,2
+PEQUEÑO,2025-07-18,Trader expuesto a bolsa (sin cobertura),0,3,78.17,76.0,1
+PEQUEÑO,2025-07-19,Trader con sobrecobertura de contratos,4,4,-219.97,-312.36,3
+PEQUEÑO,2025-07-19,Trader no regulado,1,11,-500,-311.86,4
+PEQUEÑO,2025-07-19,Integrado/regional regulado,2,12,-66.3,-160.43,2
+PEQUEÑO,2025-07-19,Trader expuesto a bolsa (sin cobertura),0,3,102.52,100.66,1
+PEQUEÑO,2025-07-20,Trader con sobrecobertura de contratos,4,4,-363.93,-348.4,3
+PEQUEÑO,2025-07-20,Trader no regulado,1,10,-500,-346.76,4
+PEQUEÑO,2025-07-20,Integrado/regional regulado,2,12,-66.54,-189.99,2
+PEQUEÑO,2025-07-20,Trader expuesto a bolsa (sin cobertura),0,3,102.2,99.88,1
+PEQUEÑO,2025-07-21,Trader con sobrecobertura de contratos,4,5,-500,-319.67,4
+PEQUEÑO,2025-07-21,Trader no regulado,1,9,-365.27,-268.17,3
+PEQUEÑO,2025-07-21,Integrado/regional regulado,2,12,-34.86,-149.86,2
+PEQUEÑO,2025-07-21,Trader expuesto a bolsa (sin cobertura),0,3,88.78,87.15,1
+PEQUEÑO,2025-07-22,Trader con sobrecobertura de contratos,4,4,-69.99,-274.92,3
+PEQUEÑO,2025-07-22,Trader no regulado,1,10,-351.0,-286.71,4
+PEQUEÑO,2025-07-22,Integrado/regional regulado,2,12,-37.88,-141.08,2
+PEQUEÑO,2025-07-22,Trader expuesto a bolsa (sin cobertura),0,3,64.65,63.36,1
+PEQUEÑO,2025-07-23,Trader con sobrecobertura de contratos,4,5,-500,-322.61,4
+PEQUEÑO,2025-07-23,Trader no regulado,1,9,-342.66,-263.71,3
+PEQUEÑO,2025-07-23,Integrado/regional regulado,2,12,-49.11,-139.81,2
+PEQUEÑO,2025-07-23,Trader expuesto a bolsa (sin cobertura),0,3,59.6,58.45,1
+PEQUEÑO,2025-07-24,Trader con sobrecobertura de contratos,4,5,-500,-321.35,4
+PEQUEÑO,2025-07-24,Trader no regulado,1,11,-483.93,-306.19,3
+PEQUEÑO,2025-07-24,Integrado/regional regulado,2,12,-51.44,-140.11,2
+PEQUEÑO,2025-07-24,Trader expuesto a bolsa (sin cobertura),0,3,60.78,59.32,1
+PEQUEÑO,2025-07-25,Trader con sobrecobertura de contratos,4,4,-85.85,-278.76,3
+PEQUEÑO,2025-07-25,Trader no regulado,1,10,-354.38,-282.34,4
+PEQUEÑO,2025-07-25,Integrado/regional regulado,2,12,-34.03,-131.67,2
+PEQUEÑO,2025-07-25,Trader expuesto a bolsa (sin cobertura),0,3,88.51,86.11,1
+PEQUEÑO,2025-07-26,Trader con sobrecobertura de contratos,4,4,-91.68,-280.23,3
+PEQUEÑO,2025-07-26,Trader no regulado,1,10,-397.75,-295.39,4
+PEQUEÑO,2025-07-26,Integrado/regional regulado,2,12,-50.1,-139.08,2
+PEQUEÑO,2025-07-26,Trader expuesto a bolsa (sin cobertura),0,3,94.22,92.48,1
+PEQUEÑO,2025-07-27,Trader con sobrecobertura de contratos,4,4,-222.86,-313.08,3
+PEQUEÑO,2025-07-27,Trader no regulado,1,11,-500,-352.9,4
+PEQUEÑO,2025-07-27,Integrado/regional regulado,2,12,-69.89,-167.18,2
+PEQUEÑO,2025-07-27,Trader expuesto a bolsa (sin cobertura),0,3,103.38,101.36,1
+PEQUEÑO,2025-07-28,Trader con sobrecobertura de contratos,4,4,-109.26,-284.84,3
+PEQUEÑO,2025-07-28,Trader no regulado,1,10,-376.22,-295.13,4
+PEQUEÑO,2025-07-28,Integrado/regional regulado,2,12,-35.95,-145.84,2
+PEQUEÑO,2025-07-28,Trader expuesto a bolsa (sin cobertura),0,3,72.98,71.57,1
+PEQUEÑO,2025-07-29,Trader con sobrecobertura de contratos,4,5,-500,-315.39,4
+PEQUEÑO,2025-07-29,Trader no regulado,1,10,-376.48,-290.29,3
+PEQUEÑO,2025-07-29,Integrado/regional regulado,2,12,-45.05,-142.29,2
+PEQUEÑO,2025-07-29,Trader expuesto a bolsa (sin cobertura),0,3,86.2,84.59,1
+PEQUEÑO,2025-07-30,Trader con sobrecobertura de contratos,4,5,-500,-317.82,4
+PEQUEÑO,2025-07-30,Trader no regulado,1,9,-385.68,-271.83,3
+PEQUEÑO,2025-07-30,Integrado/regional regulado,2,12,-36.2,-136.03,2
+PEQUEÑO,2025-07-30,Trader expuesto a bolsa (sin cobertura),0,3,48.74,47.73,1
+PEQUEÑO,2025-07-31,Trader con sobrecobertura de contratos,4,5,-500,-316.74,4
+PEQUEÑO,2025-07-31,Trader no regulado,1,9,-19.28,-212.78,2
+PEQUEÑO,2025-07-31,Integrado/regional regulado,2,12,-32.62,-132.84,3
+PEQUEÑO,2025-07-31,Trader expuesto a bolsa (sin cobertura),0,3,49.52,48.25,1

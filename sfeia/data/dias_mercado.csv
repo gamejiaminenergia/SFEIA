@@ -1,0 +1,213 @@
+﻿fecha,precio_bolsa_cop_kwh,precio_contratos_cop_kwh,spread_bolsa_menos_contratos,precio_escasez_cop_kwh,dia_escasez_1_0,estrategia_ganadora
+2025-01-01,223.3,299.5,-76.2,797.4,0,Trader expuesto a bolsa (sin cobertura)
+2025-01-02,469.7,308.0,161.7,797.4,0,Comercializador regulado
+2025-01-03,509.9,309.6,200.2,797.4,0,Comercializador regulado
+2025-01-04,417.2,306.0,111.2,797.4,0,Comercializador regulado
+2025-01-05,181.6,298.8,-117.2,797.4,0,Trader expuesto a bolsa (sin cobertura)
+2025-01-06,326.1,302.8,23.3,797.4,0,Comercializador regulado
+2025-01-07,356.6,302.5,54.1,797.4,0,Comercializador regulado
+2025-01-08,243.2,299.7,-56.5,797.4,0,Trader expuesto a bolsa (sin cobertura)
+2025-01-09,224.0,299.3,-75.3,797.4,0,Trader expuesto a bolsa (sin cobertura)
+2025-01-10,220.6,299.0,-78.4,797.4,0,Trader expuesto a bolsa (sin cobertura)
+2025-01-11,268.9,300.6,-31.7,797.4,0,Trader expuesto a bolsa (sin cobertura)
+2025-01-12,298.9,299.1,-0.2,797.4,0,Trader expuesto a bolsa (sin cobertura)
+2025-01-13,381.4,305.0,76.4,797.4,0,Comercializador regulado
+2025-01-14,447.0,308.4,138.6,797.4,0,Comercializador regulado
+2025-01-15,553.8,309.1,244.8,797.4,0,Comercializador regulado
+2025-01-16,597.8,314.0,283.8,797.4,0,Trader con sobrecobertura de contratos
+2025-01-17,688.4,317.6,370.8,797.4,0,Comercializador regulado
+2025-01-18,671.1,313.8,357.3,797.4,0,Comercializador regulado
+2025-01-19,644.1,313.3,330.8,797.4,0,Comercializador regulado
+2025-01-20,658.7,317.2,341.5,797.4,0,Comercializador regulado
+2025-01-21,682.2,315.0,367.2,797.4,0,Comercializador regulado
+2025-01-22,706.2,318.3,387.9,797.4,0,Comercializador regulado
+2025-01-23,738.2,316.4,421.8,797.4,0,Trader no regulado
+2025-01-24,681.4,314.8,366.6,797.4,0,Comercializador regulado
+2025-01-25,722.1,314.6,407.5,797.4,0,Comercializador regulado
+2025-01-26,760.3,316.2,444.2,797.4,0,Comercializador regulado
+2025-01-27,738.1,315.7,422.4,797.4,0,Trader no regulado
+2025-01-28,740.8,316.2,424.6,797.4,0,Comercializador regulado
+2025-01-29,765.9,315.2,450.7,797.4,0,Trader con sobrecobertura de contratos
+2025-01-30,708.5,314.6,393.8,797.4,0,Comercializador regulado
+2025-01-31,644.2,312.3,331.9,797.4,0,Comercializador regulado
+2025-02-01,635.0,312.8,322.2,793.9,0,Comercializador regulado
+2025-02-02,499.4,310.4,189.0,793.9,0,Comercializador regulado
+2025-02-03,655.3,312.1,343.2,793.9,0,Comercializador regulado
+2025-02-04,678.6,312.1,366.5,793.9,0,Comercializador regulado
+2025-02-05,711.0,314.1,396.8,793.9,0,Integrado/regional regulado
+2025-02-06,740.3,312.3,428.1,793.9,0,Comercializador regulado
+2025-02-07,648.8,312.9,335.9,793.9,0,Trader con sobrecobertura de contratos
+2025-02-08,492.6,309.9,182.7,793.9,0,Comercializador regulado
+2025-02-09,627.9,310.4,317.5,793.9,0,Comercializador regulado
+2025-02-10,601.3,311.5,289.7,793.9,0,Comercializador regulado
+2025-02-11,427.9,308.1,119.8,793.9,0,Comercializador regulado
+2025-02-12,620.9,311.3,309.6,793.9,0,Comercializador regulado
+2025-02-13,562.3,310.4,251.9,793.9,0,Trader con sobrecobertura de contratos
+2025-02-14,463.4,308.3,155.1,793.9,0,Trader con sobrecobertura de contratos
+2025-02-15,440.3,304.3,136.0,793.9,0,Comercializador regulado
+2025-02-16,346.6,306.5,40.1,793.9,0,Comercializador regulado
+2025-02-17,312.8,305.6,7.2,793.9,0,Comercializador regulado
+2025-02-18,277.3,304.3,-27.1,793.9,0,Trader expuesto a bolsa (sin cobertura)
+2025-02-19,237.0,304.0,-67.0,793.9,0,Trader expuesto a bolsa (sin cobertura)
+2025-02-20,257.9,304.2,-46.4,793.9,0,Trader expuesto a bolsa (sin cobertura)
+2025-02-21,213.8,303.3,-89.5,793.9,0,Trader expuesto a bolsa (sin cobertura)
+2025-02-22,199.3,303.4,-104.2,793.9,0,Trader expuesto a bolsa (sin cobertura)
+2025-02-23,195.0,303.3,-108.3,793.9,0,Trader expuesto a bolsa (sin cobertura)
+2025-02-24,274.3,304.3,-30.0,793.9,0,Trader expuesto a bolsa (sin cobertura)
+2025-02-25,317.2,305.7,11.5,793.9,0,Comercializador regulado
+2025-02-26,273.3,305.1,-31.8,793.9,0,Trader expuesto a bolsa (sin cobertura)
+2025-02-27,245.4,304.1,-58.6,793.9,0,Trader expuesto a bolsa (sin cobertura)
+2025-02-28,243.4,303.9,-60.4,793.9,0,Trader expuesto a bolsa (sin cobertura)
+2025-03-01,170.1,297.8,-127.7,770.5,0,Trader expuesto a bolsa (sin cobertura)
+2025-03-02,153.1,298.3,-145.2,770.5,0,Trader expuesto a bolsa (sin cobertura)
+2025-03-03,220.4,299.2,-78.8,770.5,0,Trader expuesto a bolsa (sin cobertura)
+2025-03-04,268.6,299.9,-31.2,770.5,0,Trader expuesto a bolsa (sin cobertura)
+2025-03-05,228.3,299.6,-71.3,770.5,0,Trader expuesto a bolsa (sin cobertura)
+2025-03-06,234.7,299.4,-64.7,770.5,0,Trader expuesto a bolsa (sin cobertura)
+2025-03-07,192.2,298.6,-106.4,770.5,0,Trader expuesto a bolsa (sin cobertura)
+2025-03-08,190.1,298.1,-108.0,770.5,0,Trader expuesto a bolsa (sin cobertura)
+2025-03-09,191.8,298.7,-107.0,770.5,0,Trader expuesto a bolsa (sin cobertura)
+2025-03-10,251.6,299.8,-48.2,770.5,0,Trader expuesto a bolsa (sin cobertura)
+2025-03-11,301.4,300.5,0.9,770.5,0,Comercializador regulado
+2025-03-12,289.5,300.6,-11.1,770.5,0,Trader expuesto a bolsa (sin cobertura)
+2025-03-13,258.9,299.9,-41.0,770.5,0,Trader expuesto a bolsa (sin cobertura)
+2025-03-14,248.7,300.0,-51.3,770.5,0,Trader expuesto a bolsa (sin cobertura)
+2025-03-15,242.5,299.5,-57.0,770.5,0,Trader expuesto a bolsa (sin cobertura)
+2025-03-16,245.9,300.1,-54.2,770.5,0,Trader expuesto a bolsa (sin cobertura)
+2025-03-17,266.2,300.4,-34.2,770.5,0,Trader expuesto a bolsa (sin cobertura)
+2025-03-18,245.7,299.9,-54.2,770.5,0,Trader expuesto a bolsa (sin cobertura)
+2025-03-19,265.2,300.2,-35.0,770.5,0,Trader expuesto a bolsa (sin cobertura)
+2025-03-20,277.9,300.6,-22.7,770.5,0,Trader expuesto a bolsa (sin cobertura)
+2025-03-21,230.6,299.6,-69.0,770.5,0,Trader expuesto a bolsa (sin cobertura)
+2025-03-22,211.0,298.9,-87.9,770.5,0,Trader expuesto a bolsa (sin cobertura)
+2025-03-23,162.7,298.2,-135.6,770.5,0,Trader expuesto a bolsa (sin cobertura)
+2025-03-24,202.0,298.7,-96.7,770.5,0,Trader expuesto a bolsa (sin cobertura)
+2025-03-25,295.1,300.6,-5.5,770.5,0,Trader expuesto a bolsa (sin cobertura)
+2025-03-26,252.1,299.7,-47.5,770.5,0,Trader expuesto a bolsa (sin cobertura)
+2025-03-27,307.4,301.0,6.5,770.5,0,Comercializador regulado
+2025-03-28,277.1,300.2,-23.1,770.5,0,Trader expuesto a bolsa (sin cobertura)
+2025-03-29,172.4,297.9,-125.5,770.5,0,Trader expuesto a bolsa (sin cobertura)
+2025-03-30,179.3,299.2,-119.9,770.5,0,Trader expuesto a bolsa (sin cobertura)
+2025-03-31,266.5,300.2,-33.6,770.5,0,Trader expuesto a bolsa (sin cobertura)
+2025-04-01,209.6,299.6,-90.0,739.8,0,Trader expuesto a bolsa (sin cobertura)
+2025-04-02,220.6,299.9,-79.3,739.8,0,Trader expuesto a bolsa (sin cobertura)
+2025-04-03,231.3,300.3,-68.9,739.8,0,Trader expuesto a bolsa (sin cobertura)
+2025-04-04,167.3,299.2,-131.9,739.8,0,Trader expuesto a bolsa (sin cobertura)
+2025-04-05,119.1,298.3,-179.2,739.8,0,Trader expuesto a bolsa (sin cobertura)
+2025-04-06,133.3,298.9,-165.6,739.8,0,Trader expuesto a bolsa (sin cobertura)
+2025-04-07,181.2,299.2,-117.9,739.8,0,Trader expuesto a bolsa (sin cobertura)
+2025-04-08,241.8,300.6,-58.8,739.8,0,Trader expuesto a bolsa (sin cobertura)
+2025-04-09,212.3,300.0,-87.6,739.8,0,Trader expuesto a bolsa (sin cobertura)
+2025-04-10,159.7,298.7,-139.0,739.8,0,Trader expuesto a bolsa (sin cobertura)
+2025-04-11,116.9,297.6,-180.7,739.8,0,Trader expuesto a bolsa (sin cobertura)
+2025-04-12,113.4,297.4,-184.0,739.8,0,Trader expuesto a bolsa (sin cobertura)
+2025-04-13,110.8,297.7,-186.8,739.8,0,Trader expuesto a bolsa (sin cobertura)
+2025-04-14,113.0,297.6,-184.6,739.8,0,Trader expuesto a bolsa (sin cobertura)
+2025-04-15,127.6,298.0,-170.4,739.8,0,Trader expuesto a bolsa (sin cobertura)
+2025-04-16,126.1,297.7,-171.6,739.8,0,Trader expuesto a bolsa (sin cobertura)
+2025-04-17,114.2,297.8,-183.6,739.8,0,Trader expuesto a bolsa (sin cobertura)
+2025-04-18,114.4,297.4,-183.0,739.8,0,Trader expuesto a bolsa (sin cobertura)
+2025-04-19,117.0,297.9,-180.9,739.8,0,Trader expuesto a bolsa (sin cobertura)
+2025-04-20,116.8,298.3,-181.5,739.8,0,Trader expuesto a bolsa (sin cobertura)
+2025-04-21,111.9,299.3,-187.4,739.8,0,Trader expuesto a bolsa (sin cobertura)
+2025-04-22,151.5,298.7,-147.2,739.8,0,Trader expuesto a bolsa (sin cobertura)
+2025-04-23,165.9,298.6,-132.7,739.8,0,Trader expuesto a bolsa (sin cobertura)
+2025-04-24,161.9,298.7,-136.8,739.8,0,Trader expuesto a bolsa (sin cobertura)
+2025-04-25,116.3,297.9,-181.6,739.8,0,Trader expuesto a bolsa (sin cobertura)
+2025-04-26,111.0,298.3,-187.2,739.8,0,Trader expuesto a bolsa (sin cobertura)
+2025-04-27,111.1,298.7,-187.6,739.8,0,Trader expuesto a bolsa (sin cobertura)
+2025-04-28,109.9,298.1,-188.1,739.8,0,Trader expuesto a bolsa (sin cobertura)
+2025-04-29,109.0,298.0,-189.0,739.8,0,Trader expuesto a bolsa (sin cobertura)
+2025-04-30,108.1,297.9,-189.8,739.8,0,Trader expuesto a bolsa (sin cobertura)
+2025-05-01,107.7,295.5,-187.8,724.3,0,Trader expuesto a bolsa (sin cobertura)
+2025-05-02,108.9,295.4,-186.6,724.3,0,Trader expuesto a bolsa (sin cobertura)
+2025-05-03,108.3,295.7,-187.4,724.3,0,Trader expuesto a bolsa (sin cobertura)
+2025-05-04,105.1,295.5,-190.4,724.3,0,Trader expuesto a bolsa (sin cobertura)
+2025-05-05,108.0,295.8,-187.9,724.3,0,Trader expuesto a bolsa (sin cobertura)
+2025-05-06,160.1,296.4,-136.3,724.3,0,Trader expuesto a bolsa (sin cobertura)
+2025-05-07,111.8,295.7,-183.9,724.3,0,Trader expuesto a bolsa (sin cobertura)
+2025-05-08,108.0,295.4,-187.4,724.3,0,Trader expuesto a bolsa (sin cobertura)
+2025-05-09,106.4,295.4,-189.0,724.3,0,Trader expuesto a bolsa (sin cobertura)
+2025-05-10,105.6,295.0,-189.4,724.3,0,Trader expuesto a bolsa (sin cobertura)
+2025-05-11,109.8,295.6,-185.8,724.3,0,Trader expuesto a bolsa (sin cobertura)
+2025-05-12,160.1,296.1,-135.9,724.3,0,Trader expuesto a bolsa (sin cobertura)
+2025-05-13,190.6,296.4,-105.8,724.3,0,Trader expuesto a bolsa (sin cobertura)
+2025-05-14,171.2,296.3,-125.1,724.3,0,Trader expuesto a bolsa (sin cobertura)
+2025-05-15,123.6,295.7,-172.1,724.3,0,Trader expuesto a bolsa (sin cobertura)
+2025-05-16,111.1,295.3,-184.2,724.3,0,Trader expuesto a bolsa (sin cobertura)
+2025-05-17,112.9,294.7,-181.8,724.3,0,Trader expuesto a bolsa (sin cobertura)
+2025-05-18,107.4,295.4,-188.0,724.3,0,Trader expuesto a bolsa (sin cobertura)
+2025-05-19,126.7,295.9,-169.2,724.3,0,Trader expuesto a bolsa (sin cobertura)
+2025-05-20,178.3,296.6,-118.3,724.3,0,Trader expuesto a bolsa (sin cobertura)
+2025-05-21,178.3,296.5,-118.2,724.3,0,Trader expuesto a bolsa (sin cobertura)
+2025-05-22,162.8,296.3,-133.5,724.3,0,Trader expuesto a bolsa (sin cobertura)
+2025-05-23,182.4,296.2,-113.9,724.3,0,Trader expuesto a bolsa (sin cobertura)
+2025-05-24,110.1,294.9,-184.8,724.3,0,Trader expuesto a bolsa (sin cobertura)
+2025-05-25,109.5,295.2,-185.7,724.3,0,Trader expuesto a bolsa (sin cobertura)
+2025-05-26,110.8,295.4,-184.5,724.3,0,Trader expuesto a bolsa (sin cobertura)
+2025-05-27,125.1,295.9,-170.7,724.3,0,Trader expuesto a bolsa (sin cobertura)
+2025-05-28,124.3,295.3,-171.1,724.3,0,Trader expuesto a bolsa (sin cobertura)
+2025-05-29,159.9,295.7,-135.9,724.3,0,Trader expuesto a bolsa (sin cobertura)
+2025-05-30,109.8,295.3,-185.5,724.3,0,Trader expuesto a bolsa (sin cobertura)
+2025-05-31,107.9,295.4,-187.5,724.3,0,Trader expuesto a bolsa (sin cobertura)
+2025-06-01,108.2,294.4,-186.2,673.7,0,Trader expuesto a bolsa (sin cobertura)
+2025-06-02,109.1,294.4,-185.4,673.7,0,Trader expuesto a bolsa (sin cobertura)
+2025-06-03,108.9,294.3,-185.4,673.7,0,Trader expuesto a bolsa (sin cobertura)
+2025-06-04,107.5,294.3,-186.7,673.7,0,Trader expuesto a bolsa (sin cobertura)
+2025-06-05,113.0,294.4,-181.4,673.7,0,Trader expuesto a bolsa (sin cobertura)
+2025-06-06,107.5,294.6,-187.1,673.7,0,Trader expuesto a bolsa (sin cobertura)
+2025-06-07,105.9,294.3,-188.4,673.7,0,Trader expuesto a bolsa (sin cobertura)
+2025-06-08,109.2,294.0,-184.8,673.7,0,Trader expuesto a bolsa (sin cobertura)
+2025-06-09,116.7,294.6,-178.0,673.7,0,Trader expuesto a bolsa (sin cobertura)
+2025-06-10,109.0,295.1,-186.2,673.7,0,Trader expuesto a bolsa (sin cobertura)
+2025-06-11,108.3,295.2,-186.9,673.7,0,Trader expuesto a bolsa (sin cobertura)
+2025-06-12,111.6,294.9,-183.4,673.7,0,Trader expuesto a bolsa (sin cobertura)
+2025-06-13,109.4,295.2,-185.8,673.7,0,Trader expuesto a bolsa (sin cobertura)
+2025-06-14,112.7,294.9,-182.2,673.7,0,Trader expuesto a bolsa (sin cobertura)
+2025-06-15,112.7,294.9,-182.2,673.7,0,Trader expuesto a bolsa (sin cobertura)
+2025-06-16,111.3,294.6,-183.3,673.7,0,Trader expuesto a bolsa (sin cobertura)
+2025-06-17,105.6,294.7,-189.1,673.7,0,Trader expuesto a bolsa (sin cobertura)
+2025-06-18,105.6,294.5,-188.8,673.7,0,Trader expuesto a bolsa (sin cobertura)
+2025-06-19,107.9,294.5,-186.6,673.7,0,Trader expuesto a bolsa (sin cobertura)
+2025-06-20,106.2,294.7,-188.5,673.7,0,Trader expuesto a bolsa (sin cobertura)
+2025-06-21,105.9,294.5,-188.6,673.7,0,Trader expuesto a bolsa (sin cobertura)
+2025-06-22,106.3,294.7,-188.4,673.7,0,Trader expuesto a bolsa (sin cobertura)
+2025-06-23,110.0,295.1,-185.0,673.7,0,Trader expuesto a bolsa (sin cobertura)
+2025-06-24,121.5,295.3,-173.9,673.7,0,Trader expuesto a bolsa (sin cobertura)
+2025-06-25,157.6,295.4,-137.7,673.7,0,Trader expuesto a bolsa (sin cobertura)
+2025-06-26,160.7,295.4,-134.8,673.7,0,Trader expuesto a bolsa (sin cobertura)
+2025-06-27,128.8,294.9,-166.1,673.7,0,Trader expuesto a bolsa (sin cobertura)
+2025-06-28,106.8,294.2,-187.4,673.7,0,Trader expuesto a bolsa (sin cobertura)
+2025-06-29,104.2,294.6,-190.4,673.7,0,Trader expuesto a bolsa (sin cobertura)
+2025-06-30,107.0,294.6,-187.6,673.7,0,Trader expuesto a bolsa (sin cobertura)
+2025-07-01,106.1,295.8,-189.6,699.2,0,Trader expuesto a bolsa (sin cobertura)
+2025-07-02,131.1,296.2,-165.1,699.2,0,Trader expuesto a bolsa (sin cobertura)
+2025-07-03,115.8,295.3,-179.5,699.2,0,Trader expuesto a bolsa (sin cobertura)
+2025-07-04,115.3,296.2,-181.0,699.2,0,Trader expuesto a bolsa (sin cobertura)
+2025-07-05,109.6,295.9,-186.3,699.2,0,Trader expuesto a bolsa (sin cobertura)
+2025-07-06,108.9,296.5,-187.6,699.2,0,Trader expuesto a bolsa (sin cobertura)
+2025-07-07,135.7,296.6,-160.9,699.2,0,Trader expuesto a bolsa (sin cobertura)
+2025-07-08,157.2,296.8,-139.6,699.2,0,Trader expuesto a bolsa (sin cobertura)
+2025-07-09,189.5,297.2,-107.7,699.2,0,Trader expuesto a bolsa (sin cobertura)
+2025-07-10,172.9,297.2,-124.3,699.2,0,Trader expuesto a bolsa (sin cobertura)
+2025-07-11,143.7,296.5,-152.8,699.2,0,Trader expuesto a bolsa (sin cobertura)
+2025-07-12,123.5,295.6,-172.0,699.2,0,Trader expuesto a bolsa (sin cobertura)
+2025-07-13,120.2,296.0,-175.8,699.2,0,Trader expuesto a bolsa (sin cobertura)
+2025-07-14,110.6,296.0,-185.4,699.2,0,Trader expuesto a bolsa (sin cobertura)
+2025-07-15,133.9,296.0,-162.1,699.2,0,Trader expuesto a bolsa (sin cobertura)
+2025-07-16,132.7,295.9,-163.2,699.2,0,Trader expuesto a bolsa (sin cobertura)
+2025-07-17,122.6,296.1,-173.5,699.2,0,Trader expuesto a bolsa (sin cobertura)
+2025-07-18,146.7,295.9,-149.2,699.2,0,Trader expuesto a bolsa (sin cobertura)
+2025-07-19,110.4,296.2,-185.8,699.2,0,Trader expuesto a bolsa (sin cobertura)
+2025-07-20,110.8,296.5,-185.6,699.2,0,Trader expuesto a bolsa (sin cobertura)
+2025-07-21,130.9,296.4,-165.5,699.2,0,Trader expuesto a bolsa (sin cobertura)
+2025-07-22,166.8,296.5,-129.6,699.2,0,Trader expuesto a bolsa (sin cobertura)
+2025-07-23,174.4,296.8,-122.4,699.2,0,Trader expuesto a bolsa (sin cobertura)
+2025-07-24,172.6,296.8,-124.2,699.2,0,Trader expuesto a bolsa (sin cobertura)
+2025-07-25,131.3,296.0,-164.7,699.2,0,Trader expuesto a bolsa (sin cobertura)
+2025-07-26,122.8,296.0,-173.3,699.2,0,Trader expuesto a bolsa (sin cobertura)
+2025-07-27,109.1,296.2,-187.2,699.2,0,Trader expuesto a bolsa (sin cobertura)
+2025-07-28,154.4,296.9,-142.4,699.2,0,Trader expuesto a bolsa (sin cobertura)
+2025-07-29,134.7,296.7,-162.0,699.2,0,Trader expuesto a bolsa (sin cobertura)
+2025-07-30,190.6,297.6,-107.0,699.2,0,Trader expuesto a bolsa (sin cobertura)
+2025-07-31,189.4,297.5,-108.1,699.2,0,Trader expuesto a bolsa (sin cobertura)

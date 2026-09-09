@@ -1,0 +1,6 @@
+﻿posicion,estrategia,cluster,dias_presente,mediana_margen_cop_kwh,media_margen_cop_kwh,dias_puesto_1,pct_dias_top3,rango_promedio,tendencia_2da_menos_1ra_mitad,es_atipico
+1,Trader expuesto a bolsa (sin cobertura),0,212,64.65,-5.23,168,82.5,1.66,194.1,0
+2,Comercializador regulado,3,212,-12.47,-28.58,36,99.5,1.84,45.91,0
+3,Integrado/regional regulado,2,212,-50.05,-61.38,1,90.1,2.97,29.89,0
+4,Trader no regulado,1,212,-86.37,-100.25,2,17.0,3.95,20.25,0
+5,Trader con sobrecobertura de contratos,4,212,-245.26,-275.51,5,10.8,4.58,15.07,0

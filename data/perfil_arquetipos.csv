@@ -1,6 +1,0 @@
-﻿estrategia,cluster,n_agentes_dia,n_agentes_unicos,media_log_demanda,media_pct_no_regulado,media_pct_cobertura,media_pct_exposicion,media_pct_sicep,media_compra_regulado,n_agentes_GRANDE,n_agentes_MEDIANO,n_agentes_PEQUENO,agentes_representativos
-Trader no regulado,0,2104,24,0.42,97.07,7110.35,335.37,0.0,0.03,174,315,1615,GECC GNCC NEUC CHVC BIAC
-Integrado/regional regulado,1,1758,9,2.8,16.83,88.5,13.78,82.04,1.0,1038,720,0,ENDC EPMC CSIC CMMC EPSC
-Comercializador regulado,2,6324,37,0.67,20.09,162.81,19.59,86.14,1.0,0,3970,2354,GNCC CNSC EMSC HLAC CDNC
-Trader expuesto a bolsa (sin cobertura),3,1316,47,0.21,42.03,0.88,139.76,0.0,0.16,26,177,1113,CSIC EPSC GECC EMIC ENDC
-Trader con sobrecobertura de contratos,4,2053,21,0.71,84.09,2335.84,0.82,0.22,0.45,245,728,1080,ISGC GECC SOEC ETTC NEUC

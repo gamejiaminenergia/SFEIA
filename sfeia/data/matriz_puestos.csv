@@ -1,0 +1,6 @@
+﻿estrategia,cluster,dias_puesto_1,dias_puesto_2,dias_puesto_3,dias_puesto_4,dias_puesto_5,total_dias
+Trader expuesto a bolsa (sin cobertura),0,168,4,3,18,19,212
+Trader no regulado,1,2,1,33,146,30,212
+Integrado/regional regulado,2,1,27,163,20,1,212
+Comercializador regulado,3,36,174,1,1,0,212
+Trader con sobrecobertura de contratos,4,5,6,12,27,162,212

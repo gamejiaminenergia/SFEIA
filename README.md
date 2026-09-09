@@ -2,6 +2,8 @@
 
 Análisis de estrategias de comercialización del Mercado de Energía Mayorista (MEM) colombiano: para **todos** los comercializadores, se determina su **estrategia diaria** (k-means pooled sobre agentes-día) y se **rankea el desempeño diario** de cada estrategia (margen estimado por kWh), con balance del período. Cruza el marco regulatorio CREG con datos reales de mercado (base elecdb / XM).
 
+Todo el estudio actual vive en el paquete autocontenido **`sfeia/`** (MVC + config + sql + tests + salidas `docs/`/`data/`). La raíz del repo queda libre para el **simulador**, que reutilizará funcionalidades vía `from sfeia.app.services import ...`.
+
 ## Requisitos
 
 - Python 3.12+ y PostgreSQL local con la base `elecdb` cargada (esquema y funciones `fn_estudio_*` documentados en la skill `elecdb`).
@@ -16,12 +18,13 @@ python -m venv .venv
 
 | Qué quieres | Comando | Resultado |
 |---|---|---|
-| Estudio híbrido diario (único) | `./.venv/bin/python main.py` | `docs/informe_estrategias_diarias.md` |
+| Estudio híbrido diario (único) | `./.venv/bin/python -m sfeia.main` | `sfeia/docs/informe_estrategias_diarias.md` |
+| Asistente imitador del agente XXXC (top-N) | `./.venv/bin/python -m asistente` | `docs/informe_asistente_imitador.md` |
 | Tests unitarios (sin BD) | `./.venv/bin/python -m pytest -q` | — |
 
 > **Un solo estudio, toda la población.** El informe diario reemplaza al benchmark por segmento (H1-2026) y al
-> k-means de H1-2026 (archivados en `docs/archivado/`). El estudio analiza **TODOS los comercializadores** con
-> demanda en la ventana (65) — no hay muestra. `main.py` no tiene flags de estudio/muestra.
+> k-means de H1-2026 (archivados en `sfeia/docs/archivado/`). El estudio analiza **TODOS los comercializadores** con
+> demanda en la ventana (65) — no hay muestra. `sfeia/main.py` no tiene flags de estudio/muestra.
 
 ### 1) Ejecutar el estudio (paso a paso)
 
@@ -30,11 +33,11 @@ python -m venv .venv
 python -m venv .venv && ./.venv/bin/pip install -r requirements.txt
 
 # (2) Regenerar el estudio y el informe Markdown
-./.venv/bin/python main.py
+./.venv/bin/python -m sfeia.main
 ```
 
 El comando conecta a elecdb, ejecuta `F-1` (segmentación de los 65) + `FaseDiaria` y deja el informe en
-**`docs/informe_estrategias_diarias.md`** y **9 archivos CSV en `data/`** (análisis directo en Excel/Sheets).
+**`sfeia/docs/informe_estrategias_diarias.md`** y **9 archivos CSV en `sfeia/data/`** (análisis directo en Excel/Sheets).
 En consola imprime un resumen con los segmentos y el **ranking final de
 estrategias** (mediana de margen COP/kWh/día y días en 1.er puesto), p. ej.:
 
@@ -72,13 +75,13 @@ Todos abren directo en Excel (UTF-8 con BOM; cabeceras en español y unidades cl
 
 ### 2) Cambiar el período de fechas
 
-En `config/config.yaml`, sección `ventana:`. El estudio usa `foco_ini`–`foco_fin` y la convención de fechas de
+En `sfeia/config/config.yaml`, sección `ventana:`. El estudio usa `foco_ini`–`foco_fin` y la convención de fechas de
 elecdb (familia C01–C14 con fin **exclusivo** `fin_c_familia`, C15 con fin **inclusivo** `fin_c15`). P. ej. para
-analizar Q3-2026: `foco_ini: "2026-07-01"`, `foco_fin: "2026-09-30"`, `fin_c_familia: "2026-10-01"`, `fin_c15: "2026-09-30"`.
+analizar Q1-2025: `foco_ini: "2025-01-01"`, `foco_fin: "2025-03-31"`, `fin_c_familia: "2025-04-01"`, `fin_c15: "2025-03-31"`.
 
 ### 3) Ajustar el modelo (opcional)
 
-Todo se parametriza en `config/config.yaml`, no en código:
+Todo se parametriza en `sfeia/config/config.yaml`, no en código:
 
 - **Número de estrategias (arquetipos):** `diario.k: 5`. La silhouette es plana (~0.4) en la población diaria, por
   eso `k` va fijo; `diario.k: null` lo devuelve a automático (máximo silhouette en `diario.k_min`–`diario.k_max`).
@@ -102,10 +105,29 @@ Todo se parametriza en `config/config.yaml`, no en código:
 7. **Balance del período** — ranking final pooled con mediana/media de margen, días 1.º, % top-3, rango promedio, tendencia y casos atípicos.
 8. **Limitaciones** — advertencias de datos y modelado.
 
-## Configuración (`config/config.yaml`)
+### 5) Asistente imitador del agente XXXC (simulador en la raíz)
 
-- `ventana:` foco del análisis (Ene–Jul 2026) + convención fin exclusivo/inclusivo (`fin_c_familia` vs `fin_c15`).
+En vez de predecir o crear estrategia propia, el asistente **imita** (Behavioral Cloning) a los **top-N** agentes de un
+(segmento, estrategia) en una ventana de **estudio** y replica su perfil de abastecimiento en una ventana de **impacto**.
+
+```bash
+./.venv/bin/python -m asistente \
+  --segmento PEQUEÑO \
+  --estrategia "Trader expuesto a bolsa (sin cobertura)" \
+  --top 5 \
+  --estudio-ini 2025-07-01 --estudio-fin 2025-07-31 \
+  --impacto-ini 2025-08-01 --impacto-fin 2025-08-08
+```
+
+- Salida: `docs/informe_asistente_imitador.md` + `data/{maestros_topN, politica_clonacion, simulacion_impacto, resumen_impacto}.csv`.
+- Sin fechas: estudio = ventana principal menos los últimos `asistente.dias_impacto_por_defecto` días; impacto = esos últimos días.
+- La BD llega a **2026-07-31**; el proyecto corre sobre **2025** (año completo), así que cualquier ventana de 2025 funciona y las posteriores a 2026-07-31 **fallan con un error claro**. Metodología en `docs/plan_agente_xxxc_asistente.md`.
+
+## Configuración (`sfeia/config/config.yaml`)
+
+- `ventana:` foco del análisis (Ene–Jul 2025) + convención fin exclusivo/inclusivo (`fin_c_familia` vs `fin_c15`).
 - `diario:` parámetros del clustering diario y guardas de robustez del ranking.
+- `asistente:` defaults del asistente imitador (segmento/estrategia/top, bins de spread, guardas, salidas).
 - `informe_diario:` ruta y título del informe único.
 - `modelo_financiero:` parámetros C16–C18 (Pv=350 fijo, cargos, garantías).
 
@@ -114,21 +136,27 @@ La conexión a la BD usa por defecto `postgresql://postgres:postgres@localhost:5
 ## Estructura
 
 ```
-config/   Configuración (DSN, ventana, diario, modelo financiero)
-sql/      Queries SQL parametrizadas (f-1…f5, d1_diario)
-app/      MVC: models (repositorio elecdb) · controllers (FaseSegmentacion + FaseDiaria) · services (diario, clustering, kpis) · views (informe_diario_md)
-tests/    Pruebas unitarias
-data/     CSVs exportados por main.py (análisis en Excel/Sheets)
-docs/     Planes metodológicos + informe generado (salida) + archivado/ (informes de los estudios reemplazados)
+sfeia/    Paquete autocontenido del estudio (app/ MVC, config/, sql/, tests/, main.py, salidas docs/ y data/)
+  app/      MVC: models (repositorio elecdb) · controllers (FaseSegmentacion + FaseDiaria) · services (diario, clustering, kpis) · views (informe_diario_md)
+  config/   Configuración (DSN, ventana, diario, modelo financiero)
+  sql/      Queries SQL parametrizadas (f-1…f5, d1_diario)
+  tests/    Pruebas unitarias
+  data/     CSVs exportados por main.py (análisis en Excel/Sheets)
+  docs/     Planes metodológicos + informe generado (salida) + archivado/ (informes de los estudios reemplazados)
+asistente/  Simulador (raíz): asistente imitador del agente XXXC (app/ MVC propio, main.py CLI, tests/)
+docs/       (raíz) Plan e informe del asistente imitador
+data/       (raíz) CSVs exportados por `python -m asistente`
 ```
 
 ## Documentación
 
-- `docs/plan_estrategias_diarias.md` — metodología del estudio híbrido diario.
-- `docs/plan_estrategias_comercializacion.md`, `docs/plan_segmentacion_kmeans.md` — metodología de los estudios reemplazados (referencia).
-- `docs/analisis_regulatorio.md` — marco normativo CREG (Q1–Q5).
-- `docs/informe_estrategias_diarias.md` — salida de `main.py` (no editar a mano).
-- `docs/archivado/` — informes antiguos (`informe_estrategias_comercializacion.md`, `informe_arquetipos_kmeans.md`).
+- `sfeia/docs/plan_estrategias_diarias.md` — metodología del estudio híbrido diario.
+- `sfeia/docs/plan_estrategias_comercializacion.md`, `sfeia/docs/plan_segmentacion_kmeans.md` — metodología de los estudios reemplazados (referencia).
+- `sfeia/docs/analisis_regulatorio.md` — marco normativo CREG (Q1–Q5).
+- `sfeia/docs/informe_estrategias_diarias.md` — salida de `main.py` (no editar a mano).
+- `sfeia/docs/archivado/` — informes antiguos (`informe_estrategias_comercializacion.md`, `informe_arquetipos_kmeans.md`).
+- `docs/plan_agente_xxxc_asistente.md` (raíz) — metodología del asistente imitador.
+- `docs/informe_asistente_imitador.md` (raíz) — salida de `python -m asistente` (no editar a mano).
 
 ## Advertencias
 

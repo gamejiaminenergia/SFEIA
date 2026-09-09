@@ -1,0 +1,7 @@
+﻿contexto_spread,spread_min_cop_kwh,spread_max_cop_kwh,dias_entrenamiento,pct_cobertura_contratos,pct_exposicion_bolsa,pct_no_regulado,pct_sicep
+muy_barata,-999999.0,0.0,529,0.0,100.0,0.0,0.0
+barata,0.0,200.0,64,2.0,98.0,0.0,0.0
+neutral,200.0,400.0,84,2.1,97.9,0.0,0.0
+cara,400.0,600.0,28,2.1,97.9,0.0,0.0
+escasez,600.0,999999.0,0,,,,
+FALLBACK,,,705,0.0,100.0,0.0,0.0
