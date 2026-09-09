@@ -73,6 +73,8 @@ Verificación 2026-09-09 sobre `fact_hourly_agente` (2026-01-01 → 2026-07-01, 
 
 #### 3.1.1 Muestra estratificada (selección por segmento y arquetipo)
 
+> **Actualización 2026-09-09:** la selección de la muestra es configurable (`seleccion_muestra.metodo` en `config/config.yaml`). El método `manual` usa las listas de abajo (25 agentes) y reproduce el informe previo byte-idéntico. El método `kmeans` analiza **toda la población (65)** y deriva representantes por clúster k-means (medoide + extremos) para la narrativa — eliminando el sesgo de la selección a mano.
+
 El estudio corre sobre una **muestra estratificada** que garantiza cobertura de los tres segmentos. La asignación de segmento se calcula para **todos** los agentes (65) en la fase F-1 (sección 5) con lógica reutilizable en `app/services/segmentacion.py` (umbrales parametrizados para reproducibilidad).
 
 | Segmento | Códigos seleccionados | N | Criterio dentro del segmento |

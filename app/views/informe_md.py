@@ -50,8 +50,14 @@ def renderizar(datos: dict, cfg: dict) -> str:
     # ---------- Encabezado ----------
     L.append(f"# {cfg['informe']['titulo']}")
     L.append("")
-    L.append(f"> Proyecto SFEIA · Generado {cfg['ventana']['foco_ini']} → {cfg['ventana']['foco_fin']} (H1-2026)"
-             f" · Población: **{f_1['total_agentes']} comercializadores** · Muestra estratificada: **{f_1['muestra_total']}**.")
+    kmeans = f_1.get("muestra_metodo") == "kmeans"
+    if kmeans:
+        L.append(f"> Proyecto SFEIA · Generado {cfg['ventana']['foco_ini']} → {cfg['ventana']['foco_fin']} (H1-2026)"
+                 f" · Población: **{f_1['total_agentes']} comercializadores** · **Población completa**"
+                 f" (muestra derivada por k-means, sin selección manual).")
+    else:
+        L.append(f"> Proyecto SFEIA · Generado {cfg['ventana']['foco_ini']} → {cfg['ventana']['foco_fin']} (H1-2026)"
+                 f" · Población: **{f_1['total_agentes']} comercializadores** · Muestra estratificada: **{f_1['muestra_total']}**.")
     L.append("")
 
     # ---------- Resumen ejecutivo ----------
@@ -63,7 +69,17 @@ def renderizar(datos: dict, cfg: dict) -> str:
              f"concentran {_fmt(rseg['GRANDE']['pct_mercado'], '%')} de la demanda; los **{rseg['MEDIANO']['n']} MEDIANO** "
              f"el {_fmt(rseg['MEDIANO']['pct_mercado'], '%')}; los **{rseg['PEQUEÑO']['n']} PEQUEÑO** solo el "
              f"{_fmt(rseg['PEQUEÑO']['pct_mercado'], '%')} pero con {_fmt(rseg['PEQUEÑO']['pct_noreg'], '%')} de demanda no regulada (mix invertido).")
-    L.append(f"- La **muestra estratificada** ({f_1['muestra_total']} agentes) tipifica los arquetipos por segmento; ver secciones 2 y 8.")
+    if kmeans:
+        cl = datos.get("clustering")
+        reps = f_1.get("representantes", {})
+        L.append(f"- Se analiza la **población completa ({f_1['muestra_total']} agentes)**; los representantes por"
+                 f" clúster k-means (medoide + extremos) se muestran en la sección 2.")
+        if cl:
+            L.append(f"- Clústeres k-means (k={cl['k_seleccionado']}): "
+                     + "; ".join(f"**{p.arquetipo}** (n={p.n})" for _, p in sorted(cl["perfiles"].items()))
+                     + " — ARI vs segmento F-1: **" + str(cl["vs_segmento"]["ari"]) + "**.")
+    else:
+        L.append(f"- La **muestra estratificada** ({f_1['muestra_total']} agentes) tipifica los arquetipos por segmento; ver secciones 2 y 8.")
     L.append("")
 
     # ---------- F0 Contexto ----------
@@ -91,10 +107,29 @@ def renderizar(datos: dict, cfg: dict) -> str:
         L.append(f"| **{seg}** | — | {r['n']} | {_fmt(r['gwh'])} | {_fmt(r['pct_mercado'], '%')} | "
                  f"{_fmt(r['pct_reg'], '%')} | {_fmt(r['pct_noreg'], '%')} |")
     L.append("")
-    L.append("Muestra estratificada por segmento y arquetipo:")
-    L.append("")
-    for seg, codes in f_1["muestra"].items():
-        L.append(f"- **{seg}** ({len(codes)}): " + ", ".join(codes))
+    if kmeans:
+        cl = datos.get("clustering")
+        reps = f_1.get("representantes", {})
+        L.append("La muestra de análisis profundo es la **población completa**"
+                 f" ({f_1['muestra_total']} agentes), agrupada por segmento de tamaño:")
+        L.append("")
+        for seg, codes in f_1["muestra"].items():
+            L.append(f"- **{seg}** ({len(codes)}): " + ", ".join(codes))
+        if cl and reps:
+            L.append("")
+            L.append("Representantes por clúster k-means (medoide = más cercano al centroide; extremos = casos de"
+                     f" borde/atípicos del clúster, k={cl['k_seleccionado']}):")
+            L.append("")
+            L.append(_tabla(
+                ["Clúster", "Arquetipo emergente", "n", "Medoide", "Extremos (borde)"],
+                [[f"C{cid}", cl["perfiles"][cid].arquetipo, r["n"], r["medoide"],
+                  ", ".join(r["extremos"]) or "—"] for cid, r in sorted(reps.items())],
+            ))
+    else:
+        L.append("Muestra estratificada por segmento y arquetipo:")
+        L.append("")
+        for seg, codes in f_1["muestra"].items():
+            L.append(f"- **{seg}** ({len(codes)}): " + ", ".join(codes))
     L.append("")
 
     # ---------- F1 Cartera ----------
@@ -166,12 +201,27 @@ def renderizar(datos: dict, cfg: dict) -> str:
     # ---------- F6 Matriz ----------
     L.append("## 8. Matriz por segmento y arquetipos (F6)")
     L.append("")
-    L.append(_tabla(
-        ["Segmento", "Agente", "Dema GWh", "% Reg", "% Cobertura", "% Exposición", "% SICEP", "% Pérdidas", "Costo energía", "Garantía est.", "Arquetipo"],
-        [[f.segmento, f.codigo, _fmt(f.dema_gwh), _fmt(f.pct_reg, "%"), _fmt(f.pct_cobertura, "%"),
-          _fmt(f.pct_exposicion, "%"), _fmt(f.pct_sicep, "%"), _fmt(f.pct_perdidas, "%"),
-          _fmt(f.costo_energia_cop_kwh), _fmt_cop(f.garantia_est_cop), f.arquetipo] for f in f6["matriz"]],
-    ))
+    if kmeans and datos.get("clustering"):
+        cl = datos["clustering"]
+        reps = f_1.get("representantes", {})
+        cluster_por_codigo = {a.codigo: a.cluster_id for a in cl["agentes"]}
+        set_reps = {r["medoide"] for r in reps.values()} | {e for r in reps.values() for e in r["extremos"]}
+        L.append(_tabla(
+            ["Segmento", "Agente", "Clúster", "Rep.", "Dema GWh", "% Reg", "% Cobertura", "% Exposición",
+             "% SICEP", "% Pérdidas", "Costo energía", "Garantía est.", "Arquetipo"],
+            [[f.segmento, f.codigo, f"c{cluster_por_codigo.get(f.codigo, '?')}",
+              "✓" if f.codigo in set_reps else "", _fmt(f.dema_gwh), _fmt(f.pct_reg, "%"),
+              _fmt(f.pct_cobertura, "%"), _fmt(f.pct_exposicion, "%"), _fmt(f.pct_sicep, "%"),
+              _fmt(f.pct_perdidas, "%"), _fmt(f.costo_energia_cop_kwh), _fmt_cop(f.garantia_est_cop),
+              f.arquetipo] for f in f6["matriz"]],
+        ))
+    else:
+        L.append(_tabla(
+            ["Segmento", "Agente", "Dema GWh", "% Reg", "% Cobertura", "% Exposición", "% SICEP", "% Pérdidas", "Costo energía", "Garantía est.", "Arquetipo"],
+            [[f.segmento, f.codigo, _fmt(f.dema_gwh), _fmt(f.pct_reg, "%"), _fmt(f.pct_cobertura, "%"),
+              _fmt(f.pct_exposicion, "%"), _fmt(f.pct_sicep, "%"), _fmt(f.pct_perdidas, "%"),
+              _fmt(f.costo_energia_cop_kwh), _fmt_cop(f.garantia_est_cop), f.arquetipo] for f in f6["matriz"]],
+        ))
     L.append("")
 
     # ---------- R0–R5 ----------

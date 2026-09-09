@@ -7,25 +7,20 @@ creg:
   default: http://localhost:3000/api/ask
 
 ventana:
-  # Foco del análisis (H1-2026)
+  # Foco del análisis (estudio híbrido diario, Ene–Jul 2026)
   foco_ini: "2026-01-01"
-  foco_fin: "2026-06-30"
+  foco_fin: "2026-07-31"
   # Fin EXCLUSIVO para la familia C01–C14 (pasar fin+1 día)
-  fin_c_familia: "2026-07-01"
+  fin_c_familia: "2026-08-01"
   # Fin INCLUSIVO para C15 / C16–C18
-  fin_c15: "2026-06-30"
+  fin_c15: "2026-07-31"
   # Ventana amplia de contexto (ciclo Niño/Niña)
   contexto_ini: "2024-01-01"
-  contexto_fin: "2026-07-01"
+  contexto_fin: "2026-08-01"
 
 segmentacion:
   grande_min_gwh: 2000.0
   mediano_min_gwh: 100.0
-
-muestra:
-  GRANDE: [ENDC, EPMC, CSIC, CMMC, EPSC, GECC, ISGC]
-  MEDIANO: [EMIC, ESSC, CNSC, GNCC, EMSC, NEUC, ETTC, CHVC, DRUC, BIAC]
-  PEQUEÑO: [FERC, FREC, EXIC, TPLC, VESC, EBPC, EGVC, GAPC]
 
 modelo_financiero:
   # Misma lógica que C16–C18 (documentada en el plan): estimaciones con
@@ -37,6 +32,49 @@ modelo_financiero:
   incobrables_pct: 0.02
   impuesto_pct: 0.33
 
-informe:
-  salida: "docs/informe_estrategias_comercializacion.md"
-  titulo: "Informe de Estrategias de Comercialización en el MEM — Benchmark por Segmento (H1-2026)"
+# Estudio híbrido diario (reemplaza al benchmark y al k-means de H1-2026).
+# Clustering K-Means pooled sobre la matriz de agentes-día (~65 × 212) con las
+# mismas features del estudio no supervisado (6), y desempeño = margen estimado
+# por kWh (lógica C16–C18 aplicada a los agregados diarios de C15).
+diario:
+  # Features activas del modelo. pct_perdidas e intensidad_pico se evaluaron y
+  # se excluyeron en el estudio k-means (silhouette inferior / ruido extremo);
+  # pct_cobertura/pct_exposicion entran log1p para estabilizar la cola pesada.
+  features:
+    - log_dema
+    - pct_noreg
+    - pct_cobertura
+    - pct_exposicion
+    - pct_sicep
+    - tiene_sicep
+  transformes:
+    pct_cobertura: pct_cobertura
+    pct_exposicion: pct_exposicion
+  clip_sobrecobertura: 300
+  # Guardas de robustez del ranking de desempeño:
+  # - clip_margen_cop_kwh: winsoriza el margen por kWh (traders con volumen
+  #   transado >> demanda producen márgenes desproporcionados).
+  # - min_dias_pct: estrategias presentes en menos de este % de días se
+  #   reportan como casos atípicos (fuera del ranking).
+  # - clip_pct_sicep: techo de % SICEP (la columna puede incluir no regulado).
+  clip_margen_cop_kwh: 500
+  min_dias_pct: 20
+  clip_pct_sicep: 100
+  k_min: 2
+  k_max: 10
+  metodo_k: silhouette
+  # Silhouette es plana (~0.4 para todo k) en la población pooled diaria: no
+  # discrimina. k se fija explícito (5) por interpretabilidad de arquetipos;
+  # k: null lo devolvería a automático (máximo silhouette en k_min–k_max).
+  # Silhouette es O(n²): se calcula sobre una submuestra determinista de
+  # agentes-día (seed fija) y el k resultante se aplica a toda la matriz.
+  submuestra_k: 5000
+  k: 5
+  random_state: 42
+  n_init: 10
+  scaler: standard
+  desempeno: margen_kwh
+
+informe_diario:
+  salida: "docs/informe_estrategias_diarias.md"
+  titulo: "Estrategias Diarias de Comercialización en el MEM — Ranking de Desempeño por Arquetipo (Ene–Jul 2026)"

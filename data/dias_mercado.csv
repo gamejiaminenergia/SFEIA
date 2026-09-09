@@ -1,0 +1,213 @@
+﻿fecha,precio_bolsa_cop_kwh,precio_contratos_cop_kwh,spread_bolsa_menos_contratos,precio_escasez_cop_kwh,dia_escasez_1_0,estrategia_ganadora
+2026-01-01,290.7,308.8,-18.1,590.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-01-02,335.3,309.4,25.9,590.6,0,Integrado/regional regulado
+2026-01-03,338.9,309.5,29.4,590.6,0,Integrado/regional regulado
+2026-01-04,302.4,308.9,-6.5,590.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-01-05,327.3,309.0,18.3,590.6,0,Integrado/regional regulado
+2026-01-06,319.0,309.3,9.7,590.6,0,Integrado/regional regulado
+2026-01-07,276.3,308.2,-32.0,590.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-01-08,195.1,307.0,-111.9,590.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-01-09,200.2,307.0,-106.8,590.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-01-10,196.2,307.2,-111.0,590.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-01-11,126.0,307.1,-181.1,590.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-01-12,163.7,307.9,-144.2,590.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-01-13,149.9,307.0,-157.1,590.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-01-14,140.3,306.8,-166.5,590.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-01-15,146.1,307.2,-161.2,590.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-01-16,118.8,306.6,-187.8,590.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-01-17,107.7,306.3,-198.6,590.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-01-18,117.6,306.8,-189.2,590.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-01-19,150.0,306.8,-156.9,590.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-01-20,177.1,306.9,-129.8,590.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-01-21,182.2,307.0,-124.8,590.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-01-22,189.0,307.2,-118.1,590.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-01-23,203.4,307.7,-104.3,590.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-01-24,212.9,307.6,-94.7,590.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-01-25,229.1,308.5,-79.4,590.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-01-26,249.8,308.4,-58.6,590.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-01-27,262.7,308.1,-45.4,590.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-01-28,258.5,308.3,-49.8,590.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-01-29,247.2,308.4,-61.2,590.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-01-30,210.0,308.0,-98.0,590.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-01-31,211.4,308.5,-97.1,590.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-02-01,172.4,310.5,-138.0,581.4,0,Trader expuesto a bolsa (sin cobertura)
+2026-02-02,141.8,308.8,-167.0,581.4,0,Trader expuesto a bolsa (sin cobertura)
+2026-02-03,136.5,308.6,-172.0,581.4,0,Trader expuesto a bolsa (sin cobertura)
+2026-02-04,146.3,308.3,-162.0,581.4,0,Trader expuesto a bolsa (sin cobertura)
+2026-02-05,133.2,302.6,-169.3,581.4,0,Trader expuesto a bolsa (sin cobertura)
+2026-02-06,130.9,304.6,-173.7,581.4,0,Trader expuesto a bolsa (sin cobertura)
+2026-02-07,114.9,302.6,-187.8,581.4,0,Trader expuesto a bolsa (sin cobertura)
+2026-02-08,109.8,306.0,-196.1,581.4,0,Trader expuesto a bolsa (sin cobertura)
+2026-02-09,114.8,300.0,-185.2,581.4,0,Trader expuesto a bolsa (sin cobertura)
+2026-02-10,117.4,301.1,-183.7,581.4,0,Trader expuesto a bolsa (sin cobertura)
+2026-02-11,132.5,301.3,-168.8,581.4,0,Trader expuesto a bolsa (sin cobertura)
+2026-02-12,129.4,301.9,-172.4,581.4,0,Trader expuesto a bolsa (sin cobertura)
+2026-02-13,119.6,305.3,-185.7,581.4,0,Trader expuesto a bolsa (sin cobertura)
+2026-02-14,123.4,301.7,-178.3,581.4,0,Trader expuesto a bolsa (sin cobertura)
+2026-02-15,121.7,300.7,-179.0,581.4,0,Trader expuesto a bolsa (sin cobertura)
+2026-02-16,112.0,300.0,-188.1,581.4,0,Trader expuesto a bolsa (sin cobertura)
+2026-02-17,112.3,300.4,-188.1,581.4,0,Trader expuesto a bolsa (sin cobertura)
+2026-02-18,130.3,303.8,-173.5,581.4,0,Trader expuesto a bolsa (sin cobertura)
+2026-02-19,131.7,301.8,-170.2,581.4,0,Trader expuesto a bolsa (sin cobertura)
+2026-02-20,123.9,300.7,-176.8,581.4,0,Trader expuesto a bolsa (sin cobertura)
+2026-02-21,113.0,300.8,-187.8,581.4,0,Trader expuesto a bolsa (sin cobertura)
+2026-02-22,113.5,301.3,-187.8,581.4,0,Trader expuesto a bolsa (sin cobertura)
+2026-02-23,112.0,299.9,-187.9,581.4,0,Trader expuesto a bolsa (sin cobertura)
+2026-02-24,122.7,300.3,-177.6,581.4,0,Trader expuesto a bolsa (sin cobertura)
+2026-02-25,124.1,301.4,-177.3,581.4,0,Trader expuesto a bolsa (sin cobertura)
+2026-02-26,123.7,301.3,-177.6,581.4,0,Trader expuesto a bolsa (sin cobertura)
+2026-02-27,116.4,303.5,-187.1,581.4,0,Trader expuesto a bolsa (sin cobertura)
+2026-02-28,119.7,303.0,-183.4,581.4,0,Trader expuesto a bolsa (sin cobertura)
+2026-03-01,104.7,309.8,-205.1,625.2,0,Trader expuesto a bolsa (sin cobertura)
+2026-03-02,105.2,304.5,-199.3,625.2,0,Trader expuesto a bolsa (sin cobertura)
+2026-03-03,118.7,311.8,-193.1,625.2,0,Trader expuesto a bolsa (sin cobertura)
+2026-03-04,116.5,310.3,-193.8,625.2,0,Trader expuesto a bolsa (sin cobertura)
+2026-03-05,116.8,310.8,-194.0,625.2,0,Trader expuesto a bolsa (sin cobertura)
+2026-03-06,112.1,305.0,-192.9,625.2,0,Trader expuesto a bolsa (sin cobertura)
+2026-03-07,115.0,304.4,-189.5,625.2,0,Trader expuesto a bolsa (sin cobertura)
+2026-03-08,107.2,310.7,-203.5,625.2,0,Trader expuesto a bolsa (sin cobertura)
+2026-03-09,108.7,307.0,-198.3,625.2,0,Trader expuesto a bolsa (sin cobertura)
+2026-03-10,188.2,309.7,-121.5,625.2,0,Trader expuesto a bolsa (sin cobertura)
+2026-03-11,235.0,310.5,-75.5,625.2,0,Trader expuesto a bolsa (sin cobertura)
+2026-03-12,217.0,313.6,-96.6,625.2,0,Trader expuesto a bolsa (sin cobertura)
+2026-03-13,195.6,313.2,-117.6,625.2,0,Trader expuesto a bolsa (sin cobertura)
+2026-03-14,207.5,313.6,-106.1,625.2,0,Trader expuesto a bolsa (sin cobertura)
+2026-03-15,222.9,314.0,-91.2,625.2,0,Trader expuesto a bolsa (sin cobertura)
+2026-03-16,314.9,314.5,0.4,625.2,0,Integrado/regional regulado
+2026-03-17,334.1,314.9,19.2,625.2,0,Integrado/regional regulado
+2026-03-18,332.9,315.6,17.3,625.2,0,Integrado/regional regulado
+2026-03-19,358.6,315.3,43.3,625.2,0,Integrado/regional regulado
+2026-03-20,351.5,315.1,36.4,625.2,0,Integrado/regional regulado
+2026-03-21,326.4,315.1,11.3,625.2,0,Integrado/regional regulado
+2026-03-22,308.6,315.2,-6.6,625.2,0,Trader expuesto a bolsa (sin cobertura)
+2026-03-23,320.7,315.9,4.8,625.2,0,Integrado/regional regulado
+2026-03-24,303.2,315.1,-11.9,625.2,0,Trader expuesto a bolsa (sin cobertura)
+2026-03-25,319.7,315.0,4.7,625.2,0,Integrado/regional regulado
+2026-03-26,316.2,314.9,1.4,625.2,0,Integrado/regional regulado
+2026-03-27,283.6,314.5,-30.9,625.2,0,Trader expuesto a bolsa (sin cobertura)
+2026-03-28,205.8,313.2,-107.4,625.2,0,Trader expuesto a bolsa (sin cobertura)
+2026-03-29,154.3,313.1,-158.8,625.2,0,Trader expuesto a bolsa (sin cobertura)
+2026-03-30,201.9,313.5,-111.5,625.2,0,Trader expuesto a bolsa (sin cobertura)
+2026-03-31,210.5,313.3,-102.8,625.2,0,Trader expuesto a bolsa (sin cobertura)
+2026-04-01,169.3,317.1,-147.8,763.3,0,Trader expuesto a bolsa (sin cobertura)
+2026-04-02,152.0,317.4,-165.4,763.3,0,Trader expuesto a bolsa (sin cobertura)
+2026-04-03,142.9,317.3,-174.4,763.3,0,Trader expuesto a bolsa (sin cobertura)
+2026-04-04,148.3,316.8,-168.5,763.3,0,Trader expuesto a bolsa (sin cobertura)
+2026-04-05,131.6,317.3,-185.7,763.3,0,Trader expuesto a bolsa (sin cobertura)
+2026-04-06,222.5,317.5,-95.0,763.3,0,Trader expuesto a bolsa (sin cobertura)
+2026-04-07,266.2,318.3,-52.1,763.3,0,Trader expuesto a bolsa (sin cobertura)
+2026-04-08,282.0,318.7,-36.7,763.3,0,Trader expuesto a bolsa (sin cobertura)
+2026-04-09,295.7,318.7,-23.0,763.3,0,Trader expuesto a bolsa (sin cobertura)
+2026-04-10,314.5,319.1,-4.6,763.3,0,Trader expuesto a bolsa (sin cobertura)
+2026-04-11,289.9,318.8,-28.9,763.3,0,Trader expuesto a bolsa (sin cobertura)
+2026-04-12,284.9,319.4,-34.5,763.3,0,Trader expuesto a bolsa (sin cobertura)
+2026-04-13,391.6,320.3,71.3,763.3,0,Integrado/regional regulado
+2026-04-14,423.5,320.3,103.2,763.3,0,Integrado/regional regulado
+2026-04-15,393.7,320.0,73.7,763.3,0,Integrado/regional regulado
+2026-04-16,420.4,320.0,100.4,763.3,0,Trader con sobrecobertura de contratos
+2026-04-17,399.7,319.6,80.1,763.3,0,Integrado/regional regulado
+2026-04-18,327.9,318.8,9.1,763.3,0,Integrado/regional regulado
+2026-04-19,218.6,317.7,-99.1,763.3,0,Trader expuesto a bolsa (sin cobertura)
+2026-04-20,282.7,318.1,-35.3,763.3,0,Trader expuesto a bolsa (sin cobertura)
+2026-04-21,302.7,318.2,-15.5,763.3,0,Trader expuesto a bolsa (sin cobertura)
+2026-04-22,282.4,317.8,-35.4,763.3,0,Trader expuesto a bolsa (sin cobertura)
+2026-04-23,276.8,317.9,-41.1,763.3,0,Trader expuesto a bolsa (sin cobertura)
+2026-04-24,298.6,318.3,-19.7,763.3,0,Trader expuesto a bolsa (sin cobertura)
+2026-04-25,265.3,317.7,-52.5,763.3,0,Trader expuesto a bolsa (sin cobertura)
+2026-04-26,254.8,318.1,-63.3,763.3,0,Trader expuesto a bolsa (sin cobertura)
+2026-04-27,286.0,318.1,-32.1,763.3,0,Trader expuesto a bolsa (sin cobertura)
+2026-04-28,259.4,317.9,-58.5,763.3,0,Trader expuesto a bolsa (sin cobertura)
+2026-04-29,230.0,317.5,-87.4,763.3,0,Trader expuesto a bolsa (sin cobertura)
+2026-04-30,207.6,317.0,-109.4,763.3,0,Trader expuesto a bolsa (sin cobertura)
+2026-05-01,190.5,321.6,-131.1,861.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-05-02,181.3,321.8,-140.5,861.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-05-03,205.6,322.2,-116.7,861.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-05-04,298.1,322.7,-24.7,861.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-05-05,338.8,323.2,15.6,861.6,0,Integrado/regional regulado
+2026-05-06,325.7,322.9,2.9,861.6,0,Integrado/regional regulado
+2026-05-07,319.2,323.0,-3.8,861.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-05-08,344.7,323.4,21.3,861.6,0,Integrado/regional regulado
+2026-05-09,214.6,321.1,-106.6,861.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-05-10,245.3,322.3,-77.1,861.6,0,Trader expuesto a bolsa (sin cobertura)
+2026-05-11,394.1,323.8,70.3,861.6,0,Integrado/regional regulado
+2026-05-12,611.3,326.3,285.0,861.6,0,Integrado/regional regulado
+2026-05-13,751.5,330.0,421.5,861.6,0,Integrado/regional regulado
+2026-05-14,848.0,331.2,516.8,861.6,0,Trader con sobrecobertura de contratos
+2026-05-15,796.3,330.3,466.0,861.6,0,Trader con sobrecobertura de contratos
+2026-05-16,678.5,327.2,351.3,861.6,0,Integrado/regional regulado
+2026-05-17,693.0,327.1,366.0,861.6,0,Integrado/regional regulado
+2026-05-18,751.9,327.6,424.3,861.6,0,Integrado/regional regulado
+2026-05-19,847.3,328.5,518.8,861.6,0,Integrado/regional regulado
+2026-05-20,848.2,329.4,518.8,861.6,0,Integrado/regional regulado
+2026-05-21,719.9,327.7,392.1,861.6,0,Integrado/regional regulado
+2026-05-22,580.6,325.9,254.7,861.6,0,Integrado/regional regulado
+2026-05-23,709.1,327.8,381.3,861.6,0,Integrado/regional regulado
+2026-05-24,612.2,326.9,285.2,861.6,0,Integrado/regional regulado
+2026-05-25,641.2,327.0,314.2,861.6,0,Trader con sobrecobertura de contratos
+2026-05-26,633.6,326.9,306.7,861.6,0,Integrado/regional regulado
+2026-05-27,561.6,326.2,235.4,861.6,0,Trader con sobrecobertura de contratos
+2026-05-28,445.6,324.1,121.5,861.6,0,Integrado/regional regulado
+2026-05-29,394.0,324.7,69.3,861.6,0,Integrado/regional regulado
+2026-05-30,352.2,323.1,29.1,861.6,0,Integrado/regional regulado
+2026-05-31,338.3,323.4,14.9,861.6,0,Integrado/regional regulado
+2026-06-01,540.4,323.9,216.5,906.1,0,Integrado/regional regulado
+2026-06-02,552.2,324.4,227.8,906.1,0,Integrado/regional regulado
+2026-06-03,578.2,325.0,253.1,906.1,0,Integrado/regional regulado
+2026-06-04,535.0,323.9,211.2,906.1,0,Integrado/regional regulado
+2026-06-05,659.9,326.6,333.3,906.1,0,Integrado/regional regulado
+2026-06-06,580.2,324.7,255.5,906.1,0,Integrado/regional regulado
+2026-06-07,469.6,322.7,146.8,906.1,0,Integrado/regional regulado
+2026-06-08,441.3,322.1,119.2,906.1,0,Integrado/regional regulado
+2026-06-09,476.3,322.3,154.0,906.1,0,Integrado/regional regulado
+2026-06-10,416.3,320.1,96.2,906.1,0,Integrado/regional regulado
+2026-06-11,436.6,320.9,115.6,906.1,0,Integrado/regional regulado
+2026-06-12,445.0,321.1,123.9,906.1,0,Integrado/regional regulado
+2026-06-13,571.9,323.4,248.4,906.1,0,Integrado/regional regulado
+2026-06-14,409.2,321.2,88.0,906.1,0,Integrado/regional regulado
+2026-06-15,367.4,320.4,47.1,906.1,0,Integrado/regional regulado
+2026-06-16,524.5,322.1,202.4,906.1,0,Integrado/regional regulado
+2026-06-17,451.2,321.1,130.1,906.1,0,Integrado/regional regulado
+2026-06-18,440.0,321.1,118.8,906.1,0,Integrado/regional regulado
+2026-06-19,513.6,321.9,191.7,906.1,0,Integrado/regional regulado
+2026-06-20,487.2,321.5,165.6,906.1,0,Integrado/regional regulado
+2026-06-21,430.1,321.3,108.8,906.1,0,Integrado/regional regulado
+2026-06-22,654.2,324.9,329.3,906.1,0,Integrado/regional regulado
+2026-06-23,669.1,323.2,345.9,906.1,0,Integrado/regional regulado
+2026-06-24,719.3,323.9,395.4,906.1,0,Integrado/regional regulado
+2026-06-25,728.2,324.5,403.6,906.1,0,Trader con sobrecobertura de contratos
+2026-06-26,710.6,324.5,386.1,906.1,0,Integrado/regional regulado
+2026-06-27,698.8,324.3,374.5,906.1,0,Integrado/regional regulado
+2026-06-28,722.1,325.7,396.4,906.1,0,Integrado/regional regulado
+2026-06-29,745.7,326.1,419.7,906.1,0,Integrado/regional regulado
+2026-06-30,813.1,327.4,485.7,906.1,0,Comercializador regulado
+2026-07-01,833.5,332.3,501.1,782.6,1,Integrado/regional regulado
+2026-07-02,826.8,329.1,497.7,782.6,1,Trader con sobrecobertura de contratos
+2026-07-03,814.5,328.1,486.4,782.6,1,Trader con sobrecobertura de contratos
+2026-07-04,778.4,328.0,450.4,782.6,0,Trader con sobrecobertura de contratos
+2026-07-05,702.1,326.8,375.3,782.6,0,Integrado/regional regulado
+2026-07-06,814.8,328.7,486.1,782.6,1,Trader con sobrecobertura de contratos
+2026-07-07,734.3,326.7,407.5,782.6,0,Trader con sobrecobertura de contratos
+2026-07-08,752.6,327.3,425.3,782.6,0,Trader con sobrecobertura de contratos
+2026-07-09,739.2,329.4,409.8,782.6,0,Trader con sobrecobertura de contratos
+2026-07-10,738.9,328.5,410.3,782.6,0,Trader con sobrecobertura de contratos
+2026-07-11,767.6,329.2,438.4,782.6,0,Trader con sobrecobertura de contratos
+2026-07-12,795.9,330.6,465.3,782.6,1,Integrado/regional regulado
+2026-07-13,826.7,330.2,496.4,782.6,1,Integrado/regional regulado
+2026-07-14,870.3,330.5,539.8,782.6,1,Trader con sobrecobertura de contratos
+2026-07-15,892.2,331.8,560.4,782.6,1,Trader con sobrecobertura de contratos
+2026-07-16,847.4,331.5,516.0,782.6,1,Trader con sobrecobertura de contratos
+2026-07-17,865.3,331.8,533.5,782.6,1,Trader con sobrecobertura de contratos
+2026-07-18,797.0,329.9,467.1,782.6,1,Trader con sobrecobertura de contratos
+2026-07-19,831.0,331.6,499.4,782.6,1,Integrado/regional regulado
+2026-07-20,799.4,330.3,469.1,782.6,1,Integrado/regional regulado
+2026-07-21,801.5,329.6,472.0,782.6,1,Trader con sobrecobertura de contratos
+2026-07-22,957.2,332.5,624.7,782.6,1,Trader con sobrecobertura de contratos
+2026-07-23,971.2,337.4,633.8,782.6,1,Trader con sobrecobertura de contratos
+2026-07-24,859.6,333.5,526.1,782.6,1,Integrado/regional regulado
+2026-07-25,689.6,328.9,360.7,782.6,0,Integrado/regional regulado
+2026-07-26,577.1,324.0,253.1,782.6,0,Integrado/regional regulado
+2026-07-27,636.0,325.2,310.8,782.6,0,Integrado/regional regulado
+2026-07-28,708.4,327.0,381.4,782.6,0,Trader con sobrecobertura de contratos
+2026-07-29,723.7,328.5,395.2,782.6,0,Trader con sobrecobertura de contratos
+2026-07-30,977.3,335.8,641.5,782.6,1,Trader con sobrecobertura de contratos
+2026-07-31,975.5,336.0,639.5,782.6,1,Trader con sobrecobertura de contratos

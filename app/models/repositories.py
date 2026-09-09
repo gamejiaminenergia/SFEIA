@@ -131,3 +131,8 @@ class RepoElecdb:
         return self._ejecutar_archivo(
             "f5_financiero.sql", {"ini": ini, "fin": fin, "agente": agente}
         )[0]
+
+    # ---- D1 (estudio híbrido diario) ----
+    def diario(self, ini: str, fin: str) -> list[dict]:
+        """Agregación diaria por agente + precios de sistema (todos los agentes)."""
+        return self._ejecutar_archivo("d1_diario.sql", {"ini": ini, "fin": fin})[0]

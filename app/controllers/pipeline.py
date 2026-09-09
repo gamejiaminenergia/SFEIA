@@ -6,6 +6,7 @@ from app.controllers.fase_cobertura import FaseCobertura
 from app.controllers.fase_contexto import FaseContexto
 from app.controllers.fase_financiera import FaseFinanciera
 from app.controllers.fase_mix import FaseMix
+from app.controllers.fase_muestra import FaseMuestra
 from app.controllers.fase_picovalle import FasePicoValle
 from app.controllers.fase_segmentacion import FaseSegmentacion
 from app.controllers.fase_sintesis import FaseSintesis
@@ -22,6 +23,9 @@ class Pipeline:
         datos: dict = {}
 
         FaseSegmentacion(self.repo, self.cfg).ejecutar(datos)   # F-1
+        if self.cfg.get("seleccion_muestra", {}).get("metodo") == "kmeans":
+            # Muestra no supervisada: representa a los 65 vía k-means.
+            FaseMuestra(self.repo, self.cfg).ejecutar(datos)
         FaseContexto(self.repo, self.cfg).ejecutar(datos)       # F0
         FaseCartera(self.repo, self.cfg).ejecutar(datos)        # F1
         FaseCobertura(self.repo, self.cfg).ejecutar(datos)      # F2
