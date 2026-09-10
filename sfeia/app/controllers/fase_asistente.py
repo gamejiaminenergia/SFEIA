@@ -42,7 +42,7 @@ from sfeia.app.models.entities import (
     SimulacionDia,
     VentanasResueltas,
 )
-from sfeia.app.services import clonacion, contexto, maestros, simulacion
+from sfeia.app.services import clonacion, contexto, maestros, scorecard, simulacion
 
 
 def _parse(s: str) -> date:
@@ -526,6 +526,129 @@ class FaseAsistente:
                 break
             fin_impacto = impacto_ini - timedelta(days=1)
         return resultados
+
+    # ---------------------------------------------------------------- barrido
+    def ejecutar_scan_ventana(self, w: dict, scan_cfg: dict, historial: dict | None = None) -> dict:
+        """Scan de TODAS las (segmento × estrategia) en una ventana con scorecard.
+
+        Versión ligera para el grid de búsqueda del harness de aceptación
+        (`--aceptacion`): un solo estudio + impacto por ventana, bootstrap
+        grueso (n_boot bajo) y sin holdout (V3 se confirma luego en las
+        candidatas con el flujo completo). Devuelve por combinación las
+        métricas de los gates N1 (cheap) / N2 / N4 (fidelidad del clon).
+        `historial` pre-calculado evita releer el histórico por ventana.
+        """
+        a_cfg = self.cfg["asistente"]
+        params = self.cfg["modelo_financiero"]
+        clip = self.cfg["diario"].get("clip_margen_cop_kwh")
+        bins = a_cfg["bins_spread"]
+        usar_previo = bool(a_cfg.get("usar_spread_previo", True))
+        factor_expo = float(a_cfg.get("factor_exposicion_fuera_distribucion", 0.5))
+        relativo = bool(a_cfg.get("seleccion_por_relativo", True))
+        semilla = int(self.cfg["diario"].get("random_state", 42))
+        umbral_corr = float(a_cfg.get("umbral_corr_duplicados", 0.9))
+        umbral_kill = float(a_cfg.get("kill_switch_drawdown_cop_kwh", 500.0))
+        n_boot = int(scan_cfg.get("n_boot_scan", 200))
+        top = int(scan_cfg.get("top", a_cfg["top_por_defecto"]))
+        min_dias = float(scan_cfg.get("min_dias_pct", a_cfg["min_dias_pct"]))
+
+        datos = self._correr_estudio(w["estudio_ini"], w["estudio_fin"])
+        d = datos["diario"]
+        if d["n_agentes"] == 0:
+            return {"ventana": w, "combinaciones": [], "error": "sin agentes"}
+        seg_cod = {c: a.segmento.value for c, a in datos["f-1"]["por_codigo"].items()}
+
+        rows_imp = self.repo.diario(w["impacto_ini"], _iso(_parse(w["impacto_fin"]) + timedelta(days=1)))
+        if not rows_imp:
+            return {"ventana": w, "combinaciones": [], "error": "sin datos impacto"}
+        ad_imp = diario.construir_agente_dia(rows_imp)
+        for ad in ad_imp.values():
+            ad["features"] = diario.features_diarias(ad)
+            ad["desempeno"] = diario.desempeno_diario(ad, params)
+        diario.aplicar_clip_margen(ad_imp, clip)
+
+        nivel_sel: dict[str, float] = {}
+        nivel_imp: dict[str, float] = {}
+        if bool(a_cfg.get("usar_regimen_hidrologico", True)):
+            nivel_sel = {str(r["fecha"])[:10]: float(r["nivel_agregado_pct"])
+                         for r in self.repo.contexto_hidrologia(w["estudio_ini"], _iso(_parse(w["estudio_fin"]) + timedelta(days=1)))}
+            nivel_imp = {str(r["fecha"])[:10]: float(r["nivel_agregado_pct"])
+                         for r in self.repo.contexto_hidrologia(w["impacto_ini"], _iso(_parse(w["impacto_fin"]) + timedelta(days=1)))}
+
+        hist = historial if historial is not None else contexto.historial_escasez(self.repo.historial_precios(), bins)
+
+        combinaciones: list[dict] = []
+        for seg in sorted({a.segmento for a in d["agentes"]}):
+            dema = contexto.demanda_referencia(d["agentedia"], seg_cod, seg)
+            if dema <= 0:
+                continue
+            for est in sorted({pf.arquetipo for pf in d["perfiles"].values()}):
+                ms = maestros.seleccionar_maestros(
+                    d["agentes"], seg, est, top, d["n_dias"], min_dias, relativo=relativo
+                )
+                if not ms:
+                    continue
+                codigos = {m.codigo for m in ms}
+                politica = clonacion.construir_politica(
+                    d["agentedia"], d["etiquetas"], d["labels"], d["perfiles"],
+                    codigos, seg, est, seg_cod, bins,
+                )
+                sims_is = simulacion.simular_dias(
+                    d["agentedia"], politica, dema, params, seg_cod, seg, codigos, bins,
+                    usar_spread_previo=usar_previo, factor_exposicion_fuera=factor_expo,
+                    nivel_embalses_por_dia=nivel_sel,
+                )
+                sims = simulacion.simular_dias(
+                    ad_imp, politica, dema, params, seg_cod, seg, codigos, bins,
+                    usar_spread_previo=usar_previo, factor_exposicion_fuera=factor_expo,
+                    nivel_embalses_por_dia=nivel_imp,
+                )
+                res = simulacion.resumen_impacto(sims, dema)
+                rep = simulacion.replicacion_is_oos(sims_is, sims)
+                boot = maestros.bootstrap_skill_luck(
+                    d["agentes"], seg, est, top, d["n_dias"],
+                    n_boot=n_boot, semilla=semilla, min_dias_pct=min_dias, relativo=relativo,
+                )
+                neff = maestros.n_efectivo(ms, d["agentes"], umbral_corr)
+                dist = simulacion.distribucion([s.margen_imitacion for s in sims])
+                n_trials = boot["n_agentes_candidatos"] if boot else top
+                dsr = simulacion.dsr_aprox([s.margen_imitacion for s in sims], n_trials=n_trials)
+                esc = simulacion.escenario_escasez(dema, politica, list(d["agentedia"].values()), params)
+                margen_esc = next((e.margen_cop_kwh for e in esc if e.nombre == "escasez_umbral"), None)
+                decision = simulacion.decision_negocio(
+                    dema_kwh=dema, mediana_benigna=res.mediana_imitacion,
+                    margen_escasez=float(margen_esc) if margen_esc is not None else 0.0,
+                    margen_escasez_extrema=0.0,
+                    pct_escasez=hist["pct_dias_escasez"], pct_escasez_nino=25.0,
+                    drawdown_max=dist.drawdown_max, kill_switch_drawdown=umbral_kill,
+                )
+                cap = simulacion.capacidad(
+                    dema, d["agentedia"], seg, seg_cod,
+                    float(a_cfg.get("capacidad_max_pct_segmento", 5.0)),
+                )
+                f1 = scorecard.fidelidad_mae(ad_imp, politica, codigos, seg_cod, seg, usar_previo)
+                combinaciones.append({
+                    "segmento": seg, "estrategia": est,
+                    "n_maestros": len(ms), "n_efectivo": neff,
+                    "codigos": [m.codigo for m in ms],
+                    "mediana_relativa_top": round(median([m.mediana_relativa for m in ms]), 2),
+                    "mediana_margen_absoluto": res.mediana_imitacion,
+                    "p_valor": boot["p_valor"] if boot else 1.0,
+                    "ratio_replicacion": rep.get("ratio_replicacion"),
+                    "dsr": dsr["dsr"] if dsr else None,
+                    "persistencia": None,
+                    "pct_gana_segmento": res.pct_dias_gana_segmento,
+                    "kill_switch": bool(dist.drawdown_max > umbral_kill),
+                    "drawdown_max": dist.drawdown_max,
+                    "ev_historico": decision["e_margen_dia_historico"],
+                    "ev_anio_nino": decision["e_margen_dia_anio_nino"],
+                    "supera_capacidad": bool(cap["supera_capacidad"]) if cap else False,
+                    "capacidad_pct": cap["pct_del_segmento"] if cap else None,
+                    "mae_f1": f1["promedio"],
+                    "mae_f1_detalle": f1,
+                })
+        combinaciones.sort(key=lambda c: (c["p_valor"], -c["mediana_relativa_top"]))
+        return {"ventana": w, "combinaciones": combinaciones, "error": None}
 
     # ---------------------------------------------------------------- barrido
     def ejecutar_barrido(self, p: ParametrosAsistente, b_cfg: dict) -> dict:

@@ -82,13 +82,31 @@ período afortunado.
 
 Salida: `data/walk_forward.csv` (un paso por fila: ventanas, mediana del margen, réplica, DSR, kill-switch).
 
-### 4. Tests
+### 4. Harness de aceptación (`--aceptacion`)
+
+Barre el grid de ventanas **2015→hoy** (estudio 90 d + impacto 7 d, paso 30 d) y evalúa **todas** las
+(segmento × estrategia × ventana) contra el scorecard N0–N4 definido en `docs/plan_aceptacion_imitador.md`
+(integridad, validez de selección, riesgo, robustez y fidelidad del clon). Confirma candidatas con el flujo
+completo (bootstrap fino + holdout + DSR). Es el "termómetro" reproducible del imitador.
+
+```bash
+./.venv/bin/python -m sfeia.main --aceptacion
+```
+
+Salidas: `docs/scorecard_aceptacion.md` + `data/scorecard.csv` + `data/scorecard_confirmadas.csv`.
+
+> **Veredicto actual (2026-09-09): NO-OPERABLE.** Ninguna de las 984 combinaciones barridas pasó el gate de
+> bootstrap skill-vs-luck (mínimo p=0.46, umbral 0.05): con el premio C16–C18 relativo los agentes de una misma
+> estrategia son conductualmente homogéneos y el "top" es suerte entre iguales. No se relajaron umbrales; la
+> evidencia vive en el scorecard.
+
+### 5. Tests
 
 ```bash
 ./.venv/bin/python -m pytest -q
 ```
 
-Lógica pura, sin BD (segmentación, diario, maestros, clonación, simulación, validez).
+Lógica pura, sin BD (segmentación, diario, maestros, clonación, simulación, validez, scorecard).
 
 ---
 
@@ -104,6 +122,7 @@ Lógica pura, sin BD (segmentación, diario, maestros, clonación, simulación, 
 | `--demanda-dia-gwh` | Demanda diaria de XXXC; si se omite, mediana del segmento. |
 | `--walk-forward` | Modo ventanas rodantes (P2.3). |
 | `--barrido` | Modo evaluación de todas las combinaciones (S2). |
+| `--aceptacion` | Harness de aceptación: grid 2015→hoy + scorecard N0–N4. |
 | `--config` | Ruta alternativa al `config.yaml` único. |
 
 **Ventanas por defecto** (si no se pasan fechas): estudio = últimos `dias_estudio_por_defecto` (30) días antes del
@@ -129,6 +148,7 @@ las fechas" en Configuración). El CLI sobreescribe el config. La BD llega a **2
 | `data/validacion_seleccion.csv` | Pruebas de validez: bootstrap, holdout, replicación, DSR, N efectivo. |
 | `data/walk_forward.csv` | Serie walk-forward (`--walk-forward`). |
 | `data/barrido_combinaciones.csv` | Todas las combinaciones evaluadas (`--barrido`). |
+| `docs/scorecard_aceptacion.md` + `data/scorecard{,_confirmadas}.csv` | Scorecard N0–N4 del harness (`--aceptacion`). |
 
 ---
 
@@ -143,11 +163,11 @@ sfeia/   Un solo paquete MVC
   sql/                     Queries parametrizadas (f-1_segmentacion, d1_diario, d1_max_fecha,
                            d1_historial_precios, d1_contexto_hidrologia)
   app/
-    controllers/           fase_segmentacion · fase_diaria · fase_asistente (ejecutar, barrido, walk-forward)
+    controllers/           fase_segmentacion · fase_diaria · fase_asistente (ejecutar, barrido, walk-forward) · fase_aceptacion
     models/                entities (dataclasses) · repositories (RepoElecdb)
-    services/              segmentacion · diario · clustering · kpi_cartera · contexto · maestros · clonacion · simulacion
-    views/                 informe_asistente_md · informe_barrido_md · exportar_csv
-  tests/                   test_segmentacion · test_diario · test_asistente
+    services/              segmentacion · diario · clustering · kpi_cartera · contexto · maestros · clonacion · simulacion · scorecard
+    views/                 informe_asistente_md · informe_barrido_md · informe_scorecard_md · exportar_csv
+  tests/                   test_segmentacion · test_diario · test_asistente · test_scorecard
 ```
 
 Los `services` son **lógica pura** (no tocan BD); solo los controladores consultan el repo. Toda query vive en

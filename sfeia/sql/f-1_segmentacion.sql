@@ -3,9 +3,9 @@
 SELECT a.agente_code,
        a.name,
        a.activity,
-       SUM(ha."DemaCome")     / 1e6 AS dema_come_gwh,
-       SUM(ha."DemaComeReg")  / 1e6 AS reg_gwh,
-       SUM(ha."DemaComeNoReg")/ 1e6 AS noreg_gwh
+       ROUND(SUM(ha."DemaCome")     / 1e6, 3) AS dema_come_gwh,
+       ROUND(SUM(ha."DemaComeReg")  / 1e6, 3) AS reg_gwh,
+       ROUND(SUM(ha."DemaComeNoReg")/ 1e6, 3) AS noreg_gwh
 FROM fact_hourly_agente ha
 JOIN dim_agente a ON ha.agente_code = a.agente_code
 WHERE ha.fecha_hora >= %(ini)s

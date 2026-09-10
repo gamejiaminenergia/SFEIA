@@ -14,9 +14,9 @@ SELECT date(ha.fecha_hora)          AS dia,
        SUM(ha."CompBolsNaciEner")   AS comp_bolsa_kwh,
        SUM(ha."VentBolsNaciEner")   AS vent_bolsa_kwh,
        SUM(ha."CompContEnerSICEP")  AS comp_sicep_kwh,
-       AVG(ds."PrecPromCont")       AS prec_cont_cop_kwh,
-       AVG(ds."PPPrecBolsNaci")     AS prec_bolsa_cop_kwh,
-       AVG(ds."PrecEsca")           AS prec_escasez_cop_kwh
+MAX(ds."PrecPromCont")       AS prec_cont_cop_kwh,
+        MAX(ds."PPPrecBolsNaci")     AS prec_bolsa_cop_kwh,
+        MAX(ds."PrecEsca")           AS prec_escasez_cop_kwh
 FROM fact_hourly_agente ha
 JOIN dim_agente a ON ha.agente_code = a.agente_code AND a.activity = 'COMERCIALIZACIÓN'
 JOIN fact_daily_sistema ds ON ds.fecha = date(ha.fecha_hora)

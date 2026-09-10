@@ -214,3 +214,33 @@ asistente:
     min_n_efectivo: 3        # maestros independientes tras deduplicar
     n_boot_rapido: 200       # bootstrap más ligero por combinación
     max_combinaciones: 20    # techo de filas reportadas
+
+  # ===== Harness de aceptación (Fase 0 del plan de aceptación) =====
+  # `python -m sfeia.main --aceptacion`: corre el grid de ventanas 2015→hoy,
+  # hace el scan grueso (n_boot bajo, sin holdout) sobre todas las
+  # (segmento × estrategia × ventana) y confirma candidatas (y las mejores
+  # casi-candidatas) con el flujo completo (bootstrap fino + holdout + DSR).
+  # Produca docs/scorecard_aceptacion.md + data/scorecard{,_confirmadas}.csv.
+  aceptacion:
+    grid:
+      dias_estudio: 90
+      dias_impacto: 7
+      paso_dias: 30
+    scan:
+      n_boot_scan: 200        # scan grueso
+      n_boot_confirma: 1000   # confirmación fina
+      dias_holdout: 2         # sub-validación al final del estudio
+      top: 10
+      min_dias_pct: 20
+      confirmar_top: 8        # mejores casi-candidatas a confirmar además
+    gates:
+      alpha: 0.05
+      min_n_efectivo: 3
+      min_persistencia: 50.0
+      min_replicacion: 0.5
+      min_dsr: 0.95
+      min_pct_gana_segmento: 60.0
+      min_ev_historico: 0.0
+      capacidad_max_pct: 5.0
+      max_mae_f1: 10.0
+    salida: "docs/scorecard_aceptacion.md"

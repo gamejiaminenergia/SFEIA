@@ -54,6 +54,9 @@ def _parsear(argv: list[str] | None) -> argparse.Namespace:
     parser.add_argument("--barrido", action="store_true",
                         help="Evalúa todas las (segmento × estrategia), filtra por validez (S2) y exporta "
                              "data/barrido_combinaciones.csv + docs/informe_barrido_combinaciones.md")
+    parser.add_argument("--aceptacion", action="store_true",
+                        help="Harness de aceptación: grid 2015→hoy, scan grueso + confirmación de candidatas, "
+                             "scorecard N0–N4 en docs/scorecard_aceptacion.md + data/scorecard*.csv")
     return parser.parse_args(argv)
 
 
@@ -78,6 +81,26 @@ def main(argv: list[str] | None = None) -> int:
 
     print(f"Asistente imitador: {params.segmento} · {params.estrategia} · top-{params.top}")
     try:
+        if args.aceptacion:
+            from sfeia.app.controllers.fase_aceptacion import FaseAceptacion
+            from sfeia.app.views.exportar_csv import exportar_scorecard
+            from sfeia.app.views.informe_scorecard_md import guardar as guardar_scorecard
+            res = FaseAceptacion(repo, cfg).ejecutar()
+            csvs = exportar_scorecard(res, cfg)
+            destino = guardar_scorecard(res, cfg)
+            print(f"Scorecard: {res['n_ventanas_ok']} ventanas · {res['n_combinaciones']} combinaciones "
+                  f"→ {destino.relative_to(Path.cwd())}")
+            for c in csvs:
+                print(f"  - {c.relative_to(Path.cwd())}")
+            operables = [c for c in res["confirmadas"] if c["valida_final"]]
+            if operables:
+                print("VEREDICTO: COMBINACIÓN OPERABLE ENCONTRADA:")
+                for c in operables:
+                    print(f"  - {c['segmento']} · {c['estrategia']}  p={c['p_valor']:.4f}  réplica {c['ratio_replicacion']:.2f}"
+                          f"  DSR {c['dsr']:.2f}  holdout {c['persistencia']}%  estudio {c['estudio_ini']}..{c['estudio_fin']}")
+            else:
+                print(f"VEREDICTO: NO-OPERABLE. Confirmadas: {len(res['confirmadas'])} (ninguna pasa N1+N2).")
+            return 0
         if args.barrido:
             b_cfg = a_cfg.get("barrido", {})
             barrido = FaseAsistente(repo, cfg).ejecutar_barrido(params, b_cfg)

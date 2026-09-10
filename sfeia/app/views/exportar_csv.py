@@ -211,6 +211,62 @@ def exportar_barrido(barrido: dict, cfg: dict) -> Path:
     return p
 
 
+def exportar_scorecard(res: dict, cfg: dict) -> list[Path]:
+    """CSV del harness de aceptación (`--aceptacion`): todas las filas del scan
+    + las confirmaciones con el flujo completo."""
+    directorio = BASE_DIR / cfg["asistente"]["data_dir"]
+
+    # ---- scorecard.csv: todas las (segmento × estrategia × ventana) del scan ----
+    filas = []
+    for c in res["filas"]:
+        filas.append([
+            c["estudio_ini"], c["estudio_fin"], c["impacto_ini"], c["impacto_fin"],
+            c["segmento"], c["estrategia"], c["n_maestros"], c["n_efectivo"],
+            ",".join(c["codigos"]), c["mediana_relativa_top"], c["mediana_margen_absoluto"],
+            c["p_valor"], c["ratio_replicacion"], c["dsr"], c["pct_gana_segmento"],
+            1 if c["kill_switch"] else 0, c["drawdown_max"],
+            c["ev_historico"], c["ev_anio_nino"],
+            1 if c["supera_capacidad"] else 0, c["capacidad_pct"], c["mae_f1"],
+            1 if c["candidata"] else 0, 1 if c["valida_cheap"] else 0,
+        ])
+    p1 = directorio / "scorecard.csv"
+    _escribir(p1, [
+        "estudio_ini", "estudio_fin", "impacto_ini", "impacto_fin",
+        "segmento", "estrategia", "n_maestros", "n_efectivo", "codigos",
+        "mediana_relativa_top_cop_kwh", "mediana_margen_absoluto_cop_kwh",
+        "p_valor_bootstrap", "ratio_replicacion", "dsr", "pct_dias_gana_segmento",
+        "kill_switch_1_0", "drawdown_max_cop_kwh",
+        "ev_historico_cop_kwh", "ev_anio_nino_cop_kwh",
+        "supera_capacidad_1_0", "capacidad_pct_segmento", "mae_f1_promedio_pp",
+        "candidata_1_0", "valida_cheap_1_0",
+    ], filas)
+
+    # ---- scorecard_confirmadas.csv: flujo completo (con holdout) ----
+    filas = []
+    for c in res["confirmadas"]:
+        gates = c.get("gates", {})
+        filas.append([
+            c["estudio_ini"], c["estudio_fin"], c["impacto_ini"], c["impacto_fin"],
+            c["segmento"], c["estrategia"], c["n_maestros"], c["n_efectivo"],
+            ",".join(c["codigos"]), c["p_valor"], c["ratio_replicacion"],
+            c["dsr"], c["persistencia"], c["pct_gana_segmento"],
+            1 if c["kill_switch"] else 0, c["ev_historico"],
+            1 if c["supera_capacidad"] else 0, c["mae_f1"],
+            c["n1_completo"], c["n2"], 1 if c["valida_final"] else 0,
+            "".join(f"{k}={1 if gates[k] else 0};" for k in sorted(gates)),
+        ])
+    p2 = directorio / "scorecard_confirmadas.csv"
+    _escribir(p2, [
+        "estudio_ini", "estudio_fin", "impacto_ini", "impacto_fin",
+        "segmento", "estrategia", "n_maestros", "n_efectivo", "codigos",
+        "p_valor_bootstrap", "ratio_replicacion", "dsr", "holdout_pct",
+        "pct_dias_gana_segmento", "kill_switch_1_0", "ev_historico_cop_kwh",
+        "supera_capacidad_1_0", "mae_f1_promedio_pp",
+        "n1_completo_1_0", "n2_1_0", "valida_final_1_0", "gates_detalle",
+    ], filas)
+    return [p1, p2]
+
+
 def exportar_walk_forward(resultados: list[dict], cfg: dict) -> Path:
     """CSV de la serie walk-forward (P2.3): un paso = una ventana estudio→impacto.
 

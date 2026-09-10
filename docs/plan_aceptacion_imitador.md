@@ -1,6 +1,6 @@
 # Plan — Scorecard de aceptación y búsqueda autónoma de una combinación operable
 
-> Proyecto: SFEIA · Fecha: 2026-09-09 · Estado: **pendiente de aprobación**
+> Proyecto: SFEIA · Fecha: 2026-09-09 · Estado: **ejecutado — veredicto NO-OPERABLE** (evidencia en `docs/scorecard_aceptacion.md`)
 > Documentos relacionados: `docs/plan_agente_xxxc_asistente.md` (plan del asistente),
 > `docs/investigacion_imitacion_traders_profesionales.md` (investigación y diagnóstico),
 > `docs/informe_asistente_imitador.md` y `docs/informe_barrido_combinaciones.md` (salidas actuales).
@@ -169,3 +169,36 @@ esa combinación). El resto de combinaciones nunca se recomiendan. Si ninguna cu
   `python -m sfeia.main` la corre por defecto.
 - **NO-OPERABLE:** agotadas las 30 iteraciones (o corte temprano de la Fase 1) sin ninguna combinación
   operable; se entrega el scorecard completo y el informe de evidencia.
+
+## 8. Ejecución (2026-09-09) — veredicto final
+
+**Fases ejecutadas:** 0 (harness `--aceptacion`) y 1 (feasibility scan). El **corte temprano** de la Fase 1 se
+activó: el harness barrió el grid completo (138 ventanas, 984 combinaciones, 2015→2026-07-31) y **ninguna**
+combinación alcanzó el gate V1 (bootstrap skill-vs-luck p ≤ 0.05; mínimo observado **0.4577**, mediana 1.0).
+No hay candidatas que confirmar, por lo que las fases 2–4 (pulir política, walk-forward, config por defecto)
+**no se ejecutaron** por diseño: no se relajan umbrales para forzar un pase.
+
+**Evidencia (resumen del scorecard):**
+
+| Gate | Combinaciones que pasan (de 984) | % |
+|---|---|---|
+| V1 · bootstrap p ≤ 0.05 | 0 | 0.0 |
+| V2 · N efectivo ≥ 3 | 633 | 64.3 |
+| V4 · replicación ≥ 0.5 | 879 | 89.3 |
+| V5 · DSR ≥ 0.95 | 444 | 45.1 |
+| E1 · % días > segmento ≥ 60 | 471 | 47.9 |
+| E2 · sin kill-switch | 769 | 78.2 |
+| E3 · EV histórico ≥ 0 | 452 | 45.9 |
+| E4 · capacidad ≤ límite | 845 | 85.9 |
+| N1 cheap + N2 (candidatas) | **0** | 0.0 |
+
+**Veredicto: NO-OPERABLE.** Con el premio C16–C18 relativo al segmento (recompensa fija acordada) no existe
+señal de skill cross-sectional imitable en ningún (segmento × estrategia × ventana) de los 11 años analizados:
+los agentes de una misma estrategia son conductualmente homogéneos (misma acción → margen relativo casi
+idéntico), el "top" es suerte entre iguales, y el bootstrap no lo puede separar. La corrección del determinismo
+(N0.2) se resolvió en la capa SQL (`MAX` en vez de `AVG` para precios de sistema; `ROUND` de sumas en F-1).
+
+**Lecciones para una futura aceptación:**
+1. La única palanca que podría crear señal es **cambiar la recompensa** (p. ej. margen bruto sin el modelo
+   contable, o ground truth XM) — decisión explícitamente excluida por el dueño en esta iteración.
+2. El harness `--aceptacion` queda operativo: si cambian la recompensa o los datos, se re-corre un solo comando.
