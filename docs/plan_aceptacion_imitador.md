@@ -192,6 +192,14 @@ Gates: p≤0.001–0.03 · réplica 0.5–1.6 · DSR ≥0.95 · holdout ≥50 % 
 365 d (p=0.001) y a la nula construida con pool entre segmentos (p≤0.017) → **no es un artefacto de poder ni de
 selección del pool**. Evidencia: `docs/scorecard_aceptacion.md`, `docs/experimento_poder_estadistico.md`.
 
+**Robustez walk-forward (R1, 84 ventanas contiguas 2015→2022, estudio 90 d / impacto 7 d) para
+PEQUEÑO · Comercializador regulado:** el gate de **skill es muy persistente** — p≤0.05 en el **99 %** de las
+ventanas, réplica ≥0.5 en el 98 %, DSR ≥0.95 en el 80 %, EV histórico ≥0 en el 96 % — pero el gate económico
+completo (N1 cheap + N2, incl. E1 "gana al segmento ≥60 % de los días") pasa en el **44 %** de ventanas (E1 es
+ruidoso con impacto de solo 7 días). Racha contigua máxima de ventanas operables: 8. **Lectura:** la habilidad
+es real y estable por régimen, pero la operabilidad es **por ventana**: el imitador debe re-seleccionar por
+ventana (modo `--walk-forward`), no operarse como una combinación estática durante años.
+
 **Lección:** el proyecto era viable; el bug del bootstrap lo hacía parecer muerto. La ruta pendiente sigue siendo
 el ground truth XM (P2.4) para confirmar los márgenes reales; mientras tanto, la imitación es operable por
 régimen con el premio relativo.
