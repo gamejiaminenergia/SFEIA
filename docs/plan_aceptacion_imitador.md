@@ -1,6 +1,6 @@
 # Plan — Scorecard de aceptación y búsqueda autónoma de una combinación operable
 
-> Proyecto: SFEIA · Fecha: 2026-09-09 · Estado: **ejecutado — veredicto NO-OPERABLE** (evidencia en `docs/scorecard_aceptacion.md`)
+> Proyecto: SFEIA · Fecha: 2026-09-09 · Estado: **ejecutado — veredicto OPERABLE (por régimen)** (evidencia en `docs/scorecard_aceptacion.md`)
 > Documentos relacionados: `docs/plan_agente_xxxc_asistente.md` (plan del asistente),
 > `docs/investigacion_imitacion_traders_profesionales.md` (investigación y diagnóstico),
 > `docs/informe_asistente_imitador.md` y `docs/informe_barrido_combinaciones.md` (salidas actuales).
@@ -170,35 +170,28 @@ esa combinación). El resto de combinaciones nunca se recomiendan. Si ninguna cu
 - **NO-OPERABLE:** agotadas las 30 iteraciones (o corte temprano de la Fase 1) sin ninguna combinación
   operable; se entrega el scorecard completo y el informe de evidencia.
 
-## 8. Ejecución (2026-09-09) — veredicto final
+## 8. Ejecución (2026-09-09) — veredicto final (revisado)
 
-**Fases ejecutadas:** 0 (harness `--aceptacion`) y 1 (feasibility scan). El **corte temprano** de la Fase 1 se
-activó: el harness barrió el grid completo (138 ventanas, 984 combinaciones, 2015→2026-07-31) y **ninguna**
-combinación alcanzó el gate V1 (bootstrap skill-vs-luck p ≤ 0.05; mínimo observado **0.4577**, mediana 1.0).
-No hay candidatas que confirmar, por lo que las fases 2–4 (pulir política, walk-forward, config por defecto)
-**no se ejecutaron** por diseño: no se relajan umbrales para forzar un pase.
+> **Corrección crítica:** el primer veredicto fue NO-OPERABLE erróneo por un **bug en `bootstrap_skill_luck`**
+> (tomaba `medianas_reales[0]` — el mínimo de un sort ascendente — en vez del máximo que indica el comentario,
+> inflando p≈1.0 en todo el grid). Corregido a `[-1]` con test. El veredicto revisado es **OPERABLE**.
 
-**Evidencia (resumen del scorecard):**
+**Fases ejecutadas:** 0 (harness `--aceptacion`), 1 (scan), 2 (confirmación), **A** (modo arquetipo ganador por
+régimen) y **C** (experimento de poder). Resultados:
 
-| Gate | Combinaciones que pasan (de 984) | % |
-|---|---|---|
-| V1 · bootstrap p ≤ 0.05 | 0 | 0.0 |
-| V2 · N efectivo ≥ 3 | 633 | 64.3 |
-| V4 · replicación ≥ 0.5 | 879 | 89.3 |
-| V5 · DSR ≥ 0.95 | 444 | 45.1 |
-| E1 · % días > segmento ≥ 60 | 471 | 47.9 |
-| E2 · sin kill-switch | 769 | 78.2 |
-| E3 · EV histórico ≥ 0 | 452 | 45.9 |
-| E4 · capacidad ≤ límite | 845 | 85.9 |
-| N1 cheap + N2 (candidatas) | **0** | 0.0 |
+| Modo | Combinaciones confirmadas | Operables (N1+N2) | Patrón dominante |
+|---|---|---|---|
+| topN | 33 | **20** | Comercializador regulado (PEQUEÑO/MEDIANO), Trader no regulado (MEDIANO) · 2015–2021 |
+| arquetipo (Ruta A) | 33 | **25** | Arquetipo ganador por régimen (regulado, trader, mixto) · 2015–2022 y 2025 |
 
-**Veredicto: NO-OPERABLE.** Con el premio C16–C18 relativo al segmento (recompensa fija acordada) no existe
-señal de skill cross-sectional imitable en ningún (segmento × estrategia × ventana) de los 11 años analizados:
-los agentes de una misma estrategia son conductualmente homogéneos (misma acción → margen relativo casi
-idéntico), el "top" es suerte entre iguales, y el bootstrap no lo puede separar. La corrección del determinismo
-(N0.2) se resolvió en la capa SQL (`MAX` en vez de `AVG` para precios de sistema; `ROUND` de sumas en F-1).
+Gates: p≤0.001–0.03 · réplica 0.5–1.6 · DSR ≥0.95 · holdout ≥50 % · E1 ≥60 % (muchos 100 %) · EV histórico >0
+(20–80 COP/kWh) · sin kill-switch · capacidad OK. **2023–2025 (escasez) siguen fallando**: la operabilidad es
+**por régimen** (Niño/benigno 2015–2021 operan; escasez reciente no).
 
-**Lecciones para una futura aceptación:**
-1. La única palanca que podría crear señal es **cambiar la recompensa** (p. ej. margen bruto sin el modelo
-   contable, o ground truth XM) — decisión explícitamente excluida por el dueño en esta iteración.
-2. El harness `--aceptacion` queda operativo: si cambian la recompensa o los datos, se re-corre un solo comando.
+**Experimento de poder (Ruta C):** la señal operable sobrevive a n_boot=2000 (p≤0.0135), a la ventana larga de
+365 d (p=0.001) y a la nula construida con pool entre segmentos (p≤0.017) → **no es un artefacto de poder ni de
+selección del pool**. Evidencia: `docs/scorecard_aceptacion.md`, `docs/experimento_poder_estadistico.md`.
+
+**Lección:** el proyecto era viable; el bug del bootstrap lo hacía parecer muerto. La ruta pendiente sigue siendo
+el ground truth XM (P2.4) para confirmar los márgenes reales; mientras tanto, la imitación es operable por
+régimen con el premio relativo.

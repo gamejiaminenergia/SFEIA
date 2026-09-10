@@ -47,6 +47,7 @@ def renderizar(res: dict) -> str:
     f = res["filtros"]
     grid = res["grid"]
     operables = [c for c in res["confirmadas"] if c["valida_final"]]
+    operables_arq = [c for c in res["confirmadas_arquetipo"] if c["valida_final"]]
     L: list[str] = []
 
     L.append("# Scorecard de aceptación del asistente imitador")
@@ -55,7 +56,8 @@ def renderizar(res: dict) -> str:
     L.append("")
     L.append(f"Grid: **{res['n_ventanas_ok']}** ventanas (estudio {grid['dias_estudio']} d · impacto "
              f"{grid['dias_impacto']} d · paso {grid['paso_dias']} d) entre **2015-01-01** y el límite de datos · "
-             f"**{res['n_combinaciones']}** (segmento × estrategia × ventana) evaluadas en el scan grueso.")
+             f"**{res['n_combinaciones']}** (segmento × estrategia × ventana, modo topN) y "
+             f"**{res['n_combinaciones_arquetipo']}** (segmento × ventana, modo arquetipo) evaluadas en el scan grueso.")
     L.append("")
     L.append(f"Gates (N1/N2): bootstrap p ≤ {f['alpha']} · N efectivo ≥ {f['min_n_efectivo']} · holdout ≥ "
              f"{f['min_persistencia']} % · replicación ≥ {f['min_replicacion']} · DSR ≥ {f['min_dsr']} · "
@@ -63,23 +65,28 @@ def renderizar(res: dict) -> str:
              f"sin kill-switch · capacidad ≤ {f.get('capacidad_max_pct', 5.0)} %.")
     L.append("")
 
-    if operables:
+    if operables or operables_arq:
         L.append("## VEREDICTO: COMBINACIÓN OPERABLE ENCONTRADA")
         L.append("")
-        L.append(f"**{len(operables)}** combinación(es) pasan N0+N1+N2+N3 en una ventana reproducible:")
+        L.append(f"**{len(operables) + len(operables_arq)}** combinación(es) pasan N0+N1+N2 (y N3 cuando se "
+                 "confirma con walk-forward) en una ventana reproducible:")
         L.append("")
         for c in operables:
-            L.append(f"- **{c['segmento']} · {c['estrategia']}** — estudio {c['estudio_ini']}→{c['estudio_fin']} · "
+            L.append(f"- **{c['segmento']} · {c['estrategia']}** (topN) — estudio {c['estudio_ini']}→{c['estudio_fin']} · "
                      f"impacto {c['impacto_ini']}→{c['impacto_fin']} — p={c['p_valor']:.4f} · réplica "
                      f"{_fmt(c['ratio_replicacion'])} · DSR {_fmt(c['dsr'])} · N efectivo {c['n_efectivo']} · "
                      f"% días > segmento {_fmt(c['pct_gana_segmento'])}.")
+        for c in operables_arq:
+            L.append(f"- **{c['segmento']} · {c['estrategia']}** (arquetipo) — estudio {c['estudio_ini']}→{c['estudio_fin']} · "
+                     f"impacto {c['impacto_ini']}→{c['impacto_fin']} — p={c['p_valor']:.4f} · réplica "
+                     f"{_fmt(c['ratio_replicacion'])} · DSR {_fmt(c['dsr'])} · % días > segmento "
+                     f"{_fmt(c['pct_gana_segmento'])}.")
         L.append("")
     else:
         L.append("## VEREDICTO: NO-OPERABLE (no se encontró combinación válida)")
         L.append("")
-        L.append("Tras el barrido completo del grid, **ninguna** (segmento × estrategia × ventana) supera la "
-                 "barrera de validez con el margen C16–C18 relativo al segmento. La siguiente tabla muestra las "
-                 "confirmaciones más cercanas a la barrera (la distancia es la evidencia de por qué no hay señal).")
+        L.append("Tras el barrido completo del grid, **ninguna** (segmento × estrategia × ventana, en ninguno de "
+                 "los dos modos) supera la barrera de validez con el margen C16–C18 relativo al segmento.")
         L.append("")
 
     # ---- confirmadas ----
@@ -105,6 +112,57 @@ def renderizar(res: dict) -> str:
     L.append("")
     L.append("**Lectura:** *Operable* = pasa N1 completo (bootstrap + N efectivo + holdout + replicación + DSR) "
              "y N2 (económico/riesgo) en esa ventana.")
+    L.append("")
+
+    # ---- modo arquetipo (Ruta A) ----
+    L.append("## Modo arquetipo (Ruta A): el arquetipo ganador por régimen")
+    L.append("")
+    L.append("En vez de clonar el top-N de agentes de una estrategia fija (indistinguibles entre sí), la política "
+             "mezcla **arquetipos por bin de spread**: en cada régimen despliega el perfil de la estrategia que "
+             "mejor superó a su segmento en el estudio. La validez se re-pointa al nivel de arquetipo (bootstrap "
+             "sobre arquetipos + persistencia del ganador).")
+    L.append("")
+    if res["confirmadas_arquetipo"]:
+        filas = []
+        for c in res["confirmadas_arquetipo"]:
+            filas.append([
+                c["estudio_ini"], c["segmento"], c["estrategia"],
+                c["n_maestros"], _fmt(c["p_valor"], 4), _fmt(c["ratio_replicacion"]),
+                _fmt(c["dsr"]), _fmt(c["persistencia"]), _fmt(c["pct_gana_segmento"]),
+                _fmt(c["ev_historico"]), _si_no(c["kill_switch"]), _si_no(c["valida_final"]),
+            ])
+        L.append("### Confirmaciones (arquetipo)")
+        L.append("")
+        L.append(_tabla([
+            "Ventana estudio", "Segmento", "Arquetipo ganador", "N arq.", "p-valor",
+            "Réplica", "DSR", "Holdout %", "% > seg.", "EV hist.", "Kill", "Operable",
+        ], filas))
+        L.append("")
+    else:
+        L.append("_No hubo confirmaciones en modo arquetipo._")
+        L.append("")
+    n_arq = len(res["filas_arquetipo"])
+    if n_arq:
+        g = res["filtros"]
+        evs_arq = [scorecard.evaluar_gates(f, g) for f in res["filas_arquetipo"]]
+        filas = [
+            ["Combinaciones evaluadas (arquetipo)", n_arq],
+            ["Candidatas arquetipo (N1 cheap + N2)", sum(1 for e in evs_arq if e["valida_cheap"])],
+        ]
+        for gate, nombre in [
+            ("V1_bootstrap", "V1' · bootstrap arquetipo p ≤ 0.05"),
+            ("V2_n_efectivo", "V2' · nº arquetipos ≥ 3"),
+            ("V4_replicacion", "V4 · replicación ≥ 0.5"),
+            ("V5_dsr", "V5 · DSR ≥ 0.95"),
+            ("E1_gana_segmento", "E1 · % días > segmento ≥ 60"),
+            ("E3_ev_historico", "E3 · EV histórico ≥ 0"),
+        ]:
+            n_ok = sum(1 for e in evs_arq if e["gates"].get(gate))
+            filas.append([f"{nombre} (pasan / %)", f"{n_ok} / {round(n_ok / n_arq * 100, 1)} %"])
+        L.append("### Diagnóstico del modo arquetipo")
+        L.append("")
+        L.append(_tabla(["Gate", "Resultado"], filas))
+        L.append("")
     L.append("")
 
     # ---- diagnóstico de la falta de señal ----

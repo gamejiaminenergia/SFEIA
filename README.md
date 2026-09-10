@@ -95,10 +95,12 @@ completo (bootstrap fino + holdout + DSR). Es el "termómetro" reproducible del 
 
 Salidas: `docs/scorecard_aceptacion.md` + `data/scorecard.csv` + `data/scorecard_confirmadas.csv`.
 
-> **Veredicto actual (2026-09-09): NO-OPERABLE.** Ninguna de las 984 combinaciones barridas pasó el gate de
-> bootstrap skill-vs-luck (mínimo p=0.46, umbral 0.05): con el premio C16–C18 relativo los agentes de una misma
-> estrategia son conductualmente homogéneos y el "top" es suerte entre iguales. No se relajaron umbrales; la
-> evidencia vive en el scorecard.
+> **Veredicto actual (2026-09-09): OPERABLE (por régimen).** Tras corregir un bug en el bootstrap skill-vs-luck
+> (el estadístico real era el mínimo, no el máximo), el harness `--aceptacion` encontró combinaciones operables
+> (p≤0.05, réplica≥0.5, DSR≥0.95, holdout≥50 %, E1≥60 %, EV>0): 20 en modo topN y 25 en modo arquetipo,
+> dominadas por Comercializador regulado (PEQUEÑO/MEDIANO) en 2015–2021. Las ventanas 2023–2025 (escasez)
+> siguen fallando: la operabilidad es por régimen. El experimento `--poder` confirma que la señal no es un
+> artefacto de poder. Evidencia en `docs/scorecard_aceptacion.md` y `docs/experimento_poder_estadistico.md`.
 
 ### 5. Tests
 

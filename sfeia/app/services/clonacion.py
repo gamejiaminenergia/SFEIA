@@ -20,6 +20,7 @@ from __future__ import annotations
 from statistics import median
 
 from sfeia.app.models.entities import PerfilAccion, PoliticaClonacion, ReglaPolitica
+from sfeia.app.services import maestros
 from sfeia.app.services.contexto import binificar_spread
 
 FEATURES_ACCION = ["pct_cobertura", "pct_exposicion", "pct_noreg", "pct_sicep", "tiene_sicep"]
@@ -69,6 +70,68 @@ def _perfil_ponderado(por_maestro: dict[str, list[dict]], pesos: dict[str, float
     )
 
 
+def _construir_politica_arquetipo(
+    agentedia: dict[str, dict],
+    etiquetas: list[str],
+    labels,
+    perfiles: dict,
+    segmento: str,
+    segmento_por_codigo: dict[str, str],
+    bins_spread: dict[str, list[float]],
+) -> PoliticaClonacion:
+    """Ruta A: política que mezcla arquetipos por régimen (bin de spread).
+
+    El 'experto' no es el top-N de agentes (indistinguibles dentro de una
+    estrategia) sino el **arquetipo ganador por bin**: se clona el perfil
+    mediano de TODOS los agentes del segmento que juegan el arquetipo que mejor
+    superó al segmento en ese bin. El fallback es el perfil del arquetipo
+    ganador global (sin condicionar por bin).
+    """
+    ganadores, fallback = maestros.arquetipos_ganadores_por_bin(
+        agentedia, etiquetas, labels, perfiles, segmento, segmento_por_codigo, bins_spread
+    )
+    por_bin: dict[str, list[dict]] = {}
+    por_fallback: list[dict] = []
+    spread_min: float | None = None
+    spread_max: float | None = None
+    for i, k in enumerate(etiquetas):
+        ad = agentedia[k]
+        if segmento_por_codigo.get(ad["codigo"]) != segmento:
+            continue
+        cid = int(labels[i])
+        spread = ad["prec_bolsa"] - ad["prec_cont"]
+        spread_min = spread if spread_min is None else min(spread_min, spread)
+        spread_max = spread if spread_max is None else max(spread_max, spread)
+        if cid == fallback:
+            por_fallback.append(ad["features"])
+        bin_label, _, _ = binificar_spread(spread, bins_spread)
+        if cid == ganadores.get(bin_label):
+            por_bin.setdefault(bin_label, []).append(ad["features"])
+
+    reglas: dict[str, ReglaPolitica] = {}
+    for bin_label, dias in por_bin.items():
+        lo, hi = _limites_bin(bin_label, bins_spread)
+        reglas[bin_label] = ReglaPolitica(
+            bin_spread=bin_label, spread_min=lo, spread_max=hi,
+            perfil=_mediana_perfil(dias), n_dias=len(dias),
+        )
+    fallback_perfil = _mediana_perfil(por_fallback) if por_fallback else None
+    rango = (round(spread_min, 2), round(spread_max, 2)) if spread_min is not None else None
+    return PoliticaClonacion(
+        reglas=reglas,
+        fallback=fallback_perfil,
+        bins_spread=bins_spread,
+        rango_spread=rango,
+        modo="arquetipo",
+        ganadores_arquetipo={b: perfiles[cid].arquetipo for b, cid in ganadores.items()},
+    )
+
+
+def _limites_bin(bin_label: str, bins_spread: dict[str, list[float]]) -> tuple[float, float]:
+    lo, hi = bins_spread[bin_label]
+    return float(lo), float(hi)
+
+
 def construir_politica(
     agentedia: dict[str, dict],
     etiquetas: list[str],
@@ -80,17 +143,22 @@ def construir_politica(
     segmento_por_codigo: dict[str, str],
     bins_spread: dict[str, list[float]],
     pesos: dict[str, float] | None = None,
+    modo: str = "topN",
 ) -> PoliticaClonacion:
     """Política BC a partir de los agentes-día de los maestros.
 
-    Solo entrena con los días en que un maestro jugó la **estrategia objetivo**
-    (clúster del estudio que coincide con `estrategia`). Por bin de spread se
-    agrupan esos agentes-día y se toma la mediana del perfil de abastecimiento
-    (o el promedio ponderado por maestro si `pesos` está presente).
+    Con `modo="topN"` (por defecto) solo entrena con los días en que un maestro
+    del top-N jugó la **estrategia objetivo** y toma la mediana del perfil (o
+    el promedio ponderado si `pesos`). Con `modo="arquetipo"` (Ruta A) clona el
+    arquetipo ganador por bin de spread (ver `_construir_politica_arquetipo`).
 
-    También registra el rango de spreads observado (P1.3): la zona de confianza
+    Registra el rango de spreads observado (P1.3): la zona de confianza
     dentro de la cual la política tiene respaldo empírico.
     """
+    if modo == "arquetipo":
+        return _construir_politica_arquetipo(
+            agentedia, etiquetas, labels, perfiles, segmento, segmento_por_codigo, bins_spread
+        )
     cids_objetivo = {cid for cid, p in perfiles.items() if _coincide(p.arquetipo, estrategia)}
     por_bin: dict[str, list[dict]] = {}
     por_bin_por_maestro: dict[str, dict[str, list[dict]]] = {}

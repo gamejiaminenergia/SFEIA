@@ -6,7 +6,7 @@ from datetime import date
 import numpy as np
 
 from sfeia.app.models.entities import PerfilEstrategia
-from sfeia.app.services import clonacion, diario, scorecard
+from sfeia.app.services import clonacion, diario, maestros, scorecard
 
 BINS = {
     "muy_barata": [-999999, 0],
@@ -147,3 +147,115 @@ def test_fidelidad_mae_sin_maestros():
     )
     f = scorecard.fidelidad_mae(ad, politica, {"OTRO"})
     assert f["promedio"] is None
+
+
+# --------------------------------------------------------- Ruta A: arquetipo
+def _agentedia_dos_arquetipos() -> tuple[dict[str, dict], list[str], np.ndarray, dict]:
+    """Dos arquetipos en PEQUEÑO: 'REG' (margen alto, ganador) y 'TRAD' (margen bajo)."""
+    agentedia = {}
+    for dia, bolsa in [(date(2026, 1, 1), 300.0), (date(2026, 1, 2), 310.0)]:
+        for codigo, margen in [("REG", 100.0), ("TRAD", 0.0)]:
+            if codigo == "REG":
+                ad = {
+                    "codigo": "REG", "dia": dia,
+                    "dema_kwh": 100_000.0, "dema_reg_kwh": 100_000.0, "dema_noreg_kwh": 0.0,
+                    "comp_cont_kwh": 90_000.0, "comp_cont_reg_kwh": 90_000.0, "vent_cont_kwh": 0.0,
+                    "comp_bolsa_kwh": 10_000.0, "vent_bolsa_kwh": 0.0, "comp_sicep_kwh": 50_000.0,
+                    "prec_cont": 350.0, "prec_bolsa": bolsa, "prec_escasez": 700.0,
+                }
+            else:
+                ad = {
+                    "codigo": "TRAD", "dia": dia,
+                    "dema_kwh": 100_000.0, "dema_reg_kwh": 0.0, "dema_noreg_kwh": 100_000.0,
+                    "comp_cont_kwh": 0.0, "comp_cont_reg_kwh": 0.0, "vent_cont_kwh": 0.0,
+                    "comp_bolsa_kwh": 100_000.0, "vent_bolsa_kwh": 0.0, "comp_sicep_kwh": 0.0,
+                    "prec_cont": 350.0, "prec_bolsa": bolsa, "prec_escasez": 700.0,
+                }
+            ad["features"] = diario.features_diarias(ad)
+            r = diario.desempeno_diario(ad, {k: v for k, v in [
+                ("pv_tarifa_cop_kwh", 350.0), ("cargo_regulado_cop_kwh", 76.1),
+                ("factor_cobertura", 0.25), ("tasa_costo_anual", 0.02),
+                ("incobrables_pct", 0.02), ("impuesto_pct", 0.33)]})
+            ad["desempeno"] = {"margen_por_kwh_cop": margen}
+            agentedia[diario.clave(codigo, dia)] = ad
+    etiquetas = sorted(agentedia)
+    labels = np.array([0 if agentedia[k]["codigo"] == "REG" else 1 for k in etiquetas])
+    perfiles = {
+        0: PerfilEstrategia(0, "Comercializador regulado", 2, 1, {}, {"PEQUEÑO": 2}),
+        1: PerfilEstrategia(1, "Trader expuesto a bolsa (sin cobertura)", 2, 1, {}, {"PEQUEÑO": 2}),
+    }
+    return agentedia, etiquetas, labels, perfiles
+
+
+def test_arquetipos_ganadores_por_bin():
+    agentedia, etiquetas, labels, perfiles = _agentedia_dos_arquetipos()
+    seg = {"REG": "PEQUEÑO", "TRAD": "PEQUEÑO"}
+    ganadores, fallback = maestros.arquetipos_ganadores_por_bin(
+        agentedia, etiquetas, labels, perfiles, "PEQUEÑO", seg, BINS
+    )
+    # spread = bolsa - contrato ≈ 300-350 = -50 → 'muy_barata'
+    assert ganadores["muy_barata"] == 0  # REG (margen 100) gana el bin
+    assert fallback == 0
+    assert perfiles[ganadores["muy_barata"]].arquetipo == "Comercializador regulado"
+
+
+def test_construir_politica_arquetipo():
+    agentedia, etiquetas, labels, perfiles = _agentedia_dos_arquetipos()
+    seg = {"REG": "PEQUEÑO", "TRAD": "PEQUEÑO"}
+    pol = clonacion.construir_politica(
+        agentedia, etiquetas, labels, perfiles, set(), "PEQUEÑO", "", seg, BINS, modo="arquetipo"
+    )
+    assert pol.modo == "arquetipo"
+    assert "muy_barata" in pol.reglas
+    assert pol.reglas["muy_barata"].perfil.pct_cobertura == 90.0  # perfil de REG
+    assert pol.ganadores_arquetipo["muy_barata"] == "Comercializador regulado"
+    assert pol.fallback is not None
+
+
+def test_bootstrap_skill_luck_arquetipo():
+    from sfeia.app.models.entities import AgenteDia
+
+    # "Comercializador regulado" domina claramente al pool (mezcla de arquetipos)
+    agentes = []
+    for dia in ("2026-01-01", "2026-01-02", "2026-01-03"):
+        agentes.append(AgenteDia("R1", "R1", dia, "PEQUEÑO", 0, "Comercializador regulado", {}, 100.0, 300.0))
+        agentes.append(AgenteDia("R2", "R2", dia, "PEQUEÑO", 0, "Comercializador regulado", {}, 90.0, 300.0))
+        for i in range(4):
+            agentes.append(AgenteDia(f"T{i}", f"T{i}", dia, "PEQUEÑO", 1, "Trader expuesto a bolsa (sin cobertura)", {}, 0.0, 300.0))
+    b = maestros.bootstrap_skill_luck(
+        agentes, "PEQUEÑO", "x", top=1, n_dias_estudio=3, n_boot=300, semilla=7,
+        min_dias_pct=0.0, relativo=False, nivel="arquetipo",
+    )
+    assert b["n_arquetipos"] == 2
+    assert b["mejor_arquetipo"] == "Comercializador regulado"
+    assert b["mejor_maestro_real"] == 100.0  # max del ranking, no el mínimo
+    assert b["p_valor"] < 1.0  # hay ventaja real frente a la nula pooled
+
+
+def test_bootstrap_skill_luck_arquetipo_sin_skill():
+    from sfeia.app.models.entities import AgenteDia
+
+    agentes = []
+    for dia in ("2026-01-01", "2026-01-02", "2026-01-03"):
+        for arq in ("Comercializador regulado", "Trader expuesto a bolsa (sin cobertura)"):
+            agentes.append(AgenteDia("X", "X", dia, "PEQUEÑO", 0, arq, {}, 5.0, 300.0))
+    b = maestros.bootstrap_skill_luck(
+        agentes, "PEQUEÑO", "x", top=1, n_dias_estudio=3, n_boot=300, semilla=7,
+        min_dias_pct=0.0, relativo=False, nivel="arquetipo",
+    )
+    assert b["mejor_maestro_real"] == 5.0
+    assert b["p_valor"] == 1.0  # sin diferencia, indistinguible del azar
+
+
+def test_persistencia_arquetipo():
+    from sfeia.app.models.entities import AgenteDia
+
+    agentes = []
+    for dia in ("2026-02-01", "2026-02-02", "2026-02-03"):
+        agentes.append(AgenteDia("R", "R", dia, "PEQUEÑO", 0, "Comercializador regulado", {}, 80.0, 300.0))
+        agentes.append(AgenteDia("T", "T", dia, "PEQUEÑO", 1, "Trader expuesto a bolsa (sin cobertura)", {}, 10.0, 300.0))
+    p = maestros.persistencia_arquetipo(agentes, "PEQUEÑO", "Comercializador regulado", 3, 0.0)
+    assert p["n_arquetipos"] == 2
+    assert p["persistencia"] == 100.0
+    p2 = maestros.persistencia_arquetipo(agentes, "PEQUEÑO", "Trader expuesto a bolsa (sin cobertura)", 3, 0.0)
+    assert p2["persistencia"] == 0.0

@@ -245,3 +245,9 @@ asistente:
       capacidad_max_pct: 5.0
       max_mae_f1: 10.0
     salida: "docs/scorecard_aceptacion.md"
+
+  # ===== Experimento de poder estadístico (Ruta C) =====
+  # `python -m sfeia.main --poder`: ¿la señal operable resiste más simulaciones,
+  # ventanas largas y pool entre segmentos? Produce docs/experimento_poder_estadistico.md.
+  poder:
+    salida: "docs/experimento_poder_estadistico.md"

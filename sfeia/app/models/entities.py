@@ -172,6 +172,7 @@ class PoliticaClonacion:
     rango_spread: tuple[float, float] | None = None
     modo: str = "mediana"
     pesos: dict[str, float] | None = None
+    ganadores_arquetipo: dict[str, str] | None = None
 
 
 @dataclass

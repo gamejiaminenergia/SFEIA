@@ -143,25 +143,39 @@ def bootstrap_skill_luck(
     semilla: int = 42,
     min_dias_pct: float = 0.0,
     relativo: bool = False,
+    nivel: str = "agente",
 ) -> dict | None:
     """¿El top-N real supera lo que el azar produciría? (bootstrap).
 
     Hipótesis nula: no hay habilidad — dentro del (segmento, estrategia) el
     margen (o el margen relativo al segmento con `relativo=True`) de cualquier
     agente-día es intercambiable. Se re-muestrea el pool con reemplazo
-    preservando el nº de días de cada agente, se recalcula el mejor agente
-    (mediana) del top-N, y se compara con el mejor real. El percentil/p-valor
+    preservando el nº de días de cada unidad (agente o arquetipo), se recalcula
+    la mejor unidad del top-N, y se compara con la mejor real. El p-valor
     responde: '¿qué tan probable es que el mejor maestro sea solo suerte?'.
 
-    Devuelve None si no hay candidatos elegibles (sin comparación posible).
+    Con `nivel="arquetipo"` la unidad es el ARQUETIPO (estrategia) del segmento
+    en vez del agente: el pool son todos los agentes-día del segmento (todas las
+    estrategias) y la pregunta es si el mejor arquetipo supera al azar (Ruta A).
+
+    Devuelve None si no hay unidades elegibles (sin comparación posible).
     """
     import numpy as np
 
     series: dict[str, list[tuple[str, float]]] = {}
+    nombres: dict[str, str] = {}
     for a in agentes:
-        if a.segmento != segmento or not _coincide(a.arquetipo, estrategia):
+        if a.segmento != segmento:
             continue
-        series.setdefault(a.codigo, []).append((a.dia, a.margen_kwh))
+        if nivel == "arquetipo":
+            clave = a.arquetipo
+        else:
+            if not _coincide(a.arquetipo, estrategia):
+                continue
+            clave = a.codigo
+        series.setdefault(clave, []).append((a.dia, a.margen_kwh))
+        if nivel == "agente":
+            nombres[clave] = a.nombre
     umbral = max(1, round(n_dias_estudio * min_dias_pct / 100)) if min_dias_pct and n_dias_estudio else 0
     series = {c: v for c, v in series.items() if len(v) >= umbral}
     if not series:
@@ -175,7 +189,7 @@ def bootstrap_skill_luck(
         return [m for _, m in pares]
 
     medianas_reales = sorted(_mediana(_vals(v)) for v in series.values())
-    real_stat = medianas_reales[-1]  # mejor maestro (mediana mayor)
+    real_stat = medianas_reales[-1]  # mejor unidad (mediana mayor)
 
     pool = [x for v in series.values() for x in _vals(v)]
     counts = [len(v) for v in series.values()]
@@ -191,7 +205,7 @@ def bootstrap_skill_luck(
 
     p_valor = (sum(1 for x in nulos if x >= real_stat) + 1) / (n_boot + 1)
     percentil = sum(1 for x in nulos if x <= real_stat) / n_boot * 100.0
-    return {
+    out = {
         "n_agentes_candidatos": len(series),
         "n_boot": n_boot,
         "mejor_maestro_real": round(real_stat, 2),
@@ -200,6 +214,10 @@ def bootstrap_skill_luck(
         "p_valor": round(p_valor, 4),
         "percentil_real": round(percentil, 1),
     }
+    if nivel == "arquetipo":
+        out["n_arquetipos"] = len(series)
+        out["mejor_arquetipo"] = max(series, key=lambda c: _mediana(_vals(series[c])))
+    return out
 
 
 def alternativa_recomendada(
@@ -279,6 +297,95 @@ def persistencia_seleccion(
         "n_maestros_rankeados": sum(1 for c in codigos_maestros if c in pos),
         "pct_persistencia": round(pct, 1),
         "mediana_percentil": round(med * 100.0, 1) if med is not None else None,
+    }
+
+
+def arquetipos_ganadores_por_bin(
+    agentedia: dict[str, dict],
+    etiquetas: list[str],
+    labels,
+    perfiles: dict,
+    segmento: str,
+    segmento_por_codigo: dict[str, str],
+    bins_spread: dict[str, list[float]],
+) -> tuple[dict[str, int], int | None]:
+    """Ruta A: arquetipo ganador por bin de spread dentro del segmento.
+
+    Para cada bin se rankean los arquetipos (clústeres) del segmento por la
+    mediana del margen **relativo al segmento** de sus agentes-día en ese bin.
+    Devuelve ({bin: cid ganador}, cid ganador global = fallback de la política).
+    """
+    from sfeia.app.services.contexto import binificar_spread
+
+    seg_dia: dict[str, list[float]] = {}
+    m_k: dict[str, float] = {}
+    for i, k in enumerate(etiquetas):
+        ad = agentedia[k]
+        if segmento_por_codigo.get(ad["codigo"]) != segmento:
+            continue
+        d = str(ad["dia"])
+        m = float(ad["desempeno"]["margen_por_kwh_cop"])
+        m_k[k] = m
+        seg_dia.setdefault(d, []).append(m)
+    seg_med = {d: _mediana(v) for d, v in seg_dia.items()}
+
+    por_bin_cid: dict[tuple[str, int], list[float]] = {}
+    por_cid: dict[int, list[float]] = {}
+    for i, k in enumerate(etiquetas):
+        ad = agentedia[k]
+        if segmento_por_codigo.get(ad["codigo"]) != segmento:
+            continue
+        spread = ad["prec_bolsa"] - ad["prec_cont"]
+        bin_label, _, _ = binificar_spread(spread, bins_spread)
+        cid = int(labels[i])
+        rel = m_k[k] - seg_med.get(str(ad["dia"]), m_k[k])
+        por_bin_cid.setdefault((bin_label, cid), []).append(rel)
+        por_cid.setdefault(cid, []).append(rel)
+
+    mejor: dict[str, tuple[int, float]] = {}
+    for (bin_label, cid), vals in por_bin_cid.items():
+        med = _mediana(vals)
+        if bin_label not in mejor or med > mejor[bin_label][1]:
+            mejor[bin_label] = (cid, med)
+    ganadores = {b: cid for b, (cid, _) in mejor.items()}
+    fallback = max(por_cid, key=lambda c: _mediana(por_cid[c])) if por_cid else None
+    return ganadores, fallback
+
+
+def persistencia_arquetipo(
+    agentes_validacion: list,
+    segmento: str,
+    arquetipo_ganador: str,
+    n_dias_validacion: int,
+    min_dias_pct: float = 0.0,
+) -> dict:
+    """Ruta A (V3'): ¿el arquetipo ganador del sub-estudio se sostiene?
+
+    Re-rankea los arquetipos del segmento en la ventana de validación por la
+    mediana del margen relativo al segmento y mide la posición del ganador
+    (persistencia = ¿sigue en la mitad superior?, percentil de su puesto).
+    """
+    series: dict[str, list[tuple[str, float]]] = {}
+    for a in agentes_validacion:
+        if a.segmento != segmento:
+            continue
+        series.setdefault(a.arquetipo, []).append((a.dia, a.margen_kwh))
+    umbral = max(1, round(n_dias_validacion * min_dias_pct / 100)) if min_dias_pct and n_dias_validacion else 0
+    series = {c: v for c, v in series.items() if len(v) >= umbral}
+    if not series or arquetipo_ganador not in series:
+        return {"n_arquetipos": len(series), "persistencia": None, "percentil": None}
+    seg_dia = _mediana_segmento_por_dia(agentes_validacion, segmento)
+    ranking = sorted(
+        ((c, _mediana([m - seg_dia.get(d, m) for d, m in v])) for c, v in series.items()),
+        key=lambda x: -x[1],
+    )
+    n = len(ranking)
+    pos = {c: i for i, (c, _) in enumerate(ranking)}
+    pct = 100.0 if pos[arquetipo_ganador] < n / 2 else 0.0
+    return {
+        "n_arquetipos": n,
+        "persistencia": round(pct, 1),
+        "percentil": round(pos[arquetipo_ganador] / max(n - 1, 1) * 100.0, 1),
     }
 
 

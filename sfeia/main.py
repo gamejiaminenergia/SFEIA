@@ -57,6 +57,9 @@ def _parsear(argv: list[str] | None) -> argparse.Namespace:
     parser.add_argument("--aceptacion", action="store_true",
                         help="Harness de aceptación: grid 2015→hoy, scan grueso + confirmación de candidatas, "
                              "scorecard N0–N4 en docs/scorecard_aceptacion.md + data/scorecard*.csv")
+    parser.add_argument("--poder", action="store_true",
+                        help="Experimento de poder estadístico (Ruta C): ¿la señal operable resiste más "
+                             "simulaciones, ventanas largas y pool entre segmentos? docs/experimento_poder_estadistico.md")
     return parser.parse_args(argv)
 
 
@@ -81,6 +84,17 @@ def main(argv: list[str] | None = None) -> int:
 
     print(f"Asistente imitador: {params.segmento} · {params.estrategia} · top-{params.top}")
     try:
+        if args.poder:
+            from sfeia.app.controllers.estudio_poder import EstudioPoder
+            from sfeia.app.views.informe_poder_md import guardar as guardar_poder
+            res = EstudioPoder(repo, cfg).ejecutar()
+            destino = guardar_poder(res, cfg)
+            print(f"Experimento de poder (Ruta C) → {destino.relative_to(Path.cwd())}")
+            for f in res["filas"]:
+                print(f"  {f['ventana']} {f['segmento']}·{f['estrategia'][:30]:32s} "
+                      f"p(n_boot2000)={f['p_n_boot2000']}  p(pool entre seg)={f['p_pool_entre_segmentos']}")
+            print(f"  [ventana larga] {res['largo']['nota']}  p={res['largo']['p_n_boot2000']}")
+            return 0
         if args.aceptacion:
             from sfeia.app.controllers.fase_aceptacion import FaseAceptacion
             from sfeia.app.views.exportar_csv import exportar_scorecard
@@ -88,18 +102,23 @@ def main(argv: list[str] | None = None) -> int:
             res = FaseAceptacion(repo, cfg).ejecutar()
             csvs = exportar_scorecard(res, cfg)
             destino = guardar_scorecard(res, cfg)
-            print(f"Scorecard: {res['n_ventanas_ok']} ventanas · {res['n_combinaciones']} combinaciones "
-                  f"→ {destino.relative_to(Path.cwd())}")
+            print(f"Scorecard: {res['n_ventanas_ok']} ventanas · {res['n_combinaciones']} combinaciones (topN) · "
+                  f"{res['n_combinaciones_arquetipo']} (arquetipo) → {destino.relative_to(Path.cwd())}")
             for c in csvs:
                 print(f"  - {c.relative_to(Path.cwd())}")
             operables = [c for c in res["confirmadas"] if c["valida_final"]]
-            if operables:
-                print("VEREDICTO: COMBINACIÓN OPERABLE ENCONTRADA:")
-                for c in operables:
+            operables_arq = [c for c in res["confirmadas_arquetipo"] if c["valida_final"]]
+            if operables or operables_arq:
+                print(f"VEREDICTO: COMBINACIÓN OPERABLE ENCONTRADA ({len(operables) + len(operables_arq)}):")
+                for c in operables[:15]:
                     print(f"  - {c['segmento']} · {c['estrategia']}  p={c['p_valor']:.4f}  réplica {c['ratio_replicacion']:.2f}"
                           f"  DSR {c['dsr']:.2f}  holdout {c['persistencia']}%  estudio {c['estudio_ini']}..{c['estudio_fin']}")
+                for c in operables_arq[:15]:
+                    print(f"  - {c['segmento']} · {c['estrategia']} (arquetipo)  p={c['p_valor']:.4f}  réplica {c['ratio_replicacion']:.2f}"
+                          f"  DSR {c['dsr']:.2f}  estudio {c['estudio_ini']}..{c['estudio_fin']}")
             else:
-                print(f"VEREDICTO: NO-OPERABLE. Confirmadas: {len(res['confirmadas'])} (ninguna pasa N1+N2).")
+                print(f"VEREDICTO: NO-OPERABLE. Confirmadas: {len(res['confirmadas'])} topN + "
+                      f"{len(res['confirmadas_arquetipo'])} arquetipo (ninguna pasa N1+N2).")
             return 0
         if args.barrido:
             b_cfg = a_cfg.get("barrido", {})

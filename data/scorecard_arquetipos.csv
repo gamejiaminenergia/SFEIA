@@ -1,0 +1,415 @@
+﻿estudio_ini,estudio_fin,impacto_ini,impacto_fin,segmento,arquetipo_ganador,n_arquetipos,n_efectivo,codigos_arquetipos,p_valor_bootstrap_arquetipo,ratio_replicacion,dsr,holdout_pct,pct_dias_gana_segmento,kill_switch_1_0,ev_historico_cop_kwh,supera_capacidad_1_0,mae_f1_promedio_pp,candidata_1_0,valida_cheap_1_0
+2015-01-01,2015-03-31,2015-04-01,2015-04-07,MEDIANO,Trader no regulado,2,2,"Comercializador regulado,Comercializador regulado",0.005,0.978,1.0,,100.0,0,83.95,0,,0,0
+2015-01-01,2015-03-31,2015-04-01,2015-04-07,PEQUEÑO,Comercializador regulado,3,3,"Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,0.978,1.0,,100.0,0,83.95,0,,1,1
+2015-01-01,2015-03-31,2015-04-01,2015-04-07,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,0.987,1.0,,0.0,0,73.04,1,,0,0
+2015-01-31,2015-04-30,2015-05-01,2015-05-07,MEDIANO,Trader no regulado,2,2,"Comercializador regulado,Comercializador regulado",0.005,1.001,1.0,,100.0,0,84.79,0,,0,0
+2015-01-31,2015-04-30,2015-05-01,2015-05-07,PEQUEÑO,Comercializador regulado,3,3,"Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,1.001,1.0,,100.0,0,84.79,0,,1,1
+2015-01-31,2015-04-30,2015-05-01,2015-05-07,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,1.008,1.0,,0.0,0,76.58,1,,0,0
+2015-03-02,2015-05-30,2015-05-31,2015-06-06,MEDIANO,Trader no regulado,2,2,"Comercializador regulado,Comercializador regulado,Comercializador regulado",0.005,0.995,1.0,,100.0,0,83.84,0,,0,0
+2015-03-02,2015-05-30,2015-05-31,2015-06-06,PEQUEÑO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,0.995,0.999,,100.0,0,83.84,0,,1,1
+2015-03-02,2015-05-30,2015-05-31,2015-06-06,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,0.987,1.0,,0.0,0,74.36,1,,0,0
+2015-04-01,2015-06-29,2015-06-30,2015-07-06,MEDIANO,Trader no regulado,2,2,"Comercializador regulado,Comercializador regulado,Trader no regulado",0.005,0.976,0.986,,100.0,0,82.3,0,,0,0
+2015-04-01,2015-06-29,2015-06-30,2015-07-06,PEQUEÑO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,0.976,0.969,,100.0,0,82.3,0,,1,1
+2015-04-01,2015-06-29,2015-06-30,2015-07-06,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,0.972,1.0,,0.0,0,75.83,1,,0,0
+2015-05-01,2015-07-29,2015-07-30,2015-08-05,MEDIANO,Trader no regulado,2,2,"Comercializador regulado,Comercializador regulado,Trader no regulado",0.005,0.962,0.96,,71.4,0,80.87,0,,0,0
+2015-05-01,2015-07-29,2015-07-30,2015-08-05,PEQUEÑO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,0.962,0.871,,71.4,0,80.87,0,,0,0
+2015-05-01,2015-07-29,2015-07-30,2015-08-05,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,1.007,1.0,,42.9,0,78.36,1,,0,0
+2015-05-31,2015-08-28,2015-08-29,2015-09-04,MEDIANO,Trader no regulado,2,2,"Comercializador regulado,Trader no regulado",0.005,0.965,1.0,,100.0,0,79.75,0,,0,0
+2015-05-31,2015-08-28,2015-08-29,2015-09-04,PEQUEÑO,Comercializador regulado,3,3,"Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,0.965,1.0,,100.0,0,79.75,0,,1,1
+2015-05-31,2015-08-28,2015-08-29,2015-09-04,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,0.958,1.0,,57.1,0,75.2,1,,0,0
+2015-06-30,2015-09-27,2015-09-28,2015-10-04,MEDIANO,Trader no regulado,2,2,"Comercializador regulado,Comercializador regulado,Trader no regulado,Trader no regulado,Trader no regulado",0.005,0.891,1.0,,100.0,0,72.91,0,,0,0
+2015-06-30,2015-09-27,2015-09-28,2015-10-04,PEQUEÑO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,0.891,0.998,,100.0,0,72.91,0,,1,1
+2015-06-30,2015-09-27,2015-09-28,2015-10-04,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,0.437,1.0,,100.0,0,37.04,1,,0,0
+2015-07-30,2015-10-27,2015-10-28,2015-11-03,MEDIANO,Trader no regulado,2,2,"Comercializador regulado,Comercializador regulado,Trader no regulado,Trader no regulado,Trader no regulado",0.005,0.95,1.0,,100.0,0,75.44,0,,0,0
+2015-07-30,2015-10-27,2015-10-28,2015-11-03,PEQUEÑO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,0.95,1.0,,100.0,0,75.44,0,,1,1
+2015-07-30,2015-10-27,2015-10-28,2015-11-03,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,0.39,1.0,,42.9,0,31.79,1,,0,0
+2015-08-29,2015-11-26,2015-11-27,2015-12-03,MEDIANO,Trader no regulado,2,2,"Trader no regulado,Trader no regulado,Trader no regulado,Trader no regulado",0.005,0.966,1.0,,100.0,0,73.08,0,,0,0
+2015-08-29,2015-11-26,2015-11-27,2015-12-03,PEQUEÑO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",0.005,0.966,1.0,,100.0,0,73.08,0,,1,1
+2015-08-29,2015-11-26,2015-11-27,2015-12-03,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,0.856,1.0,,57.1,0,29.61,1,,0,0
+2015-09-28,2015-12-26,2015-12-27,2016-01-02,MEDIANO,Trader no regulado,2,2,"Trader no regulado,Trader no regulado,Trader no regulado",0.005,0.997,1.0,,100.0,0,72.19,0,,0,0
+2015-09-28,2015-12-26,2015-12-27,2016-01-02,PEQUEÑO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado,Comercializador regulado",0.005,0.997,1.0,,100.0,0,72.19,0,,1,1
+2015-09-28,2015-12-26,2015-12-27,2016-01-02,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,2.264,1.0,,71.4,0,61.72,1,,0,0
+2015-10-28,2016-01-25,2016-01-26,2016-02-01,MEDIANO,Trader no regulado,3,3,"Trader no regulado,Trader no regulado,Trader no regulado",0.005,1.015,0.974,,100.0,0,73.11,0,,1,1
+2015-10-28,2016-01-25,2016-01-26,2016-02-01,PEQUEÑO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado,Comercializador regulado",0.005,1.015,0.974,,100.0,0,73.11,0,,1,1
+2015-10-28,2016-01-25,2016-01-26,2016-02-01,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,1.75,1.0,,100.0,0,47.57,1,,0,0
+2015-11-27,2016-02-24,2016-02-25,2016-03-02,MEDIANO,Trader no regulado,2,2,"Trader no regulado,Trader no regulado,Trader no regulado",0.005,0.988,1.0,,100.0,0,71.31,0,,0,0
+2015-11-27,2016-02-24,2016-02-25,2016-03-02,PEQUEÑO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado,Comercializador regulado",0.005,0.988,1.0,,100.0,0,71.31,0,,1,1
+2015-11-27,2016-02-24,2016-02-25,2016-03-02,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,1.123,1.0,,100.0,0,30.12,1,,0,0
+2015-12-27,2016-03-25,2016-03-26,2016-04-01,MEDIANO,Trader no regulado,2,2,"Trader no regulado,Trader no regulado,Trader no regulado",0.005,0.989,1.0,,100.0,0,71.59,0,,0,0
+2015-12-27,2016-03-25,2016-03-26,2016-04-01,PEQUEÑO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado,Comercializador regulado",0.005,0.989,1.0,,100.0,0,71.59,0,,1,1
+2015-12-27,2016-03-25,2016-03-26,2016-04-01,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,-1.127,1.0,,0.0,0,-8.86,1,,0,0
+2016-01-26,2016-04-24,2016-04-25,2016-05-01,MEDIANO,Trader no regulado,2,2,"Trader no regulado,Trader no regulado,Trader no regulado,Trader no regulado",0.005,1.049,0.993,,100.0,0,75.45,0,,0,0
+2016-01-26,2016-04-24,2016-04-25,2016-05-01,PEQUEÑO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",0.005,1.049,0.984,,100.0,0,75.45,0,,1,1
+2016-01-26,2016-04-24,2016-04-25,2016-05-01,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,21.508,1.0,,42.9,0,69.39,1,,0,0
+2016-02-25,2016-05-24,2016-05-25,2016-05-31,MEDIANO,Trader no regulado,2,2,"Comercializador regulado,Trader no regulado,Trader no regulado,Trader no regulado,Trader no regulado",0.005,1.045,1.0,,85.7,0,75.72,0,,0,0
+2016-02-25,2016-05-24,2016-05-25,2016-05-31,PEQUEÑO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,1.052,1.0,,85.7,0,75.72,0,,1,1
+2016-02-25,2016-05-24,2016-05-25,2016-05-31,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,1.752,1.0,,57.1,0,73.57,1,,0,0
+2016-03-26,2016-06-23,2016-06-24,2016-06-30,PEQUEÑO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,1.209,1.0,,85.7,0,89.05,0,,1,1
+2016-03-26,2016-06-23,2016-06-24,2016-06-30,MEDIANO,Trader no regulado,2,2,"Comercializador regulado,Trader no regulado,Trader no regulado,Trader no regulado,Trader no regulado",0.005,1.094,1.0,,85.7,0,81.31,0,,0,0
+2016-03-26,2016-06-23,2016-06-24,2016-06-30,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,1.033,1.0,,85.7,0,73.97,1,,0,0
+2016-04-25,2016-07-23,2016-07-24,2016-07-30,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),3,3,"Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,1.155,1.0,,100.0,0,82.6,0,,1,1
+2016-04-25,2016-07-23,2016-07-24,2016-07-30,MEDIANO,Comercializador regulado,2,2,"Comercializador regulado,Trader no regulado",1.0,1.025,1.0,,100.0,0,77.68,0,,0,0
+2016-04-25,2016-07-23,2016-07-24,2016-07-30,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,0.987,1.0,,85.7,0,72.35,1,,0,0
+2016-05-25,2016-08-22,2016-08-23,2016-08-29,MEDIANO,Trader expuesto a bolsa (sin cobertura),3,3,"Trader expuesto a bolsa (sin cobertura),Trader no regulado",0.005,0.896,1.0,,100.0,0,68.95,0,,1,1
+2016-05-25,2016-08-22,2016-08-23,2016-08-29,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),3,3,"Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,0.843,1.0,,100.0,0,62.99,0,,1,1
+2016-05-25,2016-08-22,2016-08-23,2016-08-29,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,0.832,1.0,,85.7,0,61.18,1,,0,0
+2016-06-24,2016-09-21,2016-09-22,2016-09-28,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),3,3,"Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,1.346,0.968,,85.7,0,98.5,0,,1,1
+2016-06-24,2016-09-21,2016-09-22,2016-09-28,MEDIANO,Trader expuesto a bolsa (sin cobertura),3,3,"Trader expuesto a bolsa (sin cobertura),Trader no regulado",0.005,1.335,0.969,,85.7,0,97.58,0,,1,1
+2016-06-24,2016-09-21,2016-09-22,2016-09-28,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,1.025,1.0,,28.6,0,72.93,1,,0,0
+2016-07-24,2016-10-21,2016-10-22,2016-10-28,MEDIANO,Trader no regulado,2,2,"Comercializador regulado,Trader no regulado",0.005,0.964,1.0,,100.0,0,68.04,0,,0,0
+2016-07-24,2016-10-21,2016-10-22,2016-10-28,PEQUEÑO,Comercializador regulado,3,3,"Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,0.965,1.0,,100.0,0,68.04,0,,1,1
+2016-07-24,2016-10-21,2016-10-22,2016-10-28,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,0.886,1.0,,100.0,0,61.65,1,,0,0
+2016-08-23,2016-11-20,2016-11-21,2016-11-27,PEQUEÑO,Comercializador regulado,3,3,"Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,1.166,1.0,,71.4,0,78.94,0,,1,1
+2016-08-23,2016-11-20,2016-11-21,2016-11-27,MEDIANO,Trader no regulado,2,2,"Comercializador regulado,Trader no regulado",0.005,1.079,1.0,,85.7,0,73.62,0,,0,0
+2016-08-23,2016-11-20,2016-11-21,2016-11-27,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,1.047,1.0,,14.3,0,68.57,1,,0,0
+2016-09-22,2016-12-20,2016-12-21,2016-12-27,PEQUEÑO,Comercializador regulado,3,3,"Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,1.318,1.0,,100.0,0,89.02,0,,1,1
+2016-09-22,2016-12-20,2016-12-21,2016-12-27,MEDIANO,Trader no regulado,2,2,"Comercializador regulado,Trader no regulado",0.01,1.158,1.0,,100.0,0,79.1,0,,0,0
+2016-09-22,2016-12-20,2016-12-21,2016-12-27,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,1.071,1.0,,42.9,0,71.08,1,,0,0
+2016-10-22,2017-01-19,2017-01-20,2017-01-26,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),3,3,"Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,1.098,1.0,,100.0,0,91.64,0,,1,1
+2016-10-22,2017-01-19,2017-01-20,2017-01-26,MEDIANO,Comercializador regulado,2,2,"Comercializador regulado,Trader no regulado",1.0,0.994,1.0,,100.0,0,71.7,0,,0,0
+2016-10-22,2017-01-19,2017-01-20,2017-01-26,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,0.988,1.0,,0.0,0,68.37,1,,0,0
+2016-11-21,2017-02-18,2017-02-19,2017-02-25,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),3,3,"Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,0.682,0.995,,85.7,0,62.71,0,,1,1
+2016-11-21,2017-02-18,2017-02-19,2017-02-25,MEDIANO,Comercializador regulado,2,2,"Trader no regulado,Trader no regulado",1.0,0.85,1.0,,100.0,0,62.71,0,,0,0
+2016-11-21,2017-02-18,2017-02-19,2017-02-25,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,0.837,1.0,,100.0,0,56.97,1,,0,0
+2016-12-21,2017-03-20,2017-03-21,2017-03-27,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),3,3,"Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,1.087,1.0,,100.0,0,93.93,0,,1,1
+2016-12-21,2017-03-20,2017-03-21,2017-03-27,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,1.02,1.0,,57.1,0,67.91,1,,0,0
+2016-12-21,2017-03-20,2017-03-21,2017-03-27,MEDIANO,Comercializador regulado,2,2,"Trader no regulado,Trader no regulado",1.0,1.02,1.0,,100.0,0,71.85,0,,0,0
+2017-01-20,2017-04-19,2017-04-20,2017-04-26,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),3,3,"Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,1.161,1.0,,100.0,0,101.13,0,,1,1
+2017-01-20,2017-04-19,2017-04-20,2017-04-26,MEDIANO,Comercializador regulado,2,2,"Trader no regulado,Trader no regulado",1.0,1.069,1.0,,100.0,0,75.26,0,,0,0
+2017-01-20,2017-04-19,2017-04-20,2017-04-26,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,1.065,1.0,,85.7,0,70.47,1,,0,0
+2017-02-19,2017-05-19,2017-05-20,2017-05-26,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),3,3,"Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,1.26,0.913,,100.0,0,125.59,0,,0,0
+2017-02-19,2017-05-19,2017-05-20,2017-05-26,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,1.108,1.0,,85.7,0,77.06,1,,0,0
+2017-02-19,2017-05-19,2017-05-20,2017-05-26,MEDIANO,Comercializador regulado,2,2,"Comercializador regulado,Trader no regulado",1.0,1.084,0.968,,100.0,0,76.43,0,,0,0
+2017-03-21,2017-06-18,2017-06-19,2017-06-25,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),3,3,Trader expuesto a bolsa (sin cobertura),0.005,1.052,1.0,,100.0,0,105.81,0,,1,1
+2017-03-21,2017-06-18,2017-06-19,2017-06-25,MEDIANO,Trader no regulado,2,2,Trader no regulado,1.0,1.029,0.999,,100.0,0,80.53,0,,0,0
+2017-03-21,2017-06-18,2017-06-19,2017-06-25,GRANDE,Comercializador regulado,1,1,Comercializador regulado,1.0,1.019,1.0,,100.0,0,74.22,1,,0,0
+2017-04-20,2017-07-18,2017-07-19,2017-07-25,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),3,3,Trader expuesto a bolsa (sin cobertura),0.005,0.979,0.996,,100.0,0,104.5,0,,1,1
+2017-04-20,2017-07-18,2017-07-19,2017-07-25,MEDIANO,Trader no regulado,2,2,Trader no regulado,0.005,0.983,0.999,,100.0,0,87.39,0,,0,0
+2017-04-20,2017-07-18,2017-07-19,2017-07-25,GRANDE,Comercializador regulado,1,1,Comercializador regulado,1.0,0.99,1.0,,100.0,0,72.06,1,,0,0
+2017-05-20,2017-08-17,2017-08-18,2017-08-24,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),3,3,Trader expuesto a bolsa (sin cobertura),0.005,0.64,1.0,,100.0,0,64.59,0,,1,1
+2017-05-20,2017-08-17,2017-08-18,2017-08-24,MEDIANO,Trader no regulado,2,2,Trader no regulado,0.005,0.722,1.0,,100.0,0,65.85,0,,0,0
+2017-05-20,2017-08-17,2017-08-18,2017-08-24,GRANDE,Comercializador regulado,1,1,Comercializador regulado,1.0,0.893,1.0,,0.0,0,64.37,1,,0,0
+2017-06-19,2017-09-16,2017-09-17,2017-09-23,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),3,3,Trader expuesto a bolsa (sin cobertura),0.005,0.757,1.0,,100.0,0,74.5,0,,1,1
+2017-06-19,2017-09-16,2017-09-17,2017-09-23,MEDIANO,Trader no regulado,2,2,Trader no regulado,1.0,0.815,1.0,,100.0,0,71.79,0,,0,0
+2017-06-19,2017-09-16,2017-09-17,2017-09-23,GRANDE,Comercializador regulado,1,1,Comercializador regulado,1.0,0.93,1.0,,100.0,0,65.28,1,,0,0
+2017-07-19,2017-10-16,2017-10-17,2017-10-23,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),3,3,Trader expuesto a bolsa (sin cobertura),0.005,0.667,0.997,,100.0,0,47.58,0,,1,1
+2017-07-19,2017-10-16,2017-10-17,2017-10-23,MEDIANO,Trader no regulado,2,2,Trader no regulado,0.005,0.772,0.998,,100.0,0,55.92,0,,0,0
+2017-07-19,2017-10-16,2017-10-17,2017-10-23,GRANDE,Comercializador regulado,1,1,Comercializador regulado,1.0,0.911,1.0,,0.0,0,59.87,1,,0,0
+2017-08-18,2017-11-15,2017-11-16,2017-11-22,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),3,3,"Trader expuesto a bolsa (sin cobertura),Trader no regulado",0.005,1.092,1.0,,100.0,0,91.77,0,,1,1
+2017-08-18,2017-11-15,2017-11-16,2017-11-22,MEDIANO,Trader no regulado,2,2,"Trader no regulado,Trader no regulado",0.005,1.053,1.0,,100.0,0,78.47,0,,0,0
+2017-08-18,2017-11-15,2017-11-16,2017-11-22,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,1.009,1.0,,0.0,0,62.79,1,,0,0
+2017-09-17,2017-12-15,2017-12-16,2017-12-22,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),3,3,"Trader expuesto a bolsa (sin cobertura),Trader no regulado",0.005,1.217,1.0,,100.0,0,108.53,0,,1,1
+2017-09-17,2017-12-15,2017-12-16,2017-12-22,MEDIANO,Trader no regulado,2,2,"Trader no regulado,Trader no regulado",0.005,1.137,1.0,,100.0,0,87.94,0,,0,0
+2017-09-17,2017-12-15,2017-12-16,2017-12-22,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,1.044,1.0,,0.0,0,66.57,1,,0,0
+2017-10-17,2018-01-14,2018-01-15,2018-01-21,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),3,3,"Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,1.096,0.975,,100.0,0,90.82,0,,1,1
+2017-10-17,2018-01-14,2018-01-15,2018-01-21,MEDIANO,Trader no regulado,2,2,"Trader no regulado,Trader no regulado",0.005,1.062,0.988,,100.0,0,77.79,0,,0,0
+2017-10-17,2018-01-14,2018-01-15,2018-01-21,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,0.991,1.0,,0.0,0,59.56,1,,0,0
+2017-11-16,2018-02-13,2018-02-14,2018-02-20,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),3,3,Trader expuesto a bolsa (sin cobertura),0.005,0.885,1.0,,100.0,0,58.53,0,,1,1
+2017-11-16,2018-02-13,2018-02-14,2018-02-20,MEDIANO,Trader no regulado,2,2,Trader no regulado,1.0,0.9,1.0,,100.0,0,59.21,0,,0,0
+2017-11-16,2018-02-13,2018-02-14,2018-02-20,GRANDE,Comercializador regulado,1,1,Comercializador regulado,1.0,0.947,1.0,,100.0,0,57.59,1,,0,0
+2017-12-16,2018-03-15,2018-03-16,2018-03-22,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),3,3,"Trader expuesto a bolsa (sin cobertura),Trader no regulado",0.005,0.697,1.0,,100.0,0,59.29,0,,1,1
+2017-12-16,2018-03-15,2018-03-16,2018-03-22,MEDIANO,Trader no regulado,2,2,"Trader no regulado,Trader no regulado",1.0,0.752,1.0,,85.7,0,58.67,0,,0,0
+2017-12-16,2018-03-15,2018-03-16,2018-03-22,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,0.905,1.0,,42.9,0,51.9,1,,0,0
+2018-01-15,2018-04-14,2018-04-15,2018-04-21,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),3,3,"Trader expuesto a bolsa (sin cobertura),Trader no regulado",0.005,1.141,0.999,,100.0,0,89.42,0,,1,1
+2018-01-15,2018-04-14,2018-04-15,2018-04-21,MEDIANO,Trader no regulado,2,2,"Trader no regulado,Trader no regulado",1.0,1.114,1.0,,100.0,0,81.16,0,,0,0
+2018-01-15,2018-04-14,2018-04-15,2018-04-21,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,1.048,1.0,,0.0,0,57.71,1,,0,0
+2018-02-14,2018-05-14,2018-05-15,2018-05-21,MEDIANO,Comercializador mixto,3,3,"Comercializador mixto,Trader no regulado",0.005,1.103,1.0,,100.0,0,82.27,0,,1,1
+2018-02-14,2018-05-14,2018-05-15,2018-05-21,PEQUEÑO,Comercializador mixto,4,4,"Comercializador mixto,Trader no regulado",0.005,1.04,1.0,,42.9,0,33.43,0,,0,0
+2018-02-14,2018-05-14,2018-05-15,2018-05-21,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,1.029,1.0,,42.9,0,58.52,1,,0,0
+2018-03-16,2018-06-13,2018-06-14,2018-06-20,MEDIANO,Comercializador mixto,3,3,"Comercializador mixto,Trader no regulado",0.005,1.102,0.971,,100.0,0,105.12,0,,1,1
+2018-03-16,2018-06-13,2018-06-14,2018-06-20,PEQUEÑO,Comercializador mixto,4,4,"Comercializador mixto,Trader no regulado",0.005,1.147,0.95,,100.0,0,61.42,0,,1,1
+2018-03-16,2018-06-13,2018-06-14,2018-06-20,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,1.029,1.0,,100.0,0,59.94,1,,0,0
+2018-04-15,2018-07-13,2018-07-14,2018-07-20,PEQUEÑO,Trader no regulado,3,3,Trader no regulado,0.005,0.983,0.937,,0.0,0,-0.87,0,,0,0
+2018-04-15,2018-07-13,2018-07-14,2018-07-20,MEDIANO,Trader no regulado,2,2,Trader no regulado,1.0,0.995,0.993,,100.0,0,81.68,0,,0,0
+2018-04-15,2018-07-13,2018-07-14,2018-07-20,GRANDE,Comercializador regulado,1,1,Comercializador regulado,1.0,1.007,1.0,,85.7,0,62.11,1,,0,0
+2018-05-15,2018-08-12,2018-08-13,2018-08-19,PEQUEÑO,Trader no regulado,3,3,Trader no regulado,0.005,-0.032,0.037,,0.0,0,-42.56,0,,0,0
+2018-05-15,2018-08-12,2018-08-13,2018-08-19,MEDIANO,Trader no regulado,2,2,Trader no regulado,1.0,0.905,1.0,,100.0,0,62.9,0,,0,0
+2018-05-15,2018-08-12,2018-08-13,2018-08-19,GRANDE,Comercializador regulado,1,1,Comercializador regulado,1.0,0.964,1.0,,71.4,0,58.56,1,,0,0
+2018-06-14,2018-09-11,2018-09-12,2018-09-18,PEQUEÑO,Trader no regulado,3,3,Trader no regulado,0.005,0.434,0.694,,0.0,0,-35.86,0,,0,0
+2018-06-14,2018-09-11,2018-09-12,2018-09-18,MEDIANO,Trader no regulado,2,2,Trader no regulado,1.0,0.95,1.0,,100.0,0,64.73,0,,0,0
+2018-06-14,2018-09-11,2018-09-12,2018-09-18,GRANDE,Comercializador regulado,1,1,Comercializador regulado,1.0,0.967,1.0,,57.1,0,57.92,1,,0,0
+2018-07-14,2018-10-11,2018-10-12,2018-10-18,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),3,3,Trader expuesto a bolsa (sin cobertura),0.005,0.99,1.0,,100.0,0,74.76,0,,1,1
+2018-07-14,2018-10-11,2018-10-12,2018-10-18,MEDIANO,Trader no regulado,2,2,Trader no regulado,1.0,0.984,1.0,,100.0,0,64.26,0,,0,0
+2018-07-14,2018-10-11,2018-10-12,2018-10-18,GRANDE,Comercializador regulado,1,1,Comercializador regulado,1.0,0.983,1.0,,0.0,0,57.51,1,,0,0
+2018-08-13,2018-11-10,2018-11-11,2018-11-17,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),3,3,"Trader expuesto a bolsa (sin cobertura),Trader no regulado",0.005,1.092,0.99,,100.0,0,108.13,0,,1,1
+2018-08-13,2018-11-10,2018-11-11,2018-11-17,MEDIANO,Trader no regulado,2,2,"Trader no regulado,Trader no regulado",1.0,1.07,0.997,,100.0,0,91.31,0,,0,0
+2018-08-13,2018-11-10,2018-11-11,2018-11-17,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,0.998,1.0,,0.0,0,56.45,1,,0,0
+2018-09-12,2018-12-10,2018-12-11,2018-12-17,MEDIANO,Comercializador mixto,3,3,"Comercializador mixto,Trader no regulado",0.005,0.591,0.985,,85.7,0,53.43,0,,1,1
+2018-09-12,2018-12-10,2018-12-11,2018-12-17,PEQUEÑO,Comercializador mixto,3,3,"Comercializador mixto,Trader no regulado",0.005,1.486,0.817,,57.1,0,47.35,0,,0,0
+2018-09-12,2018-12-10,2018-12-11,2018-12-17,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,0.893,1.0,,100.0,0,50.47,1,,0,0
+2018-10-12,2019-01-09,2019-01-10,2019-01-16,MEDIANO,Comercializador mixto,3,3,"Comercializador mixto,Trader no regulado",0.005,0.632,0.999,,100.0,0,49.38,0,,1,1
+2018-10-12,2019-01-09,2019-01-10,2019-01-16,PEQUEÑO,Comercializador mixto,3,3,"Comercializador mixto,Comercializador regulado",0.005,0.926,1.0,,100.0,0,30.21,0,,1,1
+2018-10-12,2019-01-09,2019-01-10,2019-01-16,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,0.753,1.0,,100.0,0,42.18,1,,0,0
+2018-11-11,2019-02-08,2019-02-09,2019-02-15,MEDIANO,Trader no regulado,3,3,"Trader expuesto a bolsa (sin cobertura),Trader no regulado",0.1294,0.919,0.993,,100.0,0,48.96,0,,0,0
+2018-11-11,2019-02-08,2019-02-09,2019-02-15,PEQUEÑO,Comercializador regulado,3,3,"Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.9652,0.845,0.958,,100.0,0,31.4,0,,0,0
+2018-11-11,2019-02-08,2019-02-09,2019-02-15,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,0.798,1.0,,100.0,0,32.88,1,,0,0
+2018-12-11,2019-03-10,2019-03-11,2019-03-17,MEDIANO,Trader no regulado,3,3,"Trader expuesto a bolsa (sin cobertura),Trader no regulado",0.005,0.984,1.0,,100.0,0,48.26,0,,1,1
+2018-12-11,2019-03-10,2019-03-11,2019-03-17,PEQUEÑO,Comercializador regulado,3,3,"Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.0398,1.013,1.0,,100.0,0,30.52,0,,1,1
+2018-12-11,2019-03-10,2019-03-11,2019-03-17,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,1.121,1.0,,85.7,0,30.56,1,,0,0
+2019-01-10,2019-04-09,2019-04-10,2019-04-16,MEDIANO,Trader no regulado,2,2,"Comercializador regulado,Trader no regulado",0.005,0.99,1.0,,100.0,0,47.27,0,,0,0
+2019-01-10,2019-04-09,2019-04-10,2019-04-16,PEQUEÑO,Comercializador regulado,3,3,"Trader expuesto a bolsa (sin cobertura),Trader no regulado",0.01,0.99,1.0,,100.0,0,47.27,0,,1,1
+2019-01-10,2019-04-09,2019-04-10,2019-04-16,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,1.245,1.0,,0.0,0,35.05,1,,0,0
+2019-02-09,2019-05-09,2019-05-10,2019-05-16,PEQUEÑO,Comercializador regulado,3,3,"Trader expuesto a bolsa (sin cobertura),Trader no regulado",0.005,1.352,1.0,,100.0,0,62.33,0,,1,1
+2019-02-09,2019-05-09,2019-05-10,2019-05-16,MEDIANO,Trader no regulado,3,3,"Trader expuesto a bolsa (sin cobertura),Trader no regulado",0.005,1.199,1.0,,85.7,0,55.84,0,,1,1
+2019-02-09,2019-05-09,2019-05-10,2019-05-16,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,1.359,1.0,,71.4,0,42.12,1,,0,0
+2019-03-11,2019-06-08,2019-06-09,2019-06-15,MEDIANO,Trader no regulado,2,2,"Trader no regulado,Trader no regulado",0.005,1.438,1.0,,100.0,0,66.56,0,,0,0
+2019-03-11,2019-06-08,2019-06-09,2019-06-15,PEQUEÑO,Comercializador regulado,3,3,"Trader expuesto a bolsa (sin cobertura),Trader no regulado",0.3234,1.935,1.0,,100.0,0,87.91,0,,0,0
+2019-03-11,2019-06-08,2019-06-09,2019-06-15,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,1.139,1.0,,57.1,0,44.27,1,,0,0
+2019-04-10,2019-07-08,2019-07-09,2019-07-15,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),3,3,"Trader expuesto a bolsa (sin cobertura),Trader no regulado",0.005,1.093,0.999,,100.0,0,86.72,0,,1,1
+2019-04-10,2019-07-08,2019-07-09,2019-07-15,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,0.999,1.0,,85.7,0,47.1,1,,0,0
+2019-04-10,2019-07-08,2019-07-09,2019-07-15,MEDIANO,Comercializador regulado,2,2,"Comercializador regulado,Trader no regulado",1.0,0.996,0.999,,100.0,0,49.69,0,,0,0
+2019-05-10,2019-08-07,2019-08-08,2019-08-14,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),3,3,"Trader expuesto a bolsa (sin cobertura),Trader no regulado",0.005,0.798,0.999,,100.0,0,69.34,0,,1,1
+2019-05-10,2019-08-07,2019-08-08,2019-08-14,MEDIANO,Comercializador regulado,2,2,"Trader no regulado,Trader no regulado",1.0,0.863,1.0,,85.7,0,55.55,0,,0,0
+2019-05-10,2019-08-07,2019-08-08,2019-08-14,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,0.933,1.0,,71.4,0,44.33,1,,0,0
+2019-06-09,2019-09-06,2019-09-07,2019-09-13,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),3,3,"Trader expuesto a bolsa (sin cobertura),Trader no regulado",0.005,0.48,0.979,,100.0,0,43.73,0,,0,0
+2019-06-09,2019-09-06,2019-09-07,2019-09-13,MEDIANO,Trader no regulado,2,2,"Trader no regulado,Trader no regulado",1.0,0.661,0.996,,85.7,0,43.73,0,,0,0
+2019-06-09,2019-09-06,2019-09-07,2019-09-13,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,0.818,1.0,,71.4,0,38.51,1,,0,0
+2019-07-09,2019-10-06,2019-10-07,2019-10-13,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),3,3,"Trader expuesto a bolsa (sin cobertura),Trader no regulado,Trader no regulado",0.005,0.643,1.0,,100.0,0,42.39,0,,1,1
+2019-07-09,2019-10-06,2019-10-07,2019-10-13,MEDIANO,Trader no regulado,2,2,"Trader no regulado,Trader no regulado,Trader no regulado",1.0,0.788,1.0,,100.0,0,42.39,0,,0,0
+2019-07-09,2019-10-06,2019-10-07,2019-10-13,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,0.583,1.0,,14.3,0,25.74,1,,0,0
+2019-08-08,2019-11-05,2019-11-06,2019-11-12,MEDIANO,Trader no regulado,2,2,"Trader no regulado,Trader no regulado,Trader no regulado",0.005,0.966,1.0,,100.0,0,41.82,0,,0,0
+2019-08-08,2019-11-05,2019-11-06,2019-11-12,PEQUEÑO,Comercializador regulado,3,3,"Trader expuesto a bolsa (sin cobertura),Trader no regulado,Trader no regulado",0.8657,0.967,1.0,,100.0,0,41.82,0,,0,0
+2019-08-08,2019-11-05,2019-11-06,2019-11-12,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,0.87,1.0,,28.6,0,32.35,1,,0,0
+2019-09-07,2019-12-05,2019-12-06,2019-12-12,MEDIANO,Trader no regulado,2,2,"Trader no regulado,Trader no regulado,Trader no regulado",0.005,0.983,1.0,,100.0,0,41.94,0,,0,0
+2019-09-07,2019-12-05,2019-12-06,2019-12-12,PEQUEÑO,Comercializador regulado,3,3,"Trader expuesto a bolsa (sin cobertura),Trader no regulado,Trader no regulado",0.0299,0.983,1.0,,100.0,0,41.94,0,,1,1
+2019-09-07,2019-12-05,2019-12-06,2019-12-12,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,0.926,1.0,,100.0,0,30.7,1,,0,0
+2019-10-07,2020-01-04,2020-01-05,2020-01-11,MEDIANO,Trader no regulado,2,2,"Trader no regulado,Trader no regulado,Trader no regulado",0.005,0.913,1.0,,100.0,0,38.93,0,,0,0
+2019-10-07,2020-01-04,2020-01-05,2020-01-11,PEQUEÑO,Comercializador regulado,3,3,"Trader expuesto a bolsa (sin cobertura),Trader no regulado,Trader no regulado",0.0149,0.911,1.0,,100.0,0,38.09,0,,1,1
+2019-10-07,2020-01-04,2020-01-05,2020-01-11,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,0.925,1.0,,0.0,0,30.52,1,,0,0
+2019-11-06,2020-02-03,2020-02-04,2020-02-10,MEDIANO,Trader no regulado,2,2,"Trader no regulado,Trader no regulado,Trader no regulado",0.005,0.919,1.0,,100.0,0,38.3,0,,0,0
+2019-11-06,2020-02-03,2020-02-04,2020-02-10,PEQUEÑO,Comercializador regulado,3,3,"Trader expuesto a bolsa (sin cobertura),Trader no regulado,Trader no regulado",0.005,0.919,1.0,,100.0,0,38.3,0,,1,1
+2019-11-06,2020-02-03,2020-02-04,2020-02-10,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,0.68,1.0,,100.0,0,19.69,1,,0,0
+2019-12-06,2020-03-04,2020-03-05,2020-03-11,MEDIANO,Trader no regulado,2,2,"Trader no regulado,Trader no regulado,Trader no regulado,Trader no regulado",0.005,0.998,1.0,,100.0,0,38.57,0,,0,0
+2019-12-06,2020-03-04,2020-03-05,2020-03-11,PEQUEÑO,Comercializador regulado,3,3,"Trader expuesto a bolsa (sin cobertura),Trader no regulado,Trader no regulado,Trader no regulado",0.005,0.998,1.0,,100.0,0,38.57,0,,1,1
+2019-12-06,2020-03-04,2020-03-05,2020-03-11,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,1.032,1.0,,100.0,0,15.14,1,,0,0
+2020-01-05,2020-04-03,2020-04-04,2020-04-10,MEDIANO,Trader no regulado,2,2,"Trader no regulado,Trader no regulado,Trader no regulado,Trader no regulado",0.005,0.981,0.997,,100.0,0,37.7,0,,0,0
+2020-01-05,2020-04-03,2020-04-04,2020-04-10,PEQUEÑO,Comercializador regulado,3,3,"Trader expuesto a bolsa (sin cobertura),Trader no regulado,Trader no regulado,Trader no regulado",0.005,0.981,0.991,,100.0,0,37.7,0,,1,1
+2020-01-05,2020-04-03,2020-04-04,2020-04-10,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,1.616,1.0,,100.0,0,26.9,1,,0,0
+2020-02-04,2020-05-03,2020-05-04,2020-05-10,MEDIANO,Trader no regulado,2,2,"Trader no regulado,Trader no regulado,Trader no regulado,Trader no regulado",0.005,0.995,1.0,,100.0,0,37.95,0,,0,0
+2020-02-04,2020-05-03,2020-05-04,2020-05-10,PEQUEÑO,Comercializador regulado,3,3,"Trader expuesto a bolsa (sin cobertura),Trader no regulado,Trader no regulado,Trader no regulado",0.005,0.995,1.0,,100.0,0,37.95,0,,1,1
+2020-02-04,2020-05-03,2020-05-04,2020-05-10,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,1.172,1.0,,14.3,0,23.06,1,,0,0
+2020-03-05,2020-06-02,2020-06-03,2020-06-09,MEDIANO,Trader no regulado,2,2,"Comercializador regulado,Trader no regulado,Trader no regulado",0.005,1.017,0.978,,100.0,0,38.62,0,,0,0
+2020-03-05,2020-06-02,2020-06-03,2020-06-09,PEQUEÑO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,1.031,0.877,,100.0,0,19.85,0,,0,0
+2020-03-05,2020-06-02,2020-06-03,2020-06-09,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,0.921,1.0,,28.6,0,28.41,1,,0,0
+2020-04-04,2020-07-02,2020-07-03,2020-07-09,MEDIANO,Trader no regulado,2,2,"Comercializador regulado,Trader no regulado",0.005,1.119,1.0,,42.9,0,38.57,0,,0,0
+2020-04-04,2020-07-02,2020-07-03,2020-07-09,PEQUEÑO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado",0.005,1.075,1.0,,14.3,0,17.8,0,,0,0
+2020-04-04,2020-07-02,2020-07-03,2020-07-09,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,1.155,1.0,,28.6,0,37.85,1,,0,0
+2020-05-04,2020-08-01,2020-08-02,2020-08-08,MEDIANO,Trader no regulado,2,2,"Comercializador regulado,Comercializador regulado,Trader no regulado",0.01,1.054,0.998,,85.7,0,38.26,0,,0,0
+2020-05-04,2020-08-01,2020-08-02,2020-08-08,PEQUEÑO,Comercializador regulado,4,4,"Comercializador regulado,Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",1.0,5.664,0.995,,100.0,0,66.35,0,,0,0
+2020-05-04,2020-08-01,2020-08-02,2020-08-08,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,1.074,1.0,,14.3,0,37.59,1,,0,0
+2020-06-03,2020-08-31,2020-09-01,2020-09-07,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Comercializador regulado,Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,1.048,1.0,,100.0,0,59.41,0,,1,1
+2020-06-03,2020-08-31,2020-09-01,2020-09-07,MEDIANO,Comercializador regulado,2,2,"Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,0.991,1.0,,100.0,0,38.35,0,,0,0
+2020-06-03,2020-08-31,2020-09-01,2020-09-07,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,0.992,1.0,,0.0,0,37.25,1,,0,0
+2020-07-03,2020-09-30,2020-10-01,2020-10-07,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,Trader expuesto a bolsa (sin cobertura),0.005,1.017,0.997,,100.0,0,47.56,0,,1,1
+2020-07-03,2020-09-30,2020-10-01,2020-10-07,GRANDE,Comercializador regulado,1,1,Comercializador regulado,1.0,0.984,1.0,,0.0,0,37.11,1,,0,0
+2020-07-03,2020-09-30,2020-10-01,2020-10-07,MEDIANO,Comercializador regulado,2,2,Comercializador regulado,1.0,0.985,0.999,,14.3,0,35.6,0,,0,0
+2020-08-02,2020-10-30,2020-10-31,2020-11-06,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Integrado/regional regulado,Trader expuesto a bolsa (sin cobertura)",0.005,0.572,0.999,,57.1,0,34.3,0,,0,0
+2020-08-02,2020-10-30,2020-10-31,2020-11-06,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,0.941,1.0,,0.0,0,35.28,1,,0,0
+2020-08-02,2020-10-30,2020-10-31,2020-11-06,MEDIANO,Comercializador regulado,2,2,"Comercializador regulado,Comercializador regulado",1.0,0.9,1.0,,14.3,0,31.35,0,,0,0
+2020-09-01,2020-11-29,2020-11-30,2020-12-06,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,1.466,0.999,,100.0,0,87.87,0,,1,1
+2020-09-01,2020-11-29,2020-11-30,2020-12-06,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",0.5423,1.055,1.0,,0.0,0,39.34,1,,0,0
+2020-09-01,2020-11-29,2020-11-30,2020-12-06,MEDIANO,Comercializador regulado,2,2,"Comercializador regulado,Comercializador regulado",0.995,1.107,1.0,,0.0,0,37.78,0,,0,0
+2020-10-01,2020-12-29,2020-12-30,2021-01-05,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),3,3,"Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,1.537,1.0,,100.0,0,65.59,0,,1,1
+2020-10-01,2020-12-29,2020-12-30,2021-01-05,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",0.5075,0.956,1.0,,14.3,0,35.07,1,,0,0
+2020-10-01,2020-12-29,2020-12-30,2021-01-05,MEDIANO,Comercializador regulado,2,2,"Comercializador regulado,Comercializador regulado",1.0,1.01,1.0,,57.1,0,37.55,0,,0,0
+2020-10-31,2021-01-28,2021-01-29,2021-02-04,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Comercializador mixto con convocatoria,Trader expuesto a bolsa (sin cobertura)",0.005,0.248,1.0,,28.6,0,13.6,0,,0,0
+2020-10-31,2021-01-28,2021-01-29,2021-02-04,MEDIANO,Comercializador regulado,3,3,"Comercializador regulado,Trader no regulado",0.5373,0.816,0.97,,85.7,0,30.36,0,,0,0
+2020-10-31,2021-01-28,2021-01-29,2021-02-04,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",0.5721,0.767,1.0,,85.7,0,27.79,1,,0,0
+2020-11-30,2021-02-27,2021-02-28,2021-03-06,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Integrado/regional regulado,Trader expuesto a bolsa (sin cobertura)",0.005,1.013,0.993,,57.1,0,36.03,0,,0,0
+2020-11-30,2021-02-27,2021-02-28,2021-03-06,MEDIANO,Trader no regulado,3,3,"Comercializador regulado,Trader no regulado",0.2388,0.847,1.0,,28.6,0,28.41,0,,0,0
+2020-11-30,2021-02-27,2021-02-28,2021-03-06,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,0.803,1.0,,14.3,0,24.05,1,,0,0
+2020-12-30,2021-03-29,2021-03-30,2021-04-05,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Integrado/regional regulado,Trader expuesto a bolsa (sin cobertura)",0.005,1.477,0.949,,100.0,0,64.0,0,,0,0
+2020-12-30,2021-03-29,2021-03-30,2021-04-05,MEDIANO,Trader no regulado,3,3,"Comercializador regulado,Trader no regulado",0.2687,1.042,0.979,,100.0,0,33.45,0,,0,0
+2020-12-30,2021-03-29,2021-03-30,2021-04-05,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,1.102,1.0,,57.1,0,29.38,1,,0,0
+2021-01-29,2021-04-28,2021-04-29,2021-05-05,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Integrado/regional regulado,Trader expuesto a bolsa (sin cobertura)",0.005,1.135,1.0,,100.0,0,55.33,0,,1,1
+2021-01-29,2021-04-28,2021-04-29,2021-05-05,MEDIANO,Trader no regulado,3,3,"Comercializador regulado,Trader no regulado",0.1692,1.015,1.0,,100.0,0,32.01,0,,0,0
+2021-01-29,2021-04-28,2021-04-29,2021-05-05,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",1.0,1.035,1.0,,100.0,0,25.44,1,,0,0
+2021-02-28,2021-05-28,2021-05-29,2021-06-04,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Trader expuesto a bolsa (sin cobertura),Trader expuesto a bolsa (sin cobertura)",0.005,1.534,1.0,,100.0,0,65.16,0,,1,1
+2021-02-28,2021-05-28,2021-05-29,2021-06-04,MEDIANO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado",0.1095,1.111,1.0,,71.4,0,27.63,0,,0,0
+2021-02-28,2021-05-28,2021-05-29,2021-06-04,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",0.5473,1.16,1.0,,71.4,0,32.02,1,,0,0
+2021-03-30,2021-06-27,2021-06-28,2021-07-04,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,Trader expuesto a bolsa (sin cobertura),0.005,1.028,1.0,,100.0,0,65.42,0,,1,1
+2021-03-30,2021-06-27,2021-06-28,2021-07-04,MEDIANO,Comercializador regulado,3,3,Comercializador regulado,0.1294,0.961,1.0,,100.0,0,27.73,0,,0,0
+2021-03-30,2021-06-27,2021-06-28,2021-07-04,GRANDE,Comercializador regulado,1,1,Comercializador regulado,0.5075,0.961,1.0,,100.0,0,27.6,1,,0,0
+2021-04-29,2021-07-27,2021-07-28,2021-08-03,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,Trader expuesto a bolsa (sin cobertura),0.005,1.005,0.917,,100.0,0,64.86,0,,0,0
+2021-04-29,2021-07-27,2021-07-28,2021-08-03,MEDIANO,Comercializador regulado,3,3,Comercializador regulado,0.1692,0.957,0.995,,100.0,0,27.35,0,,0,0
+2021-04-29,2021-07-27,2021-07-28,2021-08-03,GRANDE,Comercializador regulado,1,1,Comercializador regulado,0.5174,0.946,1.0,,28.6,0,24.84,1,,0,0
+2021-05-29,2021-08-26,2021-08-27,2021-09-02,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,Trader expuesto a bolsa (sin cobertura),0.005,0.997,0.992,,100.0,0,59.71,0,,1,1
+2021-05-29,2021-08-26,2021-08-27,2021-09-02,GRANDE,Comercializador regulado,1,1,Comercializador regulado,0.4527,0.933,1.0,,28.6,0,22.48,1,,0,0
+2021-05-29,2021-08-26,2021-08-27,2021-09-02,MEDIANO,Comercializador regulado,3,3,Comercializador regulado,0.9701,0.95,1.0,,100.0,0,25.69,0,,0,0
+2021-06-28,2021-09-25,2021-09-26,2021-10-02,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,Trader expuesto a bolsa (sin cobertura),0.005,0.88,1.0,,100.0,0,46.98,0,,1,1
+2021-06-28,2021-09-25,2021-09-26,2021-10-02,MEDIANO,Comercializador regulado,3,3,Comercializador regulado,0.2388,0.856,0.997,,100.0,0,22.73,0,,0,0
+2021-06-28,2021-09-25,2021-09-26,2021-10-02,GRANDE,Comercializador regulado,1,1,Comercializador regulado,0.4677,0.853,1.0,,0.0,0,19.7,1,,0,0
+2021-07-28,2021-10-25,2021-10-26,2021-11-01,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,Trader expuesto a bolsa (sin cobertura),0.005,0.796,1.0,,100.0,0,35.32,0,,1,1
+2021-07-28,2021-10-25,2021-10-26,2021-11-01,MEDIANO,Comercializador regulado,3,3,Comercializador regulado,0.1841,0.848,1.0,,100.0,0,20.27,0,,0,0
+2021-07-28,2021-10-25,2021-10-26,2021-11-01,GRANDE,Comercializador regulado,1,1,Comercializador regulado,0.5025,0.86,1.0,,0.0,0,18.51,1,,0,0
+2021-08-27,2021-11-24,2021-11-25,2021-12-01,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,Trader expuesto a bolsa (sin cobertura),0.005,1.019,1.0,,100.0,0,46.84,0,,1,1
+2021-08-27,2021-11-24,2021-11-25,2021-12-01,MEDIANO,Comercializador regulado,3,3,Comercializador regulado,0.1841,0.915,1.0,,100.0,0,18.45,0,,0,0
+2021-08-27,2021-11-24,2021-11-25,2021-12-01,GRANDE,Comercializador regulado,1,1,Comercializador regulado,0.5224,0.878,1.0,,28.6,0,16.26,1,,0,0
+2021-09-26,2021-12-24,2021-12-25,2021-12-31,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Comercializador mixto con convocatoria,Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,-0.509,0.0,,85.7,0,-55.02,0,,0,0
+2021-09-26,2021-12-24,2021-12-25,2021-12-31,MEDIANO,Comercializador regulado,3,3,"Trader no regulado,Trader no regulado,Trader no regulado",0.2338,0.185,0.992,,100.0,0,8.2,0,,0,0
+2021-09-26,2021-12-24,2021-12-25,2021-12-31,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado",0.4925,-0.244,1.0,,0.0,0,-10.78,1,,0,0
+2021-10-26,2022-01-23,2022-01-24,2022-01-30,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Comercializador regulado,Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,-0.656,0.0,,100.0,0,-44.68,0,,0,0
+2021-10-26,2022-01-23,2022-01-24,2022-01-30,MEDIANO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado,Comercializador regulado",0.2687,-0.45,0.003,,100.0,0,-9.91,0,,0,0
+2021-10-26,2022-01-23,2022-01-24,2022-01-30,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,-1.332,1.0,,42.9,0,-29.7,1,,0,0
+2021-11-25,2022-02-22,2022-02-23,2022-03-01,MEDIANO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Trader no regulado",0.2587,0.096,0.696,,14.3,0,1.35,0,,0,0
+2021-11-25,2022-02-22,2022-02-23,2022-03-01,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,2.974,1.0,,28.6,0,-3.9,1,,0,0
+2021-11-25,2022-02-22,2022-02-23,2022-03-01,PEQUEÑO,Comercializador regulado,4,4,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",1.0,-0.146,0.041,,71.4,0,-2.35,0,,0,0
+2021-12-25,2022-03-24,2022-03-25,2022-03-31,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Comercializador mixto con convocatoria,Comercializador mixto con convocatoria,Trader expuesto a bolsa (sin cobertura),Trader no regulado",0.005,0.241,0.002,,57.1,0,-13.44,0,,0,0
+2021-12-25,2022-03-24,2022-03-25,2022-03-31,MEDIANO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Trader no regulado",0.2338,0.175,0.684,,71.4,0,0.97,0,,0,0
+2021-12-25,2022-03-24,2022-03-25,2022-03-31,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,0.095,1.0,,42.9,0,-11.02,1,,0,0
+2022-01-24,2022-04-23,2022-04-24,2022-04-30,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Integrado/regional regulado,Integrado/regional regulado,Trader expuesto a bolsa (sin cobertura),Trader no regulado",0.005,41.71,0.993,,100.0,0,42.04,0,,1,1
+2022-01-24,2022-04-23,2022-04-24,2022-04-30,MEDIANO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Trader no regulado",0.2338,2.043,0.997,,28.6,0,8.03,0,,0,0
+2022-01-24,2022-04-23,2022-04-24,2022-04-30,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,1.561,1.0,,14.3,0,-4.1,1,,0,0
+2022-02-23,2022-05-23,2022-05-24,2022-05-30,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Trader expuesto a bolsa (sin cobertura),Trader no regulado",0.005,1.724,0.986,,100.0,0,61.74,0,,1,1
+2022-02-23,2022-05-23,2022-05-24,2022-05-30,GRANDE,Comercializador regulado,2,2,"Comercializador regulado,Trader no regulado",0.7015,1.172,1.0,,71.4,0,8.89,1,,0,0
+2022-02-23,2022-05-23,2022-05-24,2022-05-30,MEDIANO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado",0.995,1.266,0.998,,100.0,0,-0.42,0,,0,0
+2022-03-25,2022-06-22,2022-06-23,2022-06-29,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Trader expuesto a bolsa (sin cobertura),Trader no regulado",0.005,1.026,0.987,,100.0,0,55.91,0,,1,1
+2022-03-25,2022-06-22,2022-06-23,2022-06-29,MEDIANO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado",0.3881,0.977,0.989,,100.0,0,-2.92,0,,0,0
+2022-03-25,2022-06-22,2022-06-23,2022-06-29,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Trader no regulado",0.5522,0.973,1.0,,85.7,0,6.6,1,,0,0
+2022-04-24,2022-07-22,2022-07-23,2022-07-29,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,Trader expuesto a bolsa (sin cobertura),0.005,0.972,0.92,,100.0,0,11.46,0,,0,0
+2022-04-24,2022-07-22,2022-07-23,2022-07-29,MEDIANO,Comercializador regulado,3,3,Comercializador regulado,0.4726,0.237,0.771,,100.0,0,-7.2,0,,0,0
+2022-04-24,2022-07-22,2022-07-23,2022-07-29,GRANDE,Comercializador regulado,1,1,Comercializador regulado,0.5672,0.34,1.0,,0.0,0,-7.69,1,,0,0
+2022-05-24,2022-08-21,2022-08-22,2022-08-28,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,Trader expuesto a bolsa (sin cobertura),0.005,0.151,0.907,,100.0,0,-67.87,0,,0,0
+2022-05-24,2022-08-21,2022-08-22,2022-08-28,MEDIANO,Comercializador regulado,3,3,Comercializador regulado,0.3781,5.723,0.0,,28.6,0,-13.78,0,,0,0
+2022-05-24,2022-08-21,2022-08-22,2022-08-28,GRANDE,Comercializador regulado,1,1,Comercializador regulado,0.5622,-4.164,1.0,,0.0,0,-16.13,1,,0,0
+2022-06-23,2022-09-20,2022-09-21,2022-09-27,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Integrado/regional regulado,Trader expuesto a bolsa (sin cobertura)",0.005,0.225,1.0,,100.0,0,5.56,0,,0,0
+2022-06-23,2022-09-20,2022-09-21,2022-09-27,MEDIANO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado",0.1741,18.556,0.0,,100.0,0,-14.21,0,,0,0
+2022-06-23,2022-09-20,2022-09-21,2022-09-27,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",0.5771,-5.246,1.0,,14.3,0,-16.23,1,,0,0
+2022-07-23,2022-10-20,2022-10-21,2022-10-27,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Comercializador regulado,Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,-1.945,0.0,,42.9,0,-58.58,0,,0,0
+2022-07-23,2022-10-20,2022-10-21,2022-10-27,MEDIANO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado,Comercializador regulado",0.2886,1.807,0.0,,100.0,0,-17.68,0,,0,0
+2022-07-23,2022-10-20,2022-10-21,2022-10-27,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado",0.5622,1.577,1.0,,0.0,0,-17.86,1,,0,0
+2022-08-22,2022-11-19,2022-11-20,2022-11-26,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Comercializador regulado,Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,3.974,0.944,,100.0,0,28.11,0,,0,0
+2022-08-22,2022-11-19,2022-11-20,2022-11-26,MEDIANO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado,Comercializador regulado",0.8905,0.687,0.0,,28.6,0,-11.35,0,,0,0
+2022-08-22,2022-11-19,2022-11-20,2022-11-26,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,0.524,1.0,,28.6,0,-13.75,1,,0,0
+2022-09-21,2022-12-19,2022-12-20,2022-12-26,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Comercializador regulado,Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,-9.158,0.0,,71.4,1,-84.47,0,,0,0
+2022-09-21,2022-12-19,2022-12-20,2022-12-26,MEDIANO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado,Comercializador regulado",0.4726,3.048,0.0,,100.0,0,-27.07,0,,0,0
+2022-09-21,2022-12-19,2022-12-20,2022-12-26,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado",0.5323,4.595,1.0,,42.9,0,-35.16,1,,0,0
+2022-10-21,2023-01-18,2023-01-19,2023-01-25,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Comercializador regulado,Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,-1.055,0.817,,100.0,0,-1.12,0,,0,0
+2022-10-21,2023-01-18,2023-01-19,2023-01-25,MEDIANO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado,Comercializador regulado",0.3582,0.985,0.0,,14.3,0,-18.47,0,,0,0
+2022-10-21,2023-01-18,2023-01-19,2023-01-25,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado",0.5622,0.912,1.0,,14.3,0,-15.94,1,,0,0
+2022-11-20,2023-02-17,2023-02-18,2023-02-24,PEQUEÑO,Comercializador regulado,4,4,"Comercializador regulado,Integrado/regional regulado,Trader expuesto a bolsa (sin cobertura),Trader no regulado",0.0199,1.594,0.0,,100.0,0,-75.03,0,,0,0
+2022-11-20,2023-02-17,2023-02-18,2023-02-24,MEDIANO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Trader no regulado",0.8756,1.569,0.0,,100.0,0,-34.89,0,,0,0
+2022-11-20,2023-02-17,2023-02-18,2023-02-24,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,1.732,1.0,,85.7,0,-47.02,1,,0,0
+2022-12-20,2023-03-19,2023-03-20,2023-03-26,PEQUEÑO,Comercializador regulado,4,4,"Comercializador regulado,Comercializador regulado,Trader con sobrecobertura de contratos,Trader expuesto a bolsa (sin cobertura)",0.005,0.817,0.021,,71.4,0,-41.92,0,,0,0
+2022-12-20,2023-03-19,2023-03-20,2023-03-26,MEDIANO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Trader con sobrecobertura de contratos",0.8706,0.632,0.0,,42.9,0,-43.15,0,,0,0
+2022-12-20,2023-03-19,2023-03-20,2023-03-26,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,0.438,1.0,,71.4,0,-27.52,1,,0,0
+2023-01-19,2023-04-18,2023-04-19,2023-04-25,PEQUEÑO,Comercializador regulado,4,4,"Comercializador regulado,Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos,Trader expuesto a bolsa (sin cobertura)",0.005,0.982,0.002,,57.1,0,-63.13,0,,0,0
+2023-01-19,2023-04-18,2023-04-19,2023-04-25,MEDIANO,Comercializador regulado,3,3,"Comercializador regulado,Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos",0.8607,1.027,0.001,,0.0,1,-78.53,0,,0,0
+2023-01-19,2023-04-18,2023-04-19,2023-04-25,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,1.003,1.0,,85.7,0,-31.76,1,,0,0
+2023-02-18,2023-05-18,2023-05-19,2023-05-25,MEDIANO,Trader con sobrecobertura de contratos,3,3,"Comercializador regulado,Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos",0.005,4.056,0.0,,100.0,0,-72.27,0,,0,0
+2023-02-18,2023-05-18,2023-05-19,2023-05-25,PEQUEÑO,Comercializador regulado,4,4,"Comercializador regulado,Comercializador regulado,Trader con sobrecobertura de contratos,Trader expuesto a bolsa (sin cobertura)",0.005,2.884,0.0,,100.0,1,-166.25,0,,0,0
+2023-02-18,2023-05-18,2023-05-19,2023-05-25,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",0.5124,6.383,1.0,,42.9,1,-124.01,1,,0,0
+2023-03-20,2023-06-17,2023-06-18,2023-06-24,MEDIANO,Trader con sobrecobertura de contratos,3,3,"Comercializador regulado,Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos",0.005,4.13,0.0,,100.0,0,-60.88,0,,0,0
+2023-03-20,2023-06-17,2023-06-18,2023-06-24,PEQUEÑO,Comercializador regulado,4,4,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,2.343,0.0,,100.0,1,-157.29,0,,0,0
+2023-03-20,2023-06-17,2023-06-18,2023-06-24,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",0.5274,3.864,1.0,,57.1,1,-92.38,1,,0,0
+2023-04-19,2023-07-17,2023-07-18,2023-07-24,MEDIANO,Trader con sobrecobertura de contratos,3,3,"Comercializador regulado,Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos",0.005,0.754,0.0,,100.0,0,-29.75,0,,0,0
+2023-04-19,2023-07-17,2023-07-18,2023-07-24,PEQUEÑO,Comercializador regulado,4,4,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Trader con sobrecobertura de contratos,Trader expuesto a bolsa (sin cobertura)",0.005,0.865,0.0,,57.1,1,-110.96,0,,0,0
+2023-04-19,2023-07-17,2023-07-18,2023-07-24,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",0.4876,0.809,1.0,,0.0,0,-56.66,1,,0,0
+2023-05-19,2023-08-16,2023-08-17,2023-08-23,MEDIANO,Trader con sobrecobertura de contratos,3,3,"Comercializador regulado,Comercializador regulado,Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos",0.005,1.048,0.0,,57.1,0,-16.47,0,,0,0
+2023-05-19,2023-08-16,2023-08-17,2023-08-23,PEQUEÑO,Comercializador regulado,4,4,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Trader con sobrecobertura de contratos,Trader expuesto a bolsa (sin cobertura)",0.005,0.768,0.0,,71.4,1,-119.21,0,,0,0
+2023-05-19,2023-08-16,2023-08-17,2023-08-23,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",0.5224,0.812,1.0,,0.0,0,-62.62,1,,0,0
+2023-06-18,2023-09-15,2023-09-16,2023-09-22,MEDIANO,Trader con sobrecobertura de contratos,3,3,"Comercializador regulado,Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos",0.005,1.207,0.0,,100.0,0,-20.74,0,,0,0
+2023-06-18,2023-09-15,2023-09-16,2023-09-22,PEQUEÑO,Comercializador regulado,4,4,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Trader con sobrecobertura de contratos,Trader expuesto a bolsa (sin cobertura)",0.005,1.015,0.0,,100.0,1,-124.5,0,,0,0
+2023-06-18,2023-09-15,2023-09-16,2023-09-22,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",0.5373,2.22,1.0,,14.3,1,-162.67,1,,0,0
+2023-07-18,2023-10-15,2023-10-16,2023-10-22,MEDIANO,Trader con sobrecobertura de contratos,3,3,"Comercializador regulado,Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos",0.005,1.05,0.0,,100.0,0,-19.25,0,,0,0
+2023-07-18,2023-10-15,2023-10-16,2023-10-22,PEQUEÑO,Trader con sobrecobertura de contratos,4,4,"Comercializador regulado,Comercializador regulado,Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos,Trader expuesto a bolsa (sin cobertura)",0.005,0.95,0.0,,100.0,0,-36.84,0,,0,0
+2023-07-18,2023-10-15,2023-10-16,2023-10-22,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",0.5323,0.922,1.0,,71.4,1,-121.01,1,,0,0
+2023-08-17,2023-11-14,2023-11-15,2023-11-21,MEDIANO,Trader con sobrecobertura de contratos,3,3,"Comercializador regulado,Comercializador regulado,Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos,Trader no regulado",0.005,1.266,0.0,,85.7,0,-25.7,0,,0,0
+2023-08-17,2023-11-14,2023-11-15,2023-11-21,PEQUEÑO,Comercializador regulado,4,4,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Trader expuesto a bolsa (sin cobertura),Trader no regulado",0.005,0.682,0.0,,85.7,1,-109.41,0,,0,0
+2023-08-17,2023-11-14,2023-11-15,2023-11-21,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",0.5224,0.265,1.0,,0.0,0,-49.67,1,,0,0
+2023-09-16,2023-12-14,2023-12-15,2023-12-21,MEDIANO,Trader con sobrecobertura de contratos,3,3,"Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos",0.005,2.896,0.0,,100.0,0,-67.28,0,,0,0
+2023-09-16,2023-12-14,2023-12-15,2023-12-21,PEQUEÑO,Comercializador regulado,4,4,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",0.005,1.148,0.0,,100.0,1,-193.65,0,,0,0
+2023-09-16,2023-12-14,2023-12-15,2023-12-21,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",0.4975,0.839,1.0,,0.0,1,-93.38,1,,0,0
+2023-10-16,2024-01-13,2024-01-14,2024-01-20,PEQUEÑO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,0.939,0.0,,100.0,0,-61.54,0,,0,0
+2023-10-16,2024-01-13,2024-01-14,2024-01-20,MEDIANO,Comercializador regulado,2,2,"Comercializador regulado,Comercializador regulado,Trader no regulado,Trader no regulado,Trader no regulado",0.1692,0.913,0.0,,85.7,1,-100.08,0,,0,0
+2023-10-16,2024-01-13,2024-01-14,2024-01-20,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",0.4776,1.009,1.0,,85.7,1,-77.84,1,,0,0
+2023-11-15,2024-02-12,2024-02-13,2024-02-19,MEDIANO,Comercializador mixto,3,3,"Comercializador mixto,Comercializador mixto,Comercializador mixto,Comercializador regulado,Trader no regulado",0.005,1.079,0.0,,100.0,0,-78.66,0,,0,0
+2023-11-15,2024-02-12,2024-02-13,2024-02-19,PEQUEÑO,Comercializador regulado,4,4,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,0.99,0.0,,100.0,1,-140.2,0,,0,0
+2023-11-15,2024-02-12,2024-02-13,2024-02-19,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",0.5224,1.068,1.0,,85.7,1,-81.1,1,,0,0
+2023-12-15,2024-03-13,2024-03-14,2024-03-20,MEDIANO,Comercializador mixto,3,3,"Comercializador mixto,Comercializador mixto,Comercializador regulado,Trader no regulado",0.005,1.2,0.0,,100.0,0,-57.37,0,,0,0
+2023-12-15,2024-03-13,2024-03-14,2024-03-20,PEQUEÑO,Comercializador regulado,4,4,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,1.088,0.0,,100.0,1,-146.46,0,,0,0
+2023-12-15,2024-03-13,2024-03-14,2024-03-20,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",0.4677,1.149,1.0,,0.0,1,-91.69,1,,0,0
+2024-01-14,2024-04-12,2024-04-13,2024-04-19,MEDIANO,Comercializador mixto,3,3,"Comercializador mixto,Comercializador mixto,Comercializador mixto,Comercializador mixto",0.005,1.507,0.0,,100.0,0,-45.41,0,,0,0
+2024-01-14,2024-04-12,2024-04-13,2024-04-19,PEQUEÑO,Comercializador regulado,4,4,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",0.005,1.557,0.0,,100.0,1,-191.87,0,,0,0
+2024-01-14,2024-04-12,2024-04-13,2024-04-19,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",0.5224,1.837,1.0,,28.6,1,-152.83,1,,0,0
+2024-02-13,2024-05-12,2024-05-13,2024-05-19,PEQUEÑO,Comercializador regulado,4,4,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,-0.218,0.858,,100.0,0,12.5,0,,0,0
+2024-02-13,2024-05-12,2024-05-13,2024-05-19,MEDIANO,Comercializador mixto,3,3,"Comercializador mixto,Comercializador mixto,Comercializador mixto,Comercializador mixto,Comercializador regulado",0.005,0.402,0.0,,100.0,0,-17.93,0,,0,0
+2024-02-13,2024-05-12,2024-05-13,2024-05-19,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",0.5274,0.293,1.0,,0.0,0,-34.5,1,,0,0
+2024-03-14,2024-06-11,2024-06-12,2024-06-18,MEDIANO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",0.01,1.003,0.0,,85.7,0,-40.08,0,,0,0
+2024-03-14,2024-06-11,2024-06-12,2024-06-18,PEQUEÑO,Integrado/regional regulado,4,4,"Comercializador regulado,Integrado/regional regulado,Integrado/regional regulado,Integrado/regional regulado,Trader expuesto a bolsa (sin cobertura)",0.01,0.952,0.001,,85.7,0,-69.79,0,,0,0
+2024-03-14,2024-06-11,2024-06-12,2024-06-18,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",0.5522,0.757,1.0,,42.9,0,-47.74,1,,0,0
+2024-04-13,2024-07-11,2024-07-12,2024-07-18,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Integrado/regional regulado,Integrado/regional regulado,Trader expuesto a bolsa (sin cobertura),Trader no regulado",0.005,1.599,0.001,,100.0,0,-42.77,0,,0,0
+2024-04-13,2024-07-11,2024-07-12,2024-07-18,MEDIANO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",0.005,1.186,0.0,,71.4,0,-43.46,0,,0,0
+2024-04-13,2024-07-11,2024-07-12,2024-07-18,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",0.5522,1.111,1.0,,28.6,0,-49.71,1,,0,0
+2024-05-13,2024-08-10,2024-08-11,2024-08-17,MEDIANO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado,Comercializador regulado",0.005,1.234,0.0,,100.0,0,-50.54,0,,0,0
+2024-05-13,2024-08-10,2024-08-11,2024-08-17,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Integrado/regional regulado,Integrado/regional regulado,Trader expuesto a bolsa (sin cobertura)",0.005,1.212,0.0,,100.0,1,-119.85,0,,0,0
+2024-05-13,2024-08-10,2024-08-11,2024-08-17,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado",0.5224,1.402,1.0,,71.4,0,-62.75,1,,0,0
+2024-06-12,2024-09-09,2024-09-10,2024-09-16,MEDIANO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",0.005,1.305,0.0,,100.0,0,-53.69,0,,0,0
+2024-06-12,2024-09-09,2024-09-10,2024-09-16,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Comercializador regulado,Integrado/regional regulado,Integrado/regional regulado,Trader expuesto a bolsa (sin cobertura)",0.0199,1.282,0.0,,100.0,1,-134.52,0,,0,0
+2024-06-12,2024-09-09,2024-09-10,2024-09-16,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",0.5124,1.61,1.0,,57.1,1,-77.98,1,,0,0
+2024-07-12,2024-10-09,2024-10-10,2024-10-16,PEQUEÑO,Integrado/regional regulado,4,4,"Integrado/regional regulado,Integrado/regional regulado,Integrado/regional regulado,Integrado/regional regulado,Trader expuesto a bolsa (sin cobertura)",0.005,1.358,0.0,,100.0,1,-173.49,0,,0,0
+2024-07-12,2024-10-09,2024-10-10,2024-10-16,MEDIANO,Integrado/regional regulado,3,3,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",0.9154,1.204,0.0,,100.0,0,-66.03,0,,0,0
+2024-07-12,2024-10-09,2024-10-10,2024-10-16,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,1.774,1.0,,100.0,1,-122.87,1,,0,0
+2024-08-11,2024-11-08,2024-11-09,2024-11-15,MEDIANO,Comercializador mixto,4,4,"Comercializador mixto,Comercializador mixto,Comercializador mixto,Comercializador mixto",0.005,0.931,0.0,,100.0,0,-46.76,0,,0,0
+2024-08-11,2024-11-08,2024-11-09,2024-11-15,PEQUEÑO,Integrado/regional regulado,4,4,"Integrado/regional regulado,Integrado/regional regulado,Integrado/regional regulado,Integrado/regional regulado",0.005,0.915,0.0,,100.0,1,-143.65,0,,0,0
+2024-08-11,2024-11-08,2024-11-09,2024-11-15,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",1.0,0.947,1.0,,0.0,1,-91.81,1,,0,0
+2024-09-10,2024-12-08,2024-12-09,2024-12-15,PEQUEÑO,Integrado/regional regulado,4,4,"Comercializador regulado,Integrado/regional regulado,Integrado/regional regulado,Integrado/regional regulado,Trader expuesto a bolsa (sin cobertura)",0.005,1.01,0.0,,100.0,1,-164.61,0,,0,0
+2024-09-10,2024-12-08,2024-12-09,2024-12-15,MEDIANO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",0.1393,0.958,0.0,,100.0,0,-55.71,0,,0,0
+2024-09-10,2024-12-08,2024-12-09,2024-12-15,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",0.5721,0.991,1.0,,85.7,1,-102.94,1,,0,0
+2024-10-10,2025-01-07,2025-01-08,2025-01-14,PEQUEÑO,Integrado/regional regulado,4,4,"Integrado/regional regulado,Integrado/regional regulado,Integrado/regional regulado,Integrado/regional regulado,Trader expuesto a bolsa (sin cobertura)",0.005,0.027,0.008,,100.0,0,-22.78,0,,0,0
+2024-10-10,2025-01-07,2025-01-08,2025-01-14,MEDIANO,Comercializador mixto,4,4,"Comercializador mixto,Comercializador mixto,Comercializador mixto,Comercializador mixto,Comercializador regulado",0.005,0.565,0.0,,71.4,0,-31.88,0,,0,0
+2024-10-10,2025-01-07,2025-01-08,2025-01-14,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",0.5473,0.311,1.0,,28.6,0,-40.51,1,,0,0
+2024-11-09,2025-02-06,2025-02-07,2025-02-13,MEDIANO,Comercializador mixto,4,4,"Comercializador mixto,Comercializador mixto,Comercializador mixto,Comercializador mixto,Comercializador regulado",0.005,0.949,0.0,,100.0,0,-46.8,0,,0,0
+2024-11-09,2025-02-06,2025-02-07,2025-02-13,PEQUEÑO,Integrado/regional regulado,4,4,"Integrado/regional regulado,Integrado/regional regulado,Integrado/regional regulado,Integrado/regional regulado,Trader expuesto a bolsa (sin cobertura)",0.005,0.853,0.0,,100.0,1,-114.14,0,,0,0
+2024-11-09,2025-02-06,2025-02-07,2025-02-13,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",0.592,0.821,1.0,,14.3,1,-84.06,1,,0,0
+2024-12-09,2025-03-08,2025-03-09,2025-03-15,PEQUEÑO,Integrado/regional regulado,4,4,"Integrado/regional regulado,Integrado/regional regulado,Integrado/regional regulado,Integrado/regional regulado,Trader expuesto a bolsa (sin cobertura)",0.005,-0.062,0.088,,100.0,0,-11.52,0,,0,0
+2024-12-09,2025-03-08,2025-03-09,2025-03-15,MEDIANO,Trader con sobrecobertura de contratos,4,4,"Comercializador regulado,Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos",0.005,0.51,0.0,,85.7,0,-26.57,0,,0,0
+2024-12-09,2025-03-08,2025-03-09,2025-03-15,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",0.592,0.363,1.0,,0.0,0,-36.69,1,,0,0
+2025-01-08,2025-04-07,2025-04-08,2025-04-14,MEDIANO,Comercializador regulado,3,3,"Comercializador regulado,Comercializador regulado,Trader no regulado,Trader no regulado",0.01,0.378,0.001,,85.7,0,-18.4,0,,0,0
+2025-01-08,2025-04-07,2025-04-08,2025-04-14,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Comercializador regulado,Integrado/regional regulado,Integrado/regional regulado,Trader expuesto a bolsa (sin cobertura)",0.0299,-1.783,1.0,,100.0,0,22.91,0,,0,0
+2025-01-08,2025-04-07,2025-04-08,2025-04-14,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Comercializador regulado",0.5622,0.543,1.0,,14.3,0,-27.77,1,,0,0
+2025-02-07,2025-05-07,2025-05-08,2025-05-14,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),3,3,"Integrado/regional regulado,Integrado/regional regulado,Trader expuesto a bolsa (sin cobertura)",0.005,2.974,1.0,,100.0,0,80.12,0,,1,1
+2025-02-07,2025-05-07,2025-05-08,2025-05-14,MEDIANO,Comercializador regulado,3,3,"Comercializador regulado,Trader no regulado,Trader no regulado",0.005,-1.274,0.87,,100.0,0,-0.14,0,,0,0
+2025-02-07,2025-05-07,2025-05-08,2025-05-14,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado,Comercializador regulado",0.5572,0.182,1.0,,28.6,0,-15.81,1,,0,0
+2025-03-09,2025-06-06,2025-06-07,2025-06-13,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Trader expuesto a bolsa (sin cobertura),Trader expuesto a bolsa (sin cobertura)",0.005,1.16,0.981,,100.0,0,39.69,0,,1,1
+2025-03-09,2025-06-06,2025-06-07,2025-06-13,MEDIANO,Comercializador regulado,4,4,"Comercializador regulado,Trader con sobrecobertura de contratos",0.005,-6.85,0.999,,100.0,0,0.27,0,,0,0
+2025-03-09,2025-06-06,2025-06-07,2025-06-13,GRANDE,Comercializador regulado,1,1,"Comercializador regulado,Comercializador regulado",0.5323,0.469,1.0,,85.7,0,-15.01,1,,0,0
+2025-04-08,2025-07-06,2025-07-07,2025-07-13,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,Trader expuesto a bolsa (sin cobertura),0.005,0.787,0.999,,100.0,0,21.27,0,,1,1
+2025-04-08,2025-07-06,2025-07-07,2025-07-13,MEDIANO,Trader no regulado,3,3,Trader no regulado,0.005,-0.628,0.004,,100.0,0,-14.55,0,,0,0
+2025-04-08,2025-07-06,2025-07-07,2025-07-13,GRANDE,Integrado/regional regulado,1,1,Integrado/regional regulado,0.4876,1.653,1.0,,57.1,0,-19.13,1,,0,0
+2025-05-08,2025-08-05,2025-08-06,2025-08-12,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),3,3,Trader expuesto a bolsa (sin cobertura),0.005,0.6,1.0,,100.0,0,2.12,0,,1,1
+2025-05-08,2025-08-05,2025-08-06,2025-08-12,MEDIANO,Integrado/regional regulado,2,2,Integrado/regional regulado,0.0398,1.134,0.0,,85.7,0,-37.58,0,,0,0
+2025-05-08,2025-08-05,2025-08-06,2025-08-12,GRANDE,Integrado/regional regulado,1,1,Integrado/regional regulado,0.4577,1.851,1.0,,57.1,0,-25.88,1,,0,0
+2025-06-07,2025-09-04,2025-09-05,2025-09-11,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Integrado/regional regulado,Trader expuesto a bolsa (sin cobertura)",0.005,0.088,0.504,,100.0,0,-2.99,0,,0,0
+2025-06-07,2025-09-04,2025-09-05,2025-09-11,MEDIANO,Integrado/regional regulado,3,3,"Integrado/regional regulado,Trader con sobrecobertura de contratos",0.4279,4.119,0.0,,100.0,0,-28.01,0,,0,0
+2025-06-07,2025-09-04,2025-09-05,2025-09-11,GRANDE,Integrado/regional regulado,1,1,"Integrado/regional regulado,Integrado/regional regulado",0.5075,1.96,1.0,,14.3,0,-34.83,1,,0,0
+2025-07-07,2025-10-04,2025-10-05,2025-10-11,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Integrado/regional regulado,Integrado/regional regulado,Trader expuesto a bolsa (sin cobertura)",0.005,1.022,0.992,,100.0,0,4.86,0,,1,1
+2025-07-07,2025-10-04,2025-10-05,2025-10-11,GRANDE,Integrado/regional regulado,1,1,"Integrado/regional regulado,Integrado/regional regulado,Integrado/regional regulado",0.5224,0.992,1.0,,57.1,0,-32.17,1,,0,0
+2025-07-07,2025-10-04,2025-10-05,2025-10-11,MEDIANO,Integrado/regional regulado,3,3,"Integrado/regional regulado,Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos",1.0,0.961,0.0,,100.0,0,-32.77,0,,0,0
+2025-08-06,2025-11-03,2025-11-04,2025-11-10,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Integrado/regional regulado,Integrado/regional regulado,Trader expuesto a bolsa (sin cobertura)",0.005,3.416,0.984,,100.0,0,35.52,0,,1,1
+2025-08-06,2025-11-03,2025-11-04,2025-11-10,MEDIANO,Trader con sobrecobertura de contratos,3,3,"Integrado/regional regulado,Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos",0.005,0.551,0.0,,100.0,0,-18.92,0,,0,0
+2025-08-06,2025-11-03,2025-11-04,2025-11-10,GRANDE,Integrado/regional regulado,1,1,"Integrado/regional regulado,Integrado/regional regulado,Integrado/regional regulado",0.5174,0.6,1.0,,57.1,0,-23.54,1,,0,0
+2025-09-05,2025-12-03,2025-12-04,2025-12-10,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Integrado/regional regulado,Trader expuesto a bolsa (sin cobertura),Trader expuesto a bolsa (sin cobertura)",0.005,2.578,0.998,,100.0,0,30.41,0,,1,1
+2025-09-05,2025-12-03,2025-12-04,2025-12-10,MEDIANO,Trader con sobrecobertura de contratos,3,3,"Integrado/regional regulado,Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos",0.005,0.606,0.0,,71.4,0,-17.84,0,,0,0
+2025-09-05,2025-12-03,2025-12-04,2025-12-10,GRANDE,Integrado/regional regulado,1,1,"Integrado/regional regulado,Integrado/regional regulado,Integrado/regional regulado",0.5174,0.694,1.0,,57.1,0,-23.38,1,,0,0
+2025-10-05,2026-01-02,2026-01-03,2026-01-09,MEDIANO,Trader con sobrecobertura de contratos,3,3,"Integrado/regional regulado,Trader con sobrecobertura de contratos",0.005,1.814,0.0,,100.0,0,-41.24,0,,0,0
+2025-10-05,2026-01-02,2026-01-03,2026-01-09,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Integrado/regional regulado,Trader expuesto a bolsa (sin cobertura)",0.005,-3.937,0.01,,57.1,0,-76.02,0,,0,0
+2025-10-05,2026-01-02,2026-01-03,2026-01-09,GRANDE,Integrado/regional regulado,1,1,"Integrado/regional regulado,Integrado/regional regulado",0.4925,1.855,1.0,,42.9,0,-44.0,1,,0,0
+2025-11-04,2026-02-01,2026-02-02,2026-02-08,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,6.322,1.0,,100.0,0,67.13,0,,1,1
+2025-11-04,2026-02-01,2026-02-02,2026-02-08,MEDIANO,Trader con sobrecobertura de contratos,4,4,"Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos",0.005,1.328,0.0,,100.0,0,-36.72,0,,0,0
+2025-11-04,2026-02-01,2026-02-02,2026-02-08,GRANDE,Integrado/regional regulado,1,1,"Integrado/regional regulado,Integrado/regional regulado",0.4627,0.897,1.0,,0.0,0,-28.09,1,,0,0
+2025-12-04,2026-03-03,2026-03-04,2026-03-10,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,2.084,0.837,,100.0,0,77.25,0,,0,0
+2025-12-04,2026-03-03,2026-03-04,2026-03-10,MEDIANO,Trader no regulado,4,4,"Integrado/regional regulado,Trader no regulado",0.005,-0.595,0.355,,100.0,0,-1.38,0,,0,0
+2025-12-04,2026-03-03,2026-03-04,2026-03-10,GRANDE,Integrado/regional regulado,1,1,"Integrado/regional regulado,Integrado/regional regulado",0.4726,0.891,1.0,,0.0,0,-21.56,1,,0,0
+2026-01-03,2026-04-02,2026-04-03,2026-04-09,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,0.391,0.701,,100.0,0,6.51,0,,0,0
+2026-01-03,2026-04-02,2026-04-03,2026-04-09,MEDIANO,Trader no regulado,4,4,"Integrado/regional regulado,Trader no regulado",0.005,5.422,0.0,,100.0,0,-35.38,0,,0,0
+2026-01-03,2026-04-02,2026-04-03,2026-04-09,GRANDE,Integrado/regional regulado,1,1,"Integrado/regional regulado,Integrado/regional regulado",0.4577,1.685,1.0,,14.3,0,-46.13,1,,0,0
+2026-02-02,2026-05-02,2026-05-03,2026-05-09,MEDIANO,Trader no regulado,4,4,"Integrado/regional regulado,Trader no regulado",0.005,2.984,0.0,,100.0,0,-65.58,0,,0,0
+2026-02-02,2026-05-02,2026-05-03,2026-05-09,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,-1.803,0.003,,57.1,1,-90.41,0,,0,0
+2026-02-02,2026-05-02,2026-05-03,2026-05-09,GRANDE,Integrado/regional regulado,1,1,"Integrado/regional regulado,Integrado/regional regulado",0.5522,1.827,1.0,,71.4,0,-64.67,1,,0,0
+2026-03-04,2026-06-01,2026-06-02,2026-06-08,MEDIANO,Trader no regulado,4,4,"Integrado/regional regulado,Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos,Trader no regulado",0.005,1.468,0.0,,100.0,0,-68.6,0,,0,0
+2026-03-04,2026-06-01,2026-06-02,2026-06-08,PEQUEÑO,Trader expuesto a bolsa (sin cobertura),4,4,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,2.567,0.0,,100.0,1,-133.33,0,,0,0
+2026-03-04,2026-06-01,2026-06-02,2026-06-08,GRANDE,Integrado/regional regulado,1,1,"Integrado/regional regulado,Integrado/regional regulado,Integrado/regional regulado,Integrado/regional regulado",0.5572,1.792,1.0,,0.0,1,-91.27,1,,0,0
+2026-04-03,2026-07-01,2026-07-02,2026-07-08,PEQUEÑO,Comercializador regulado,4,4,"Comercializador regulado,Comercializador regulado,Comercializador regulado,Trader expuesto a bolsa (sin cobertura)",0.005,1.294,0.0,,100.0,1,-150.2,0,,0,0
+2026-04-03,2026-07-01,2026-07-02,2026-07-08,MEDIANO,Integrado/regional regulado,4,4,"Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos,Trader con sobrecobertura de contratos,Trader no regulado",0.0249,1.093,0.0,,100.0,1,-71.66,0,,0,0
+2026-04-03,2026-07-01,2026-07-02,2026-07-08,GRANDE,Integrado/regional regulado,1,1,"Integrado/regional regulado,Integrado/regional regulado,Integrado/regional regulado,Integrado/regional regulado",0.5373,1.718,1.0,,0.0,1,-119.49,1,,0,0
