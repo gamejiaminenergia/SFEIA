@@ -5,11 +5,24 @@ de clonación y de la demanda de referencia, calcula su margen con la **misma
 lógica** del estudio (`sfeia.app.services.diario.desempeno_diario`) y lo
 compara contra el margen real de los maestros y del segmento ese día.
 
+Adiciones del plan de investigación:
+- `simular_dias` (P1.1): decide con **spread previo** (ex-ante, sin look-ahead)
+  y, si el día está fuera de la zona de confianza (P1.3), aplica un perfil
+  defensivo que reduce la exposición a bolsa.
+- `replicacion_is_oos` (P0.5): ratio IS→OOS de la imitación (estándar de los
+  quants: un sistema sano conserva ≥ 50–70 % del desempeño IS).
+- `dsr_aprox` (P0.5): Deflated Sharpe aproximado, corrige por múltiples
+  pruebas (López de Prado).
+- `capacidad` (P2.1) y `decision_negocio` con kill-switch (P2.2).
+
 SOLID: responsabilidad única — simular y comparar la imitación en el impacto.
 """
 from __future__ import annotations
 
+import math
 from statistics import median
+
+import numpy as np
 
 from sfeia.app.models.entities import (
     EscenarioEstres,
@@ -57,6 +70,95 @@ def construir_ad_xxxc(
     }
 
 
+def _perfil_defensivo(perfil: PerfilAccion, factor_exposicion: float) -> PerfilAccion:
+    """Reduce exposición a bolsa trasladando a contratos (P1.3).
+
+    Fuera de la distribución de entrenamiento, clonar a ciegas es el modo de
+    fallo del BC. Se conserva el abastecimiento total (cobertura + exposición ≈
+    igual) moviendo volumen de bolsa a contratos, cuyo precio es conocido.
+    """
+    expo = round(perfil.pct_exposicion * factor_exposicion, 1)
+    cob = round(perfil.pct_cobertura + (perfil.pct_exposicion - expo), 1)
+    return PerfilAccion(
+        pct_cobertura=cob,
+        pct_exposicion=expo,
+        pct_noreg=perfil.pct_noreg,
+        pct_sicep=perfil.pct_sicep,
+        tiene_sicep=perfil.tiene_sicep,
+        n_dias=perfil.n_dias,
+    )
+
+
+def simular_dias(
+    agentedia: dict[str, dict],
+    politica,
+    dema_kwh: float,
+    params: dict,
+    segmento_por_codigo: dict[str, str],
+    segmento: str,
+    codigos_maestros: set[str],
+    bins_spread: dict[str, list[float]],
+    usar_spread_previo: bool = True,
+    factor_exposicion_fuera: float = 0.5,
+    nivel_embalses_por_dia: dict[str, float] | None = None,
+) -> list[SimulacionDia]:
+    """Simula la política día a día sobre `agentedia` y compara contra maestros/segmento.
+
+    Contexto ex-ante (P1.1): la decisión usa el spread con la bolsa del **día
+    anterior** (conocida al decidir) y el contrato del día (conocido). El
+    primer día cae al spread del mismo día (sin referencia previa). `es_escasez`
+    se reporta con la bolsa realizada del día (informativo, no es la decisión).
+    """
+    precios_dia: dict[str, tuple[float, float, float]] = {}
+    for ad in agentedia.values():
+        d = str(ad["dia"])
+        if d not in precios_dia:
+            precios_dia[d] = (ad["prec_cont"], ad["prec_bolsa"], ad["prec_escasez"])
+    fechas = sorted(precios_dia)
+    bolsa_prev: dict[str, float] = {
+        fechas[i]: precios_dia[fechas[i - 1]][1] for i in range(1, len(fechas))
+    }
+
+    sims: list[SimulacionDia] = []
+    vistos: set[str] = set()
+    for ad in agentedia.values():
+        dia = str(ad["dia"])
+        if dia in vistos:
+            continue
+        vistos.add(dia)
+        prec_cont, prec_bolsa, prec_escasez = precios_dia[dia]
+        if usar_spread_previo and dia in bolsa_prev:
+            spread_ctx = bolsa_prev[dia] - prec_cont
+        else:
+            spread_ctx = prec_bolsa - prec_cont
+        perfil, en_dist = clonacion.aplicar_politica_con_banda(politica, spread_ctx)
+        if not en_dist and factor_exposicion_fuera < 1.0:
+            perfil = _perfil_defensivo(perfil, factor_exposicion_fuera)
+        ad_xxxc = construir_ad_xxxc(dema_kwh, perfil, prec_cont, prec_bolsa, prec_escasez)
+        res = diario.desempeno_diario(ad_xxxc, params)
+        bin_label, _, _ = contexto.binificar_spread(spread_ctx, bins_spread)
+        nivel = None
+        if nivel_embalses_por_dia:
+            nivel = nivel_embalses_por_dia.get(dia)
+            nivel = round(nivel, 1) if nivel is not None else None
+        sims.append(SimulacionDia(
+            fecha=dia,
+            bin_spread=bin_label,
+            es_escasez=contexto.es_escasez(prec_bolsa, prec_escasez),
+            perfil=perfil,
+            margen_imitacion=round(res["margen_por_kwh_cop"], 2),
+            margen_maestros=mediana_margen_dia(agentedia, dia, codigos=codigos_maestros),
+            margen_segmento=mediana_margen_dia(
+                agentedia, dia, segmento=segmento, segmento_por_codigo=segmento_por_codigo
+            ),
+            garantia_exigida_cop=round(res["garantia_exigida_cop"], 0),
+            en_distribucion=en_dist,
+            nivel_embalses_pct=nivel,
+        ))
+    sims.sort(key=lambda s: s.fecha)
+    return sims
+
+
 def mediana_margen_dia(
     agentedia: dict[str, dict],
     dia: str,
@@ -78,6 +180,96 @@ def mediana_margen_dia(
         return None
     orden = sorted(valores)
     return round(orden[len(orden) // 2], 2)
+
+
+def replicacion_is_oos(
+    sims_estudio: list[SimulacionDia],
+    sims_impacto: list[SimulacionDia],
+) -> dict:
+    """Ratio de replicación IS→OOS de la imitación (P0.5).
+
+    Mediana del margen de la imitación en la ventana de estudio (IS) vs. en la
+    de impacto (OOS). Un ratio ≥ 0.5–0.7 es el estándar de un sistema sano;
+    cerca de 0 significa que la política no generaliza.
+    """
+    def _med(sims: list[SimulacionDia]) -> float | None:
+        vals = [s.margen_imitacion for s in sims if s.margen_imitacion is not None]
+        return round(median(vals), 2) if vals else None
+
+    m_is = _med(sims_estudio)
+    m_oos = _med(sims_impacto)
+    ratio = (round(m_oos / m_is, 3) if m_is else None)
+    return {"mediana_imitacion_is": m_is, "mediana_imitacion_oos": m_oos, "ratio_replicacion": ratio}
+
+
+def dsr_aprox(margenes: list[float], n_trials: int) -> dict | None:
+    """Deflated Sharpe Ratio aproximado (P0.5, Bailey–López de Prado).
+
+    Corrige el Sharpe de la serie de la imitación por el número de trials
+    independientes de la selección (≈ agentes candidatos rankeados). `dsr >=
+    0.95` indica que el resultado difícilmente es producto de la selección por
+    azar. Devuelve None si la serie es demasiado corta o sin varianza.
+    """
+    from scipy import stats
+
+    arr = np.asarray([float(x) for x in margenes if x is not None])
+    n = arr.size
+    if n < 3 or not n_trials or n_trials < 1:
+        return None
+    std = arr.std(ddof=1)
+    if std == 0:
+        return None
+    sr = float(arr.mean() / std)
+    skew = float(stats.skew(arr))
+    kurt = float(stats.kurtosis(arr, fisher=False))
+    var_sr = max((1.0 - skew * sr + (kurt - 1.0) / 4.0 * sr ** 2) / (n - 1), 1e-12)
+    gamma = 0.5772156649015329  # constante de Euler–Mascheroni
+    emax = math.sqrt(var_sr) * (
+        (1 - gamma) * stats.norm.ppf(1 - 1.0 / n_trials)
+        + gamma * stats.norm.ppf(1 - 1.0 / (n_trials * math.e))
+    )
+    den = math.sqrt(max(1.0 - skew * sr + (kurt - 1.0) / 4.0 * sr ** 2, 1e-12))
+    z = (sr - emax) * math.sqrt(n - 1) / den
+    dsr = float(stats.norm.cdf(z))
+    return {
+        "sharpe_diario": round(sr, 3),
+        "skew": round(skew, 2),
+        "kurt": round(kurt, 2),
+        "n_trials": int(n_trials),
+        "dsr": round(dsr, 3),
+        "significativo": bool(dsr >= 0.95),
+    }
+
+
+def capacidad(
+    dema_kwh: float,
+    agentedia: dict[str, dict],
+    segmento: str,
+    segmento_por_codigo: dict[str, str],
+    umbral_pct: float = 5.0,
+) -> dict | None:
+    """Límite de capacidad (P2.1): la imitación no puede absorber más que una
+    fracción de la demanda total del segmento (proxy de profundidad del mercado).
+    """
+    por_dia: dict[str, list[float]] = {}
+    for ad in agentedia.values():
+        if segmento_por_codigo.get(ad["codigo"]) != segmento:
+            continue
+        por_dia.setdefault(str(ad["dia"]), []).append(ad["dema_kwh"])
+    demas = [sum(v) for v in por_dia.values() if v]
+    if not demas:
+        return None
+    dema_seg = median(demas)
+    if dema_seg <= 0:
+        return None
+    pct = dema_kwh / dema_seg * 100.0
+    return {
+        "dema_imitar_kwh": round(dema_kwh, 0),
+        "dema_total_segmento_mediana_kwh": round(dema_seg, 0),
+        "pct_del_segmento": round(pct, 1),
+        "umbral_pct": umbral_pct,
+        "supera_capacidad": bool(pct > umbral_pct),
+    }
 
 
 def resumen_impacto(sims: list[SimulacionDia], demanda_kwh_dia: float) -> ResumenImpacto:
@@ -193,12 +385,19 @@ def decision_negocio(
     margen_escasez_extrema: float,
     pct_escasez: float,
     pct_escasez_nino: float = 25.0,
+    drawdown_max: float = 0.0,
+    kill_switch_drawdown: float = 0.0,
+    capacidad: dict | None = None,
 ) -> dict:
     """Traduce el análisis a decisiones de negocio para XXXC.
 
     Calcula la pérdida diaria si la bolsa toca el precio de escasez, el
     beneficio esperado por kWh bajo la frecuencia histórica y bajo un año
     Niño, y el veredicto de conveniencia de la estrategia imitada.
+
+    Adiciones del plan: kill-switch por drawdown (P2.2) y límite de capacidad
+    (P2.1). Si el drawdown acumulado del período simulado supera el umbral, el
+    veredicto ordena NO operar la estrategia imitada sin rediseño.
     """
     def _e(p: float, margen: float) -> float:
         return (1.0 - p) * mediana_benigna + p * margen
@@ -210,7 +409,21 @@ def decision_negocio(
     e_historico = round(_e(p_hist, margen_escasez), 2)
     e_nino = round(_e(p_nino, margen_escasez), 2)
 
-    if margen_escasez >= 0:
+    kill_sw = bool(kill_switch_drawdown and drawdown_max > kill_switch_drawdown)
+
+    if kill_sw:
+        veredicto = (
+            f"KILL-SWITCH: el drawdown acumulado del período simulado ({drawdown_max:,.0f} COP/kWh) supera el "
+            f"umbral ({kill_switch_drawdown:,.0f} COP/kWh). NO operar la estrategia imitada sin rediseñar el perfil "
+            "o reducir la exposición."
+        )
+    elif capacidad and capacidad["supera_capacidad"]:
+        veredicto = (
+            f"CAPACIDAD: la demanda simulada de XXXC ({capacidad['dema_imitar_kwh']:,.0f} kWh/día) supera el "
+            f"umbral de {capacidad['umbral_pct']:.0f} % de la demanda del segmento "
+            f"({capacidad['pct_del_segmento']:.1f} %): no replicable sin afectar el mercado."
+        )
+    elif margen_escasez >= 0:
         veredicto = "Sin pérdida relevante en escasez: la estrategia no expone a XXXC al riesgo de bolsa."
     elif e_nino < 0:
         veredicto = (
@@ -236,5 +449,9 @@ def decision_negocio(
         "e_margen_dia_anio_nino": e_nino,
         "pct_escasez_historico": pct_escasez,
         "pct_escasez_anio_nino": pct_escasez_nino,
+        "drawdown_max_cop_kwh": round(drawdown_max, 2),
+        "kill_switch_activado": kill_sw,
+        "kill_switch_drawdown_cop_kwh": kill_switch_drawdown,
+        "capacidad": capacidad,
         "veredicto": veredicto,
     }

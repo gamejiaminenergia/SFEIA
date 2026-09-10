@@ -118,3 +118,8 @@ class RepoElecdb:
     def historial_precios(self) -> list[dict]:
         """Todas las filas de fact_daily_sistema (precios diarios, 2015 → hoy)."""
         return self._ejecutar_archivo("d1_historial_precios.sql", {})[0]
+
+    # ---- D1 (auxiliar): contexto hidrológico diario (nivel de embalses) ----
+    def contexto_hidrologia(self, ini: str, fin: str) -> list[dict]:
+        """Nivel agregado de embalses del SIN por día (régimen hidrológico)."""
+        return self._ejecutar_archivo("d1_contexto_hidrologia.sql", {"ini": ini, "fin": fin})[0]

@@ -1,5 +1,4 @@
-﻿posicion,codigo_agente,nombre_agente,dias_en_estrategia,mediana_margen_cop_kwh,media_margen_cop_kwh
-1,TRPC,TERMOPIEDRAS S.A. E.S.P.,23,-246.95,-285.47
-2,HIMC,GESTION ENERGETICA S.A. E.S.P.,30,-257.22,-280.35
-3,RPEC,RIOPAILA ENERGÍA S.A.S. E.S.P.,30,-268.34,-291.34
-4,VICC,EMPRESA DE ENERGÍA ELÉCTRICA DEL DEPARTAMENTO DEL VICHADA,30,-268.34,-291.34
+﻿posicion,codigo_agente,nombre_agente,dias_en_estrategia,mediana_margen_cop_kwh,media_margen_cop_kwh,mediana_relativa_cop_kwh,pct_dias_supera_segmento,pct_dias_perdida,drawdown_max_cop_kwh_acum,mediana_dias_malos_cop_kwh
+1,RPEC,RIOPAILA ENERGÍA S.A.S. E.S.P.,28,93.68,88.88,146.49,100.0,0.0,0.0,0.0
+2,VICC,EMPRESA DE ENERGÍA ELÉCTRICA DEL DEPARTAMENTO DEL VICHADA,28,93.68,88.88,146.49,100.0,0.0,0.0,0.0
+3,HIMC,GESTION ENERGETICA S.A. E.S.P.,28,88.16,83.38,139.46,100.0,0.0,0.0,0.0

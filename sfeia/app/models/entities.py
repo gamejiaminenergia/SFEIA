@@ -96,12 +96,25 @@ class VentanasResueltas:
 
 @dataclass
 class AgenteMaestro:
-    """Un agente del top-N del (segmento, estrategia) en la ventana de estudio."""
+    """Un agente del top-N del (segmento, estrategia) en la ventana de estudio.
+
+    Las métricas de riesgo (P0.4) acompañan a la mediana del margen: % de días
+    con pérdida, drawdown máximo de la serie acumulada y mediana del margen en
+    los días de pérdida (colas). `mediana_relativa` y `pct_dias_supera_segmento`
+    (S1) miden cuánto superó el agente a la mediana del segmento el mismo día:
+    es la métrica que cancela el artefacto Pv=350 y guía la selección cuando
+    `seleccion_por_relativo` está activa.
+    """
     codigo: str
     nombre: str
     n_dias: int
     mediana_margen: float
     media_margen: float
+    pct_dias_perdida: float = 0.0
+    drawdown_max: float = 0.0
+    downside_mediana: float = 0.0
+    mediana_relativa: float = 0.0
+    pct_dias_supera_segmento: float = 0.0
 
 
 @dataclass
@@ -144,10 +157,21 @@ class PoliticaClonacion:
 
     `reglas` solo contiene bins con datos; los bins sin entrenamiento se
     resuelven con el bin más cercano con datos, o con `fallback` si ninguno.
+
+    Adiciones del plan de investigación:
+    - `rango_spread`: [min, max] de spreads observados en el entrenamiento.
+      Fuera de ese rango el día está **fuera de distribución** (P1.3): el
+      simulador reduce exposición en vez de clonar a ciegas.
+    - `modo`: 'mediana' (top-N discreto, comportamiento original) o
+      'ponderado' (P1.2: perfiles de maestros combinados con pesos, en vez de
+      elegir un top-N duro). `pesos` guarda {código: peso}.
     """
     reglas: dict[str, ReglaPolitica] = field(default_factory=dict)
     fallback: PerfilAccion | None = None
     bins_spread: dict[str, list[float]] = field(default_factory=dict)
+    rango_spread: tuple[float, float] | None = None
+    modo: str = "mediana"
+    pesos: dict[str, float] | None = None
 
 
 @dataclass
@@ -161,6 +185,8 @@ class SimulacionDia:
     margen_maestros: float | None
     margen_segmento: float | None
     garantia_exigida_cop: float = 0.0
+    en_distribucion: bool = True
+    nivel_embalses_pct: float | None = None
 
 
 @dataclass

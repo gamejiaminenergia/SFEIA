@@ -1,0 +1,8 @@
+﻿segmento,estrategia,n_maestros,n_efectivo,codigos,mediana_relativa_top_cop_kwh,mediana_margen_absoluto_cop_kwh,p_valor_bootstrap,ratio_replicacion,drawdown_max_cop_kwh,kill_switch_1_0,valida_1_0
+PEQUEÑO,Trader expuesto a bolsa (sin cobertura),3,1,"RPEC,VICC,HIMC",142.76,86.2,0.9801,0.972,0.0,0,0
+PEQUEÑO,Integrado/regional regulado,10,9,"EBSC,CHCC,EDQC,EMPC,ENIC,EVSC,TENC,CASC,EDPC,EMSC",33.61,-21.93,1.0,1.044,170.97,0,0
+PEQUEÑO,Trader no regulado,10,10,"FREC,GAPC,EXIC,CMXC,CBNC,DRUC,BEIC,TRPC,LESC,GNYC",18.54,-52.42,1.0,1.024,400.39,0,0
+MEDIANO,Trader no regulado,1,1,GECC,12.46,-1.12,0.5174,2.732,34.82,0,0
+MEDIANO,Integrado/regional regulado,9,9,"ESSC,CNSC,CSIC,CMMC,EMIC,ENDC,EPMC,EPSC,GNCC",0.0,-11.88,1.0,1.082,99.66,0,0
+MEDIANO,Trader con sobrecobertura de contratos,2,2,"SOEC,ISGC",-53.23,-62.0,1.0,1.011,433.89,0,0
+PEQUEÑO,Trader con sobrecobertura de contratos,10,6,"ASCC,ETTC,CHVC,CMXC,EMEC,BEIC,VESC,PEEC,SCEC,FERC",-211.33,-238.03,1.0,1.004,1666.0,1,0

@@ -5,6 +5,14 @@ estrategia objetivo en la ventana de estudio, la **mediana del perfil de
 abastecimiento** por bin de spread. La política es determinista e
 interpretable: dado el spread de un día → perfil recomendado.
 
+Adiciones del plan de investigación:
+- `pesos` (P1.2): si se pasan, el perfil por bin es el **promedio ponderado**
+  de los perfiles de cada maestro (agregación) en vez de la mediana pooled del
+  top-N discreto (que era Follow-the-Leader).
+- `rango_spread` (P1.3): rango de spreads observado en el entrenamiento.
+  `aplicar_politica_con_banda` indica si un día está dentro/fuera de la
+  distribución; el simulador reduce exposición fuera de ella.
+
 SOLID: responsabilidad única — construir y consultar la política de clonación.
 """
 from __future__ import annotations
@@ -33,6 +41,34 @@ def _mediana_perfil(dias: list[dict]) -> PerfilAccion:
     )
 
 
+def _perfil_ponderado(por_maestro: dict[str, list[dict]], pesos: dict[str, float]) -> PerfilAccion:
+    """Perfil por bin = mediana de cada maestro en ese bin, combinada con pesos.
+
+    Los maestros sin presencia en el bin no aportan; los pesos se re-normalizan
+    sobre los presentes. Si ningún maestro con peso tiene datos, cae a la
+    mediana pooled (comportamiento original).
+    """
+    med_por_maestro = {c: _mediana_perfil(dias) for c, dias in por_maestro.items()}
+    n_dias = sum(len(dias) for dias in por_maestro.values())
+    presentes = [c for c in med_por_maestro if c in pesos]
+    if not presentes:
+        return _mediana_perfil([d for dias in por_maestro.values() for d in dias])
+    w = {c: pesos[c] for c in presentes}
+    tot = sum(w.values()) or 1.0
+
+    def _mezcla(atr: str, redondeo: int) -> float:
+        return round(sum(w[c] / tot * getattr(med_por_maestro[c], atr) for c in presentes), redondeo)
+
+    return PerfilAccion(
+        pct_cobertura=_mezcla("pct_cobertura", 1),
+        pct_exposicion=_mezcla("pct_exposicion", 1),
+        pct_noreg=_mezcla("pct_noreg", 1),
+        pct_sicep=_mezcla("pct_sicep", 1),
+        tiene_sicep=_mezcla("tiene_sicep", 2),
+        n_dias=n_dias,
+    )
+
+
 def construir_politica(
     agentedia: dict[str, dict],
     etiquetas: list[str],
@@ -43,17 +79,26 @@ def construir_politica(
     estrategia: str,
     segmento_por_codigo: dict[str, str],
     bins_spread: dict[str, list[float]],
+    pesos: dict[str, float] | None = None,
 ) -> PoliticaClonacion:
     """Política BC a partir de los agentes-día de los maestros.
 
     Solo entrena con los días en que un maestro jugó la **estrategia objetivo**
     (clúster del estudio que coincide con `estrategia`). Por bin de spread se
-    agrupan esos agentes-día y se toma la mediana del perfil de abastecimiento.
+    agrupan esos agentes-día y se toma la mediana del perfil de abastecimiento
+    (o el promedio ponderado por maestro si `pesos` está presente).
+
+    También registra el rango de spreads observado (P1.3): la zona de confianza
+    dentro de la cual la política tiene respaldo empírico.
     """
     cids_objetivo = {cid for cid, p in perfiles.items() if _coincide(p.arquetipo, estrategia)}
     por_bin: dict[str, list[dict]] = {}
+    por_bin_por_maestro: dict[str, dict[str, list[dict]]] = {}
     metadatos: dict[str, tuple[float, float]] = {}
     todos: list[dict] = []
+    todos_por_maestro: dict[str, list[dict]] = {}
+    spread_min: float | None = None
+    spread_max: float | None = None
 
     for i, clave in enumerate(etiquetas):
         ad = agentedia[clave]
@@ -65,24 +110,40 @@ def construir_politica(
             continue
         f = ad["features"]
         spread = ad["prec_bolsa"] - ad["prec_cont"]
+        spread_min = spread if spread_min is None else min(spread_min, spread)
+        spread_max = spread if spread_max is None else max(spread_max, spread)
         bin_label, lo, hi = binificar_spread(spread, bins_spread)
         por_bin.setdefault(bin_label, []).append(f)
+        por_bin_por_maestro.setdefault(bin_label, {}).setdefault(ad["codigo"], []).append(f)
         metadatos[bin_label] = (lo, hi)
         todos.append(f)
+        todos_por_maestro.setdefault(ad["codigo"], []).append(f)
 
     reglas: dict[str, ReglaPolitica] = {}
     for label, dias in por_bin.items():
         lo, hi = metadatos[label]
+        perfil = _perfil_ponderado(por_bin_por_maestro[label], pesos) if pesos else _mediana_perfil(dias)
         reglas[label] = ReglaPolitica(
             bin_spread=label,
             spread_min=lo,
             spread_max=hi,
-            perfil=_mediana_perfil(dias),
+            perfil=perfil,
             n_dias=len(dias),
         )
 
-    fallback = _mediana_perfil(todos) if todos else None
-    return PoliticaClonacion(reglas=reglas, fallback=fallback, bins_spread=bins_spread)
+    if pesos:
+        fallback = _perfil_ponderado(todos_por_maestro, pesos) if todos_por_maestro else None
+    else:
+        fallback = _mediana_perfil(todos) if todos else None
+    rango = (round(spread_min, 2), round(spread_max, 2)) if todos else None
+    return PoliticaClonacion(
+        reglas=reglas,
+        fallback=fallback,
+        bins_spread=bins_spread,
+        rango_spread=rango,
+        modo="ponderado" if pesos else "mediana",
+        pesos=dict(pesos) if pesos else None,
+    )
 
 
 def _distancia_a_bin(spread: float, lo: float, hi: float) -> float:
@@ -113,3 +174,20 @@ def aplicar_politica(politica: PoliticaClonacion, spread: float) -> PerfilAccion
     if politica.fallback:
         return politica.fallback
     raise ValueError("Política de clonación vacía: no hay reglas ni fallback para entrenar")
+
+
+def aplicar_politica_con_banda(
+    politica: PoliticaClonacion, spread: float
+) -> tuple[PerfilAccion, bool]:
+    """Perfil + bandera de 'dentro de distribución' (P1.3).
+
+    `en_distribucion=False` cuando el spread del día cae **fuera** del rango
+    observado en el entrenamiento: la política aplica su regla más cercana pero
+    el simulador debe **reducir exposición** (el clonado ciego fuera de la
+    distribución es el modo de fallo clásico del Behavioral Cloning).
+    """
+    perfil = aplicar_politica(politica, spread)
+    rango = politica.rango_spread
+    if rango is None:
+        return perfil, True
+    return perfil, rango[0] <= spread <= rango[1]

@@ -324,3 +324,214 @@ def test_detectar_duplicados():
     dups = maestros.detectar_duplicados(ms)
     assert ["A", "B"] in dups
     assert len(dups) == 1
+
+
+# --------------------------------------------------------- P0: validez ---------
+def test_detectar_duplicados_correlacion():
+    from sfeia.app.models.entities import AgenteMaestro
+
+    agentes = []
+    for i, dia in enumerate(("2026-01-01", "2026-01-02", "2026-01-03", "2026-01-04")):
+        agentes.append(AgenteDia("A", "A", dia, "PEQUEÑO", 0, ESTRATEGIA, {}, float(i), 300.0))
+        agentes.append(AgenteDia("B", "B", dia, "PEQUEÑO", 0, ESTRATEGIA, {}, float(i) + 0.1, 300.0))
+        agentes.append(AgenteDia("C", "C", dia, "PEQUEÑO", 0, ESTRATEGIA, {}, 100.0 - float(i), 300.0))
+    ms = [
+        AgenteMaestro("A", "A", 4, 1.5, 1.5),
+        AgenteMaestro("B", "B", 4, 1.6, 1.6),
+        AgenteMaestro("C", "C", 4, 98.5, 98.5),
+    ]
+    dups = maestros.detectar_duplicados(ms, agentes, umbral_corr=0.9)
+    assert any("A" in g and "B" in g for g in dups)
+    assert all("C" not in g for g in dups)
+    assert maestros.n_efectivo(ms, agentes, umbral_corr=0.9) == 2
+
+
+def test_bootstrap_skill_luck_sin_skill():
+    agentes = []
+    for dia in ("2026-01-01", "2026-01-02", "2026-01-03"):
+        for codigo in ("A", "B"):
+            agentes.append(AgenteDia(codigo, codigo, dia, "PEQUEÑO", 0, ESTRATEGIA, {}, 5.0, 300.0))
+    b = maestros.bootstrap_skill_luck(
+        agentes, "PEQUEÑO", ESTRATEGIA, top=1, n_dias_estudio=3, n_boot=100, semilla=7, min_dias_pct=0.0
+    )
+    assert b["mejor_maestro_real"] == 5.0
+    assert b["p_valor"] == 1.0  # sin habilidad, el mejor es indistinguible del azar
+
+
+def test_persistencia_seleccion():
+    agentes = []
+    for dia in ("2026-02-01", "2026-02-02", "2026-02-03"):
+        agentes.append(AgenteDia("A", "A", dia, "PEQUEÑO", 0, ESTRATEGIA, {}, 50.0, 300.0))
+        agentes.append(AgenteDia("B", "B", dia, "PEQUEÑO", 0, ESTRATEGIA, {}, -50.0, 300.0))
+    h = maestros.persistencia_seleccion(
+        agentes, "PEQUEÑO", ESTRATEGIA, {"A", "B"}, n_dias_validacion=3, min_dias_pct=0.0
+    )
+    assert h["pct_persistencia"] == 50.0  # solo A sigue en la mitad superior (1 de 2)
+    h2 = maestros.persistencia_seleccion(
+        agentes, "PEQUEÑO", ESTRATEGIA, {"B"}, n_dias_validacion=3, min_dias_pct=0.0
+    )
+    assert h2["pct_persistencia"] == 0.0
+
+
+def test_metricas_riesgo_maestros():
+    agentes = []
+    for dia in ("2026-01-01", "2026-01-02", "2026-01-03"):
+        agentes.append(AgenteDia("EXP", "EXP", dia, "PEQUEÑO", 0, ESTRATEGIA, {}, 10.0, 300.0))
+        agentes.append(AgenteDia("MALO", "MALO", dia, "PEQUEÑO", 0, ESTRATEGIA, {}, -20.0, 300.0))
+    top = maestros.seleccionar_maestros(agentes, "PEQUEÑO", ESTRATEGIA, top=5, n_dias_estudio=3, min_dias_pct=0.0)
+    exp = next(m for m in top if m.codigo == "EXP")
+    malo = next(m for m in top if m.codigo == "MALO")
+    assert exp.pct_dias_perdida == 0.0
+    assert malo.pct_dias_perdida == 100.0
+    assert malo.downside_mediana == -20.0
+
+
+def test_pesos_maestros():
+    from sfeia.app.models.entities import AgenteMaestro
+
+    ms = [AgenteMaestro("A", "A", 10, 50.0, -10.0), AgenteMaestro("B", "B", 10, -50.0, -10.0)]
+    ws = maestros.pesos_maestros(ms, mediana_segmento=0.0, eta=1.0)
+    assert abs(sum(ws.values()) - 1.0) < 1e-9
+    assert ws["A"] > ws["B"]
+
+
+def test_politica_ponderada():
+    agentedia = _agentedia_toy()
+    etiquetas = sorted(agentedia)
+    labels = np.array([0 if agentedia[k]["codigo"] == "EXP" else 1 for k in etiquetas])
+    perfiles = {
+        0: PerfilEstrategia(cluster_id=0, arquetipo=ESTRATEGIA, n=3, n_agentes=1,
+                            medias={}, composicion_segmento={"PEQUEÑO": 3}),
+        1: PerfilEstrategia(cluster_id=1, arquetipo="Comercializador regulado", n=3, n_agentes=1,
+                            medias={}, composicion_segmento={"GRANDE": 3}),
+    }
+    politica = clonacion.construir_politica(
+        agentedia, etiquetas, labels, perfiles, {"EXP"}, "PEQUEÑO", ESTRATEGIA, {"EXP": "PEQUEÑO"}, BINS,
+        pesos={"EXP": 1.0},
+    )
+    assert politica.modo == "ponderado"
+    assert politica.rango_spread == (50.0, 50.0)
+    assert politica.reglas["barata"].perfil.pct_exposicion == 100.0
+
+
+def test_aplicar_politica_con_banda():
+    politica = PoliticaClonacion(
+        reglas={"barata": ReglaPolitica("barata", 0, 200, PerfilAccion(0.0, 100.0, 0.0, 0.0, 0.0), 2)},
+        fallback=PerfilAccion(0.0, 100.0, 0.0, 0.0, 0.0),
+        bins_spread=BINS, rango_spread=(0.0, 200.0),
+    )
+    _, en = clonacion.aplicar_politica_con_banda(politica, 50.0)
+    assert en is True
+    _, en2 = clonacion.aplicar_politica_con_banda(politica, 500.0)
+    assert en2 is False
+
+
+def test_simular_dias_fuera_de_distribucion():
+    from datetime import date
+
+    agentedia = {}
+    for dia, bolsa in [(date(2026, 1, 1), 900.0), (date(2026, 1, 2), 350.0)]:
+        ad = {
+            "codigo": "EXP", "dia": dia,
+            "dema_kwh": 100_000.0, "dema_reg_kwh": 100_000.0, "dema_noreg_kwh": 0.0,
+            "comp_cont_kwh": 0.0, "comp_cont_reg_kwh": 0.0, "vent_cont_kwh": 0.0,
+            "comp_bolsa_kwh": 100_000.0, "vent_bolsa_kwh": 0.0, "comp_sicep_kwh": 0.0,
+            "prec_cont": 300.0, "prec_bolsa": bolsa, "prec_escasez": 400.0,
+        }
+        ad["features"] = diario.features_diarias(ad)
+        ad["desempeno"] = diario.desempeno_diario(ad, PARAMS)
+        agentedia[diario.clave("EXP", dia)] = ad
+    politica = PoliticaClonacion(
+        reglas={"barata": ReglaPolitica("barata", 0, 200, PerfilAccion(0.0, 100.0, 0.0, 0.0, 0.0), 2)},
+        fallback=PerfilAccion(0.0, 100.0, 0.0, 0.0, 0.0),
+        bins_spread=BINS, rango_spread=(0.0, 200.0), modo="mediana",
+    )
+    sims = simulacion.simular_dias(
+        agentedia, politica, 100_000.0, PARAMS, {"EXP": "PEQUEÑO"}, "PEQUEÑO", {"EXP"}, BINS,
+        usar_spread_previo=True, factor_exposicion_fuera=0.5,
+    )
+    assert len(sims) == 2
+    # día 1: spread mismo día 600 (fuera de rango) -> perfil defensivo 50/50
+    assert sims[0].en_distribucion is False
+    assert sims[0].perfil.pct_exposicion == 50.0
+    assert sims[0].perfil.pct_cobertura == 50.0
+    # día 2: spread previo 600 (fuera de rango) -> defensivo también
+    assert sims[1].en_distribucion is False
+    assert sims[1].perfil.pct_exposicion == 50.0
+
+
+def test_replicacion_is_oos():
+    p = PerfilAccion(0.0, 100.0, 0.0, 0.0, 0.0)
+    sims_e = [SimulacionDia("2026-01-01", "barata", False, p, -100.0, -90.0, -80.0)]
+    sims_i = [SimulacionDia("2026-02-01", "barata", False, p, -50.0, -90.0, -80.0)]
+    r = simulacion.replicacion_is_oos(sims_e, sims_i)
+    assert r["ratio_replicacion"] == 0.5
+    assert r["mediana_imitacion_is"] == -100.0
+
+
+def test_dsr_aprox():
+    rng = np.random.default_rng(0)
+    margenes = rng.normal(5.0, 10.0, 40).tolist()
+    d = simulacion.dsr_aprox(margenes, n_trials=10)
+    assert d is not None
+    assert 0.0 <= d["dsr"] <= 1.0
+    assert d["n_trials"] == 10
+    assert simulacion.dsr_aprox([], n_trials=10) is None
+
+
+def test_capacidad():
+    agentedia = _agentedia_toy()
+    seg = {"EXP": "PEQUEÑO"}
+    cap = simulacion.capacidad(1_000_000.0, agentedia, "PEQUEÑO", seg, umbral_pct=5.0)
+    assert cap["supera_capacidad"] is True
+    cap2 = simulacion.capacidad(4_000.0, agentedia, "PEQUEÑO", seg, umbral_pct=5.0)
+    assert cap2["supera_capacidad"] is False
+
+
+def test_decision_negocio_kill_switch():
+    d = simulacion.decision_negocio(
+        dema_kwh=100_000.0, mediana_benigna=86.2,
+        margen_escasez=-520.36, margen_escasez_extrema=-715.6,
+        pct_escasez=10.64, pct_escasez_nino=25.0,
+        drawdown_max=900.0, kill_switch_drawdown=500.0,
+    )
+    assert d["kill_switch_activado"] is True
+    assert "KILL-SWITCH" in d["veredicto"]
+
+
+# --------------------------------------------------------- S1: relativo -----
+def test_seleccionar_maestros_relativo():
+    agentes = []
+    # C y D (otra estrategia) fijan la mediana del segmento por día
+    agentes.append(AgenteDia("C", "C", "2026-01-01", "PEQUEÑO", 1, "Regulado", {}, 1100.0, 300.0))
+    agentes.append(AgenteDia("C", "C", "2026-01-02", "PEQUEÑO", 1, "Regulado", {}, 80.0, 300.0))
+    agentes.append(AgenteDia("C", "C", "2026-01-03", "PEQUEÑO", 1, "Regulado", {}, 80.0, 300.0))
+    agentes.append(AgenteDia("D", "D", "2026-01-01", "PEQUEÑO", 1, "Regulado", {}, 10.0, 300.0))
+    agentes.append(AgenteDia("D", "D", "2026-01-02", "PEQUEÑO", 1, "Regulado", {}, 10.0, 300.0))
+    agentes.append(AgenteDia("D", "D", "2026-01-03", "PEQUEÑO", 1, "Regulado", {}, 10.0, 300.0))
+    # A: solo el día de segmento alto (mediana absoluta enorme, relativa nula)
+    agentes.append(AgenteDia("A", "A", "2026-01-01", "PEQUEÑO", 0, ESTRATEGIA, {}, 1000.0, 300.0))
+    # B: días de segmento bajo (absoluta menor pero relativa claramente positiva)
+    agentes.append(AgenteDia("B", "B", "2026-01-02", "PEQUEÑO", 0, ESTRATEGIA, {}, 150.0, 300.0))
+    agentes.append(AgenteDia("B", "B", "2026-01-03", "PEQUEÑO", 0, ESTRATEGIA, {}, 150.0, 300.0))
+    abs_top = maestros.seleccionar_maestros(agentes, "PEQUEÑO", ESTRATEGIA, top=2, n_dias_estudio=3,
+                                            min_dias_pct=0.0, relativo=False)
+    rel_top = maestros.seleccionar_maestros(agentes, "PEQUEÑO", ESTRATEGIA, top=2, n_dias_estudio=3,
+                                            min_dias_pct=0.0, relativo=True)
+    assert abs_top[0].codigo == "A"      # por absoluto gana A (1000)
+    assert rel_top[0].codigo == "B"      # por relativo gana B (70 vs 0)
+    assert rel_top[0].mediana_relativa == 70.0
+    assert rel_top[0].pct_dias_supera_segmento == 100.0
+
+
+def test_alternativa_recomendada():
+    agentes = []
+    for dia in ("2026-01-01", "2026-01-02", "2026-01-03"):
+        agentes.append(AgenteDia("A", "A", dia, "PEQUEÑO", 0, ESTRATEGIA, {}, 50.0, 300.0))
+        agentes.append(AgenteDia("B", "B", dia, "GRANDE", 1, "Regulado", {}, 30.0, 300.0))
+    alt = maestros.alternativa_recomendada(agentes, "PEQUEÑO", ESTRATEGIA, n_dias_estudio=3,
+                                           min_dias_pct=0.0, top=3)
+    assert alt is not None
+    assert alt["segmento"] == "GRANDE"
+    assert alt["estrategia"] == "Regulado"
+    assert alt["n_maestros"] == 1

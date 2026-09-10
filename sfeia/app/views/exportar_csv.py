@@ -26,12 +26,16 @@ def exportar(resultado: dict, cfg: dict) -> list[Path]:
     generados: list[Path] = []
 
     # ---- 1. maestros_topN.csv ----
-    filas = [[i + 1, m.codigo, m.nombre, m.n_dias, m.mediana_margen, m.media_margen]
+    filas = [[i + 1, m.codigo, m.nombre, m.n_dias, m.mediana_margen, m.media_margen,
+              m.mediana_relativa, m.pct_dias_supera_segmento,
+              m.pct_dias_perdida, m.drawdown_max, m.downside_mediana]
              for i, m in enumerate(resultado["maestros"])]
     p = directorio / "maestros_topN.csv"
     _escribir(p, [
         "posicion", "codigo_agente", "nombre_agente", "dias_en_estrategia",
         "mediana_margen_cop_kwh", "media_margen_cop_kwh",
+        "mediana_relativa_cop_kwh", "pct_dias_supera_segmento",
+        "pct_dias_perdida", "drawdown_max_cop_kwh_acum", "mediana_dias_malos_cop_kwh",
     ], filas)
     generados.append(p)
 
@@ -66,6 +70,8 @@ def exportar(resultado: dict, cfg: dict) -> list[Path]:
     for s in resultado["simulacion"]:
         filas.append([
             s.fecha, s.bin_spread, 1 if s.es_escasez else 0,
+            1 if s.en_distribucion else 0,
+            "" if s.nivel_embalses_pct is None else s.nivel_embalses_pct,
             s.perfil.pct_cobertura, s.perfil.pct_exposicion, s.perfil.pct_noreg, s.perfil.pct_sicep,
             s.margen_imitacion,
             "" if s.margen_maestros is None else s.margen_maestros,
@@ -73,7 +79,7 @@ def exportar(resultado: dict, cfg: dict) -> list[Path]:
         ])
     p = directorio / "simulacion_impacto.csv"
     _escribir(p, [
-        "fecha", "contexto_spread", "dia_escasez_1_0",
+        "fecha", "contexto_spread", "dia_escasez_1_0", "en_distribucion_1_0", "nivel_embalses_pct",
         "pct_cobertura_contratos", "pct_exposicion_bolsa", "pct_no_regulado", "pct_sicep",
         "margen_imitacion_cop_kwh", "mediana_margen_maestros_cop_kwh", "mediana_margen_segmento_cop_kwh",
     ], filas)
@@ -145,7 +151,100 @@ def exportar(resultado: dict, cfg: dict) -> list[Path]:
     ], filas)
     generados.append(p)
 
+    # ---- 8. validacion_seleccion.csv (P0: bootstrap, holdout, DSR, replicación) ----
+    v = resultado.get("validez", {})
+    filas = []
+    boot = v.get("bootstrap")
+    if boot:
+        filas.append(["bootstrap_p_valor", boot["p_valor"]])
+        filas.append(["bootstrap_mejor_maestro_real_cop_kwh", boot["mejor_maestro_real"]])
+        filas.append(["bootstrap_nulo_p50_cop_kwh", boot["nulo_p50"]])
+        filas.append(["bootstrap_nulo_p95_cop_kwh", boot["nulo_p95"]])
+        filas.append(["bootstrap_candidatos_trials", boot["n_agentes_candidatos"]])
+    h_ = v.get("holdout")
+    if h_:
+        filas.append(["holdout_pct_persistencia",
+                      "" if h_.get("pct_persistencia") is None else h_["pct_persistencia"]])
+        filas.append(["holdout_mediana_percentil",
+                      "" if h_.get("mediana_percentil") is None else h_["mediana_percentil"]])
+    rep = v.get("replicacion_is_oos")
+    if rep:
+        filas.append(["replicacion_is_cop_kwh", rep["mediana_imitacion_is"]])
+        filas.append(["replicacion_oos_cop_kwh", rep["mediana_imitacion_oos"]])
+        filas.append(["replicacion_ratio", rep["ratio_replicacion"]])
+    dsr = v.get("dsr")
+    if dsr:
+        filas.append(["dsr_sharpe_diario", dsr["sharpe_diario"]])
+        filas.append(["dsr_skew", dsr["skew"]])
+        filas.append(["dsr_kurt", dsr["kurt"]])
+        filas.append(["dsr_n_trials", dsr["n_trials"]])
+        filas.append(["dsr_valor", dsr["dsr"]])
+        filas.append(["dsr_significativo", 1 if dsr["significativo"] else 0])
+    if v.get("n_efectivo_maestros") is not None:
+        filas.append(["n_efectivo_maestros", v["n_efectivo_maestros"]])
+    p = directorio / "validacion_seleccion.csv"
+    _escribir(p, ["metrica", "valor"], filas)
+    generados.append(p)
+
     return generados
+
+
+def exportar_barrido(barrido: dict, cfg: dict) -> Path:
+    """CSV del barrido de combinaciones (S2)."""
+    directorio = BASE_DIR / cfg["asistente"]["data_dir"]
+    filas = []
+    for c in barrido["combinaciones"]:
+        filas.append([
+            c["segmento"], c["estrategia"], c["n_maestros"], c["n_efectivo"],
+            ",".join(c["codigos"]),
+            c["mediana_relativa_top"], c["mediana_margen_absoluto"],
+            c["p_valor"], c["ratio_replicacion"], c["drawdown_max"],
+            1 if c["kill_switch"] else 0, 1 if c["valida"] else 0,
+        ])
+    p = directorio / "barrido_combinaciones.csv"
+    _escribir(p, [
+        "segmento", "estrategia", "n_maestros", "n_efectivo", "codigos",
+        "mediana_relativa_top_cop_kwh", "mediana_margen_absoluto_cop_kwh",
+        "p_valor_bootstrap", "ratio_replicacion", "drawdown_max_cop_kwh",
+        "kill_switch_1_0", "valida_1_0",
+    ], filas)
+    return p
+
+
+def exportar_walk_forward(resultados: list[dict], cfg: dict) -> Path:
+    """CSV de la serie walk-forward (P2.3): un paso = una ventana estudio→impacto.
+
+    Cada fila reporta el desempeño OOS (impacto) de ese paso y el resultado de
+    las pruebas de validez (replicación, DSR).
+    """
+    directorio = BASE_DIR / cfg["asistente"]["data_dir"]
+    filas = []
+    for r in resultados:
+        p = r["parametros"]
+        v = r["parametros"]["ventanas"]
+        res = r["resumen"]
+        val = r.get("validez", {})
+        rep = val.get("replicacion_is_oos", {})
+        dsr = val.get("dsr", {})
+        filas.append([
+            v["estudio"]["ini"], v["estudio"]["fin"],
+            v["impacto"]["ini"], v["impacto"]["fin"],
+            len(r["maestros"]),
+            res.mediana_imitacion,
+            "" if res.mediana_maestros is None else res.mediana_maestros,
+            "" if res.mediana_segmento is None else res.mediana_segmento,
+            "" if rep.get("ratio_replicacion") is None else rep["ratio_replicacion"],
+            "" if not dsr else dsr["dsr"],
+            r["decision"]["kill_switch_activado"],
+        ])
+    p = directorio / "walk_forward.csv"
+    _escribir(p, [
+        "estudio_ini", "estudio_fin", "impacto_ini", "impacto_fin",
+        "n_maestros", "mediana_margen_imitacion_cop_kwh",
+        "mediana_margen_maestros_cop_kwh", "mediana_margen_segmento_cop_kwh",
+        "replicacion_ratio", "dsr", "kill_switch_activado",
+    ], filas)
+    return p
 
 
 def guardar(resultado: dict, cfg: dict) -> list[Path]:

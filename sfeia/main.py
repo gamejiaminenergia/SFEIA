@@ -11,9 +11,12 @@ Uso:
                          [--estudio-ini 2025-07-01] [--estudio-fin 2025-07-31]
                          [--impacto-ini 2025-08-01] [--impacto-fin 2025-08-08]
                          [--demanda-dia-gwh 0.12] [--config path/to/config.yaml]
+                         [--walk-forward] [--barrido]
 
-Sin fechas: el estudio usa la ventana principal menos los últimos N días
-(`asistente.dias_impacto_por_defecto`) y el impacto los últimos N días.
+Sin fechas: el estudio usa los últimos `dias_estudio_por_defecto` días antes de
+la ventana de impacto y el impacto los últimos `dias_impacto_por_defecto` días
+de la ventana principal. `--barrido` evalúa todas las (segmento × estrategia)
+y filtra por validez; `--walk-forward` corre la serie de ventanas rodantes.
 """
 from __future__ import annotations
 
@@ -25,7 +28,9 @@ from sfeia.app.controllers.fase_asistente import FaseAsistente
 from sfeia.app.models.entities import ParametrosAsistente
 from sfeia.app.models.repositories import RepoElecdb
 from sfeia.app.views.exportar_csv import exportar as exportar_csv
+from sfeia.app.views.exportar_csv import exportar_barrido, exportar_walk_forward
 from sfeia.app.views.informe_asistente_md import guardar as guardar_informe
+from sfeia.app.views.informe_barrido_md import guardar as guardar_informe_barrido
 from sfeia.config.settings import ASISTENTE_CONFIG_PATH, db_dsn, load_merged
 
 CONFIG_DEFECTO = Path(__file__).resolve().parent / "config" / "config.yaml"
@@ -47,6 +52,11 @@ def _parsear(argv: list[str] | None) -> argparse.Namespace:
     parser.add_argument("--impacto-fin", default=None)
     parser.add_argument("--demanda-dia-gwh", type=float, default=None,
                         help="Demanda diaria de XXXC; si se omite, mediana del segmento")
+    parser.add_argument("--walk-forward", action="store_true",
+                        help="Corre la serie de ventanas rodantes (P2.3) y exporta data/walk_forward.csv")
+    parser.add_argument("--barrido", action="store_true",
+                        help="Evalúa todas las (segmento × estrategia), filtra por validez (S2) y exporta "
+                             "data/barrido_combinaciones.csv + docs/informe_barrido_combinaciones.md")
     return parser.parse_args(argv)
 
 
@@ -71,6 +81,37 @@ def main(argv: list[str] | None = None) -> int:
 
     print(f"Asistente imitador: {params.segmento} · {params.estrategia} · top-{params.top}")
     try:
+        if args.barrido:
+            b_cfg = a_cfg.get("barrido", {})
+            barrido = FaseAsistente(repo, cfg).ejecutar_barrido(params, b_cfg)
+            destino = exportar_barrido(barrido, cfg)
+            guardar_informe_barrido(barrido, cfg)
+            validas = [c for c in barrido["combinaciones"] if c["valida"]]
+            print(f"Barrido: {len(barrido['combinaciones'])} combinaciones evaluadas → {destino.relative_to(Path.cwd())}")
+            if validas:
+                print(f"  {len(validas)} combinaciones VÁLIDAS:")
+                for c in validas:
+                    print(f"    - {c['segmento']} · {c['estrategia']}  relativo {c['mediana_relativa_top']:.2f}"
+                          f"  p={c['p_valor']:.3f}  réplica {c['ratio_replicacion']:.2f}")
+            else:
+                print("  Ninguna combinación pasó el filtro de validez. Ver informe del barrido.")
+            return 0
+        if args.walk_forward:
+            wf_cfg = a_cfg.get("walk_forward", {"dias_estudio": 30, "dias_impacto": 7, "pasos_max": 6})
+            resultados = FaseAsistente(repo, cfg).ejecutar_walk_forward(params, wf_cfg)
+            if not resultados:
+                print("ERROR: walk-forward no produjo ninguna ventana válida.", file=sys.stderr)
+                return 1
+            destino = exportar_walk_forward(resultados, cfg)
+            print(f"Walk-forward: {len(resultados)} pasos → {destino.relative_to(Path.cwd())}")
+            ratios = [r["validez"]["replicacion_is_oos"]["ratio_replicacion"]
+                      for r in resultados if r["validez"]["replicacion_is_oos"]["ratio_replicacion"] is not None]
+            dsrs = [r["validez"]["dsr"]["dsr"] for r in resultados if r["validez"].get("dsr")]
+            print(f"  Ratio de replicación IS→OOS (mediana): "
+                  + (f"{sorted(ratios)[len(ratios)//2]:.2f}" if ratios else "—"))
+            print(f"  DSR (mediana): " + (f"{sorted(dsrs)[len(dsrs)//2]:.2f}" if dsrs else "—"))
+            return 0
+
         resultado = FaseAsistente(repo, cfg).ejecutar(params)
     except ValueError as err:
         print(f"ERROR: {err}", file=sys.stderr)
@@ -86,11 +127,20 @@ def main(argv: list[str] | None = None) -> int:
 
     p = resultado["parametros"]
     res = resultado["resumen"]
+    val = resultado.get("validez", {})
     print()
     print(f"Maestros ({len(resultado['maestros'])}): "
           + ", ".join(m.codigo for m in resultado["maestros"]))
     print(f"Política: {len(resultado['politica'].reglas)} bins con datos"
           + (f" (fallback: {resultado['politica'].fallback.n_dias} días)" if resultado["politica"].fallback else ""))
+    if val.get("bootstrap"):
+        b = val["bootstrap"]
+        print(f"Skill-vs-luck: p={b['p_valor']:.3f}"
+              + (" (sí supera al azar)" if b["p_valor"] <= val.get("alpha_significancia", 0.05) else " (NO supera al azar)"))
+    if val.get("holdout") and val["holdout"].get("pct_persistencia") is not None:
+        print(f"Holdout: {val['holdout']['pct_persistencia']:.1f} % de maestros persisten en sub-validación")
+    if val.get("dsr"):
+        print(f"DSR: {val['dsr']['dsr']:.2f} ({val['dsr']['n_trials']} trials)")
     print(f"Impacto ({p['ventanas']['impacto']['ini']} → {p['ventanas']['impacto']['fin']}):")
     print(f"  mediana imitación  = {res.mediana_imitacion:.2f} COP/kWh")
     print(f"  mediana maestros   = {res.mediana_maestros if res.mediana_maestros is not None else '—'}")
