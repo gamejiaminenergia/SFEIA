@@ -1,15 +1,24 @@
-# Configuración del ESTUDIO híbrido diario (motor del asistente).
+# Configuración ÚNICA de SFEIA.
 #
-# Aquí viven solo los parámetros del estudio: acceso a datos, ventana,
-# segmentación, modelo financiero y clustering diario. El asistente imitador
-# (config/asistente.yaml) REUTILIZA esta configuración y le suma la suya.
+# Un solo archivo: el MOTOR (estudio híbrido diario) y el SIMULADOR (asistente
+# imitador) viven juntos porque el asistente REUTILIZA el motor (ventana,
+# modelo financiero y guardas del diario). Tenerlos separados duplicaba el
+# foco; aquí cada sección está claramente delimitada:
+#   - database / ventana / segmentacion / modelo_financiero / diario = MOTOR
+#   - asistente = SIMULADOR (reutiliza las secciones del motor).
+#
+# FECHAS (importante): las ventanas del simulador están en `asistente`
+# (estudio_ini/fin, impacto_ini/fin). Si están en `null`, se derivan del ancla
+# del motor `ventana.foco_*` con `asistente.dias_estudio_por_defecto` y
+# `asistente.dias_impacto_por_defecto`. El CLI (`--estudio-ini`, ...) las
+# sobreescribe.
 
 # Conexión a elecdb (XM/SIN). La usa tanto el estudio como el asistente.
 database:
   dsn_env: DB_DSN
   default: postgresql://postgres:postgres@localhost:5432/postgres
 
-# Ventana principal del estudio (foco del análisis).
+# Ventana principal del motor (ancla de derivación de las ventanas del simulador).
 ventana:
   # Foco del análisis (estudio híbrido diario, Ene–Jul 2025)
   foco_ini: "2025-01-01"
@@ -28,6 +37,7 @@ segmentacion:
   mediano_min_gwh: 100.0
 
 # Modelo financiero (C16–C18): margen estimado por kWh. Artefacto de modelado.
+# Lo usa el motor para el ranking y el simulador para medir la imitación.
 modelo_financiero:
   # Misma lógica que C16–C18 (documentada en el plan): estimaciones con
   # precio promedio de sistema. No reemplazan liquidaciones XM.
@@ -38,10 +48,9 @@ modelo_financiero:
   incobrables_pct: 0.02
   impuesto_pct: 0.33
 
-# Estudio híbrido diario (reemplaza al benchmark y al k-means de H1-2026).
-# Clustering K-Means pooled sobre la matriz de agentes-día (~65 × 212) con las
-# mismas features del estudio no supervisado (6), y desempeño = margen estimado
-# por kWh (lógica C16–C18 aplicada a los agregados diarios de C15).
+# Estudio híbrido diario (motor). Clustering K-Means pooled sobre la matriz de
+# agentes-día (~65 × 212) con las 6 features del estudio no supervisado, y
+# desempeño = margen estimado por kWh (lógica C16–C18 aplicada a C15 diario).
 diario:
   # Features activas del modelo. pct_perdidas e intensidad_pico se evaluaron y
   # se excluyeron en el estudio k-means (silhouette inferior / ruido extremo);
@@ -59,9 +68,12 @@ diario:
   clip_sobrecobertura: 300
   # Guardas de robustez del ranking de desempeño:
   # - clip_margen_cop_kwh: winsoriza el margen por kWh (traders con volumen
-  #   transado >> demanda producen márgenes desproporcionados).
+  #   transado >> demanda producen márgenes desproporcionados). El SIMULADOR
+  #   también lo usa para acotar los márgenes de la ventana de impacto.
   # - min_dias_pct: estrategias presentes en menos de este % de días se
-  #   reportan como casos atípicos (fuera del ranking).
+  #   reportan como casos atípicos (fuera del ranking del motor).
+  #   NOTA: `asistente.min_dias_pct` es OTRA guarda (elegibilidad de maestros),
+  #   con su propio valor.
   # - clip_pct_sicep: techo de % SICEP (la columna puede incluir no regulado).
   clip_margen_cop_kwh: 500
   min_dias_pct: 20
@@ -74,9 +86,131 @@ diario:
   # k: null lo devolvería a automático (máximo silhouette en k_min–k_max).
   # Silhouette es O(n²): se calcula sobre una submuestra determinista de
   # agentes-día (seed fija) y el k resultante se aplica a toda la matriz.
+  # random_state es la semilla ÚNICA del proyecto: la usa el k-means y el
+  # bootstrap del simulador (reproducibilidad).
   submuestra_k: 5000
   k: 5
   random_state: 42
   n_init: 10
   scaler: standard
   desempeno: margen_kwh
+
+# =============================================================================
+# SIMULADOR (asistente imitador del agente XXXC). Behavioral Cloning del top-N
+# de un (segmento, estrategia) en una ventana de estudio, replicado en una
+# ventana de impacto. Documentado en docs/plan_agente_xxxc_asistente.md.
+# =============================================================================
+asistente:
+  # ===== Ventanas de prueba (muévelas para probar en el tiempo) =====
+  # Regla: estudio_ini <= estudio_fin < impacto_ini <= impacto_fin.
+  # Si dejas una en null, se deriva del ancla del motor `ventana.foco_*`
+  # (ver cabecera). El CLI (--estudio-ini, --impacto-fin, ...) sobreescribe.
+  estudio_ini: null
+  estudio_fin: null
+  impacto_ini: null
+  impacto_fin: null
+
+  # Qué (segmento, estrategia) imitar por defecto.
+  segmento_por_defecto: PEQUEÑO
+  estrategia_por_defecto: "Trader expuesto a bolsa (sin cobertura)"
+  # Cuántos maestros (top-N) se clonan.
+  top_por_defecto: 10
+
+  # Presencia mínima del agente dentro de la estrategia (ventana de estudio)
+  # para ser elegible como maestro (casos marginales quedan fuera).
+  # Es DISTINTA de `diario.min_dias_pct` (guard del motor para atípicos).
+  min_dias_pct: 20
+
+  # ===== Validez de la selección (P0) =====
+  # S1: si true, la selección y el bootstrap usan el margen RELATIVO al
+  # segmento (margen del agente − mediana del segmento el mismo día), que
+  # cancela el artefacto Pv=350. La mediana absoluta se sigue reportando.
+  seleccion_por_relativo: true
+  # Holdout: la ventana de estudio se parte en sub-estudio (elegir maestros y
+  # entrenar la política) + sub-validación (comprobar que la selección
+  # generaliza). dias_holdout: 0 desactiva.
+  dias_holdout: 2
+  # Bootstrap skill-vs-luck: ¿el top-N real supera al azar? La semilla es la
+  # única del proyecto: `diario.random_state` (arriba).
+  n_boot: 1000
+  alpha_significancia: 0.05
+  # Umbral de correlación de la serie diaria de márgenes para considerar a dos
+  # maestros como el mismo comportamiento (deduplicación, N efectivo).
+  umbral_corr_duplicados: 0.9
+
+  # ===== Política (P1) =====
+  # P1.1 Contexto ex-ante: la decisión usa el spread con la bolsa del día
+  # anterior (sin look-ahead). false vuelve al spread del mismo día.
+  usar_spread_previo: true
+  # P1.2 Agregación ponderada: pesos por desempeño relativo al segmento (tipo
+  # EWA) en vez del top-N discreto. false = mediana pooled (comportamiento
+  # original). eta controla la concentración de la mezcla.
+  ponderar_politica: true
+  pesos_eta: 1.0
+  # P1.3 Zona de confianza: fuera del rango de spread entrenado se reduce la
+  # exposición a bolsa trasladándola a contratos (1.0 = sin reducción).
+  factor_exposicion_fuera_distribucion: 0.5
+  # P1.4 Régimen hidrológico: nivel agregado de embalses por día (información
+  # del informe; alimenta la simulación día a día).
+  usar_regimen_hidrologico: true
+
+  # ===== Negocio (P2) =====
+  # P2.1 Capacidad: la demanda de XXXC no puede superar este % de la demanda
+  # total del segmento (proxy de profundidad del mercado).
+  capacidad_max_pct_segmento: 5.0
+  # P2.2 Kill-switch: si el drawdown acumulado del período supera este umbral
+  # (COP/kWh), el veredicto ordena NO operar. 0 desactiva.
+  kill_switch_drawdown_cop_kwh: 500.0
+
+  # Demanda diaria de XXXC en GWh; null -> mediana diaria del segmento en el
+  # estudio.
+  dema_dia_gwh: null
+
+  # Si no se dan fechas de impacto, se usan las últimas N días del ancla
+  # `ventana.foco_*`.
+  dias_impacto_por_defecto: 7
+  # Si no se dan fechas de estudio, se usan los últimos dias_estudio_por_defecto
+  # días ANTES de la ventana de impacto (evidencia suficiente para bootstrap y
+  # holdout: con ventanas de 6–8 días la selección es puro ruido).
+  dias_estudio_por_defecto: 30
+
+  # Escenario 'año Niño' para la decisión de negocio: % de días con escasez
+  # que se asume en un año seco (ver historial en el informe; 2015-16/2023-24
+  # estuvieron entre 21-30 %).
+  pct_escasez_anio_nino: 25
+
+  # Estado del mercado: spread = bolsa − contratos (COP/kWh). Cada bin aprende
+  # la mediana del perfil de abastecimiento de los top-N.
+  bins_spread:
+    muy_barata: [-999999, 0]
+    barata: [0, 200]
+    neutral: [200, 400]
+    cara: [400, 600]
+    escasez: [600, 999999]
+
+  # Salidas del asistente (rutas relativas a la raíz del repo).
+  salida: "docs/informe_asistente_imitador.md"
+  salida_barrido: "docs/informe_barrido_combinaciones.md"
+  data_dir: "data"
+
+  # ===== Modo walk-forward (P2.3) =====
+  # `python -m sfeia.main --walk-forward`: corre la serie de ventanas rodantes
+  # (estudio -> impacto) hacia atrás desde la última fecha con datos y cose los
+  # resultados OOS. dias_estudio/dias_impacto: tamaño de cada ventana.
+  walk_forward:
+    dias_estudio: 30
+    dias_impacto: 7
+    pasos_max: 6
+
+  # ===== Modo barrido (S2) =====
+  # `python -m sfeia.main --barrido`: evalúa TODAS las combinaciones
+  # (segmento × estrategia), les aplica el filtro de validez y reporta las que
+  # pasan, ordenadas por margen relativo. Así el asistente encuentra DÓNDE hay
+  # señal en vez de casarse con una combinación concreta.
+  barrido:
+    # Filtros de validez para que una combinación sea "operable".
+    min_p_valor: 0.05        # bootstrap skill-vs-luck
+    min_replicacion: 0.5     # ratio IS→OOS de la imitación
+    min_n_efectivo: 3        # maestros independientes tras deduplicar
+    n_boot_rapido: 200       # bootstrap más ligero por combinación
+    max_combinaciones: 20    # techo de filas reportadas

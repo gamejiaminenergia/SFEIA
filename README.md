@@ -104,12 +104,12 @@ Lógica pura, sin BD (segmentación, diario, maestros, clonación, simulación, 
 | `--demanda-dia-gwh` | Demanda diaria de XXXC; si se omite, mediana del segmento. |
 | `--walk-forward` | Modo ventanas rodantes (P2.3). |
 | `--barrido` | Modo evaluación de todas las combinaciones (S2). |
-| `--config` / `--asistente-config` | Rutas alternativas a `config.yaml` / `asistente.yaml`. |
+| `--config` | Ruta alternativa al `config.yaml` único. |
 
-**Ventanas por defecto** (si no se pasan fechas): estudio = últimos `dias_estudio_por_defecto` (30) días antes
-del impacto; impacto = últimos `dias_impacto_por_defecto` (7) días de la ventana principal de `config.yaml`.
-El CLI sobreescribe el config. La BD llega a **2026-07-31**; el proyecto corre sobre **2025** (año completo), y
-las ventanas posteriores a 2026-07-31 **fallan con un error claro**.
+**Ventanas por defecto** (si no se pasan fechas): estudio = últimos `dias_estudio_por_defecto` (30) días antes del
+impacto; impacto = últimos `dias_impacto_por_defecto` (7) días del ancla `ventana.foco_*` (ver "Cómo se resuelven
+las fechas" en Configuración). El CLI sobreescribe el config. La BD llega a **2026-07-31**; el proyecto corre sobre
+**2025** (año completo), y las ventanas posteriores a 2026-07-31 **fallan con un error claro**.
 
 ---
 
@@ -139,7 +139,7 @@ docs/    Planes e informes del asistente (salida generada)
 data/    CSVs del asistente (salida generada)
 sfeia/   Un solo paquete MVC
   main.py                  CLI del asistente (python -m sfeia.main)
-  config/                  config.yaml (estudio) + asistente.yaml (simulador) + settings.py
+  config/                  config.yaml (única: motor + simulador) + settings.py
   sql/                     Queries parametrizadas (f-1_segmentacion, d1_diario, d1_max_fecha,
                            d1_historial_precios, d1_contexto_hidrologia)
   app/
@@ -157,10 +157,15 @@ Los `services` son **lógica pura** (no tocan BD); solo los controladores consul
 
 ## Configuración
 
-Dos archivos independientes (cada uno se entiende solo), fusionados en memoria por `sfeia.main`:
+**Un solo archivo** `sfeia/config/config.yaml` (antes eran dos; se fusionaron porque el asistente reutiliza el
+motor). Contiene el motor y el simulador, cada uno en su sección:
 
-- `sfeia/config/config.yaml` — **ESTUDIO** (motor): `database`, `ventana`, `segmentacion`, `modelo_financiero`, `diario`.
-- `sfeia/config/asistente.yaml` — **SIMULADOR**: ventanas, `top`, `bins_spread`, y los interruptores de las funcionalidades:
+| Sección | Rol |
+|---|---|
+| `database`, `ventana`, `segmentacion`, `modelo_financiero`, `diario` | **MOTOR** (estudio híbrido diario). |
+| `asistente` | **SIMULADOR** (imitador). Reutiliza las secciones del motor. |
+
+Parámetros clave del simulador (`asistente:`):
 
 | Clave | Función |
 |---|---|
@@ -175,6 +180,19 @@ Dos archivos independientes (cada uno se entiende solo), fusionados en memoria p
 | `kill_switch_drawdown_cop_kwh` | Kill-switch por drawdown (P2.2). |
 | `walk_forward` / `barrido` | Parámetros de los modos (`--walk-forward`, `--barrido`). |
 | `salida`, `salida_barrido`, `data_dir` | Rutas de salida. |
+
+### Cómo se resuelven las fechas
+
+Las fechas del simulador (`asistente.estudio_ini/fin`, `asistente.impacto_ini/fin`) viven en el mismo archivo que
+el motor, en su sección. Si están en `null` (por defecto), se derivan del **ancla** del motor
+(`ventana.foco_ini/foco_fin`):
+
+- `estudio_fin` = `foco_fin` − `dias_impacto_por_defecto`
+- `estudio_ini` = `estudio_fin` − (`dias_estudio_por_defecto` − 1)
+- `impacto_fin` = `foco_fin`; `impacto_ini` = `estudio_fin` + 1
+
+No son parámetros duplicados: el motor define la ventana de análisis y el simulador deriva (o sobreescribe con el
+CLI `--estudio-ini`/`--impacto-fin`) sus ventanas de estudio e impacto a partir de esa única ancla.
 
 La conexión usa por defecto `postgresql://postgres:postgres@localhost:5432/postgres` (configurable con `DB_DSN`).
 

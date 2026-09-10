@@ -1,13 +1,12 @@
 """Carga de configuración del proyecto SFEIA.
 
-Hay DOS archivos independientes:
-- `config/config.yaml`     -> configuración del ESTUDIO (motor): database,
-  ventana, segmentación, modelo financiero y clustering diario.
-- `config/asistente.yaml`  -> configuración del SIMULADOR (asistente imitador).
-
-El asistente (punto de entrada `python -m sfeia.main`) carga el estudio y le
-suma su propia configuración (`load_merged`). Cada archivo se entiende solo.
-No contiene credenciales en código (DB_DSN vía variable de entorno).
+Un SOLO archivo: `config/config.yaml` contiene el motor (estudio híbrido
+diario) y el simulador (asistente imitador). Antes eran dos archivos
+(config.yaml + asistente.yaml); se fusionaron porque el asistente reutiliza el
+motor (ventana, modelo financiero y guardas del diario) y tenerlos separados
+duplicaba el foco. `load_config` es la única entrada; `load_merged` se conserva
+como alias para no romper la interfaz. No contiene credenciales en código
+(DB_DSN vía variable de entorno).
 """
 from __future__ import annotations
 
@@ -18,32 +17,20 @@ import yaml
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 CONFIG_PATH = BASE_DIR / "config" / "config.yaml"
-ASISTENTE_CONFIG_PATH = BASE_DIR / "config" / "asistente.yaml"
 
 
 def load_config(path: str | Path | None = None) -> dict:
-    """Lee config/config.yaml (ESTUDIO) y devuelve su diccionario."""
+    """Lee config/config.yaml (configuración única) y devuelve su diccionario."""
     cfg_path = Path(path) if path else CONFIG_PATH
     with open(cfg_path, encoding="utf-8") as fh:
         return yaml.safe_load(fh)
 
 
-def load_asistente_config(path: str | Path | None = None) -> dict:
-    """Lee config/asistente.yaml (SIMULADOR) y devuelve su diccionario."""
-    cfg_path = Path(path) if path else ASISTENTE_CONFIG_PATH
-    with open(cfg_path, encoding="utf-8") as fh:
-        return yaml.safe_load(fh)
-
-
-def load_merged(path: str | Path | None = None, asistente_path: str | Path | None = None) -> dict:
-    """Configuración completa: estudio + asistente fusionadas.
-
-    Las claves del estudio vienen de config.yaml; la clave `asistente` se
-    sobreescribe con config/asistente.yaml (independiente).
-    """
-    cfg = load_config(path)
-    cfg.update(load_asistente_config(asistente_path))
-    return cfg
+def load_merged(path: str | Path | None = None) -> dict:
+    """Configuración completa. Antes fusionaba estudio + simulador; ahora hay
+    un solo archivo, así que es idéntica a `load_config` (se mantiene como
+    alias para no romper la interfaz de los controladores)."""
+    return load_config(path)
 
 
 def db_dsn(cfg: dict) -> str:

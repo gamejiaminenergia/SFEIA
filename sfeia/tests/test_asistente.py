@@ -274,19 +274,19 @@ def test_historial_escasez():
     assert h["por_anio"][2025]["n_escasez"] == 1
 
 
-def test_config_split_estudio_vs_simulador():
-    """config.yaml (estudio) y asistente.yaml (simulador) son independientes."""
-    from sfeia.config.settings import load_asistente_config, load_config, load_merged
+def test_config_unico_motor_y_simulador():
+    """Un solo config.yaml: motor (ventana/diario/modelo_financiero) + simulador (asistente)."""
+    from sfeia.config.settings import load_config, load_merged
 
-    estudio = load_config()
-    simulador = load_asistente_config()
-    # el estudio NO conoce la clave `asistente`; el simulador solo trae la suya
-    assert "asistente" not in estudio
-    assert set(simulador) == {"asistente"}
-    # la fusión conserva lo del estudio + lo del simulador
+    cfg = load_config()
+    # el archivo único trae el motor y el simulador juntos
+    assert "database" in cfg and "diario" in cfg and "modelo_financiero" in cfg
+    assert "asistente" in cfg and cfg["asistente"]["segmento_por_defecto"] == "PEQUEÑO"
+    # load_merged es idéntica (antes fusionaba dos archivos)
     merged = load_merged()
     assert merged["database"]["dsn_env"] == "DB_DSN"
     assert merged["diario"]["k"] == 5
+    assert merged["diario"]["random_state"] == merged["asistente"].get("semilla", merged["diario"]["random_state"])
     assert merged["asistente"]["segmento_por_defecto"] == "PEQUEÑO"
 
 

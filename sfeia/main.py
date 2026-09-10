@@ -31,18 +31,15 @@ from sfeia.app.views.exportar_csv import exportar as exportar_csv
 from sfeia.app.views.exportar_csv import exportar_barrido, exportar_walk_forward
 from sfeia.app.views.informe_asistente_md import guardar as guardar_informe
 from sfeia.app.views.informe_barrido_md import guardar as guardar_informe_barrido
-from sfeia.config.settings import ASISTENTE_CONFIG_PATH, db_dsn, load_merged
-
-CONFIG_DEFECTO = Path(__file__).resolve().parent / "config" / "config.yaml"
+from sfeia.config.settings import CONFIG_PATH, db_dsn, load_merged
 
 
 def _parsear(argv: list[str] | None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Asistente imitador del agente XXXC (Behavioral Cloning del top-N)"
     )
-    parser.add_argument("--config", default=str(CONFIG_DEFECTO), help="Config del ESTUDIO (config.yaml)")
-    parser.add_argument("--asistente-config", default=str(ASISTENTE_CONFIG_PATH),
-                        help="Config del SIMULADOR (asistente.yaml)")
+    parser.add_argument("--config", default=str(CONFIG_PATH),
+                        help="Config única (estudio + simulador) en sfeia/config/config.yaml")
     parser.add_argument("--segmento", default=None, help="GRANDE | MEDIANO | PEQUEÑO")
     parser.add_argument("--estrategia", default=None, help="Arquetipo del estudio a imitar")
     parser.add_argument("--top", type=int, default=None, help="N de maestros a imitar")
@@ -62,7 +59,7 @@ def _parsear(argv: list[str] | None) -> argparse.Namespace:
 
 def main(argv: list[str] | None = None) -> int:
     args = _parsear(argv)
-    cfg = load_merged(args.config, args.asistente_config)
+    cfg = load_merged(args.config)
     repo = RepoElecdb(db_dsn(cfg))
 
     a_cfg = cfg["asistente"]

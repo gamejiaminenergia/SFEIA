@@ -188,7 +188,7 @@ class FaseAsistente:
         bootstrap = maestros.bootstrap_skill_luck(
             d["agentes"], segmento, estrategia, top, d["n_dias"],
             n_boot=int(a_cfg.get("n_boot", 1000)),
-            semilla=int(a_cfg.get("semilla", 42)),
+            semilla=int(self.cfg["diario"].get("random_state", 42)),
             min_dias_pct=p.min_dias_pct,
             relativo=relativo,
         )
@@ -581,7 +581,7 @@ class FaseAsistente:
         min_p = float(b_cfg.get("min_p_valor", 0.05))
         min_rep = float(b_cfg.get("min_replicacion", 0.5))
         min_nef = int(b_cfg.get("min_n_efectivo", 3))
-        semilla = int(a_cfg.get("semilla", 42))
+        semilla = int(self.cfg["diario"].get("random_state", 42))
         umbral_corr = float(a_cfg.get("umbral_corr_duplicados", 0.9))
         umbral_kill = float(a_cfg.get("kill_switch_drawdown_cop_kwh", 500.0))
 
