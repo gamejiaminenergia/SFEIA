@@ -1,3 +1,3 @@
 ﻿escenario,descripcion,precio_bolsa_cop_kwh,precio_contratos_cop_kwh,spread_cop_kwh,bin_spread,margen_cop_kwh,garantia_cop
-escasez_umbral,Bolsa en el precio de escasez,699.2,295.8,403.4,cara,-429.74,45764693
-escasez_extrema,Bolsa 25 % sobre el precio de escasez,874.0,295.8,578.2,cara,-603.39,57171846
+escasez_umbral,Bolsa en el precio de escasez,906.1,323.9,582.2,cara,-633.19,45647448
+escasez_extrema,Bolsa 25 % sobre el precio de escasez,1132.7,323.9,808.8,escasez,-852.47,56767924

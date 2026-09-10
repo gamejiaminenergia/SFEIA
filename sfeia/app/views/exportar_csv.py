@@ -345,3 +345,39 @@ def exportar_walk_forward(resultados: list[dict], cfg: dict) -> Path:
 def guardar(resultado: dict, cfg: dict) -> list[Path]:
     """Alias de exportar() para mantener la interfaz de las vistas."""
     return exportar(resultado, cfg)
+
+
+def exportar_semanal(p: dict, cfg: dict) -> Path:
+    """CSV de la recomendación semanal: serie diaria de la ventana de impacto.
+
+    Una fila por día (fecha, spread, bin, escasez, embalses, margen imitación
+    vs maestros vs segmento, drawdown acumulado) para el historial del cliente.
+    """
+    directorio = BASE_DIR / cfg["asistente"]["data_dir"]
+    s = p.get("series", {})
+    n = len(s.get("dias", []))
+    filas = []
+    for i in range(n):
+        filas.append([
+            s["dias"][i],
+            "" if s["spread"][i] is None else s["spread"][i],
+            "" if i >= len(s.get("bin_spread", [])) else s["bin_spread"][i],
+            "" if i >= len(s.get("es_escasez", [])) else s["es_escasez"][i],
+            "" if i >= len(s.get("en_distribucion", [])) else s["en_distribucion"][i],
+            "" if s["embalses"][i] is None else s["embalses"][i],
+            "" if i >= len(s.get("margen_imitacion", [])) or s["margen_imitacion"][i] is None
+            else s["margen_imitacion"][i],
+            "" if i >= len(s.get("margen_maestros", [])) or s["margen_maestros"][i] is None
+            else s["margen_maestros"][i],
+            "" if i >= len(s.get("margen_segmento", [])) or s["margen_segmento"][i] is None
+            else s["margen_segmento"][i],
+            "" if i >= len(s.get("drawdown", [])) else s["drawdown"][i],
+        ])
+    destino = directorio / "recomendacion_semanal.csv"
+    _escribir(destino, [
+        "fecha", "spread_cop_kwh", "contexto_spread", "dia_escasez_1_0",
+        "en_distribucion_1_0", "nivel_embalses_pct",
+        "margen_imitacion_cop_kwh", "mediana_margen_maestros_cop_kwh",
+        "mediana_margen_segmento_cop_kwh", "drawdown_acum_cop_kwh",
+    ], filas)
+    return destino

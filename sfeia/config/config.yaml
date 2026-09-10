@@ -20,14 +20,21 @@ database:
 
 # Ventana principal del motor (ancla de derivación de las ventanas del simulador).
 ventana:
-  # Foco del análisis (estudio híbrido diario, Ene–Jul 2025)
-  foco_ini: "2025-01-01"
-  foco_fin: "2025-07-31"
-  # Fin EXCLUSIVO para la familia C01–C14 (pasar fin+1 día)
-  fin_c_familia: "2025-08-01"
-  # Fin INCLUSIVO para C15 / C16–C18
-  fin_c15: "2025-07-31"
-  # Ventana amplia de contexto (ciclo Niño/Niña)
+  # Foco del análisis (estudio híbrido diario). En `null` se resuelve
+  # dinámicamente en `main.py` contra el borde de datos de elecdb:
+  #   foco_fin = fecha_max_sistema() (hoy 2026-07-31)
+  #   foco_ini = foco_fin − 180 días
+  # Así `python -m sfeia.main` analiza "lo actual", no 2025 (2025 queda para
+  # análisis histórico vía --estudio-ini/--impacto-fin explícitos).
+  foco_ini: null
+  foco_fin: null
+  # Fin EXCLUSIVO para la familia C01–C14 (pasar fin+1 día). Se rellena junto
+  # con el ancla en main.py (foco_fin + 1 día).
+  fin_c_familia: null
+  # Fin INCLUSIVO para C15 / C16–C18. Se rellena junto con el ancla (foco_fin).
+  fin_c15: null
+  # Ventana amplia de contexto (ciclo Niño/Niña). Informativa; el código de
+  # fases no la consume (las ventanas reales vienen de foco_*/fin_c_*).
   contexto_ini: "2024-01-01"
   contexto_fin: "2025-08-01"
 
@@ -171,8 +178,9 @@ asistente:
   dias_impacto_por_defecto: 7
   # Si no se dan fechas de estudio, se usan los últimos dias_estudio_por_defecto
   # días ANTES de la ventana de impacto (evidencia suficiente para bootstrap y
-  # holdout: con ventanas de 6–8 días la selección es puro ruido).
-  dias_estudio_por_defecto: 30
+  # holdout: con ventanas de 6–8 días la selección es puro ruido). 90 días es
+  # el default del canal "lo actual y el futuro" (plan_recomendacion_semanal).
+  dias_estudio_por_defecto: 90
 
   # Escenario 'año Niño' para la decisión de negocio: % de días con escasez
   # que se asume en un año seco (ver historial en el informe; 2015-16/2023-24
@@ -251,3 +259,15 @@ asistente:
   # ventanas largas y pool entre segmentos? Produce docs/experimento_poder_estadistico.md.
   poder:
     salida: "docs/experimento_poder_estadistico.md"
+
+  # ===== Recomendación semanal (canal cliente) =====
+  # `python -m sfeia.main --semanal [--fecha AAAA-MM-DD]`: re-entrena con los
+  # últimos `dias_estudio` días y valida contra la última semana CERRADA (ancla
+  # = --fecha o el borde de datos). Veredicto OPERAR/NO OPERAR con criterio
+  # estricto "solo operar si gana" y dashboard HTML autocontenido como
+  # entregable principal (ver docs/plan_recomendacion_semanal.md). Los gates
+  # N1+N2 son los mismos del scorecard (`aceptacion.gates`).
+  semanal:
+    dias_estudio: 90
+    dias_impacto: 7
+    salida_html: "docs/recomendacion_semanal.html"

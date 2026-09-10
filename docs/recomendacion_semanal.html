@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recomendación semanal · SFEIA</title>
+<style>
+:root{--ok:#15803d;--ok-bg:#dcfce7;--warn:#b45309;--warn-bg:#fef3c7;--bad:#b91c1c;--bad-bg:#fee2e2;
+      --ink:#111827;--mut:#6b7280;--line:#e5e7eb;--card:#ffffff;--bg:#f3f4f6;}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.45}
+.wrap{max-width:1120px;margin:0 auto;padding:16px 20px 48px}
+h1{font-size:1.35rem;margin:0 0 2px}
+h2{font-size:1.05rem;margin:28px 0 8px;border-bottom:2px solid var(--line);padding-bottom:4px}
+h3{font-size:.95rem;margin:0 0 6px}
+.meta{color:var(--mut);font-size:.85rem;margin-bottom:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+/* veredicto */
+.veredicto{border-radius:14px;padding:20px 22px;margin:10px 0 18px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.veredicto.ok{background:var(--ok-bg);border:2px solid var(--ok)}
+.veredicto.bad{background:var(--bad-bg);border:2px solid var(--bad)}
+.badge{font-size:1.7rem;font-weight:800;letter-spacing:.06em;padding:10px 22px;border-radius:10px;color:#fff;white-space:nowrap}
+.badge.ok{background:var(--ok)}
+.badge.bad{background:var(--bad)}
+.razon{flex:1;min-width:260px;font-size:1rem}
+/* kpis */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.kpi{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--mut);border-radius:10px;padding:12px 14px}
+.kpi.ok{border-left-color:var(--ok)}
+.kpi.warn{border-left-color:#d97706}
+.kpi.bad{border-left-color:var(--bad)}
+.kpi .v{font-size:1.5rem;font-weight:700}
+.kpi .l{font-size:.82rem;color:var(--mut)}
+.kpi .n{font-size:.74rem;color:var(--mut);margin-top:4px}
+/* regimen chips */
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.86rem}
+.chip b{font-weight:700}
+/* graficas */
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:14px;margin-top:12px}
+.chart-svg svg{width:100%;height:auto;display:block}
+.legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px;font-size:.8rem;color:var(--mut)}
+.legend .lg{display:inline-flex;align-items:center;gap:5px}
+.legend i{display:inline-block;width:12px;height:4px;border-radius:2px}
+.chart-empty{color:var(--mut);font-style:italic;padding:30px;text-align:center;background:#fafafa;border-radius:8px}
+/* tablas */
+table{width:100%;border-collapse:collapse;font-size:.86rem;background:var(--card)}
+th,td{border:1px solid var(--line);padding:6px 9px;text-align:left}
+th{background:#f9fafb;font-weight:600}
+.gate-ok{color:var(--ok);font-weight:700}
+.gate-bad{color:var(--bad);font-weight:700}
+.gate-na{color:var(--mut)}
+/* perfil */
+.bar{position:relative;background:#f3f4f6;border-radius:6px;height:22px;min-width:120px;overflow:hidden}
+.bar-fill{position:absolute;top:0;bottom:0;left:0;border-radius:6px}
+.bar-v{position:absolute;right:6px;top:1px;font-size:.78rem;font-weight:600}
+.bar-fill.azul{background:#2563eb}.bar-fill.verde{background:#16a34a}
+/* warnings y conclusiones */
+.warn-list li{margin:4px 0;padding:8px 12px;background:var(--warn-bg);border-left:4px solid #d97706;border-radius:6px;font-size:.9rem;list-style:none}
+.concl li{margin:6px 0;padding:8px 12px;background:#eff6ff;border-left:4px solid #2563eb;border-radius:6px;font-size:.92rem}
+footer{color:var(--mut);font-size:.78rem;margin-top:30px;border-top:1px solid var(--line);padding-top:10px}
+@media print{.veredicto,.kpis,.charts,.grid2{break-inside:avoid}}
+</style>
+</head>
+<body><div class="wrap">
+
+<h1>Recomendación semanal de operación · SFEIA</h1><div class='meta'>Segmento <b>PEQUEÑO</b> · Estrategia <b>Trader expuesto a bolsa (sin cobertura)</b> · Semana evaluada 2026-07-25 → 2026-07-31 · Generado 2026-09-10</div>
+<div class='veredicto bad'><div class='badge bad'>NO OPERAR</div><div class='razon'><b>¿Por qué?</b> Ninguna de las estrategias analizadas muestra una ventaja comprobada sobre el promedio del mercado en la ventana vigente: activa el freno de seguridad por pérdida acumulada; gana pocos días frente al promedio del mercado; no resiste la corrección por el número de opciones evaluadas; pierde dinero en expectativa (histórico); pocos agentes de referencia independientes; su resultado no se distingue del azar. Sin ventaja comprobada, la regla es NO OPERAR.</div></div>
+<h2>Cómo operar (perfil recomendado)</h2><div class='card'><p class='meta'>Porcentajes sobre su demanda diaria. <b>El precio de hoy está fuera del rango histórico del modelo: la recomendación es defensiva (menos bolsa, más contratos).</b> «Recomendado» es lo que el sistema sugiere operar hoy; «Agentes de referencia» es lo que hicieron en promedio las empresas imitadas la última semana. Contratos SICEP (recomendado): 0.41.</p><table><tr><th>Variable</th><th>Recomendado (usted)</th><th>Agentes de referencia</th></tr><tr><td>Compras con contratos (% de la demanda)</td><td><div class='bar'><div class='bar-fill azul' style='width:50.9%'></div><span class='bar-v'>50.9</span></div></td><td><div class='bar'><div class='bar-fill verde' style='width:0.0%'></div><span class='bar-v'>0.0</span></div></td></tr><tr><td>Compras en bolsa (% de la demanda)</td><td><div class='bar'><div class='bar-fill azul' style='width:49.1%'></div><span class='bar-v'>49.1</span></div></td><td><div class='bar'><div class='bar-fill verde' style='width:100.0%'></div><span class='bar-v'>100.0</span></div></td></tr><tr><td>Clientes no regulados (% de la demanda)</td><td><div class='bar'><div class='bar-fill azul' style='width:29.4%'></div><span class='bar-v'>29.4</span></div></td><td><div class='bar'><div class='bar-fill verde' style='width:100.0%'></div><span class='bar-v'>100.0</span></div></td></tr><tr><td>Compras SICEP (% de la demanda)</td><td><div class='bar'><div class='bar-fill azul' style='width:0.0%'></div><span class='bar-v'>0.0</span></div></td><td><div class='bar'><div class='bar-fill verde' style='width:0.0%'></div><span class='bar-v'>0.0</span></div></td></tr></table><p class='meta'>La mejor estrategia según el nivel de precios de cada día (control del sistema): <b>Integrado/regional regulado</b> cuando el mercado está barata; <b>Integrado/regional regulado</b> cuando el mercado está cara; <b>Integrado/regional regulado</b> cuando el mercado está escasez; <b>Trader expuesto a bolsa (sin cobertura)</b> cuando el mercado está muy_barata; <b>Integrado/regional regulado</b> cuando el mercado está neutral.</p></div>
+<h2>La estrategia en números (última semana)</h2><div class='kpis'><div class='kpi bad'><div class='v'>-419.1 <small>COP/kWh</small></div><div class='l'>Resultado medio de la estrategia (semana)</div><div class='n'>Lo que habría ganado o perdido por cada kWh vendido, operando el perfil recomendado la última semana.</div></div><div class='kpi bad'><div class='v'>0.0 <small>%</small></div><div class='l'>Días que gana al promedio del mercado</div><div class='n'>Días de la semana en que la estrategia superó al promedio de empresas de su tamaño. Debajo de 60 % la ventaja es dudosa.</div></div><div class='kpi bad'><div class='v'>0 <small>%</small></div><div class='l'>Confianza de que la ventaja no es suerte</div><div class='n'>Corrige por el número de estrategias evaluadas. Arriba de 95 %: la ventaja difícilmente es azar.</div></div><div class='kpi bad'><div class='v'>58.2 <small>%</small></div><div class='l'>Probabilidad de que sea solo suerte</div><div class='n'>Debajo de 5 %: el resultado es difícil de explicar por azar.</div></div><div class='kpi bad'><div class='v'>1 <small></small></div><div class='l'>Agentes imitados (independientes)</div><div class='n'>Con menos de 3, la imitación no tiene base sólida (varias empresas se comportan igual).</div></div><div class='kpi bad'><div class='v'>3 070.1 <small>COP/kWh acum.</small></div><div class='l'>Peor caída acumulada</div><div class='n'>Freno de seguridad: se detiene todo si la pérdida acumulada supera 500 COP/kWh.</div></div><div class='kpi bad'><div class='v'>-441.83 <small>COP/kWh·día</small></div><div class='l'>Ganancia esperada por kWh·día</div><div class='n'>Considera la frecuencia histórica de escasez (~10.64 % de los días).</div></div><div class='kpi ok'><div class='v'>80.0 <small>%</small></div><div class='l'>Nivel de embalses</div><div class='n'>Tendencia en la semana: estable.</div></div></div>
+<h2>Contexto del mercado</h2><p class='meta'>La brecha bolsa–contratos indica qué tan cara está la bolsa frente a los contratos; cuando supera el precio de escasez, comprar en bolsa castiga fuerte al comercializador. Los embalses altos suelen anticipar bolsa baja.</p><div class='chips'><span class='chip'><b>Brecha bolsa–contratos (último día):</b> 639.5 COP/kWh</span><span class='chip'><b>Situación de precios:</b> escasez</span><span class='chip'><b>Nivel de embalses:</b> 80.0 % · estable</span><span class='chip'><b>Escasez histórica:</b> 10.64 % de los días</span><span class='chip'><b>Días de escasez (semana evaluada):</b> 2 de 7</span></div>
+<h2>Gráficas</h2><div class='grid2 charts'><div class='card'><h3>Resultado diario: la estrategia vs. el promedio del mercado</h3><div class='chart-svg' id='g-margen-box'></div><div class='legend' id='g-margen-legend'></div><div class='meta'>COP/kWh por día. Azul: la estrategia imitada; verde: las empresas de referencia; ámbar: el promedio del mercado.</div></div><div class='card'><h3>Pérdida acumulada (peor caída de la semana)</h3><div class='chart-svg' id='g-dd-box'></div><div class='legend' id='g-dd-legend'></div><div class='meta'>COP/kWh acumulados. Cuánto se habría perdido desde el mejor momento de la semana.</div></div><div class='card'><h3>Brecha de precios bolsa–contratos y rango del modelo</h3><div class='chart-svg' id='g-spread-box'></div><div class='legend' id='g-spread-legend'></div><div class='meta'>COP/kWh. La banda verde es el rango de precios con el que se entrenó el modelo; fuera de ella, se reduce la exposición a bolsa.</div></div><div class='card'><h3>Nivel de embalses del SIN</h3><div class='chart-svg' id='g-emb-box'></div><div class='legend' id='g-emb-legend'></div><div class='meta'>% agregado. Referencia: arriba de 70 % holgado, debajo de 30 % crítico.</div></div><div class='card'><h3>Distribución de resultados diarios</h3><div class='chart-svg' id='g-dist-box'></div><div class='legend' id='g-dist-legend'></div><div class='meta'>Cuántos días de la semana dieron cada nivel de resultado (p5/p95 marcan días malos y buenos).</div></div></div>
+<h2>¿En qué se basa esta recomendación?</h2><div class='card'><p class='meta'>El sistema solo recomienda operar cuando la estrategia demuestra una ventaja comprobada sobre el promedio del mercado (✓ en todos los criterios). Un solo ✗ basta para recomendar no operar.</p><table><tr><th>¿La estrategia cumple…?</th><th>Meta</th><th>Estrategia elegida</th><th>Mejor alternativa</th></tr><tr><td>Ventaja comprobada sobre el mercado (no es azar)</td><td class='meta'>azar ≤ 5 %</td><td class='gate-bad'>✗ 58.2 %</td><td class='gate-ok'>✓ 0.5 %</td></tr><tr><td>Base suficiente de agentes de referencia</td><td class='meta'>≥ 3 empresas</td><td class='gate-bad'>✗ 1</td><td class='gate-ok'>✓ 4</td></tr><tr><td>Consistencia en el período de comprobación</td><td class='meta'>≥ 50 %</td><td class='gate-ok'>✓ — <small>(no evaluada)</small></td><td class='gate-ok'>✓ — <small>(no evaluada)</small></td></tr><tr><td>El desempeño se mantiene fuera del análisis</td><td class='meta'>≥ 0.5</td><td class='gate-ok'>✓ 1.19</td><td class='gate-ok'>✓ 1.13</td></tr><tr><td>Resultado corregido por las opciones evaluadas</td><td class='meta'>≥ 95 %</td><td class='gate-bad'>✗ 0 %</td><td class='gate-bad'>✗ 0 %</td></tr><tr><td>Días que gana al promedio del mercado</td><td class='meta'>≥ 60 % de los días</td><td class='gate-bad'>✗ 0.0 %</td><td class='gate-bad'>✗ 0.0 %</td></tr><tr><td>Freno de seguridad no activado</td><td class='meta'>no activado</td><td class='gate-bad'>✗ sí</td><td class='gate-bad'>✗ sí</td></tr><tr><td>Ganancia esperada positiva</td><td class='meta'>≥ 0 COP/kWh</td><td class='gate-bad'>✗ -441.83</td><td class='gate-bad'>✗ -86.98</td></tr><tr><td>Tamaño operable en el mercado</td><td class='meta'>≤ 5 % del mercado</td><td class='gate-ok'>✓ no</td><td class='gate-ok'>✓ no</td></tr></table></div>
+<h2>Agentes de referencia (los que se imitan)</h2><div class='card'><p class='meta'>La recomendación imita el comportamiento de las empresas de su mismo tamaño a las que mejor les fue con esta estrategia en los últimos 90 días.</p><table><tr><th>#</th><th>Código</th><th>Empresa</th><th>Días analizados</th><th>Resultado medio (COP/kWh)</th><th>Ventaja sobre el mercado</th><th>% días con pérdida</th><th>Peor caída</th></tr><tr><td>1</td><td><b>TRPC</b></td><td>TERMOPIEDRAS S.A. E.S.P.</td><td>70</td><td>-305.2</td><td>-58.4</td><td>87.1 %</td><td>20 170.3</td></tr><tr><td>2</td><td><b>HIMC</b></td><td>GESTION ENERGETICA S.A. E.S.P.</td><td>88</td><td>-331.9</td><td>-88.5</td><td>89.8 %</td><td>26 493.6</td></tr><tr><td>3</td><td><b>RPEC</b></td><td>RIOPAILA ENERGÍA S.A.S. E.S.P.</td><td>88</td><td>-345.5</td><td>-92.7</td><td>89.8 %</td><td>27 157.8</td></tr><tr><td>4</td><td><b>VICC</b></td><td>EMPRESA DE ENERGÍA ELÉCTRICA DEL DEPARTAMENTO DEL VICHADA</td><td>88</td><td>-345.5</td><td>-92.7</td><td>89.8 %</td><td>27 157.8</td></tr></table></div>
+<h2>Si aun así quiere operar esta semana</h2><div class='card'><p>La estrategia analizada no mostró ventaja comprobada. La opción menos mala observada fue <b>PEQUEÑO · Integrado/regional regulado</b> (ventaja sobre el mercado de 152.3 COP/kWh, resultado medio -61.8 COP/kWh) con las empresas de referencia: <b>ESOC</b>, <b>ASCC</b>, <b>CETC</b>, <b>CQTC</b>, <b>EGVC</b>. Aun así no cumple todos los criterios: la regla del sistema sigue siendo no operar.</p></div>
+<h2>Notas honestas</h2><ul class='warn-list'><li>El grupo de referencia para esta estrategia es pequeño (4 empresas de las 10 esperadas): la imitación se basa en menos evidencia de la deseable.</li><li>Varias empresas de referencia compran y venden al unísono: en la práctica, es como imitar a una sola empresa.</li><li>El resultado del grupo de referencia no se distingue del azar en esta ventana: es igual de probable que sea suerte que habilidad.</li><li>La ventaja no resiste la corrección por el número de estrategias evaluadas: pudo aparecer por haber revisado muchas opciones, no por ser real.</li><li>La pérdida acumulada simulada superó el freno de seguridad (500 COP/kWh acumulados): operar esta estrategia esta semana no es prudente.</li><li>Las cifras son estimaciones con precios de referencia del sistema (ventas reguladas valoradas a 350 COP/kWh): no son las liquidaciones reales de cada empresa.</li><li>La semana evaluada ya ocurrió: la recomendación asume que las condiciones de precios se mantienen, pero el mercado puede cambiar mañana.</li><li>Cuando el precio de bolsa sale del rango histórico del modelo, el sistema reduce automáticamente la exposición a bolsa (perfil defensivo).</li></ul>
+<h2>Qué hacer esta semana</h2><ol class='concl'><li>Esta semana: NO OPERAR con la estrategia analizada. Ninguna estrategia muestra una ventaja comprobada sobre el promedio del mercado, y la regla del sistema es «solo operar si se gana».</li><li>Si debe operar por obligación comercial, hágalo cubierto: compre la mayor parte con contratos y evite la bolsa (perfil defensivo de la sección «Cómo operar»).</li><li>Esta recomendación se actualiza cada semana: si las condiciones de precios mejoran (embalses altos, bolsa barata), el veredicto puede pasar a OPERAR automáticamente.</li></ol>
+<footer>Generado por SFEIA · recomendación automática basada en el comportamiento histórico de agentes del MEM colombiano · cifras estimadas con precios de referencia del sistema (no son liquidaciones reales) · no constituye asesoría financiera ni legal.</footer>
+<script>window.SEMANAL = {"advertencias": ["El grupo de referencia para esta estrategia es pequeño (4 empresas de las 10 esperadas): la imitación se basa en menos evidencia de la deseable.", "Varias empresas de referencia compran y venden al unísono: en la práctica, es como imitar a una sola empresa.", "El resultado del grupo de referencia no se distingue del azar en esta ventana: es igual de probable que sea suerte que habilidad.", "La ventaja no resiste la corrección por el número de estrategias evaluadas: pudo aparecer por haber revisado muchas opciones, no por ser real.", "La pérdida acumulada simulada superó el freno de seguridad (500 COP/kWh acumulados): operar esta estrategia esta semana no es prudente.", "Las cifras son estimaciones con precios de referencia del sistema (ventas reguladas valoradas a 350 COP/kWh): no son las liquidaciones reales de cada empresa.", "La semana evaluada ya ocurrió: la recomendación asume que las condiciones de precios se mantienen, pero el mercado puede cambiar mañana.", "Cuando el precio de bolsa sale del rango histórico del modelo, el sistema reduce automáticamente la exposición a bolsa (perfil defensivo)."], "alternativa": {"codigos": ["ESOC", "ASCC", "CETC", "CQTC", "EGVC"], "estrategia": "Integrado/regional regulado", "mediana_imitacion": -61.75, "mediana_relativa_top": 152.35, "segmento": "PEQUEÑO"}, "ancla": "2026-07-31", "arquetipo": {"capacidad_pct": 1.6, "codigos": ["Integrado/regional regulado", "Integrado/regional regulado", "Integrado/regional regulado", "Integrado/regional regulado", "Trader expuesto a bolsa (sin cobertura)"], "drawdown_max": 612.81, "dsr": 0.0, "estrategia": "Integrado/regional regulado", "ev_anio_nino": -83.85, "ev_historico": -86.98, "ganadores_arquetipo": {"barata": "Integrado/regional regulado", "cara": "Integrado/regional regulado", "escasez": "Integrado/regional regulado", "muy_barata": "Trader expuesto a bolsa (sin cobertura)", "neutral": "Integrado/regional regulado"}, "kill_switch": true, "mae_f1": null, "mae_f1_detalle": {"pct_cobertura": null, "pct_exposicion": null, "pct_noreg": null, "pct_sicep": null, "promedio": null}, "mediana_margen_absoluto": -89.29, "mediana_relativa_top": 0.0, "modo_arquetipo": true, "n_efectivo": 4, "n_maestros": 4, "p_valor": 0.005, "pct_gana_segmento": 0.0, "persistencia": null, "ratio_replicacion": 1.132, "segmento": "PEQUEÑO", "supera_capacidad": false}, "conclusiones": ["Esta semana: NO OPERAR con la estrategia analizada. Ninguna estrategia muestra una ventaja comprobada sobre el promedio del mercado, y la regla del sistema es «solo operar si se gana».", "Si debe operar por obligación comercial, hágalo cubierto: compre la mayor parte con contratos y evite la bolsa (perfil defensivo de la sección «Cómo operar»).", "Esta recomendación se actualiza cada semana: si las condiciones de precios mejoran (embalses altos, bolsa barata), el veredicto puede pasar a OPERAR automáticamente."], "error_topn": null, "estrategia": "Trader expuesto a bolsa (sin cobertura)", "gates": {"arquetipo": {"gates": {"E1_gana_segmento": false, "E2_sin_kill_switch": false, "E3_ev_historico": false, "E4_capacidad": true, "V1_bootstrap": true, "V2_n_efectivo": true, "V3_holdout": true, "V4_replicacion": true, "V5_dsr": false}, "n1_cheap": false, "n1_completo": false, "n2": false, "valida_cheap": false, "valida_final": false}, "topn": {"gates": {"E1_gana_segmento": false, "E2_sin_kill_switch": false, "E3_ev_historico": false, "E4_capacidad": true, "V1_bootstrap": false, "V2_n_efectivo": false, "V3_holdout": true, "V4_replicacion": true, "V5_dsr": false}, "n1_cheap": false, "n1_completo": false, "n2": false, "valida_cheap": false, "valida_final": false}}, "generado": "2026-09-10", "historial_escasez": {"frecuencia_bins": {"barata": 28.51, "cara": 4.59, "escasez": 5.84, "muy_barata": 52.22, "neutral": 8.84}, "pct_dias_escasez": 10.64, "spread_max": 2182.7, "spread_p50": -8.8, "spread_p95": 639.5}, "kpis": [{"estado": "bad", "etiqueta": "Resultado medio de la estrategia (semana)", "id": "mediana_margen", "nota": "Lo que habría ganado o perdido por cada kWh vendido, operando el perfil recomendado la última semana.", "unidad": "COP/kWh", "valor": -419.05}, {"estado": "bad", "etiqueta": "Días que gana al promedio del mercado", "id": "pct_gana_segmento", "nota": "Días de la semana en que la estrategia superó al promedio de empresas de su tamaño. Debajo de 60 % la ventaja es dudosa.", "unidad": "%", "valor": 0.0}, {"estado": "bad", "etiqueta": "Confianza de que la ventaja no es suerte", "id": "dsr", "nota": "Corrige por el número de estrategias evaluadas. Arriba de 95 %: la ventaja difícilmente es azar.", "unidad": "%", "valor": 0.0}, {"estado": "bad", "etiqueta": "Probabilidad de que sea solo suerte", "id": "bootstrap_p", "nota": "Debajo de 5 %: el resultado es difícil de explicar por azar.", "unidad": "%", "valor": 58.2}, {"estado": "bad", "etiqueta": "Agentes imitados (independientes)", "id": "n_efectivo", "nota": "Con menos de 3, la imitación no tiene base sólida (varias empresas se comportan igual).", "unidad": "", "valor": 1}, {"estado": "bad", "etiqueta": "Peor caída acumulada", "id": "drawdown_max", "nota": "Freno de seguridad: se detiene todo si la pérdida acumulada supera 500 COP/kWh.", "unidad": "COP/kWh acum.", "valor": 3070.14}, {"estado": "bad", "etiqueta": "Ganancia esperada por kWh·día", "id": "ev_historico", "nota": "Considera la frecuencia histórica de escasez (~10.64 % de los días).", "unidad": "COP/kWh·día", "valor": -441.83}, {"estado": "ok", "etiqueta": "Nivel de embalses", "id": "embalses", "nota": "Tendencia en la semana: estable.", "unidad": "%", "valor": 80.0}], "maestros": [{"codigo": "TRPC", "drawdown_max": 20170.33, "mediana_margen": -305.21, "mediana_relativa": -58.38, "n_dias": 70, "nombre": "TERMOPIEDRAS S.A. E.S.P.", "pct_dias_perdida": 87.1, "posicion": 1}, {"codigo": "HIMC", "drawdown_max": 26493.59, "mediana_margen": -331.93, "mediana_relativa": -88.47, "n_dias": 88, "nombre": "GESTION ENERGETICA S.A. E.S.P.", "pct_dias_perdida": 89.8, "posicion": 2}, {"codigo": "RPEC", "drawdown_max": 27157.79, "mediana_margen": -345.52, "mediana_relativa": -92.67, "n_dias": 88, "nombre": "RIOPAILA ENERGÍA S.A.S. E.S.P.", "pct_dias_perdida": 89.8, "posicion": 3}, {"codigo": "VICC", "drawdown_max": 27157.79, "mediana_margen": -345.52, "mediana_relativa": -92.67, "n_dias": 88, "nombre": "EMPRESA DE ENERGÍA ELÉCTRICA DEL DEPARTAMENTO DEL VICHADA", "pct_dias_perdida": 89.8, "posicion": 4}], "operar": false, "perfil": {"arquetipo_ganador": {"barata": "Integrado/regional regulado", "cara": "Integrado/regional regulado", "escasez": "Integrado/regional regulado", "muy_barata": "Trader expuesto a bolsa (sin cobertura)", "neutral": "Integrado/regional regulado"}, "es_defensivo": true, "maestros_realizado": {"n_dias": 20, "pct_cobertura": 0.0, "pct_exposicion": 100.0, "pct_noreg": 100.0, "pct_sicep": 0.0}, "recomendado": {"n_dias": 3, "pct_cobertura": 50.9, "pct_exposicion": 49.1, "pct_noreg": 29.4, "pct_sicep": 0.0, "tiene_sicep": 0.41}}, "razon": "Ninguna de las estrategias analizadas muestra una ventaja comprobada sobre el promedio del mercado en la ventana vigente: activa el freno de seguridad por pérdida acumulada; gana pocos días frente al promedio del mercado; no resiste la corrección por el número de opciones evaluadas; pierde dinero en expectativa (histórico); pocos agentes de referencia independientes; su resultado no se distingue del azar. Sin ventaja comprobada, la regla es NO OPERAR.", "regimen": {"bin_actual": "escasez", "dias_escasez_impacto": 2, "n_dias_impacto": 7, "nivel_embalses_ultimo": 80.0, "pct_escasez_historico": 10.64, "spread_ultimo": 639.5, "tendencia_embalses": "estable"}, "segmento": "PEQUEÑO", "series": {"bin_spread": ["neutral", "neutral", "neutral", "neutral", "neutral", "neutral", "escasez"], "bins_spread": [["muy_barata", -999999.0, 0.0], ["barata", 0.0, 200.0], ["neutral", 200.0, 400.0], ["cara", 400.0, 600.0], ["escasez", 600.0, 999999.0]], "dias": ["2026-07-25", "2026-07-26", "2026-07-27", "2026-07-28", "2026-07-29", "2026-07-30", "2026-07-31"], "drawdown": [419.05, 726.66, 1092.64, 1530.23, 1983.01, 2686.77, 3070.14], "embalses": [80.58015829223858, 80.81752853856132, 80.6607644868953, 80.40457682050095, 80.30486307186571, 80.22806954623445, 79.99340347641551], "en_distribucion": [1, 1, 1, 1, 1, 1, 0], "es_escasez": [0, 0, 0, 0, 0, 1, 1], "margen_imitacion": [-419.05, -307.61, -365.98, -437.59, -452.78, -703.76, -383.37], "margen_maestros": [-388.68, null, null, -406.84, -423.37, -500, -500], "margen_segmento": [127.05, 83.28, 116.08, 83.4, 82.04, 46.98, 77.34], "rango_spread": [-140.48, 624.73], "spread": [360.7, 253.1, 310.8, 381.4, 395.2, 641.5, 639.5]}, "tipo": "recomendacion_semanal", "top": 10, "topn": {"capacidad_pct": 1.6, "codigos": ["TRPC", "HIMC", "RPEC", "VICC"], "drawdown_max": 3070.14, "dsr": 0.0, "estrategia": "Trader expuesto a bolsa (sin cobertura)", "ev_anio_nino": -472.59, "ev_historico": -441.83, "kill_switch": true, "mediana_margen_absoluto": -419.05, "mediana_relativa_top": -83.05, "mejor_dia": -307.61, "modo": "topN", "n_efectivo": 1, "n_maestros": 4, "p5": -703.76, "p95": -307.61, "p_valor": 0.5824, "pct_gana_segmento": 0.0, "peor_dia": -703.76, "persistencia": null, "ratio_replicacion": 1.187, "segmento": "PEQUEÑO", "supera_capacidad": false}, "umbrales": {"alpha": 0.05, "capacidad_max_pct": 5.0, "max_mae_f1": 10.0, "min_dsr": 0.95, "min_ev_historico": 0.0, "min_n_efectivo": 3, "min_pct_gana_segmento": 60.0, "min_persistencia": 50.0, "min_replicacion": 0.5}, "ventanas": {"estudio": {"fin": "2026-07-24", "ini": "2026-04-26"}, "impacto": {"fin": "2026-07-31", "ini": "2026-07-25"}}, "veredicto": "NO OPERAR"};</script>
+<script>
+(function(){
+"use strict";
+var D=window.SEMANAL; if(!D) return;
+function n(v){return (typeof v==='number'&&isFinite(v))?v:null;}
+function fmt(v,d){d=(d===undefined)?1:d;if(v===null||v===undefined||isNaN(v))return '\u2014';
+  return v.toLocaleString('es-CO',{minimumFractionDigits:d,maximumFractionDigits:d});}
+function svgOpen(w,h){return '<svg viewBox="0 0 '+w+' '+h+'" xmlns="http://www.w3.org/2000/svg">';}
+function vacio(id){var b=document.getElementById(id+'-box');if(b)b.innerHTML='<div class="chart-empty">Sin datos</div>';}
+
+function chartLine(id,cfg){
+  var box=document.getElementById(id+'-box'); if(!box) return;
+  var W=760,H=280,PL=58,PR=16,PT=14,PB=30;
+  var xs=cfg.x||[], sers=cfg.series||[];
+  var allV=[];
+  sers.forEach(function(se){se.values.forEach(function(v){if(n(v)!==null)allV.push(v);});});
+  if(!allV.length){ box.innerHTML='<div class="chart-empty">Sin datos</div>'; return; }
+  var ymin=Math.min.apply(null,allV), ymax=Math.max.apply(null,allV);
+  if(cfg.ylim){ymin=cfg.ylim[0];ymax=cfg.ylim[1];}
+  else if(ymin===ymax){ymin-=1;ymax+=1;}
+  if(cfg.yfloor!==undefined&&ymin>cfg.yfloor)ymin=cfg.yfloor;
+  if(cfg.yceil!==undefined&&ymax<cfg.yceil)ymax=cfg.yceil;
+  var pad=(ymax-ymin)*0.08; ymin-=pad; ymax+=pad;
+  function x(i){return PL+((xs.length<=1)?(W-PL-PR)/2:i*(W-PL-PR)/(xs.length-1));}
+  function y(v){return PT+(H-PT-PB)*(1-(v-ymin)/(ymax-ymin));}
+  function clampY(v){return Math.max(PT,Math.min(H-PT-0.5,y(v)));}
+  var s='';
+  if(cfg.band&&cfg.band.lo!==null&&cfg.band.lo!==undefined){
+    var yTop=clampY(cfg.band.hi), yBot=clampY(cfg.band.lo);
+    s+='<rect x="'+PL+'" y="'+yTop+'" width="'+(W-PL-PR)+'" height="'+(yBot-yTop)+'" fill="'+cfg.band.color+'" opacity="0.22"/>';
+  }
+  if(cfg.hlines){cfg.hlines.forEach(function(h){
+    s+='<line x1="'+PL+'" y1="'+y(h.y)+'" x2="'+(W-PR)+'" y2="'+y(h.y)+'" stroke="'+h.color+'" stroke-dasharray="4 4" stroke-width="1"/>';
+    s+='<text x="'+(W-PR+3)+'" y="'+(y(h.y)+3)+'" font-size="9" fill="'+h.color+'">'+h.label+'</text>';
+  });}
+  for(var t=0;t<=4;t++){var v=ymin+(ymax-ymin)*t/4, yy=y(v);
+    s+='<line x1="'+PL+'" y1="'+yy+'" x2="'+(W-PR)+'" y2="'+yy+'" stroke="#e5e7eb" stroke-width="1"/>';
+    s+='<text x="'+(PL-6)+'" y="'+(yy+4)+'" font-size="10" text-anchor="end" fill="#6b7280">'+fmt(v,1)+'</text>';}
+  var idxs=[0,Math.floor((xs.length-1)/2),xs.length-1];
+  idxs.forEach(function(i){if(i>=0&&i<xs.length){
+    var anc=(i===0)?'start':((i===xs.length-1)?'end':'middle');
+    s+='<text x="'+x(i)+'" y="'+(H-PB+16)+'" font-size="10" text-anchor="'+anc+'" fill="#6b7280">'+String(xs[i]).slice(5)+'</text>';}});
+  sers.forEach(function(se){
+    var d='',started=false;
+    se.values.forEach(function(v,i){var vv=n(v);
+      if(vv===null){started=false;return;}
+      var xx=x(i), yy=y(vv);
+      d+=(started?'L':'M')+xx.toFixed(1)+' '+yy.toFixed(1)+' ';started=true;});
+    if(d){
+      s+='<path d="'+d+'" fill="'+(cfg.fill?se.color:'none')+'" '+(cfg.fill?'opacity="0.30"':'stroke="'+se.color+'" stroke-width="2"')+'/>';
+      s+='<path d="'+d+'" fill="none" stroke="'+se.color+'" stroke-width="2"/>';
+    }
+    if(se.values.length<=20){se.values.forEach(function(v,i){var vv=n(v);if(vv===null)return;
+      s+='<circle cx="'+x(i)+'" cy="'+y(vv)+'" r="3" fill="'+se.color+'"/>';});}
+  });
+  box.innerHTML=svgOpen(W,H)+s+'</svg>';
+  var leg=document.getElementById(id+'-legend');
+  if(leg){
+    var items=sers.map(function(se){return '<span class="lg"><i style="background:'+se.color+'"></i>'+se.name+'</span>';});
+    if(cfg.band&&cfg.band.lo!==null&&cfg.band.lo!==undefined){
+      items.push('<span class="lg"><i style="background:'+cfg.band.color+';opacity:.35"></i>'+cfg.band.label+'</span>');}
+    leg.innerHTML=items.join('');
+  }
+}
+
+function chartHist(id,cfg){
+  var box=document.getElementById(id+'-box'); if(!box) return;
+  var vals=(cfg.values||[]).filter(function(v){return n(v)!==null;});
+  if(!vals.length){ box.innerHTML='<div class="chart-empty">Sin datos</div>'; return; }
+  var W=760,H=280,PL=58,PR=16,PT=14,PB=30;
+  var mn=Math.min.apply(null,vals), mx=Math.max.apply(null,vals);
+  if(mn===mx){mn-=1;mx+=1;}
+  var nbins=Math.min(12,Math.max(6,Math.ceil(vals.length/3)));
+  var bw=(mx-mn)/nbins;
+  var counts=[],i; for(i=0;i<nbins;i++)counts.push(0);
+  vals.forEach(function(v){var k=Math.min(nbins-1,Math.floor((v-mn)/bw));counts[k]++;});
+  var cmax=Math.max.apply(null,counts);
+  function xv(v){return PL+(v-mn)*(W-PL-PR)/(mx-mn);}
+  function yc(c){return PT+(H-PT-PB)*(1-c/cmax);}
+  var s='';
+  for(var t=0;t<=4;t++){var yy=PT+(H-PT-PB)*t/4;
+    s+='<line x1="'+PL+'" y1="'+yy+'" x2="'+(W-PR)+'" y2="'+yy+'" stroke="#e5e7eb"/>';
+    s+='<text x="'+(PL-6)+'" y="'+(yy+4)+'" font-size="10" text-anchor="end" fill="#6b7280">'+Math.round(cmax*t/4)+'</text>';}
+  var bwPix=(W-PL-PR)/nbins;
+  for(i=0;i<nbins;i++){s+='<rect x="'+(PL+i*bwPix+1)+'" y="'+yc(counts[i])+'" width="'+(bwPix-2)+'" height="'+(PT+(H-PT-PB)-yc(counts[i]))+'" fill="'+cfg.color+'" opacity="0.75"/>';}
+  if(mn<0&&mx>0){s+='<line x1="'+PL+'" y1="'+yc(0)+'" x2="'+(W-PR)+'" y2="'+yc(0)+'" stroke="#374151" stroke-width="1.5"/>';}
+  if(cfg.p5!==null&&cfg.p5!==undefined){s+='<line x1="'+xv(cfg.p5)+'" y1="'+PT+'" x2="'+xv(cfg.p5)+'" y2="'+(H-PB)+'" stroke="#b45309" stroke-dasharray="4 4"/>';
+    s+='<text x="'+xv(cfg.p5)+'" y="'+(PT+10)+'" font-size="9" fill="#b45309">p5</text>';}
+  if(cfg.p95!==null&&cfg.p95!==undefined){s+='<line x1="'+xv(cfg.p95)+'" y1="'+PT+'" x2="'+xv(cfg.p95)+'" y2="'+(H-PB)+'" stroke="#b45309" stroke-dasharray="4 4"/>';
+    s+='<text x="'+xv(cfg.p95)+'" y="'+(PT+10)+'" font-size="9" fill="#b45309">p95</text>';}
+  ['mn','mx'].forEach(function(k,i){var vv=(k==='mn')?mn:mx;
+    s+='<text x="'+xv(vv)+'" y="'+(H-PB+16)+'" font-size="10" text-anchor="'+(i?'end':'start')+'" fill="#6b7280">'+fmt(vv,1)+'</text>';});
+  box.innerHTML=svgOpen(W,H)+s+'</svg>';
+}
+
+var S=D.series||{};
+var dias=S.dias||[];
+if(dias.length){
+  chartLine('g-margen',{x:dias,series:[
+    {name:'Estrategia imitada',color:'#2563eb',values:S.margen_imitacion||[]},
+    {name:'Agentes de referencia',color:'#16a34a',values:S.margen_maestros||[]},
+    {name:'Promedio del mercado',color:'#d97706',values:S.margen_segmento||[]}]});
+  chartLine('g-dd',{x:dias,series:[{name:'Pérdida acumulada',color:'#dc2626',values:S.drawdown||[]}],fill:true,yfloor:0});
+  var hlines=[];
+  (S.bins_spread||[]).forEach(function(b){var hi=b[2];if(hi!==null&&isFinite(hi)&&Math.abs(hi)<999999){hlines.push({y:hi,label:b[0],color:'#9ca3af'});}});
+  chartLine('g-spread',{x:dias,series:[{name:'Brecha bolsa \u2212 contrato',color:'#7c3aed',values:S.spread||[]}],
+    band:(S.rango_spread?{lo:S.rango_spread[0],hi:S.rango_spread[1],color:'#16a34a',label:'Rango histórico del modelo'}:null),
+    hlines:hlines});
+  chartLine('g-emb',{x:dias,series:[{name:'Embalses SIN',color:'#0891b2',values:S.embalses||[]}],ylim:[0,100],
+    hlines:[{y:70,label:'70 %',color:'#16a34a'},{y:30,label:'30 %',color:'#dc2626'}]});
+  chartHist('g-dist',{values:S.margen_imitacion||[],p5:(D.topn&&D.topn.p5!==undefined)?D.topn.p5:null,
+    p95:(D.topn&&D.topn.p95!==undefined)?D.topn.p95:null,color:'#2563eb'});
+}else{
+  ['g-margen','g-dd','g-spread','g-emb','g-dist'].forEach(function(id){var b=document.getElementById(id+'-box');if(b)b.innerHTML='<div class="chart-empty">Sin datos</div>';});
+}
+})();
+</script>
+</div></body></html>

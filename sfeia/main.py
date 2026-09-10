@@ -11,12 +11,15 @@ Uso:
                          [--estudio-ini 2025-07-01] [--estudio-fin 2025-07-31]
                          [--impacto-ini 2025-08-01] [--impacto-fin 2025-08-08]
                          [--demanda-dia-gwh 0.12] [--config path/to/config.yaml]
-                         [--walk-forward] [--barrido]
+                         [--walk-forward] [--barrido] [--semanal [--fecha AAAA-MM-DD]]
 
 Sin fechas: el estudio usa los últimos `dias_estudio_por_defecto` días antes de
 la ventana de impacto y el impacto los últimos `dias_impacto_por_defecto` días
-de la ventana principal. `--barrido` evalúa todas las (segmento × estrategia)
-y filtra por validez; `--walk-forward` corre la serie de ventanas rodantes.
+de la ventana principal (ancla = borde de datos de elecdb). `--barrido` evalúa
+todas las (segmento × estrategia) y filtra por validez; `--walk-forward` corre
+la serie de ventanas rodantes; `--semanal` entrega la recomendación semanal
+(veredicto OPERAR/NO OPERAR + dashboard HTML autocontenido) anclada a
+`--fecha` o al borde de datos.
 """
 from __future__ import annotations
 
@@ -60,6 +63,13 @@ def _parsear(argv: list[str] | None) -> argparse.Namespace:
     parser.add_argument("--poder", action="store_true",
                         help="Experimento de poder estadístico (Ruta C): ¿la señal operable resiste más "
                              "simulaciones, ventanas largas y pool entre segmentos? docs/experimento_poder_estadistico.md")
+    parser.add_argument("--semanal", action="store_true",
+                        help="Recomendación semanal 'lo actual y el futuro': re-entrena con los últimos 90 días, "
+                             "valida contra la última semana CERRADA y entrega el dashboard HTML autocontenido "
+                             "docs/recomendacion_semanal.html (+ .md y CSV) con veredicto OPERAR/NO OPERAR")
+    parser.add_argument("--fecha", default=None, metavar="AAAA-MM-DD",
+                        help="Ancla de la ventana para --semanal (o el flujo por defecto): la ventana termina en "
+                             "esa fecha; si se omite, en el borde de datos de elecdb")
     return parser.parse_args(argv)
 
 
@@ -67,6 +77,14 @@ def main(argv: list[str] | None = None) -> int:
     args = _parsear(argv)
     cfg = load_merged(args.config)
     repo = RepoElecdb(db_dsn(cfg))
+
+    # Ancla dinámica (plan_recomendacion_semanal §4.1): si el foco es null (o
+    # se pasa --fecha), se resuelve contra el borde de datos de elecdb.
+    from sfeia.app.controllers.fase_semanal import resolver_ancla
+    if args.fecha:
+        cfg["ventana"]["foco_fin"] = args.fecha
+        cfg["ventana"]["foco_ini"] = None
+    cfg["ventana"] = resolver_ancla(cfg["ventana"], repo.fecha_max_sistema())
 
     a_cfg = cfg["asistente"]
     params = ParametrosAsistente(
@@ -84,6 +102,21 @@ def main(argv: list[str] | None = None) -> int:
 
     print(f"Asistente imitador: {params.segmento} · {params.estrategia} · top-{params.top}")
     try:
+        if args.semanal:
+            from sfeia.app.controllers.fase_semanal import FaseSemanal
+            from sfeia.app.views.dashboard_semanal_html import guardar as guardar_dashboard
+            from sfeia.app.views.exportar_csv import exportar_semanal
+            sem_cfg = a_cfg.get("semanal", {})
+            a_cfg["dias_estudio_por_defecto"] = int(sem_cfg.get("dias_estudio", 90))
+            a_cfg["dias_impacto_por_defecto"] = int(sem_cfg.get("dias_impacto", 7))
+            payload = FaseSemanal(repo, cfg).ejecutar(params)
+            html_d = guardar_dashboard(payload, cfg)
+            csv_d = exportar_semanal(payload, cfg)
+            print(f"Recomendación semanal → {html_d.relative_to(Path.cwd())}")
+            print(f"  - {csv_d.relative_to(Path.cwd())}")
+            print(f"VEREDICTO: {payload['veredicto']}")
+            print(f"  {payload['razon']}")
+            return 0
         if args.poder:
             from sfeia.app.controllers.estudio_poder import EstudioPoder
             from sfeia.app.views.informe_poder_md import guardar as guardar_poder

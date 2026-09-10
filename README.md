@@ -102,13 +102,32 @@ Salidas: `docs/scorecard_aceptacion.md` + `data/scorecard.csv` + `data/scorecard
 > siguen fallando: la operabilidad es por régimen. El experimento `--poder` confirma que la señal no es un
 > artefacto de poder. Evidencia en `docs/scorecard_aceptacion.md` y `docs/experimento_poder_estadistico.md`.
 
-### 5. Tests
+### 5. Recomendación semanal (`--semanal`)
+
+Canal de cliente "**lo actual y el futuro**": re-entrena con los **últimos 90 días** y valida contra la **última
+semana cerrada** (ancla = borde de datos de elecdb o `--fecha`). Veredicto estricto **OPERAR / NO OPERAR**
+("solo operar si gana"): si ninguna combinación (top-N o arquetipo ganador por régimen) pasa los gates N1+N2, el
+veredicto es NO OPERAR prominente con perfil defensivo informativo. Metodología en
+`docs/plan_recomendacion_semanal.md`.
+
+```bash
+./.venv/bin/python -m sfeia.main --semanal            # anclado al borde de datos
+./.venv/bin/python -m sfeia.main --semanal --fecha 2021-06-30   # ancla explícita (pruebas)
+```
+
+Entregable principal: **`docs/recomendacion_semanal.html`** — dashboard **autocontenido** (HTML + CSS + JS
+inline, sin CDN ni build) que abre sin internet, con badge OPERAR/NO OPERAR, 8 KPI cards, 5 gráficas SVG
+(margen diario, drawdown, spread con zona de confianza, embalses, distribución), perfil recomendado vs realizado,
+tablas de maestros y gates con semáforo, tips/warnings y conclusiones. Acompaña `data/recomendacion_semanal.csv`
+(serie diaria, historial interno).
+
+### 6. Tests
 
 ```bash
 ./.venv/bin/python -m pytest -q
 ```
 
-Lógica pura, sin BD (segmentación, diario, maestros, clonación, simulación, validez, scorecard).
+Lógica pura, sin BD (segmentación, diario, maestros, clonación, simulación, validez, scorecard, semanal).
 
 ---
 
@@ -125,12 +144,16 @@ Lógica pura, sin BD (segmentación, diario, maestros, clonación, simulación, 
 | `--walk-forward` | Modo ventanas rodantes (P2.3). |
 | `--barrido` | Modo evaluación de todas las combinaciones (S2). |
 | `--aceptacion` | Harness de aceptación: grid 2015→hoy + scorecard N0–N4. |
+| `--semanal` | Recomendación semanal: veredicto OPERAR/NO OPERAR + dashboard HTML autocontenido. |
+| `--fecha` | Ancla de la ventana para `--semanal` (default: borde de datos de elecdb). |
 | `--config` | Ruta alternativa al `config.yaml` único. |
 
-**Ventanas por defecto** (si no se pasan fechas): estudio = últimos `dias_estudio_por_defecto` (30) días antes del
-impacto; impacto = últimos `dias_impacto_por_defecto` (7) días del ancla `ventana.foco_*` (ver "Cómo se resuelven
-las fechas" en Configuración). El CLI sobreescribe el config. La BD llega a **2026-07-31**; el proyecto corre sobre
-**2025** (año completo), y las ventanas posteriores a 2026-07-31 **fallan con un error claro**.
+**Ventanas por defecto** (si no se pasan fechas): el ancla `ventana.foco_*` es **dinámica** — si está en `null`
+(default), `main.py` la resuelve contra el borde de datos (`foco_fin = fecha_max_sistema()` = **2026-07-31**,
+`foco_ini = foco_fin − 180 días`). Así estudio = últimos `dias_estudio_por_defecto` (**90**) días antes del
+impacto e impacto = últimos `dias_impacto_por_defecto` (**7**) días del ancla: el proyecto analiza **lo actual**,
+no 2025 (2025 queda para análisis histórico vía `--estudio-ini`/`--impacto-fin` explícitos). El CLI sobreescribe
+el config, y las ventanas posteriores al borde de datos **fallan con un error claro**.
 
 ---
 
@@ -151,6 +174,8 @@ las fechas" en Configuración). El CLI sobreescribe el config. La BD llega a **2
 | `data/walk_forward.csv` | Serie walk-forward (`--walk-forward`). |
 | `data/barrido_combinaciones.csv` | Todas las combinaciones evaluadas (`--barrido`). |
 | `docs/scorecard_aceptacion.md` + `data/scorecard{,_confirmadas}.csv` | Scorecard N0–N4 del harness (`--aceptacion`). |
+| `docs/recomendacion_semanal.html` | **Dashboard HTML autocontenido** de la recomendación semanal (`--semanal`): KPIs, gráficas SVG, tablas, tips y conclusiones. |
+| `data/recomendacion_semanal.csv` | Serie diaria de la ventana de impacto (spread, embalses, márgenes, drawdown). |
 
 ---
 
@@ -165,11 +190,13 @@ sfeia/   Un solo paquete MVC
   sql/                     Queries parametrizadas (f-1_segmentacion, d1_diario, d1_max_fecha,
                            d1_historial_precios, d1_contexto_hidrologia)
   app/
-    controllers/           fase_segmentacion · fase_diaria · fase_asistente (ejecutar, barrido, walk-forward) · fase_aceptacion
+    controllers/           fase_segmentacion · fase_diaria · fase_asistente (ejecutar, barrido, walk-forward) ·
+                           fase_aceptacion · fase_semanal
     models/                entities (dataclasses) · repositories (RepoElecdb)
     services/              segmentacion · diario · clustering · kpi_cartera · contexto · maestros · clonacion · simulacion · scorecard
-    views/                 informe_asistente_md · informe_barrido_md · informe_scorecard_md · exportar_csv
-  tests/                   test_segmentacion · test_diario · test_asistente · test_scorecard
+    views/                 informe_asistente_md · informe_barrido_md · informe_scorecard_md · exportar_csv ·
+                           dashboard_semanal_html
+  tests/                   test_segmentacion · test_diario · test_asistente · test_scorecard · test_semanal
 ```
 
 Los `services` son **lógica pura** (no tocan BD); solo los controladores consultan el repo. Toda query vive en
@@ -200,14 +227,15 @@ Parámetros clave del simulador (`asistente:`):
 | `usar_regimen_hidrologico` | Nivel de embalses por día (P1.4). |
 | `capacidad_max_pct_segmento` | Límite de capacidad (P2.1). |
 | `kill_switch_drawdown_cop_kwh` | Kill-switch por drawdown (P2.2). |
-| `walk_forward` / `barrido` | Parámetros de los modos (`--walk-forward`, `--barrido`). |
+| `walk_forward` / `barrido` / `semanal` | Parámetros de los modos (`--walk-forward`, `--barrido`, `--semanal`). |
 | `salida`, `salida_barrido`, `data_dir` | Rutas de salida. |
 
 ### Cómo se resuelven las fechas
 
 Las fechas del simulador (`asistente.estudio_ini/fin`, `asistente.impacto_ini/fin`) viven en el mismo archivo que
 el motor, en su sección. Si están en `null` (por defecto), se derivan del **ancla** del motor
-(`ventana.foco_ini/foco_fin`):
+(`ventana.foco_ini/foco_fin`), que también es dinámica: si `foco_fin` es `null`, `main.py` lo resuelve contra el
+borde de datos de elecdb (`fecha_max_sistema()`, hoy 2026-07-31) y `foco_ini = foco_fin − 180 días`:
 
 - `estudio_fin` = `foco_fin` − `dias_impacto_por_defecto`
 - `estudio_ini` = `estudio_fin` − (`dias_estudio_por_defecto` − 1)

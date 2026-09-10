@@ -13,21 +13,22 @@
 | Segmento | PEQUEÑO |
 | Estrategia a imitar | Trader expuesto a bolsa (sin cobertura) |
 | Top de maestros | 10 |
-| Demanda diaria de XXXC (GWh) | 0.26 |
+| Demanda diaria de XXXC (GWh) | 0.20 |
 | Presencia mínima en la estrategia | 20 % de los días |
-| Ventana de estudio (define maestros) | 2025-06-25 → 2025-07-22 |
-| Sub-validación (holdout) | 2025-07-23 → 2025-07-24 |
-| Ventana de impacto (evalúa imitación) | 2025-07-25 → 2025-07-31 |
+| Ventana de estudio (define maestros) | 2026-04-26 → 2026-07-22 |
+| Sub-validación (holdout) | 2026-07-23 → 2026-07-24 |
+| Ventana de impacto (evalúa imitación) | 2026-07-25 → 2026-07-31 |
 
 ## 2. Maestros — top 10 del segmento en la ventana de estudio
 
-Ranking de agentes por mediana del margen diario dentro de **PEQUEÑO · Trader expuesto a bolsa (sin cobertura)** en 2025-06-25 → 2025-07-22 (estudio de 65 agentes, 28 días, k=5).
+Ranking de agentes por mediana del margen diario dentro de **PEQUEÑO · Trader expuesto a bolsa (sin cobertura)** en 2026-04-26 → 2026-07-22 (estudio de 65 agentes, 88 días, k=5).
 
 | Pos. | Código | Comercializador | Días en la estrategia | Mediana margen (COP/kWh) | Media margen | Mediana relativa (COP/kWh) | % días > segmento | % días pérdida | Drawdown máx. (COP/kWh acum.) | Mediana días malos (COP/kWh) |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 1 | RPEC | RIOPAILA ENERGÍA S.A.S. E.S.P. | 28 | 93.68 | 88.88 | 146.49 | 100.00 | 0.00 | 0.00 | 0.00 |
-| 2 | VICC | EMPRESA DE ENERGÍA ELÉCTRICA DEL DEPARTAMENTO DEL VICHADA | 28 | 93.68 | 88.88 | 146.49 | 100.00 | 0.00 | 0.00 | 0.00 |
-| 3 | HIMC | GESTION ENERGETICA S.A. E.S.P. | 28 | 88.16 | 83.38 | 139.46 | 100.00 | 0.00 | 0.00 | 0.00 |
+| 1 | TRPC | TERMOPIEDRAS S.A. E.S.P. | 70 | -305.21 | -285.42 | -58.38 | 28.60 | 87.10 | 20 170.33 | -402.50 |
+| 2 | HIMC | GESTION ENERGETICA S.A. E.S.P. | 88 | -331.93 | -299.17 | -88.47 | 28.40 | 89.80 | 26 493.59 | -387.07 |
+| 3 | RPEC | RIOPAILA ENERGÍA S.A.S. E.S.P. | 88 | -345.52 | -306.44 | -92.67 | 23.90 | 89.80 | 27 157.79 | -402.50 |
+| 4 | VICC | EMPRESA DE ENERGÍA ELÉCTRICA DEL DEPARTAMENTO DEL VICHADA | 88 | -345.52 | -306.44 | -92.67 | 23.90 | 89.80 | 27 157.79 | -402.50 |
 
 > **Selección por margen relativo al segmento** (S1): el ranking usa la *mediana relativa* (margen del agente − mediana del segmento el mismo día), que cancela el artefacto Pv=350. La mediana absoluta se reporta como contexto.
 
@@ -35,11 +36,11 @@ Ranking de agentes por mediana del margen diario dentro de **PEQUEÑO · Trader 
 
 | min. días en estrategia | top-8 | top-10 | top-12 |
 |---|---|---|---|
-| 10 % | RPEC, VICC, HIMC | RPEC, VICC, HIMC | RPEC, VICC, HIMC |
-| 20 % | RPEC, VICC, HIMC | RPEC, VICC, HIMC | RPEC, VICC, HIMC |
-| 30 % | RPEC, VICC, HIMC | RPEC, VICC, HIMC | RPEC, VICC, HIMC |
+| 10 % | ESOC, TRPC, HIMC, RPEC, VICC | ESOC, TRPC, HIMC, RPEC, VICC | ESOC, TRPC, HIMC, RPEC, VICC |
+| 20 % | TRPC, HIMC, RPEC, VICC | TRPC, HIMC, RPEC, VICC | TRPC, HIMC, RPEC, VICC |
+| 30 % | TRPC, HIMC, RPEC, VICC | TRPC, HIMC, RPEC, VICC | TRPC, HIMC, RPEC, VICC |
 
-> ⚠️ **Maestros con comportamiento idéntico o correlacionado**: HIMC y RPEC y VICC. Contarlos como 'independientes' infla el top-N (ver N efectivo en la sección de validez).
+> ⚠️ **Maestros con comportamiento idéntico o correlacionado**: HIMC y RPEC y TRPC y VICC; HIMC y TRPC. Contarlos como 'independientes' infla el top-N (ver N efectivo en la sección de validez).
 
 ## 3. Validez de la selección (¿los maestros son hábiles o suertudos?)
 
@@ -47,17 +48,17 @@ Tres pruebas separan la selección del ruido: **bootstrap skill-vs-luck** (¿el 
 
 | Prueba | Métrica | Valor | Pasa |
 |---|---|---|---|
-| Bootstrap skill-vs-luck | p-valor | 0.9930 | no |
-|  | Mejor maestro real (COP/kWh) | 139.46 |  |
-|  | Nulo p50 / p95 (COP/kWh) | 148.85 / 161.35 |  |
-|  | Candidatos rankeados (trials) | 3 |  |
-| Holdout (sub-estudio → sub-validación) | % de maestros que siguen en la mitad superior | 66.70 | ≥50 % |
-|  | Mediana del percentil de los maestros | 50.00 |  |
-| Replicación IS→OOS | mediana imitación estudio / impacto (COP/kWh) | 88.70 / 85.44 | 0.96 |
+| Bootstrap skill-vs-luck | p-valor | 0.5824 | no |
+|  | Mejor maestro real (COP/kWh) | -58.38 |  |
+|  | Nulo p50 / p95 (COP/kWh) | -58.38 / -36.41 |  |
+|  | Candidatos rankeados (trials) | 4 |  |
+| Holdout (sub-estudio → sub-validación) | % de maestros que siguen en la mitad superior | — | <50 % (azar) |
+|  | Mediana del percentil de los maestros | — |  |
+| Replicación IS→OOS | mediana imitación estudio / impacto (COP/kWh) | -352.98 / -419.05 | 1.19 |
 |  | Criterio de sistema sano | ≥ 50–70 % |  |
-| DSR (corrige múltiples pruebas) | Sharpe diario 2.297 · skew -1.01 · kurt 2.74 | 0.936 | no |
+| DSR (corrige múltiples pruebas) | Sharpe diario -3.461 · skew -1.40 · kurt 3.98 | 0.000 | no |
 
-N efectivo de maestros (tras deduplicar correlacionados): **1** de 3.
+N efectivo de maestros (tras deduplicar correlacionados): **1** de 4.
 
 ## 4. Política de clonación (contexto → perfil de abastecimiento)
 
@@ -65,17 +66,17 @@ Por bin de spread (bolsa − contrato) se aprende la **mediana** del perfil que 
 
 | Contexto (spread bolsa−contrato) | Rango (COP/kWh) | Días de entrenamiento | Cobertura contratos | Exposición bolsa | No regulado | SICEP |
 |---|---|---|---|---|---|---|
-| muy_barata | -999 999–0 | 84 | 1% | 99% | 42% | 0% |
-| barata | 0–200 | — | — | — | — | — |
-| neutral | 200–400 | — | — | — | — | — |
-| cara | 400–600 | — | — | — | — | — |
-| escasez | 600–999 999 | — | — | — | — | — |
+| muy_barata | -999 999–0 | 48 | 1% | 99% | 59% | 0% |
+| barata | 0–200 | 82 | 1% | 99% | 59% | 0% |
+| neutral | 200–400 | 92 | 1% | 99% | 59% | 0% |
+| cara | 400–600 | 109 | 1% | 99% | 59% | 0% |
+| escasez | 600–999 999 | 3 | 2% | 98% | 29% | 0% |
 
-> **Agregación ponderada** (P1.2): el perfil por bin combina a los maestros con pesos (RPEC: 0.42, VICC: 0.42, HIMC: 0.16) en vez de elegir un top-N duro. Los pesos premian superar la mediana del segmento.
+> **Agregación ponderada** (P1.2): el perfil por bin combina a los maestros con pesos (TRPC: 0.42, HIMC: 0.24, RPEC: 0.17, VICC: 0.17) en vez de elegir un top-N duro. Los pesos premian superar la mediana del segmento.
 
-> **Zona de confianza** (P1.3): la política fue entrenada con spreads en [-190, -108] COP/kWh. Un día fuera de ese rango reduce su exposición a bolsa (trasladándola a contratos) en vez de clonar a ciegas.
+> **Zona de confianza** (P1.3): la política fue entrenada con spreads en [-140, 625] COP/kWh. Un día fuera de ese rango reduce su exposición a bolsa (trasladándola a contratos) en vez de clonar a ciegas.
 
-> **Fallback** (mediana global del estudio, para contextos sin datos): cobertura 1 %, exposición 99 %, no regulado 42 %, SICEP 0 %.
+> **Fallback** (mediana global del estudio, para contextos sin datos): cobertura 1 %, exposición 99 %, no regulado 59 %, SICEP 0 %.
 
 ## 5. Escenarios de estrés (sintéticos — la ventana no tuvo estos días)
 
@@ -83,14 +84,12 @@ La ventana de impacto puede no contener días de bolsa cara/escasez. Estos escen
 
 | Escenario | Descripción | Bolsa (COP/kWh) | Contratos (COP/kWh) | Spread | Bin | Margen (COP/kWh) | Garantía (COP) |
 |---|---|---|---|---|---|---|---|
-| escasez_umbral | Bolsa en el precio de escasez | 699.2 | 295.8 | 403.4 | cara | -429.74 | 45 764 693 |
-| escasez_extrema | Bolsa 25 % sobre el precio de escasez | 874.0 | 295.8 | 578.2 | cara | -603.39 | 57 171 846 |
+| escasez_umbral | Bolsa en el precio de escasez | 906.1 | 323.9 | 582.2 | cara | -633.19 | 45 647 448 |
+| escasez_extrema | Bolsa 25 % sobre el precio de escasez | 1 132.7 | 323.9 | 808.8 | escasez | -852.47 | 56 767 924 |
 
 ## 6. Frecuencia histórica de escasez (todo el histórico de la BD)
 
 Con 4230 días de histórico (2015 → límite de datos), la escasez real (bolsa > precio de escasez) ocurre el **10.64 %** de los días, y el contexto en que la política de clonación **no tiene datos** (spread > 600, bin 'escasez') es raro pero existe. Cuando ocurre, la sección 4 muestra pérdidas de **−520 a −715 COP/kWh/día**.
-
-> ⚠️ **La ventana de impacto (2025) es un año sin días de escasez.** La distribución 'ideal' de la sección 6 refleja ese clima benigno; en un año con escasez (2015–16, 2023–24: 21–30 % de los días) la misma estrategia produce las pérdidas de la sección 4.
 
 | Contexto (spread) | Días históricos | % del histórico |
 |---|---|---|
@@ -131,43 +130,43 @@ Medidas de la serie diaria de márgenes. **p5** es un día malo, **% días con p
 
 | Métrica | Imitación (XXXC) | Maestros (real) | Segmento (real) |
 |---|---|---|---|
-| Días | 7 | 7 | 7 |
-| Mediana (COP/kWh) | 85.44 | 86.20 | -44.82 |
-| Media (COP/kWh) | 71.81 | 77.65 | -52.77 |
-| p5 (COP/kWh) | 13.01 | 48.74 | -98.02 |
-| p95 (COP/kWh) | 102.51 | 103.38 | -34.03 |
-| % días con pérdida | 0.00 | 0.00 | 100.00 |
-| Peor día (COP/kWh) | 13.01 | 48.74 | -98.02 |
-| Mejor día (COP/kWh) | 102.51 | 103.38 | -34.03 |
-| Drawdown máximo (COP/kWh acum.) | 0.00 | 0.00 | 369.42 |
+| Días | 7 | 5 | 7 |
+| Mediana (COP/kWh) | -419.05 | -423.37 | 83.28 |
+| Media (COP/kWh) | -438.59 | -443.78 | 88.02 |
+| p5 (COP/kWh) | -703.76 | -500 | 46.98 |
+| p95 (COP/kWh) | -307.61 | -388.68 | 127.05 |
+| % días con pérdida | 100.00 | 100.00 | 0.00 |
+| Peor día (COP/kWh) | -703.76 | -500 | 46.98 |
+| Mejor día (COP/kWh) | -307.61 | -388.68 | 127.05 |
+| Drawdown máximo (COP/kWh acum.) | 3 070.14 | 2 218.89 | 0.00 |
 
-> **Lectura:** la imitación logra una mediana de **85.4 COP/kWh/día** frente a **86.2** de sus maestros reales y **-44.8** del segmento, con **0.00 % de días en pérdida** y un drawdown de **0.0 COP/kWh** acumulados en el período. El margen es un artefacto de modelado; solo sirve para comparar entre sí.
+> **Lectura:** la imitación logra una mediana de **-419.1 COP/kWh/día** frente a **-423.4** de sus maestros reales y **83.3** del segmento, con **100.00 % de días en pérdida** y un drawdown de **3070.1 COP/kWh** acumulados en el período. El margen es un artefacto de modelado; solo sirve para comparar entre sí.
 
-## 8. Simulación día a día (2025-07-25 → 2025-07-31)
+## 8. Simulación día a día (2026-07-25 → 2026-07-31)
 
 XXXC replica cada día el perfil recomendado y se calcula su margen y garantía estimada con la misma lógica del estudio (C16–C18 sobre precios de sistema). Se compara contra la mediana real de los maestros y del segmento ese día. **En distribución** indica si el spread del día cae dentro del rango entrenado (si no, la exposición a bolsa se redujo — P1.3); **Embalses** es el nivel agregado del SIN (P1.4).
 
 | Fecha | Contexto | Escasez | En distribución | Embalses (%) | Cobertura | Exposición | Margen imitación | Mediana maestros | Mediana segmento | Garantía (COP) |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 2025-07-25 | muy_barata | no | sí | 80.90 | 1% | 99% | 87.74 | 88.51 | -34.03 | 8 702 731 |
-| 2025-07-26 | muy_barata | no | sí | 81.20 | 1% | 99% | 93.41 | 94.22 | -72.06 | 8 146 925 |
-| 2025-07-27 | muy_barata | no | sí | 81.50 | 1% | 99% | 102.51 | 103.38 | -98.02 | 7 254 953 |
-| 2025-07-28 | muy_barata | no | sí | 81.90 | 1% | 99% | 72.31 | 72.98 | -35.95 | 10 214 759 |
-| 2025-07-29 | muy_barata | no | sí | 82.20 | 1% | 99% | 85.44 | 86.20 | -47.04 | 8 927 392 |
-| 2025-07-30 | muy_barata | no | sí | 82.20 | 1% | 99% | 48.24 | 48.74 | -44.82 | 12 574 852 |
-| 2025-07-31 | muy_barata | no | **no** | 81.90 | 50% | 50% | 13.01 | 49.52 | -37.50 | 16 028 381 |
+| 2026-07-25 | neutral | no | sí | 80.60 | 1% | 99% | -419.05 | -388.68 | 127.05 | 34 787 208 |
+| 2026-07-26 | neutral | no | sí | 80.80 | 1% | 99% | -307.61 | — | 83.28 | 29 135 727 |
+| 2026-07-27 | neutral | no | sí | 80.70 | 1% | 99% | -365.98 | — | 116.08 | 32 096 219 |
+| 2026-07-28 | neutral | no | sí | 80.40 | 1% | 99% | -437.59 | -406.84 | 83.40 | 35 727 887 |
+| 2026-07-29 | neutral | no | sí | 80.30 | 1% | 99% | -452.78 | -423.37 | 82.04 | 36 497 978 |
+| 2026-07-30 | neutral | sí | sí | 80.20 | 1% | 99% | -703.76 | -500 | 46.98 | 49 226 241 |
+| 2026-07-31 | escasez | sí | **no** | 80.00 | 51% | 49% | -383.37 | -500 | 77.34 | 32 977 969 |
 
 ## 9. Balance del impacto
 
 | Métrica | Imitación (XXXC) | Maestros (real) | Segmento (real) |
 |---|---|---|---|
-| Mediana margen (COP/kWh) | 85.44 | 86.20 | -44.82 |
-| Media margen (COP/kWh) | 71.81 | — | — |
-| % días que la imitación gana | — | 0.00 | 100.00 |
-| Replicación IS→OOS (ratio estudio→impacto) | 0.96 | — | — |
-| DSR (corregido por múltiples pruebas) | 0.936 (no) | — | — |
+| Mediana margen (COP/kWh) | -419.05 | -423.37 | 83.28 |
+| Media margen (COP/kWh) | -438.59 | — | — |
+| % días que la imitación gana | — | 20.00 | 0.00 |
+| Replicación IS→OOS (ratio estudio→impacto) | 1.19 | — | — |
+| DSR (corregido por múltiples pruebas) | 0.000 (no) | — | — |
 
-Garantía estimada por día (COP): mediana **8 927 392**  máximo **16 028 381**. Demanda simulada: **262 882 kWh** (0.263 GWh).
+Garantía estimada por día (COP): mediana **34 787 208**  máximo **49 226 241**. Demanda simulada: **202 942 kWh** (0.203 GWh).
 
 ## 10. Advertencias y limitaciones
 
@@ -176,38 +175,39 @@ Garantía estimada por día (COP): mediana **8 927 392**  máximo **16 028 381**
 3. La ventana de impacto usa datos ya cargados en elecdb; es retrospectiva, no predicción en vivo.
 4. Los maestros se eligen dentro de su segmento: el asistente no compite contra GRANDE por diseño.
 5. No existe ground truth real (liquidaciones XM) para validar el margen: la validación externa queda pendiente (P2.4 del plan de investigación).
-6. Solo se encontraron 3 agentes en el (segmento, estrategia) de la ventana de estudio; el top pedido era 10.
-7. N efectivo de maestros: 1 de 3 (hay maestros con comportamiento correlacionado/duplicado que no suman información independiente).
-8. La selección del top-10 NO supera el bootstrap skill-vs-luck (p=0.993 > 0.05): el 'mejor maestro' es indistinguible del azar. No operar sin más evidencia.
-9. DSR ≈ 0.94 (< 0.95) con 3 trials: el resultado de la imitación puede ser producto de la selección por azar.
-10. La combinación objetivo NO pasó la validez (bootstrap/holdout/replicación/N efectivo). Alternativa recomendada: **PEQUEÑO · Integrado/regional regulado** (relativo 48.4 COP/kWh).
+6. Solo se encontraron 4 agentes en el (segmento, estrategia) de la ventana de estudio; el top pedido era 10.
+7. N efectivo de maestros: 1 de 4 (hay maestros con comportamiento correlacionado/duplicado que no suman información independiente).
+8. La selección del top-10 NO supera el bootstrap skill-vs-luck (p=0.5824 > 0.05): el 'mejor maestro' es indistinguible del azar. No operar sin más evidencia.
+9. DSR ≈ 0.00 (< 0.95) con 4 trials: el resultado de la imitación puede ser producto de la selección por azar.
+10. KILL-SWITCH activado: el drawdown acumulado (3070 COP/kWh) supera el umbral (500 COP/kWh).
+11. La combinación objetivo NO pasó la validez (bootstrap/holdout/replicación/N efectivo). Alternativa recomendada: **PEQUEÑO · Integrado/regional regulado** (relativo 152.3 COP/kWh).
 
 ## 11. Alternativa recomendada (la combinación pedida no validó)
 
-El objetivo **PEQUEÑO · Trader expuesto a bolsa (sin cobertura)** no superó las pruebas de validez. La mejor alternativa del mismo estudio es **PEQUEÑO · Integrado/regional regulado** (maestros: EBSC, CHCC, EDQC, EMPC, ENIC), con mediana relativa de **48.38 COP/kWh** por encima de su segmento.
+El objetivo **PEQUEÑO · Trader expuesto a bolsa (sin cobertura)** no superó las pruebas de validez. La mejor alternativa del mismo estudio es **PEQUEÑO · Integrado/regional regulado** (maestros: ESOC, ASCC, CETC, CQTC, EGVC), con mediana relativa de **152.35 COP/kWh** por encima de su segmento.
 
 | Métrica | Valor |
 |---|---|
-| Mediana margen imitación (COP/kWh) | -7.19 |
-| Mediana maestros (COP/kWh) | -5.71 |
-| Mediana segmento (COP/kWh) | -44.82 |
-| % días que la imitación gana al segmento | 100.00 |
-| Replicación IS→OOS | 1.19 |
-| Garantía mediana (COP) | 17 961 101 |
+| Mediana margen imitación (COP/kWh) | -61.75 |
+| Mediana maestros (COP/kWh) | 227.50 |
+| Mediana segmento (COP/kWh) | 83.28 |
+| % días que la imitación gana al segmento | 0.00 |
+| Replicación IS→OOS | 1.06 |
+| Garantía mediana (COP) | 16 667 410 |
 
-Perfil alternativo (fallback): cobertura **85 %**, exposición bolsa **16 %**, no regulado **0 %**, SICEP **88 %**.
+Perfil alternativo (fallback): cobertura **100 %**, exposición bolsa **0 %**, no regulado **0 %**, SICEP **95 %**.
 
 ## 12. Decisiones de negocio para el agente XXXC
 
-Resumen ejecutivo para **PEQUEÑO · Trader expuesto a bolsa (sin cobertura)** en el período planteado (estudio 2025-06-25 → 2025-07-22; impacto 2025-07-25 → 2025-07-31):
+Resumen ejecutivo para **PEQUEÑO · Trader expuesto a bolsa (sin cobertura)** en el período planteado (estudio 2026-04-26 → 2026-07-22; impacto 2026-07-25 → 2026-07-31):
 
-- **Perfil a replicar:** compra **99 % de tu demanda en bolsa** y **1 % en contratos**, con mix **42 % no regulado** y **0 % SICEP** (perfil mediano de los maestros).
-- **Capital para operar:** constituye garantías por al menos **16 028 381 COP/día** (mediana **8 927 392 COP**).
-- **Pérdida en un día de escasez:** si la bolsa toca el precio de escasez pierdes **112 971 014 COP** en un día (158 620 515 COP si la supera 25 %), sobre tu demanda simulada de 0.263 GWh/día.
-- **Expectativa de negocio:** con la frecuencia histórica de escasez (10.64 % de los días) tu beneficio esperado es **30.62 COP/kWh/día**; en un año Niño (25 % de escasez) baja a **-43.36 COP/kWh/día**.
-- **Kill-switch:** drawdown acumulado del período **0.00 COP/kWh**; el umbral de protección está en 500 COP/kWh.
-- **Capacidad:** la demanda simulada de XXXC (262,882 kWh/día) es el **0.7 %** de la demanda mediana del segmento (5 % = umbral): dentro del límite.
+- **Perfil a replicar:** compra **99 % de tu demanda en bolsa** y **1 % en contratos**, con mix **59 % no regulado** y **0 % SICEP** (perfil mediano de los maestros).
+- **Capital para operar:** constituye garantías por al menos **49 226 241 COP/día** (mediana **34 787 208 COP**).
+- **Pérdida en un día de escasez:** si la bolsa toca el precio de escasez pierdes **128 500 617 COP** en un día (173 001 660 COP si la supera 25 %), sobre tu demanda simulada de 0.203 GWh/día.
+- **Expectativa de negocio:** con la frecuencia histórica de escasez (10.64 % de los días) tu beneficio esperado es **-441.83 COP/kWh/día**; en un año Niño (25 % de escasez) baja a **-472.59 COP/kWh/día**.
+- **Kill-switch (activado):** el drawdown acumulado del período **3 070.14 COP/kWh** supera el umbral: **no operar** la estrategia imitada sin rediseño.
+- **Capacidad:** la demanda simulada de XXXC (202,942 kWh/día) es el **1.6 %** de la demanda mediana del segmento (5 % = umbral): dentro del límite.
 - **Regla de protección:** define un límite/cobertura cuando el spread bolsa−contrato se acerque a 600 COP/kWh (contexto 'escasez'): ahí la política no tiene datos de entrenamiento y el perfil imitado (sin cobertura) es el que más pierde.
 - **Re-evaluación:** el top de maestros es pequeño y con comportamientos duplicados; no operes con datos de un solo período. Revisa esta decisión cada ventana (modo `--walk-forward`).
 
-**Veredicto:** En un año Niño (escasez ~25 % de los días) la estrategia PIERDE en expectativa. Es viable solo en años benignos; exige cobertura o reducción de exposición si el clima se torna seco.
+**Veredicto:** KILL-SWITCH: el drawdown acumulado del período simulado (3,070 COP/kWh) supera el umbral (500 COP/kWh). NO operar la estrategia imitada sin rediseñar el perfil o reducir la exposición.
