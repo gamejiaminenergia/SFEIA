@@ -70,8 +70,13 @@ class FaseAceptacion:
                 filas.append(fila)
 
         # Candidatas = pasaron el scan grueso; además se confirman las mejores
-        # casi-candidatas para documentar la distancia a la barrera.
+        # casi-candidatas para documentar la distancia a la barrera. Se limita
+        # el número de confirmaciones (cada una corre el flujo completo: 2
+        # estudios + bootstrap fino) para mantener el runtime acotado.
         candidatas = [f for f in filas if f["candidata"]]
+        max_confirmar = int(scan_cfg.get("max_confirmar", 25))
+        candidatas.sort(key=lambda f: (f["p_valor"], -f["mediana_relativa_top"], f["estudio_ini"]))
+        candidatas = candidatas[:max_confirmar]
         orden = sorted(filas, key=lambda f: (f["p_valor"], -f["mediana_relativa_top"]))
         confirmar_top = int(scan_cfg.get("confirmar_top", 8))
         a_confirmar = candidatas + [f for f in orden if not f["candidata"]][:confirmar_top]

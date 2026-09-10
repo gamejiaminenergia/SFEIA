@@ -175,7 +175,7 @@ def bootstrap_skill_luck(
         return [m for _, m in pares]
 
     medianas_reales = sorted(_mediana(_vals(v)) for v in series.values())
-    real_stat = medianas_reales[0] if top >= 1 else 0.0  # mejor maestro (mediana mayor)
+    real_stat = medianas_reales[-1]  # mejor maestro (mediana mayor)
 
     pool = [x for v in series.values() for x in _vals(v)]
     counts = [len(v) for v in series.values()]

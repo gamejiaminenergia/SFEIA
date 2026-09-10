@@ -358,6 +358,20 @@ def test_bootstrap_skill_luck_sin_skill():
     assert b["p_valor"] == 1.0  # sin habilidad, el mejor es indistinguible del azar
 
 
+def test_bootstrap_skill_luck_mejor_real_es_max():
+    """El estadístico real es la mediana MAYOR del ranking (bug: era el mínimo)."""
+    # C es claramente superior a A y B en todos los días
+    agentes = []
+    for dia in ("2026-01-01", "2026-01-02", "2026-01-03"):
+        agentes.append(AgenteDia("A", "A", dia, "PEQUEÑO", 0, ESTRATEGIA, {}, 1.0, 300.0))
+        agentes.append(AgenteDia("B", "B", dia, "PEQUEÑO", 0, ESTRATEGIA, {}, 2.0, 300.0))
+        agentes.append(AgenteDia("C", "C", dia, "PEQUEÑO", 0, ESTRATEGIA, {}, 100.0, 300.0))
+    b = maestros.bootstrap_skill_luck(
+        agentes, "PEQUEÑO", ESTRATEGIA, top=1, n_dias_estudio=3, n_boot=200, semilla=7, min_dias_pct=0.0
+    )
+    assert b["mejor_maestro_real"] == 100.0  # max, no min (1.0)
+
+
 def test_persistencia_seleccion():
     agentes = []
     for dia in ("2026-02-01", "2026-02-02", "2026-02-03"):

@@ -232,6 +232,7 @@ asistente:
       dias_holdout: 2         # sub-validación al final del estudio
       top: 10
       min_dias_pct: 20
+      max_confirmar: 25      # techo de candidatas a confirmar con flujo completo
       confirmar_top: 8        # mejores casi-candidatas a confirmar además
     gates:
       alpha: 0.05
