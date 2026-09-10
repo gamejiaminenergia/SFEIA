@@ -1,46 +1,19 @@
-"""Modelo financiero por agente (equivalente a C16–C18) desde C15.
+"""Modelo financiero por kWh (equivalente a C16–C18) sobre agregados diarios.
 
-Estimaciones con precio promedio de sistema (ver plan sección 3.2):
-no hay precio horario ni precio por agente en elecdb. No sustituyen
-liquidaciones XM.
+Estimaciones con precio promedio de sistema (ver plan): no hay precio horario
+ni precio por agente en elecdb. No sustituyen liquidaciones XM. Es la métrica
+de desempeño del estudio híbrido diario y del asistente imitador.
 """
 from __future__ import annotations
 
 
-def agregar_enriquecido(rows: list[dict]) -> dict:
-    """Agrega filas horarias de C15 a totales por agente."""
-    def f(key):
-        return sum(float(r[key] or 0.0) for r in rows)
-
-    dema = f("dema_come")
-    compra_bolsa = f("comp_bolsa_naci_ener")
-    venta_bolsa = f("vent_bolsa_naci_ener")
-    compra_cont = f("comp_cont_ener")
-    venta_cont = f("vent_cont_ener")
-    perdidas = f("perdidas_ener")
-    val_comp = f("val_comp_cont") + f("val_comp_bolsa_naci")
-    val_vent = f("val_vent_cont") + f("val_vent_bolsa_naci")
-    val_comp_bolsa = f("val_comp_bolsa_naci")
-    val_vent_bolsa = f("val_vent_bolsa_naci")
-
-    return {
-        "dema_kwh": dema,
-        "compra_bolsa_kwh": compra_bolsa,
-        "venta_bolsa_kwh": venta_bolsa,
-        "compra_cont_kwh": compra_cont,
-        "venta_cont_kwh": venta_cont,
-        "perdidas_kwh": perdidas,
-        "val_comp_cop": val_comp,
-        "val_vent_cop": val_vent,
-        "pos_net_bolsa_kwh": compra_bolsa - venta_bolsa,
-        "pos_net_cont_kwh": compra_cont - venta_cont,
-        "exposicion_neta_cop": val_comp - val_vent,
-        "egreso_energia_cop": val_comp,
-    }
-
-
 def modelo_financiero(ag: dict, params: dict) -> dict:
-    """Aplica la lógica documentada de C16–C18 sobre los totales de C15."""
+    """Aplica la lógica documentada de C16–C18 sobre los totales del agente-día.
+
+    `ag` debe traer: dema_kwh, compra_bolsa_kwh, venta_bolsa_kwh,
+    compra_cont_kwh, venta_cont_kwh, exposicion_neta_cop, egreso_energia_cop.
+    Devuelve el margen estimado por kWh (artefacto: Pv fijo de config).
+    """
     pv = float(params["pv_tarifa_cop_kwh"])
     cargo = float(params["cargo_regulado_cop_kwh"])
     factor = float(params["factor_cobertura"])

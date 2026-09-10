@@ -11,8 +11,8 @@ from __future__ import annotations
 
 from statistics import median
 
-from asistente.app.models.entities import PerfilAccion, PoliticaClonacion, ReglaPolitica
-from asistente.app.services.contexto import binificar_spread
+from sfeia.app.models.entities import PerfilAccion, PoliticaClonacion, ReglaPolitica
+from sfeia.app.services.contexto import binificar_spread
 
 FEATURES_ACCION = ["pct_cobertura", "pct_exposicion", "pct_noreg", "pct_sicep", "tiene_sicep"]
 

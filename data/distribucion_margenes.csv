@@ -1,0 +1,10 @@
+﻿metrica,imitacion,maestros_real,segmento_real
+n_dias,8,8,8
+mediana_cop_kwh,-511.79,-500,-218.96
+media_cop_kwh,-515.53,-486.15,-226.52
+p5_cop_kwh,-566.91,-500,-266.09
+p95_cop_kwh,-435.5,-435.5,-208.76
+pct_dias_perdida,100.0,100.0,100.0
+peor_dia_cop_kwh,-566.91,-500,-266.09
+mejor_dia_cop_kwh,-435.5,-435.5,-208.76
+drawdown_max_cop_kwh_acum,4124.28,3889.2,1812.19

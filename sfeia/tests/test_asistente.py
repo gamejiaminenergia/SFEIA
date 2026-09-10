@@ -8,13 +8,13 @@ import numpy as np
 from sfeia.app.models.entities import AgenteDia, PerfilEstrategia
 from sfeia.app.services import diario
 
-from asistente.app.models.entities import (
+from sfeia.app.models.entities import (
     PerfilAccion,
     PoliticaClonacion,
     ReglaPolitica,
     SimulacionDia,
 )
-from asistente.app.services import clonacion, contexto, maestros, simulacion
+from sfeia.app.services import clonacion, contexto, maestros, simulacion
 
 PARAMS = {
     "pv_tarifa_cop_kwh": 350.0,
@@ -190,8 +190,8 @@ def test_mediana_margen_dia():
 
 def test_resumen_impacto():
     sims = [
-        SimulacionDia("2026-07-01", "barata", False, PerfilAccion(0.0, 100.0, 100.0, 0.0, 0.0), 10.0, 8.0, 6.0),
-        SimulacionDia("2026-07-02", "barata", False, PerfilAccion(0.0, 100.0, 100.0, 0.0, 0.0), 12.0, 9.0, 7.0),
+        SimulacionDia("2026-07-01", "barata", False, PerfilAccion(0.0, 100.0, 100.0, 0.0, 0.0), 10.0, 8.0, 6.0, 1_000.0),
+        SimulacionDia("2026-07-02", "barata", False, PerfilAccion(0.0, 100.0, 100.0, 0.0, 0.0), 12.0, 9.0, 7.0, 1_500.0),
     ]
     r = simulacion.resumen_impacto(sims, demanda_kwh_dia=100_000.0)
     assert r.dias == 2
@@ -199,3 +199,128 @@ def test_resumen_impacto():
     assert r.mediana_maestros == 8.5
     assert r.pct_dias_gana_segmento == 100.0
     assert r.pct_dias_gana_maestros == 100.0
+    assert r.garantia_mediana_cop == 1_250.0
+    assert r.garantia_max_cop == 1_500.0
+
+
+def test_distribucion():
+    m = simulacion.distribucion([-10.0, -5.0, 5.0, 10.0, 20.0])
+    assert m.n == 5
+    assert m.mediana == 5.0
+    assert m.pct_dias_perdida == 40.0
+    assert m.peor_dia == -10.0
+    assert m.mejor_dia == 20.0
+    # drawdown de la serie acumulada: -10,-15,-10,0,20 -> caída pico-valle = 15
+    assert m.drawdown_max == 15.0
+
+
+def test_distribucion_vacia():
+    m = simulacion.distribucion([])
+    assert m.n == 0 and m.mediana == 0.0
+
+
+def test_escenario_escasez():
+    agentedia = _agentedia_toy()
+    etiquetas = sorted(agentedia)
+    labels = np.array([0 if agentedia[k]["codigo"] == "EXP" else 1 for k in etiquetas])
+    perfiles = {
+        0: PerfilEstrategia(cluster_id=0, arquetipo=ESTRATEGIA, n=3, n_agentes=1,
+                            medias={}, composicion_segmento={"PEQUEÑO": 3}),
+    }
+    politica = clonacion.construir_politica(
+        agentedia, etiquetas, labels, perfiles, {"EXP"}, "PEQUEÑO", ESTRATEGIA, {"EXP": "PEQUEÑO"}, BINS
+    )
+    dias = [ad for ad in agentedia.values()]
+    esc = simulacion.escenario_escasez(100_000.0, politica, dias, PARAMS)
+    assert len(esc) == 2
+    assert esc[0].nombre == "escasez_umbral"
+    assert esc[1].nombre == "escasez_extrema"
+    assert esc[1].spread > esc[0].spread
+    assert all(e.garantia_cop >= 0 for e in esc)
+
+
+def test_sensibilidad_maestros():
+    agentes = []
+    for dia in ("2026-01-01", "2026-01-02", "2026-01-03"):
+        agentes.append(AgenteDia(
+            codigo="EXP", nombre="EXP S.A.", dia=dia, segmento="PEQUEÑO",
+            cluster_id=0, arquetipo=ESTRATEGIA, features={}, margen_kwh=10.0, costo_kwh=300.0,
+        ))
+    sens = maestros.sensibilidad(agentes, "PEQUEÑO", ESTRATEGIA, n_dias_estudio=3,
+                                 tops=(1, 3), min_dias_pcts=(0.0, 50.0))
+    assert sens[(1, 0.0)] == ["EXP"]
+    assert sens[(3, 50.0)] == ["EXP"]
+
+
+def test_historial_escasez():
+    from datetime import date
+
+    dias = [
+        {"fecha": date(2025, 1, 1), "prec_bolsa": 300.0, "prec_cont": 330.0, "prec_escasez": 800.0},  # spread -30
+        {"fecha": date(2025, 1, 2), "prec_bolsa": 500.0, "prec_cont": 330.0, "prec_escasez": 800.0},  # spread 170
+        {"fecha": date(2025, 1, 3), "prec_bolsa": 950.0, "prec_cont": 330.0, "prec_escasez": 800.0},  # spread 620
+        {"fecha": date(2025, 1, 4), "prec_bolsa": 700.0, "prec_cont": 330.0, "prec_escasez": 800.0},  # spread 370
+    ]
+    h = contexto.historial_escasez(dias, BINS)
+    assert h["n_dias"] == 4
+    assert h["n_dias_escasez"] == 1  # solo 950 > 800
+    assert h["pct_dias_escasez"] == 25.0
+    assert h["frecuencia_bins"]["muy_barata"]["n"] == 1
+    assert h["frecuencia_bins"]["barata"]["n"] == 1
+    assert h["frecuencia_bins"]["neutral"]["n"] == 1
+    assert h["frecuencia_bins"]["cara"]["n"] == 1  # 620 cae en 'cara' (test BINS sin bin escasez)
+    assert h["spread_max"] == 620.0
+    assert h["spread_p50"] == 370.0
+    assert h["por_anio"][2025]["n_escasez"] == 1
+
+
+def test_config_split_estudio_vs_simulador():
+    """config.yaml (estudio) y asistente.yaml (simulador) son independientes."""
+    from sfeia.config.settings import load_asistente_config, load_config, load_merged
+
+    estudio = load_config()
+    simulador = load_asistente_config()
+    # el estudio NO conoce la clave `asistente`; el simulador solo trae la suya
+    assert "asistente" not in estudio
+    assert set(simulador) == {"asistente"}
+    # la fusión conserva lo del estudio + lo del simulador
+    merged = load_merged()
+    assert merged["database"]["dsn_env"] == "DB_DSN"
+    assert merged["diario"]["k"] == 5
+    assert merged["asistente"]["segmento_por_defecto"] == "PEQUEÑO"
+
+
+def test_decision_negocio():
+    d = simulacion.decision_negocio(
+        dema_kwh=100_000.0, mediana_benigna=86.2,
+        margen_escasez=-520.36, margen_escasez_extrema=-715.6,
+        pct_escasez=10.64, pct_escasez_nino=25.0,
+    )
+    assert d["perdida_dia_escasez_cop"] == -52_036_000.0
+    assert d["perdida_dia_escasez_extrema_cop"] == -71_560_000.0
+    # E = (1-p)*86.2 + p*(-520.36)
+    assert d["e_margen_dia_historico"] == round(0.8936 * 86.2 + 0.1064 * -520.36, 2)
+    assert d["e_margen_dia_anio_nino"] < 0  # en año Niño pierde en expectativa
+    assert "PIERDE" in d["veredicto"]
+
+
+def test_decision_negocio_benigna():
+    d = simulacion.decision_negocio(
+        dema_kwh=100_000.0, mediana_benigna=86.2,
+        margen_escasez=5.0, margen_escasez_extrema=-15.0,
+        pct_escasez=10.64, pct_escasez_nino=25.0,
+    )
+    assert "Sin pérdida relevante" in d["veredicto"]
+
+
+def test_detectar_duplicados():
+    from sfeia.app.models.entities import AgenteMaestro
+
+    ms = [
+        AgenteMaestro("A", "A", 10, 62.48, -10.29),
+        AgenteMaestro("B", "B", 10, 62.48, -10.29),
+        AgenteMaestro("C", "C", 10, -28.59, -132.91),
+    ]
+    dups = maestros.detectar_duplicados(ms)
+    assert ["A", "B"] in dups
+    assert len(dups) == 1

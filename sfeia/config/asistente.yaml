@@ -1,0 +1,54 @@
+# Configuración del SIMULADOR (asistente imitador del agente XXXC).
+#
+# Independiente del estudio: aquí viven SOLO los parámetros del asistente.
+# Se carga junto con config/config.yaml (el estudio/motor, que el asistente
+# reutiliza). Behavioral Cloning del top-N de un (segmento, estrategia) en una
+# ventana de estudio, replicado en una ventana de impacto. Documentado en
+# docs/plan_agente_xxxc_asistente.md.
+
+asistente:
+  # ===== Ventanas de prueba (muévelas para probar en el tiempo) =====
+  # Regla: estudio_ini <= estudio_fin < impacto_ini <= impacto_fin.
+  # Si dejas una en null, se rellena con la ventana del estudio (config.yaml)
+  # menos dias_impacto_por_defecto. El CLI (--estudio-ini, --impacto-fin, ...)
+  # sobreescribe estos valores.
+  estudio_ini: "2026-06-01"
+  estudio_fin: "2026-06-30"
+  impacto_ini: "2026-07-01"
+  impacto_fin: "2026-07-08"
+
+  # Qué (segmento, estrategia) imitar por defecto.
+  segmento_por_defecto: PEQUEÑO
+  estrategia_por_defecto: "Trader expuesto a bolsa (sin cobertura)"
+  # Cuántos maestros (top-N) se clonan.
+  top_por_defecto: 5
+
+  # Presencia mínima del agente dentro de la estrategia (ventana de estudio)
+  # para ser elegible como maestro (casos marginales quedan fuera).
+  min_dias_pct: 20
+
+  # Demanda diaria de XXXC en GWh; null -> mediana diaria del segmento en el
+  # estudio.
+  dema_dia_gwh: null
+
+  # Si no se dan fechas de impacto, se usan las últimas N días de la ventana
+  # principal (config.yaml -> ventana).
+  dias_impacto_por_defecto: 7
+
+  # Escenario 'año Niño' para la decisión de negocio: % de días con escasez
+  # que se asume en un año seco (ver historial en el informe; 2015-16/2023-24
+  # estuvieron entre 21-30 %).
+  pct_escasez_anio_nino: 25
+
+  # Estado del mercado: spread = bolsa − contratos (COP/kWh). Cada bin aprende
+  # la mediana del perfil de abastecimiento de los top-N.
+  bins_spread:
+    muy_barata: [-999999, 0]
+    barata: [0, 200]
+    neutral: [200, 400]
+    cara: [400, 600]
+    escasez: [600, 999999]
+
+  # Salidas del asistente (rutas relativas a la raíz del repo).
+  salida: "docs/informe_asistente_imitador.md"
+  data_dir: "data"

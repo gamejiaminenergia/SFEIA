@@ -10,7 +10,7 @@ from __future__ import annotations
 
 from statistics import median
 
-from asistente.app.models.entities import AgenteMaestro
+from sfeia.app.models.entities import AgenteMaestro
 
 
 def _coincide(arquetipo: str, estrategia: str) -> bool:
@@ -57,3 +57,37 @@ def seleccionar_maestros(
 
     candidatos.sort(key=lambda m: (-m.mediana_margen, -m.n_dias, m.codigo))
     return candidatos[:top]
+
+
+def sensibilidad(
+    agentes: list,
+    segmento: str,
+    estrategia: str,
+    n_dias_estudio: int,
+    tops: tuple[int, ...] = (3, 5, 7),
+    min_dias_pcts: tuple[float, ...] = (10.0, 20.0, 30.0),
+) -> dict[tuple[int, float], list[str]]:
+    """Estabilidad del top-N frente a (top, min_dias_pct).
+
+    Re-selecciona maestros con otras configuraciones sobre la **misma** ventana
+    de estudio y devuelve { (top, min_dias_pct): [códigos] } para ver si los
+    maestros cambian mucho (robustez de la selección).
+    """
+    out: dict[tuple[int, float], list[str]] = {}
+    for top in tops:
+        for mp in min_dias_pcts:
+            ms = seleccionar_maestros(agentes, segmento, estrategia, top, n_dias_estudio, mp)
+            out[(top, mp)] = [m.codigo for m in ms]
+    return out
+
+
+def detectar_duplicados(maestros: list[AgenteMaestro]) -> list[list[str]]:
+    """Agrupa maestros con idéntico (mediana, media) de margen.
+
+    Un margen idéntico redondeado suele indicar el mismo comportamiento (o
+    datos espejo); contar cada uno como 'maestro' independiente infla el top-N.
+    """
+    grupos: dict[tuple[float, float], list[str]] = {}
+    for m in maestros:
+        grupos.setdefault((m.mediana_margen, m.media_margen), []).append(m.codigo)
+    return [codes for codes in grupos.values() if len(codes) > 1]

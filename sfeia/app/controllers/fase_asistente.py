@@ -22,13 +22,13 @@ from sfeia.app.controllers.fase_diaria import FaseDiaria
 from sfeia.app.controllers.fase_segmentacion import FaseSegmentacion
 from sfeia.app.services import diario
 
-from asistente.app.models.entities import (
+from sfeia.app.models.entities import (
     ParametrosAsistente,
     PerfilAccion,
     SimulacionDia,
     VentanasResueltas,
 )
-from asistente.app.services import clonacion, contexto, maestros, simulacion
+from sfeia.app.services import clonacion, contexto, maestros, simulacion
 
 
 def _parse(s: str) -> date:
@@ -187,23 +187,57 @@ class FaseAsistente:
             ad_xxxc = simulacion.construir_ad_xxxc(
                 dema_kwh, perfil, ad["prec_cont"], ad["prec_bolsa"], ad["prec_escasez"]
             )
-            margen_im = diario.desempeno_diario(ad_xxxc, params)["margen_por_kwh_cop"]
+            res = diario.desempeno_diario(ad_xxxc, params)
             bin_label, _, _ = contexto.binificar_spread(spread, a_cfg["bins_spread"])
             sims.append(SimulacionDia(
                 fecha=dia,
                 bin_spread=bin_label,
                 es_escasez=contexto.es_escasez(ad["prec_bolsa"], ad["prec_escasez"]),
                 perfil=perfil,
-                margen_imitacion=round(margen_im, 2),
+                margen_imitacion=round(res["margen_por_kwh_cop"], 2),
                 margen_maestros=simulacion.mediana_margen_dia(
                     agentedia_impacto, dia, codigos=codigos_maestros
                 ),
                 margen_segmento=simulacion.mediana_margen_dia(
                     agentedia_impacto, dia, segmento=segmento, segmento_por_codigo=segmento_por_codigo
                 ),
+                garantia_exigida_cop=round(res["garantia_exigida_cop"], 0),
             ))
         sims.sort(key=lambda s: s.fecha)
         resumen = simulacion.resumen_impacto(sims, dema_kwh)
+
+        distribuciones = {
+            "imitacion": simulacion.distribucion([s.margen_imitacion for s in sims]),
+            "maestros": simulacion.distribucion(
+                [s.margen_maestros for s in sims if s.margen_maestros is not None]
+            ),
+            "segmento": simulacion.distribucion(
+                [s.margen_segmento for s in sims if s.margen_segmento is not None]
+            ),
+        }
+        escenarios = simulacion.escenario_escasez(
+            dema_kwh, politica, list(d["agentedia"].values()), params
+        )
+        historial_escasez = contexto.historial_escasez(
+            self.repo.historial_precios(), a_cfg["bins_spread"]
+        )
+        esc_by_name = {e.nombre: e for e in escenarios}
+        decision = simulacion.decision_negocio(
+            dema_kwh=dema_kwh,
+            mediana_benigna=resumen.mediana_imitacion,
+            margen_escasez=esc_by_name["escasez_umbral"].margen_cop_kwh if "escasez_umbral" in esc_by_name else 0.0,
+            margen_escasez_extrema=esc_by_name["escasez_extrema"].margen_cop_kwh if "escasez_extrema" in esc_by_name else 0.0,
+            pct_escasez=historial_escasez["pct_dias_escasez"],
+            pct_escasez_nino=float(a_cfg.get("pct_escasez_anio_nino", 25.0)),
+        )
+        robustez = {
+            "sensibilidad": maestros.sensibilidad(
+                d["agentes"], segmento, estrategia, d["n_dias"],
+                tops=(max(1, p.top - 2), p.top, p.top + 2),
+                min_dias_pcts=(10.0, p.min_dias_pct, 30.0),
+            ),
+            "duplicados": maestros.detectar_duplicados(maestros_lista),
+        }
 
         advertencias = [
             "El margen es un artefacto de modelado (Pv=350 COP/kWh fijo, precios de sistema): sirve para "
@@ -242,6 +276,11 @@ class FaseAsistente:
             "politica": politica,
             "simulacion": sims,
             "resumen": resumen,
+            "distribuciones": distribuciones,
+            "escenarios": escenarios,
+            "historial_escasez": historial_escasez,
+            "decision": decision,
+            "robustez": robustez,
             "advertencias": advertencias,
         }
         return resultado

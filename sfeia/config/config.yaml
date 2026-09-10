@@ -1,11 +1,15 @@
+# Configuración del ESTUDIO híbrido diario (motor del asistente).
+#
+# Aquí viven solo los parámetros del estudio: acceso a datos, ventana,
+# segmentación, modelo financiero y clustering diario. El asistente imitador
+# (config/asistente.yaml) REUTILIZA esta configuración y le suma la suya.
+
+# Conexión a elecdb (XM/SIN). La usa tanto el estudio como el asistente.
 database:
   dsn_env: DB_DSN
   default: postgresql://postgres:postgres@localhost:5432/postgres
 
-creg:
-  url_env: CREG_URL
-  default: http://localhost:3000/api/ask
-
+# Ventana principal del estudio (foco del análisis).
 ventana:
   # Foco del análisis (estudio híbrido diario, Ene–Jul 2025)
   foco_ini: "2025-01-01"
@@ -18,10 +22,12 @@ ventana:
   contexto_ini: "2024-01-01"
   contexto_fin: "2025-08-01"
 
+# Segmentación por tamaño (F-1): umbrales de DemaCome GWh/semestre.
 segmentacion:
   grande_min_gwh: 2000.0
   mediano_min_gwh: 100.0
 
+# Modelo financiero (C16–C18): margen estimado por kWh. Artefacto de modelado.
 modelo_financiero:
   # Misma lógica que C16–C18 (documentada en el plan): estimaciones con
   # precio promedio de sistema. No reemplazan liquidaciones XM.
@@ -74,33 +80,3 @@ diario:
   n_init: 10
   scaler: standard
   desempeno: margen_kwh
-
-informe_diario:
-  salida: "docs/informe_estrategias_diarias.md"
-  titulo: "Estrategias Diarias de Comercialización en el MEM — Ranking de Desempeño por Arquetipo (Ene–Jul 2025)"
-
-# Asistente imitador del agente XXXC (simulador en la raíz del repo).
-# Behavioral Cloning del top-N de un (segmento, estrategia) en una ventana de
-# estudio, replicado en una ventana de impacto. Documentado en
-# docs/plan_agente_xxxc_asistente.md (raíz).
-asistente:
-  segmento_por_defecto: PEQUEÑO
-  estrategia_por_defecto: "Trader expuesto a bolsa (sin cobertura)"
-  top_por_defecto: 5
-  # Presencia mínima del agente dentro de la estrategia (ventana de estudio)
-  # para ser elegible como maestro (casos marginales quedan fuera).
-  min_dias_pct: 20
-  # Demanda diaria de XXXC; null -> mediana diaria del segmento en el estudio.
-  dema_dia_gwh: null
-  # Si no se dan fechas de impacto, se usan las últimas N días de la ventana.
-  dias_impacto_por_defecto: 7
-  # Estado del mercado: spread = bolsa − contratos (COP/kWh). Cada bin
-  # aprende la mediana del perfil de abastecimiento de los top-N.
-  bins_spread:
-    muy_barata: [-999999, 0]
-    barata: [0, 200]
-    neutral: [200, 400]
-    cara: [400, 600]
-    escasez: [600, 999999]
-  salida: "docs/informe_asistente_imitador.md"
-  data_dir: "data"

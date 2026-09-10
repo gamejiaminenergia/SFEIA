@@ -2,6 +2,9 @@
 
 Ejecuta las queries aisladas en sql/ contra PostgreSQL. Todas las consultas
 están parametrizadas y filtran por fecha. La vista nunca consulta la BD.
+
+Solo expone los métodos del flujo activo (segmentación, agregación diaria
+y límite de datos para las ventanas del asistente).
 """
 from __future__ import annotations
 
@@ -97,48 +100,21 @@ class RepoElecdb:
         finally:
             conn.close()
 
-    # ---- F-1 ----
+    # ---- F-1: segmentación de la población ----
     def segmentacion_poblacion(self, ini: str, fin: str) -> list[dict]:
         return self._ejecutar_archivo("f-1_segmentacion.sql", {"ini": ini, "fin": fin})[0]
 
-    # ---- F0 ----
-    def contexto_mercado(self, ini: str, fin: str) -> list[dict]:
-        return self._ejecutar_archivo("f0_contexto_mercado.sql", {"ini": ini, "fin": fin})[0]
-
-    # ---- F1 ----
-    def cartera(self, ini: str, fin: str) -> list[list[dict]]:
-        """C01 (demanda), C02 (bolsa), C03 (contratos), SICEP."""
-        return self._ejecutar_archivo("f1_cartera.sql", {"ini": ini, "fin": fin})
-
-    # ---- F2 ----
-    def cobertura(self, ini: str, fin: str) -> list[dict]:
-        return self._ejecutar_archivo("f2_cobertura.sql", {"ini": ini, "fin": fin})[0]
-
-    # ---- F3 ----
-    def pico_valle(self, ini: str, fin: str) -> list[dict]:
-        return self._ejecutar_archivo("f3_pico_valle.sql", {"ini": ini, "fin": fin})[0]
-
-    # ---- F4 ----
-    def mix(self, ini: str, fin: str) -> list[list[dict]]:
-        """C08 (pérdidas por agente) + C06 (contexto CIIU)."""
-        return self._ejecutar_archivo("f4_mix.sql", {"ini": ini, "fin": fin})
-
-    # ---- F5 ----
-    def precio_contratos(self, ini: str, fin: str) -> list[dict]:
-        return self._ejecutar_archivo("f5_precio_contratos.sql", {"ini": ini, "fin": fin})[0]
-
-    def agente_enriquecido(self, ini: str, fin: str, agente: str) -> list[dict]:
-        return self._ejecutar_archivo(
-            "f5_financiero.sql", {"ini": ini, "fin": fin, "agente": agente}
-        )[0]
-
-    # ---- D1 (estudio híbrido diario) ----
+    # ---- D1: agregación diaria por agente + precios de sistema ----
     def diario(self, ini: str, fin: str) -> list[dict]:
-        """Agregación diaria por agente + precios de sistema (todos los agentes)."""
         return self._ejecutar_archivo("d1_diario.sql", {"ini": ini, "fin": fin})[0]
 
-    # ---- D1 (auxiliar del asistente imitador) ----
+    # ---- D1 (auxiliar): límite de datos para las ventanas del asistente ----
     def fecha_max_sistema(self) -> str:
         """Última fecha con precios de sistema (límite para las ventanas)."""
         fila = self._ejecutar_archivo("d1_max_fecha.sql", {})[0][0]
         return str(fila["max_fecha"])
+
+    # ---- D1 (auxiliar): histórico completo de precios (frecuencia de escasez) ----
+    def historial_precios(self) -> list[dict]:
+        """Todas las filas de fact_daily_sistema (precios diarios, 2015 → hoy)."""
+        return self._ejecutar_archivo("d1_historial_precios.sql", {})[0]
